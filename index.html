@@ -406,7 +406,7 @@ footer a { color: var(--ash); }
 </main>
 
 <footer>
-  Inspired by the <a href="https://thebulletin.org/doomsday-clock/" rel="noopener">Bulletin of the Atomic Scientists</a>, not affiliated with it. Open source, runs on free tools.
+  Inspired by the <a href="https://thebulletin.org/doomsday-clock/" target="_blank" rel="noopener">Bulletin of the Atomic Scientists</a>, not affiliated with it. Open source, runs on free tools.
 </footer>
 
 <script>
@@ -531,7 +531,7 @@ function render(data) {
     </div>`).join("");
 
   document.getElementById("headlines").innerHTML = data.headlines.map(h => `
-    <li><span class="tag">${esc(h.tag)}</span>${h.url && h.url !== "#" ? `<a href="${esc(h.url)}" rel="noopener">${esc(h.title)}</a>` : esc(h.title)}
+    <li><span class="tag">${esc(h.tag)}</span>${h.url && h.url !== "#" ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}</a>` : esc(h.title)}
       <div class="src">${esc(h.source)}</div></li>`).join("");
 
   renderHistory(data);
