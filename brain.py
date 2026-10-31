@@ -136,7 +136,7 @@ PROVIDERS = [
         "name": "gemini",
         "url": os.environ.get("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai") + "/chat/completions",
         "key_env": "GEMINI_API_KEY",
-        "model": os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
+        "model": os.environ.get("GEMINI_MODEL", "gemini-3.8-flash"),
     },
 ]
 
@@ -260,42 +260,51 @@ def extract_json(text):
         raise
 
 
-def ask(system, user, max_tokens=900):
-    """Ask the first provider that works. Returns parsed JSON."""
+def ask(system, user, max_tokens=2500):
+    """Ask the first provider that works. Returns parsed JSON.
+
+    max_tokens is generous because reasoning models (gpt-oss) spend tokens
+    thinking before they answer; a tight cap cuts the JSON off."""
     errors = []
     for p in PROVIDERS:
         key = os.environ.get(p["key_env"])
         if not key:
             continue
         for attempt in range(3):
+            body = {
+                "model": p["model"],
+                "temperature": 0.3,
+                "max_tokens": max_tokens,
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user},
+                ],
+            }
+            if attempt == 0:
+                body["response_format"] = {"type": "json_object"}
+            if p["name"] == "groq" and "gpt-oss" in p["model"]:
+                body["reasoning_effort"] = "low"
             try:
                 r = requests.post(
                     p["url"],
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-                    json={
-                        "model": p["model"],
-                        "temperature": 0.3,
-                        "max_tokens": max_tokens,
-                        "response_format": {"type": "json_object"},
-                        "messages": [
-                            {"role": "system", "content": system},
-                            {"role": "user", "content": user},
-                        ],
-                    },
-                    timeout=90,
+                    json=body,
+                    timeout=120,
                 )
                 if r.status_code == 429:
-                    wait = 15 * (attempt + 1)
+                    wait = 20 * (attempt + 1)
                     log(f"{p['name']} rate-limited, waiting {wait}s")
                     time.sleep(wait)
                     continue
-                r.raise_for_status()
+                if r.status_code >= 400:
+                    raise RuntimeError(f"HTTP {r.status_code}: {r.text[:300]}")
                 content = r.json()["choices"][0]["message"]["content"]
                 return extract_json(content)
             except Exception as ex:
-                errors.append(f"{p['name']}: {ex}")
+                log(f"{p['name']} attempt {attempt + 1} failed: {str(ex)[:300]}")
+                errors.append(f"{p['name']}: {str(ex)[:200]}")
                 time.sleep(3)
-    raise RuntimeError("All LLM providers failed: " + "; ".join(errors) or "no API key set")
+    raise RuntimeError("All LLM providers failed: " + ("; ".join(errors) or "no API key set"))
 
 
 RULES = """You are part of a simulated Doomsday Clock board. The clock shows seconds to midnight;
@@ -311,7 +320,7 @@ You are the {role} expert. Your scope: {scope}.
 Return JSON: {{"vote": "worse"|"hold"|"better", "score": -3..3, "say": "<2-3 plain sentences, under 70 words, naming the headline numbers you relied on>", "cites": [headline numbers]}}
 score: -3 = clearly more dangerous today, 0 = no real change, +3 = clearly safer. A vote of worse/better requires at least one cite."""
     user = f"Current reading: {seconds} seconds to midnight.\n\nNews from the last 24 hours:\n{news}"
-    out = ask(system, user, max_tokens=400)
+    out = ask(system, user, max_tokens=2000)
     vote = out.get("vote", "hold")
     if vote not in ("worse", "hold", "better"):
         vote = "hold"
@@ -342,7 +351,7 @@ Return JSON: {{"delta": -{MAX_MOVE}..{MAX_MOVE} (negative = closer to midnight),
     user = (f"Current reading: {seconds} seconds to midnight.\n"
             f"Yesterday's chair lede: {yesterday_lede or '(none, first day)'}\n\n"
             f"Expert views:\n{views}\n\nNews from the last 24 hours:\n{news}")
-    return ask(system, user, max_tokens=900)
+    return ask(system, user, max_tokens=3000)
 
 # ----------------------------------------------------------------------------
 # Fake AI for --dry-run (no key needed)
