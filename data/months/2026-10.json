@@ -46,26 +46,25 @@
     }
   ],
   "official": 85,
-  "title": "Clock ticks back amid Ebola and storms",
-  "summary": "The Doomsday Clock began October at 85 seconds to midnight and ended at 84 seconds, moving back one second due to heightened biological and climate threats. The single biggest driver was the worsening Ebola outbreak in the Democratic Republic of Congo combined with severe storms in Australia.",
+  "title": "Ebola Outbreak Pushes Clock Back",
+  "summary": "The clock started October at 85 seconds and ended at 84 seconds, moving closer to midnight. The single biggest factor was the worsening Ebola outbreak in Central Africa, which raised biological and climate risk assessments.",
   "sections": [
     {
       "heading": "What moved the clock",
       "body": [
-        "The outbreak in the Democratic Republic of Congo surpassed 5,000 deaths, raising fears of continental spread. Nigeria also reported suspected cases, indicating regional escalation.",
-        "Australia experienced severe storms that amplified immediate climate risks, contributing to the decision to move the clock back."
+        "The Doomsday Clock was set back by one second on October 31, moving from 85 to 84 seconds, indicating a closer approach to midnight. Experts cited a worsening Ebola outbreak in the Democratic Republic of Congo, with deaths exceeding 5,000 and suspected cases in Nigeria, as a key driver of increased biological risk. Severe storms in Australia also heightened climate risk, reinforcing the decision to move the clock backward."
       ]
     },
     {
       "heading": "Where the experts disagreed",
       "body": [
-        "No experts voted in opposite directions on this day; all assessments aligned on worsening biological and climate factors."
+        "No experts disagreed this month; all votes were either hold or worse, with no day showing both a \"worse\" and a \"better\" vote."
       ]
     },
     {
       "heading": "What to watch next month",
       "body": [
-        "Monitor the trajectory of the Ebola outbreak in Central Africa and any further developments in Australian weather patterns, as both could influence future clock adjustments."
+        "Monitor the spread of Ebola in Central Africa and the response efforts, as further escalation could prompt additional clock adjustments. Watch for developments in Australian weather patterns and any emerging climate-related disasters that could influence future risk assessments."
       ]
     }
   ],
@@ -75,5 +74,5 @@
       "seconds": 84
     }
   ],
-  "generated_at": "2026-10-31T21:53:42+00:00"
+  "generated_at": "2026-10-31T22:18:15+00:00"
 }
