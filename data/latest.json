@@ -1,50 +1,62 @@
 {
   "sample": false,
   "date": "2026-10-31",
-  "seconds": 84,
-  "previous": 85,
-  "generated_at": "2026-10-31T16:14:37+00:00",
+  "seconds": 83,
+  "previous": 84,
+  "generated_at": "2026-10-31T16:54:34+00:00",
   "chair": {
-    "lede": "We move the clock one second closer to midnight, driven chiefly by the worsening Ebola outbreak in the Congo surpassing 5,000 deaths.",
+    "lede": "We move the clock one second closer, driven chiefly by escalating climate disasters in Syria and Australia combined with a worsening Ebola toll.",
     "body": [
-      "The bio‑security situation has sharply deteriorated, with the Congo Ebola crisis now exceeding 5,000 fatalities, marking a clear escalation in global health risk.",
-      "Geopolitical tensions also rose, highlighted by the U.S. approval of a $2.1 billion Patriot missile sale to Ukraine and Iran’s renewed calls to withdraw from the NPT, but these do not yet constitute a systemic shift.",
-      "Positive signals were limited to modest AI safety steps, which offset only a small portion of the overall risk increase."
+      "Severe flooding in eastern Syria killed five children, underscoring an acute humanitarian crisis, while extreme storm warnings across major Australian cities signal a broader intensification of climate risks.",
+      "The Congo Ebola outbreak has now exceeded 5,000 deaths, confirming the bio‑risk trajectory highlighted yesterday and adding further pressure on regional stability.",
+      "Additionally, OpenAI’s $10 billion funding cut highlights growing economic and governance strains in AI development, compounding the overall risk landscape."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "worse",
-      "say": "Iranian lawmakers urging NPT withdrawal raises nuclear proliferation risk, while US Patriot missile sales to Ukraine modestly bolster defense but may heighten tensions. [11][1]"
+      "vote": "hold",
+      "say": "Patriot missile sales to Ukraine continue (1,6,15,20) but Iran’s NPT withdrawal calls raise concern (11); overall no clear shift in nuclear risk."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
-      "vote": "hold",
-      "say": "Brazil's Lula will attend COP31, showing continued engagement ([2]), while severe storm warnings in Australia highlight ongoing extreme weather but no new climate policy shifts ([7])."
+      "vote": "worse",
+      "say": "Severe flooding in eastern Syria killed children [2] and intense storm warnings across major Australian cities signal worsening extreme weather events [7]."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "The Congo Ebola outbreak has surpassed 5,000 deaths, indicating a worsening humanitarian and biosecurity situation.[3][8][12]"
+      "say": "The Congo Ebola outbreak has surpassed 5,000 deaths, indicating a worsening public health crisis and heightened risk of regional spread [3][8][12]."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
-      "vote": "better",
-      "say": "OpenAI reduced its funding target, signalling slower AI expansion, and announced limits on weapons information for teens, while Pope Francis urged stronger ethical frameworks for AI, suggesting a modest safety boost. (9,19,4)"
+      "vote": "worse",
+      "say": "OpenAI’s move to limit weapons info for teens and its $10 billion funding cut signal heightened concern over AI misuse, while the Pope’s call for ethical frameworks underscores ongoing governance gaps. North Korean hacker activity further highlights cyber‑risk. [4,9,19,23]"
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "worse",
-      "say": "US approval of a $2.1 billion Patriot missile sale to Ukraine heightens the Russia‑Ukraine conflict risk, while Iran’s lawmakers urging NPT withdrawal and tanker fires in the Strait of Hormuz raise nuclear and regional tensions. (1,11,24)"
+      "say": "US approval of a $2.1 bn Patriot missile sale to Ukraine heightens Russia‑Ukraine tensions, while Iran lawmakers urging NPT withdrawal and tanker attacks in the Strait of Hormuz raise nuclear and regional risks. (cites 1,11,25)"
     }
   ],
   "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Five children among seven dead in eastern Syria floods",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+    },
     {
       "tag": "Bio",
       "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
@@ -58,10 +70,10 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbllsVjgtOF8tYlNWQTMtSzkxZ1paY0Fud2RmVVRldXhsdi1ST3hDM2VyRHZIUUNHZjVOSHdSbHNOZE5nZ0I1NVRsT2lIS0N1dWllTm0yUThUVDVHcVNJZVZDdGljeUt4dGhYOTVsRy1FYlM1ZTJkMVZkTncwcHJGVmNvNDNYZnJBQUxvNnpvM1lLc0w1ZmVhVk5MUkt0YjAwZUFGYWZDczJSdUNJNWQ0djFDLW8tcjlJS0owaU4yZTRaZw?oc=5"
     },
     {
-      "tag": "Bio",
-      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
+      "tag": "AI & tech",
+      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
     },
     {
       "tag": "Nuclear",
@@ -71,27 +83,15 @@
     },
     {
       "tag": "Nuclear",
+      "title": "US approves sale of 500 Patriot missiles to Ukraine",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Nuclear",
       "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
       "source": "Al Jazeera",
       "url": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss"
-    },
-    {
-      "tag": "Climate",
-      "title": "Brazil's Lula to attend UN COP31 climate summit in Turkey",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVEp2SWRObnBXbHJkOC1lWUtXV2tOemtGOFVjVU96aEYwS3BDbl9JR0ZNRUpqYWdwaGl1N2N1U0w2b2tUbElmY1ctWnBDNHlMZnMzMV9OUE9EQ2xOZXpPR3ZsZ1BjTEZNcHVJTjZmbDZOZ1JBeE54c3p2b2YxUUJobDhaX1FfOVhEM2w2ejZwam92RzR5UTB5VllpOGJqTGJRalpqMy1aZmQ?oc=5"
-    },
-    {
-      "tag": "Climate",
-      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
     }
   ]
 }
