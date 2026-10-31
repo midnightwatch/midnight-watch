@@ -43,6 +43,19 @@ ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 LATEST = DATA_DIR / "latest.json"
 HISTORY = DATA_DIR / "history.json"
+OFFICIAL_FILE = DATA_DIR / "official.json"
+
+# The real Doomsday Clock, as set by the Bulletin, in seconds to midnight.
+# Used to seed data/official.json; after that the daily run keeps it current
+# by reading the Bulletin's own page.
+OFFICIAL_SEED = [
+    [1947, 420], [1949, 180], [1953, 120], [1960, 420], [1963, 720], [1968, 420],
+    [1969, 600], [1972, 720], [1974, 540], [1980, 420], [1981, 240], [1984, 180],
+    [1988, 360], [1990, 600], [1991, 1020], [1995, 840], [1998, 540], [2002, 420],
+    [2007, 300], [2010, 360], [2012, 300], [2015, 180], [2017, 150], [2018, 120],
+    [2020, 100], [2023, 90], [2025, 89], [2026, 85],
+]
+BULLETIN_URL = "https://thebulletin.org/doomsday-clock/"
 
 START_SECONDS = 85        # official reading when the project started
 MAX_MOVE = 5              # max seconds the clock can move in one day
@@ -245,6 +258,59 @@ def news_block(items):
     return "\n".join(lines) if lines else "(no relevant news found in the last 24 hours)"
 
 # ----------------------------------------------------------------------------
+# Official clock check
+# ----------------------------------------------------------------------------
+
+def fetch_official():
+    """Read the Bulletin's page and return the current official seconds, or None."""
+    try:
+        r = requests.get(BULLETIN_URL, timeout=20,
+                         headers={"User-Agent": "Mozilla/5.0 (compatible; MidnightWatch/1.0)"})
+        r.raise_for_status()
+        page = r.text
+    except Exception as ex:
+        log(f"bulletin page failed: {ex}")
+        return None
+    # Preferred anchor: the headline "It is N seconds/minutes to midnight".
+    m = re.search(r"It is (?:now )?(\d+(?:\.\d+)?)\s+(seconds?|minutes?) to midnight", page, re.I)
+    if not m:
+        # Fallback: the most repeated "N seconds to midnight" phrase on the page.
+        found = re.findall(r"(\d+(?:\.\d+)?)\s+(seconds?|minutes?) to midnight", page, re.I)
+        if not found:
+            return None
+        counts = {}
+        for n, unit in found:
+            counts[(n, unit.lower())] = counts.get((n, unit.lower()), 0) + 1
+        (n, unit), _ = max(counts.items(), key=lambda kv: kv[1])
+        m = None
+    else:
+        n, unit = m.group(1), m.group(2)
+    secs = float(n) * (60 if unit.lower().startswith("min") else 1)
+    secs = int(round(secs))
+    if not (1 <= secs <= 30 * 60):
+        return None
+    return secs
+
+
+def update_official(now):
+    """Keep data/official.json current. Returns the list of [year, seconds]."""
+    official = load_json(OFFICIAL_FILE, None)
+    if not isinstance(official, list) or not official:
+        official = [list(x) for x in OFFICIAL_SEED]
+    current = fetch_official()
+    last = official[-1][1]
+    if current is None:
+        log(f"official clock: could not read, keeping {last} s")
+    elif current != last:
+        log(f"official clock CHANGED: {last} -> {current} s")
+        official.append([now.year, current])
+    else:
+        log(f"official clock: {current} s (unchanged)")
+    DATA_DIR.mkdir(exist_ok=True)
+    OFFICIAL_FILE.write_text(json.dumps(official))
+    return official
+
+# ----------------------------------------------------------------------------
 # LLM calls
 # ----------------------------------------------------------------------------
 
@@ -432,6 +498,7 @@ def main():
         seconds = START_SECONDS
         yesterday_lede = ""
     log(f"date {today}, starting from {seconds} seconds")
+    update_official(now)
 
     items = fetch_news(now)
     log(f"{len(items)} items sent to the board")
