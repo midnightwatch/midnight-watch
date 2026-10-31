@@ -572,6 +572,15 @@ def main():
     HISTORY.write_text(json.dumps(history, indent=0, ensure_ascii=False))
     log(f"wrote {LATEST.name} and {HISTORY.name}")
 
+    # Picture shown when the link is shared in chat apps.
+    try:
+        from share_image import draw_share_image
+        nice_date = datetime.strptime(today, "%Y-%m-%d").strftime("%-d %B %Y")
+        draw_share_image(new_seconds, seconds, nice_date, DATA_DIR / "share.png")
+        log("wrote share.png")
+    except Exception as ex:
+        log(f"share image skipped: {ex}")
+
 
 if __name__ == "__main__":
     try:
