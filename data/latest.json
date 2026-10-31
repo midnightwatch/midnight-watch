@@ -3,14 +3,14 @@
   "date": "2026-10-31",
   "seconds": 84,
   "previous": 85,
-  "generated_at": "2026-10-31T17:38:51+00:00",
+  "generated_at": "2026-10-31T21:51:48+00:00",
   "yesterday_lede": "",
   "chair": {
-    "lede": "We move the clock one second closer to midnight, driven primarily by worsening health and climate emergencies",
+    "lede": "We move the clock back by one second as worsening Ebola outbreak and severe Australian storms increase immediate biological and climate risks.",
     "body": [
-      "Severe flooding in eastern Syria killed five children, underscoring escalating climate‑related risks.",
-      "The Ebola outbreak in the Democratic Republic of Congo has now surpassed 5,000 deaths, marking a deepening bio‑security crisis,,.",
-      "While AI safety steps were noted, the combined impact of these health and climate shocks outweighs modest improvements elsewhere."
+      "The Ebola crisis in the Democratic Republic of Congo has now exceeded 5,000 deaths with over 10,000 infections, and Nigeria reports two suspected cases, indicating a heightened risk of regional spread.",
+      "Severe storm warnings across Melbourne, Canberra, Sydney and Brisbane signal an acute escalation in extreme weather events, reflecting a negative shift in climate risk.",
+      "While nuclear and geopolitical risks remain unchanged, the combination of a worsening bio‑hazard and acute climate threats justifies a modest one‑second move toward midnight."
     ]
   },
   "experts": [
@@ -18,40 +18,34 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "hold",
-      "say": "Patriot missile sales to Ukraine continue (1) while Iranian lawmakers push NPT withdrawal (11), offsetting each other with no clear net change in nuclear risk."
+      "say": "No new nuclear tests, deployments, or treaty changes reported; only heightened rhetoric from Iran and a Patriot missile sale (1) which does not affect nuclear risk."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Severe flooding in eastern Syria killed children and storm warnings across major Australian cities signal extreme weather risks."
+      "say": "Severe storm warnings across multiple Australian cities indicate heightened extreme weather risk, suggesting a negative climate shift."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "The Congo Ebola outbreak has killed over 5,000 people, indicating a worsening health crisis."
+      "say": "Ebola deaths in DR Congo have surpassed 5,000 with over 10,000 infections, and Nigeria reports two suspected Ebola cases with isolation and contact tracing underway, indicating heightened outbreak risk."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
-      "vote": "better",
-      "say": "OpenAI reduced its funding target, limiting resources for risky scaling (9); it also restricted weapons‑related content for teen users on ChatGPT (19); the SEC is actively monitoring AI corporate disclosures (21). These steps modestly improve AI safety."
+      "vote": "worse",
+      "say": "OpenAI slashed its funding target by $10 billion, potentially limiting safety investments, while reports link North Korean hackers to a record Binance hack and highlight broader cryptocurrency platform vulnerabilities, raising AI‑enabled cyber‑risk."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "worse",
-      "say": "US approval of a $2.1 billion Patriot missile sale to Ukraine heightens military tension with Russia (1). Meanwhile a rare local cease‑fire in Russian‑occupied Oleshky allows some residents to return, offering a modest de‑escalation (29)."
+      "vote": "hold",
+      "say": "No clear shift in major geopolitical risks: UN Security Council deadlock on Western Sahara (17) and Iran's threatening rhetoric (43) persist, while limited cease‑fire interest in the Black Sea (21) and Egypt's caution about Iran escalation (25) balance each other."
     }
   ],
   "headlines": [
-    {
-      "tag": "Climate",
-      "title": "Five children among seven dead in eastern Syria floods",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
-    },
     {
       "tag": "Bio",
       "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
@@ -60,9 +54,9 @@
     },
     {
       "tag": "Bio",
-      "title": "Congo Ebola outbreak kills more than 5,000",
+      "title": "Nigeria reports two suspected Ebola cases in northeast region",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbllsVjgtOF8tYlNWQTMtSzkxZ1paY0Fud2RmVVRldXhsdi1ST3hDM2VyRHZIUUNHZjVOSHdSbHNOZE5nZ0I1NVRsT2lIS0N1dWllTm0yUThUVDVHcVNJZVZDdGljeUt4dGhYOTVsRy1FYlM1ZTJkMVZkTncwcHJGVmNvNDNYZnJBQUxvNnpvM1lLc0w1ZmVhVk5MUkt0YjAwZUFGYWZDczJSdUNJNWQ0djFDLW8tcjlJS0owaU4yZTRaZw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLVJNVjgwa3JjQjJTZV9qaEtOR0hPeUVlUU5fVmg1NmpMcmtWR2QycWNERWphd21IckhyYnNQMllfLUtrSDhCV1p4cEV4RWhmYURFbW91dVJ0YzVUMUJPNFctZG5FX1ZSdS1KemxhbWdmRTRSX2R0TEZMbm5tdVVDSDNUbnBreFJrT0tlQXE1VzVmSllTdVZoVVpqOXV1WXh3ZGpaNmZqWmdlS010Zi1NcWxQai1WU2k0dE96SDVuUld0WkxhSm9VSlFR?oc=5"
     },
     {
       "tag": "Bio",
@@ -71,16 +65,10 @@
       "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "tag": "Nuclear",
-      "title": "US approves $2.1 billion Patriot missile sale to Ukraine",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUGRTc1V3SzhDNWZQUUVuQ3hsWmlKcUY3V3ZJb0poUEh6ZGZjSVZlNzlaWlF2SVVwU1M3RklET3hzdmtnVU54NXEtb0ZCYUc1WjZMR3Vya1Vfa0ZhSzhEUEg1NkF6bjlIODVJQW9mN0htVWM3dDRKbFF1MjVsMjkwQUdmNGpmNHBkWWl6dmtDeVFIYmptQ2VZZ0FyTHhqWVplU2RkZFhONnZNN3F0UWVWQUlJeno?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
+      "tag": "Bio",
+      "title": "Health authorities probe two suspected Ebola cases in northeast Nigeria",
       "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss"
+      "url": "https://www.aljazeera.com/news/2026/10/31/health-authorities-probe-two-suspected-ebola-cases-in-northeast-nigeria?traffic_source=rss"
     },
     {
       "tag": "Climate",
@@ -89,10 +77,22 @@
       "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
     },
     {
-      "tag": "AI & tech",
-      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
+      "tag": "Geopolitics",
+      "title": "Iran targeted US air defenses then hit aircraft and buildings on Mideast bases, AP analysis finds",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMnA4dnBfVkNUZ1dxQWFVbGtlSWpSMDVfWnBXUHI2Qk5wWE9jUWlUZFpySkhzZVVuQ0pfOURlM0Q3RFlNbHNvaFh2Snk2TndhNnhQckdpQW92VjMwUXpZTVVyMUVuSEpzNkhzdEZPXzV2aVpHWVJ0WThGSHp6cE9ISm5HMngxNlgtckcwUFdqY2hRUHc?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Iran's leader says response to attack would have no 'geographic limits,' and other Mideast news",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQcC1sSkxtLWVVWVpCXzVQc1pIeHhrdnBEYkY1ZjZmQjQtZE9CdWNOdkFPalphUHVmWTJ0dk1NUUNtX2Y4RVJ1U0FQZ21BM1VkQTFUOU1IVHNRd2kwMGs4c0VqUG81X2hRbVlvU0NCOFRiYjR4TDdhajltTmRRazJBbUotYUs3Q3o0aEg4UDBONEhodw?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Trump admin approves potential Patriot missiles sale to Ukraine",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/americas/20261030-trump-admin-approves-potential-patriot-missiles-sale-to-ukraine"
     }
   ]
 }
