@@ -21,6 +21,21 @@
 <meta name="twitter:description" content="Five AI experts and a chair read the world’s news every day and reset a simulated Doomsday Clock.">
 <meta name="twitter:image" content="https://midnightwatch.github.io/midnight-watch/data/share.png">
 <meta name="theme-color" content="#1a1513">
+<link rel="canonical" href="https://midnightwatch.github.io/midnight-watch/">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Midnight Watch",
+  "alternateName": "Midnight Watch: a daily AI Doomsday Clock",
+  "url": "https://midnightwatch.github.io/midnight-watch/",
+  "description": "A daily, AI-run Doomsday Clock. Every day at 00:00 UTC, five AI experts and a chair read the world’s news and reset a simulated Doomsday Clock, then explain why.",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "name": "Sai Balaji Thadishetty" },
+  "isAccessibleForFree": true
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -75,6 +90,8 @@ a:hover { text-decoration-color: var(--ember); }
   color: var(--smoke);
 }
 .top strong { color: var(--ash); font-weight: 700; font-size: 1.25rem; }
+.top .brand { margin: 0; font-size: inherit; font-weight: inherit; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .top .status { text-align: right; line-height: 1.35; }
 .top .sub { font-size: 0.9rem; color: var(--smoke); opacity: 0.85; }
 .top .sub span { color: var(--ash); }
@@ -412,7 +429,7 @@ footer p { margin: 0 0 0.5rem; }
 <body>
 
 <header class="top">
-  <div><strong>Midnight Watch</strong></div>
+  <h1 class="brand"><strong>Midnight Watch</strong> <span class="sr">: a daily AI Doomsday Clock</span></h1>
   <div class="status" id="status">
     <div>reset daily at 00:00 UTC</div>
     <div class="sub" id="updatedLine"></div>
@@ -442,7 +459,7 @@ footer p { margin: 0 0 0.5rem; }
       <span class="hint">tap to read why</span>
     </button>
 
-    <h1 class="time-big" id="timeBig">—</h1>
+    <p class="time-big" id="timeBig">—</p>
     <p class="time-sub" id="timeSub">loading today’s reading</p>
     <p class="date-line" id="dateLine"></p>
     <p class="sample-flag" id="sampleFlag" hidden>Sample data. The daily run will replace this.</p>

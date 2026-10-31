@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://midnightwatch.github.io/midnight-watch/sitemap.xml
