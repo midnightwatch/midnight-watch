@@ -377,7 +377,8 @@ RULES = """You are part of a simulated Doomsday Clock board. The clock shows sec
 fewer seconds means closer to catastrophe. Judge only what changed in the LAST 24 HOURS compared
 to the day before, not the overall state of the world (that is already priced into the current time).
 Most days nothing meaningful changes and the honest answer is "hold". Cite headlines by their [number].
-Never invent events. Be concrete and calm. Answer ONLY with a JSON object."""
+Never invent events. Use only names, numbers and places that appear in the headlines; if a headline says
+"Pope" do not guess which pope. Be concrete and calm. Answer ONLY with a JSON object."""
 
 
 def ask_expert(role, focus, scope, news, seconds):
@@ -397,8 +398,13 @@ score: -3 = clearly more dangerous today, 0 = no real change, +3 = clearly safer
         score = max(-3, min(3, int(out.get("score", 0))))
     except (TypeError, ValueError):
         score = 0
+    say = str(out.get("say", "")).strip()
+    # Drop citation markers like [3], [3][8], (9,19,4), ([2]) from the displayed text.
+    say = re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", say)
+    say = re.sub(r"\s*\(\d+(?:[,\s]+\d+)+\)", "", say)
+    say = re.sub(r"\s+([.,;:])", r"\1", say).strip()[:500]
     return {"role": role, "focus": focus, "vote": vote, "score": score,
-            "say": str(out.get("say", "")).strip()[:500], "cites": cites}
+            "say": say, "cites": cites}
 
 
 def ask_chair(experts, news, seconds, yesterday_lede):
@@ -539,7 +545,7 @@ def main():
     body = chair.get("body", [])
     if isinstance(body, str):
         body = [body]
-    body = [str(p).strip() for p in body if str(p).strip()][:4]
+    body = [re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", str(p)).strip() for p in body if str(p).strip()][:4]
 
     latest = {
         "sample": False,
