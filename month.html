@@ -407,7 +407,9 @@ footer p { margin: 0 0 0.5rem; }
 }
 </style>
 <style>
-.report { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.2rem 3rem; display: grid; gap: 2rem; }
+.report { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.2rem 3rem; display: grid; gap: 2rem; align-content: start; min-height: calc(100vh - 12rem); }
+.report { opacity: 0; transition: opacity 0.45s ease; }
+.report.ready { opacity: 1; }
 .report .eyebrow { font-family: var(--display); font-weight: 500; letter-spacing: 0.08em; color: var(--smoke); text-transform: uppercase; font-size: 0.95rem; margin: 0; }
 .report h1 { font-family: var(--display); font-weight: 900; font-size: clamp(2.2rem, 7vw, 3.6rem); line-height: 1; color: var(--bone); margin: 0.3rem 0 0; }
 .report .summary { font-size: 1.3rem; line-height: 1.45; color: var(--bone); margin: 1rem 0 0; }
@@ -429,13 +431,7 @@ footer p { margin: 0 0 0.5rem; }
 .monthnav { display: flex; justify-content: space-between; font-family: var(--display); font-weight: 700; }
 .monthnav a { text-decoration: none; color: var(--ash); } .monthnav a:hover { color: var(--ember); }
 .empty { text-align: center; color: var(--smoke); font-style: italic; padding: 3rem 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .report > * { animation: rise 0.6s cubic-bezier(.2,.8,.2,1) both; }
-  .report > *:nth-child(2) { animation-delay: 0.08s; }
-  .report > *:nth-child(3) { animation-delay: 0.16s; }
-  .report > *:nth-child(n+4) { animation-delay: 0.24s; }
-  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-}
+
 </style>
 </head>
 <body>
@@ -510,14 +506,15 @@ function render(d, months) {
 async function load() {
   let months = [];
   try { const r = await fetch("data/months/index.json", { cache: "no-store" }); if (r.ok) months = await r.json(); } catch (_) {}
-  if (!months.length) { document.getElementById("report").innerHTML = `<p class="empty">No monthly reports yet. The first one is written on the 1st of the month after launch.</p>`; return; }
+  if (!months.length) { document.getElementById("report").innerHTML = `<p class="empty">No monthly reports yet. The first one is written on the 1st of the month after launch.</p>`; document.getElementById("report").classList.add("ready"); return; }
   const want = location.hash.replace("#", "");
   const m = months.find(x => x.month === want) ? want : months[0].month;
   try {
     const r = await fetch(`data/months/${m}.json`, { cache: "no-store" });
     render(await r.json(), months);
     window.scrollTo(0, 0);
-  } catch (_) { document.getElementById("report").innerHTML = `<p class="empty">Could not load that report.</p>`; }
+    requestAnimationFrame(() => document.getElementById("report").classList.add("ready"));
+  } catch (_) { document.getElementById("report").innerHTML = `<p class="empty">Could not load that report.</p>`; document.getElementById("report").classList.add("ready"); }
 }
 window.addEventListener("hashchange", load);
 load();
