@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monthly report: Midnight Watch</title>
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Monthly report from Midnight Watch, the daily AI-run Doomsday Clock: how the clock moved, what drove it, where the experts disagreed.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Midnight Watch">
+<meta property="og:title" content="Midnight Watch monthly report">
+<meta property="og:description" content="How the AI Doomsday Clock moved this month, what drove it, and where the experts disagreed.">
+<meta property="og:image" content="https://midnightwatch.github.io/midnight-watch/data/share.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1513">
+<link rel="canonical" href="https://midnightwatch.github.io/midnight-watch/month.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --iron: #1a1513;
+  --soot: #261e1a;
+  --char: #35291f;
+  --ash: #d9cfc4;
+  --smoke: #8f8176;
+  --bone: #f3ece2;
+  --ember: #e0561d;
+  --ember-dim: #7a3214;
+  --ember-glow: rgba(224, 86, 29, 0.35);
+  --calm: #6f9a7a;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: inherit; -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--iron);
+  color: var(--ash);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  min-height: 100%;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% 38%, rgba(224,86,29,0.07), transparent 70%),
+    radial-gradient(ellipse 100% 60% at 50% 100%, rgba(0,0,0,0.5), transparent);
+}
+a { color: var(--bone); text-decoration-color: var(--ember-dim); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ember); }
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; }
+
+/* Header */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.4rem 1.6rem 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--smoke);
+}
+.top strong { color: var(--ash); font-weight: 700; font-size: 1.25rem; }
+.top .brand { margin: 0; font-size: inherit; font-weight: inherit; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.top .status { text-align: right; line-height: 1.35; }
+.top .sub { font-size: 0.9rem; color: var(--smoke); opacity: 0.85; }
+.top .sub span { color: var(--ash); }
+
+/* Hero */
+.hero {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  gap: 0.2rem;
+}
+.clock-btn {
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: min(84vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+.clock-btn:hover { transform: scale(1.015); }
+.clock-btn, .tab, .intro a { -webkit-tap-highlight-color: transparent; }
+.clock-btn:active { transform: scale(0.99); }
+.clock-btn svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.clock-btn .hint {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  transform: translateX(-50%);
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--smoke);
+  pointer-events: none;
+  transition: color 0.3s;
+}
+.clock-btn:hover .hint { color: var(--ash); }
+
+.face { fill: var(--soot); stroke: var(--char); stroke-width: 2; }
+.rim { fill: none; stroke: var(--char); stroke-width: 10; }
+.tick { stroke: var(--smoke); stroke-width: 1.2; opacity: 0.55; }
+.tick.hour { stroke: var(--ash); stroke-width: 2.6; opacity: 0.9; }
+.wedge { fill: var(--ember); opacity: 0.9; filter: url(#glow); }
+.hand { stroke: var(--bone); stroke-linecap: round; }
+.hand.hourh { stroke-width: 9; }
+.hand.minh { stroke-width: 5; }
+.pin { fill: var(--bone); }
+.midnight { font-family: var(--display); font-weight: 900; font-size: 34px; fill: var(--bone); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .wedge { animation: breathe 4s ease-in-out infinite; }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.78; }
+    50% { opacity: 1; }
+  }
+  .hand, .wedge { transition: all 1.6s cubic-bezier(.3,.9,.2,1); }
+}
+
+.time-big {
+  margin: 0.8rem 0 0;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3.6rem, 13vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  color: var(--bone);
+}
+.time-big span { color: var(--ember); }
+.time-sub {
+  margin: 0.35rem 0 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 3.6vw, 1.6rem);
+  letter-spacing: 0.03em;
+  color: var(--ash);
+}
+.delta { color: var(--ember); }
+.delta.calm { color: var(--calm); }
+.delta.flat { color: var(--smoke); }
+.date-line { margin: 0.4rem 0 0; color: var(--smoke); font-style: italic; font-size: 1rem; }
+.sample-flag {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--smoke);
+  border: 1px dashed var(--char);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+.intro {
+  max-width: 34rem;
+  margin: 1rem 0 0;
+  color: var(--smoke);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.intro a { color: var(--ash); }
+.daynav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: -1rem;
+  font-family: var(--display);
+}
+#dayPrev { justify-self: start; }
+#dayNext { justify-self: end; }
+.daybtn { min-width: 7rem; text-align: center; }
+.daybtn {
+  appearance: none; background: none; cursor: pointer;
+  border: 1px solid var(--char); color: var(--ash); border-radius: 3px;
+  font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: 0.03em;
+  padding: 0.4rem 0.7rem;
+}
+.daybtn:hover { border-color: var(--ember); color: var(--bone); }
+.daybtn[disabled] { color: var(--char); border-color: var(--char); cursor: default; }
+.daybtn[disabled]:hover { border-color: var(--char); color: var(--char); }
+.daypick-wrap { position: relative; text-align: center; }
+.daypick {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  font-family: var(--display); color: var(--bone); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em;
+  border-bottom: 1px dashed var(--smoke); padding: 0 0 2px;
+}
+
+.daypick:hover { border-bottom-color: var(--ember); }
+.cal {
+  position: absolute; left: 50%; top: calc(100% + 0.6rem); transform: translateX(-50%);
+  z-index: 5; width: 19rem; max-width: calc(100vw - 2rem);
+  background: var(--soot); border: 1px solid var(--char); border-radius: 4px;
+  padding: 0.8rem; box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+.cal-head { display: grid; grid-template-columns: auto 1fr auto; align-items: center; margin-bottom: 0.5rem; }
+.cal-title {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  text-align: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--bone); letter-spacing: 0.03em;
+}
+.cal-title:hover { color: var(--ember); }
+.cal-title.static { cursor: default; }
+.cal-title.static:hover { color: var(--bone); }
+.cal-grid.months, .cal-grid.years { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.cal-grid .m { aspect-ratio: auto; height: 2.6rem; }
+.cal-nav {
+  appearance: none; background: none; border: 1px solid var(--char); color: var(--ash); cursor: pointer;
+  width: 2rem; height: 2rem; border-radius: 3px; font-size: 1.3rem; line-height: 1; font-family: var(--serif);
+}
+.cal-nav:hover { border-color: var(--ember); color: var(--bone); }
+.cal-nav[disabled] { opacity: 0.25; cursor: default; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.cal-grid .wd { text-align: center; font-size: 0.8rem; color: var(--smoke); font-weight: 500; padding: 0.2rem 0 0.4rem; letter-spacing: 0.05em; }
+.cal-grid .d {
+  appearance: none; background: none; border: 1px solid transparent; border-radius: 3px;
+  font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--ash); cursor: pointer;
+  aspect-ratio: 1; display: grid; place-items: center;
+}
+.cal-grid .d:hover { border-color: var(--ember); color: var(--bone); }
+.cal-grid .d.off { color: var(--char); cursor: default; border-color: transparent; }
+.cal-grid .d.on { color: var(--iron); background: var(--ember); }
+.cal-grid .d.today-dot { box-shadow: inset 0 -3px 0 var(--ember); }
+@media (max-width: 560px) {
+  .daynav { grid-template-columns: 1fr 1fr; }
+  .daypick-wrap { grid-column: 1 / -1; order: -1; justify-self: center; }
+}
+/* Verdict panel */
+.verdict {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.2rem 3rem;
+  display: grid;
+  gap: 2.4rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.8s ease;
+}
+.verdict.open {
+  opacity: 1;
+  max-height: 20000px;
+  transform: none;
+}
+.verdict h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.6rem;
+  color: var(--bone);
+}
+.chair p { margin: 0 0 1rem; font-size: 1.15rem; }
+.chair .lede { font-size: 1.35rem; line-height: 1.4; color: var(--bone); }
+.change-strip {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--display);
+  text-align: center;
+  border-top: 1px solid var(--char);
+  border-bottom: 1px solid var(--char);
+  padding: 1rem 0;
+}
+.change-strip .n { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--bone); }
+.change-strip .l { font-size: 1rem; font-weight: 500; color: var(--smoke); letter-spacing: 0.04em; }
+.change-strip .arrow { font-size: 2rem; color: var(--ember); }
+
+.experts { display: grid; gap: 0; }
+.expert {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--char);
+}
+.expert:last-child { border-bottom: 1px solid var(--char); }
+.expert .who {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  color: var(--bone);
+}
+.expert .who small {
+  display: block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--smoke);
+  margin-top: 0.25rem;
+}
+.expert .say { margin: 0; }
+.expert .vote {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+}
+.vote.worse { color: var(--ember); }
+.vote.better { color: var(--calm); }
+.vote.hold { color: var(--smoke); }
+
+.headlines { list-style: none; margin: 0; padding: 0; }
+.headlines li {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--char);
+}
+.headlines li:last-child { border-bottom: 1px solid var(--char); }
+.headlines .src { color: var(--smoke); font-style: italic; font-size: 0.95rem; }
+.headlines .tag {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--ember);
+  margin-right: 0.5rem;
+}
+
+.history svg { width: 100%; height: auto; display: block; }
+.history .official { fill: none; stroke: var(--smoke); stroke-width: 2; stroke-dasharray: 6 5; }
+.history .step { fill: none; stroke: var(--ash); stroke-width: 2; stroke-linejoin: round; }
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 0 1.2rem;
+  font-family: var(--display);
+  text-align: center;
+}
+.compare .box { border: 1px solid var(--char); padding: 0.8rem 0.5rem; }
+.compare .n { font-size: 2.4rem; font-weight: 900; line-height: 1; color: var(--bone); }
+.compare .n.ours { color: var(--ember); }
+.compare .l { font-size: 0.95rem; font-weight: 500; color: var(--smoke); letter-spacing: 0.04em; margin-top: 0.3rem; }
+.compare .diff { grid-column: 1 / -1; font-family: var(--serif); font-style: italic; color: var(--ash); font-size: 1.05rem; }
+.tabs { display: flex; gap: 0.5rem; margin: 0 0 0.8rem; }
+.tab {
+  appearance: none;
+  -webkit-tap-highlight-color: transparent; background: none; cursor: pointer;
+  border: 1px solid var(--char); color: var(--smoke); border-radius: 3px;
+  font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: 0.04em;
+  padding: 0.3rem 0.8rem;
+}
+.tab.active { color: var(--bone); border-color: var(--ember); }
+.history .axis { stroke: var(--char); stroke-width: 1; }
+.history .line { fill: none; stroke: var(--ember); stroke-width: 2.5; stroke-linejoin: round; }
+.history .dot { fill: var(--bone); }
+.history .lbl { font-family: var(--display); font-size: 13px; fill: var(--smoke); font-weight: 500; }
+.history .note { color: var(--smoke); font-style: italic; font-size: 0.95rem; margin: 0.4rem 0 0; }
+
+.about p { margin: 0 0 0.8rem; }
+.about .warn {
+  border-left: 3px solid var(--ember);
+  padding-left: 1rem;
+  color: var(--bone);
+}
+
+footer {
+  text-align: center;
+  color: var(--smoke);
+  font-size: 0.95rem;
+  padding: 2rem 1rem 3rem;
+}
+footer a { color: var(--ash); }
+footer p { margin: 0 0 0.5rem; }
+.foot-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 0;
+  font-family: var(--display); font-weight: 500; letter-spacing: 0.03em; font-size: 1rem;
+}
+.foot-links > * { padding: 0 0.9rem; border-left: 1px solid var(--char); }
+.foot-links > *:first-child { border-left: 0; }
+.foot-links a { display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; color: var(--ash); }
+.foot-links a:hover { color: var(--ember); }
+@media (max-width: 560px) {
+  .foot-links { flex-direction: column; align-items: center; gap: 0.35rem; }
+  .foot-links > * { border-left: 0; padding: 0; }
+}
+
+@media (max-width: 560px) {
+  .expert { grid-template-columns: 1fr; gap: 0.35rem; }
+  .change-strip .n { font-size: 2.4rem; }
+}
+</style>
+<style>
+.report { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.2rem 3rem; display: grid; gap: 2rem; }
+.report .eyebrow { font-family: var(--display); font-weight: 500; letter-spacing: 0.08em; color: var(--smoke); text-transform: uppercase; font-size: 0.95rem; margin: 0; }
+.report h1 { font-family: var(--display); font-weight: 900; font-size: clamp(2.2rem, 7vw, 3.6rem); line-height: 1; color: var(--bone); margin: 0.3rem 0 0; }
+.report .summary { font-size: 1.3rem; line-height: 1.45; color: var(--bone); margin: 1rem 0 0; }
+.report h2 { font-family: var(--display); font-weight: 700; font-size: 1.7rem; color: var(--bone); margin: 0 0 0.5rem; }
+.report p { margin: 0 0 0.9rem; font-size: 1.1rem; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: 0.8rem; font-family: var(--display); text-align: center; }
+.kpis .box { border: 1px solid var(--char); padding: 0.8rem 0.4rem; }
+.kpis .n { font-size: 2.2rem; font-weight: 900; line-height: 1; color: var(--bone); }
+.kpis .n.ember { color: var(--ember); }
+.kpis .l { font-size: 0.9rem; color: var(--smoke); margin-top: 0.3rem; letter-spacing: 0.04em; }
+.votes { display: grid; gap: 0.4rem; }
+.vrow { display: grid; grid-template-columns: 7rem 1fr; gap: 0.8rem; align-items: center; font-family: var(--display); }
+.vrow .who { font-weight: 700; color: var(--bone); }
+.bar { display: flex; height: 1.1rem; border: 1px solid var(--char); overflow: hidden; }
+.bar span { display: block; height: 100%; }
+.bar .w { background: var(--ember); } .bar .h { background: var(--char); } .bar .b { background: var(--calm); }
+.legend { font-family: var(--display); font-size: 0.9rem; color: var(--smoke); margin-top: 0.4rem; }
+.legend i { display: inline-block; width: 0.8rem; height: 0.8rem; vertical-align: -1px; margin: 0 0.3rem 0 0.8rem; }
+.monthnav { display: flex; justify-content: space-between; font-family: var(--display); font-weight: 700; }
+.monthnav a { text-decoration: none; color: var(--ash); } .monthnav a:hover { color: var(--ember); }
+.empty { text-align: center; color: var(--smoke); font-style: italic; padding: 3rem 0; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div><strong><a href="./" style="text-decoration:none;color:inherit">Midnight Watch</a></strong></div>
+  <div class="status"><div>monthly report</div></div>
+</header>
+<main class="report" id="report">
+  <p class="empty" id="empty">Loading…</p>
+</main>
+<footer>
+  <p>Inspired by the <a href="https://thebulletin.org/doomsday-clock/" target="_blank" rel="noopener">Bulletin of the Atomic Scientists</a>, not affiliated with it. This is an AI simulation.</p>
+  <p class="foot-links"><a href="./">← Back to the clock</a><span>Built by Sai Balaji Thadishetty</span></p>
+</footer>
+<script>
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function fmtDate(iso) { return new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" }); }
+function chart(series, official) {
+  if (series.length < 2) return "";
+  const W = 720, H = 200, padL = 44, padR = 16, padT = 14, padB = 30;
+  const vals = series.map(s => s.seconds).concat([official]);
+  const lo = Math.min(...vals) - 2, hi = Math.max(...vals) + 2;
+  const x = i => padL + (i / (series.length - 1)) * (W - padL - padR);
+  const y = v => padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Seconds to midnight through the month">`;
+  const step = Math.max(1, Math.round((hi - lo) / 4));
+  for (let v = Math.ceil(lo); v <= Math.floor(hi); v++) {
+    if ((v - Math.ceil(lo)) % step !== 0) continue;
+    svg += `<line class="axis" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}"/><text class="lbl" x="${padL - 8}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+  }
+  svg += `<line class="official" x1="${padL}" x2="${W - padR}" y1="${y(official)}" y2="${y(official)}"/>`;
+  svg += `<polyline class="line" points="${series.map((s, i) => `${x(i)},${y(s.seconds)}`).join(" ")}"/>`;
+  series.forEach((s, i) => { svg += `<circle class="dot" cx="${x(i)}" cy="${y(s.seconds)}" r="3"/>`; });
+  svg += `<text class="lbl" x="${padL}" y="${H - 8}">${series[0].date.slice(5)}</text><text class="lbl" x="${W - padR}" y="${H - 8}" text-anchor="end">${series[series.length - 1].date.slice(5)}</text></svg>`;
+  return `<div class="history">${svg}<p class="note">Lower is closer to midnight. Dashed line: the official clock (${official} s).</p></div>`;
+}
+function render(d, months) {
+  document.title = `${d.label}: ${d.title}`;
+  const delta = d.end - d.start;
+  const dtxt = delta === 0 ? "no change" : `${Math.abs(delta)} s ${delta < 0 ? "closer" : "further"}`;
+  const i = months.findIndex(m => m.month === d.month);
+  const newer = months[i - 1], older = months[i + 1];
+  const votes = Object.entries(d.votes || {}).map(([role, v]) => {
+    const t = (v.worse + v.hold + v.better) || 1;
+    return `<div class="vrow"><div class="who">${esc(role)}</div><div class="bar"><span class="w" style="width:${100 * v.worse / t}%"></span><span class="h" style="width:${100 * v.hold / t}%"></span><span class="b" style="width:${100 * v.better / t}%"></span></div></div>`;
+  }).join("");
+  const biggest = (d.biggest || []).map(m => `<li><span class="tag">${fmtDate(m.date)}</span>${m.from} → ${m.to} s. ${esc(m.lede)}</li>`).join("");
+  document.getElementById("report").innerHTML = `
+    <div>
+      <p class="eyebrow">${esc(d.label)} · ${d.days} day${d.days === 1 ? "" : "s"} of readings</p>
+      <h1>${esc(d.title)}</h1>
+      <p class="summary">${esc(d.summary)}</p>
+    </div>
+    <div class="kpis">
+      <div class="box"><div class="n">${d.start}</div><div class="l">start</div></div>
+      <div class="box"><div class="n ember">${d.end}</div><div class="l">end</div></div>
+      <div class="box"><div class="n">${d.low}–${d.high}</div><div class="l">range</div></div>
+      <div class="box"><div class="n">${d.moves}</div><div class="l">days moved</div></div>
+      <div class="box"><div class="n">${d.official}</div><div class="l">official</div></div>
+    </div>
+    ${chart(d.series || [], d.official)}
+    ${(d.sections || []).map(s => `<div><h2>${esc(s.heading)}</h2>${s.body.map(p => `<p>${esc(p)}</p>`).join("")}</div>`).join("")}
+    ${biggest ? `<div><h2>Biggest moves</h2><ul class="headlines">${biggest}</ul></div>` : ""}
+    <div><h2>How each expert voted</h2><div class="votes">${votes}</div>
+      <div class="legend"><i style="background:var(--ember)"></i>closer <i style="background:var(--char)"></i>hold <i style="background:var(--calm)"></i>further</div></div>
+    <div class="monthnav">
+      <span>${older ? `<a href="#${older.month}">← ${esc(older.label)}</a>` : ""}</span>
+      <span>${newer ? `<a href="#${newer.month}">${esc(newer.label)} →</a>` : ""}</span>
+    </div>
+    <p class="note" style="color:var(--smoke);font-style:italic">Written by the AI chair from the month’s daily verdicts. This is a simulation, not the official Doomsday Clock.</p>`;
+}
+async function load() {
+  let months = [];
+  try { const r = await fetch("data/months/index.json", { cache: "no-store" }); if (r.ok) months = await r.json(); } catch (_) {}
+  if (!months.length) { document.getElementById("report").innerHTML = `<p class="empty">No monthly reports yet. The first one is written on the 1st of the month after launch.</p>`; return; }
+  const want = location.hash.replace("#", "");
+  const m = months.find(x => x.month === want) ? want : months[0].month;
+  try {
+    const r = await fetch(`data/months/${m}.json`, { cache: "no-store" });
+    render(await r.json(), months);
+    window.scrollTo(0, 0);
+  } catch (_) { document.getElementById("report").innerHTML = `<p class="empty">Could not load that report.</p>`; }
+}
+window.addEventListener("hashchange", load);
+load();
+</script>
+<script data-goatcounter="https://midnightwatch.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

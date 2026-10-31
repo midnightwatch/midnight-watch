@@ -520,6 +520,11 @@ footer p { margin: 0 0 0.5rem; }
       <p class="note" id="historyNote"></p>
     </div>
 
+    <div class="months" id="monthsBox" hidden>
+      <h2>Monthly reports</h2>
+      <ul class="headlines" id="monthsList"></ul>
+    </div>
+
     <div class="about" id="what">
       <h2>What is the Doomsday Clock?</h2>
       <p>The Doomsday Clock is a symbol, not a real clock. It was created in 1947 by scientists who had worked on the first atomic bomb. It shows how close humanity is to destroying itself. Midnight means catastrophe. The nearer the hands are to midnight, the more danger the world is in.</p>
@@ -662,8 +667,20 @@ function renderStatus(data) {
 }
 setInterval(() => { if (TODAY_DATA) renderStatus(TODAY_DATA); }, 60000);
 
+async function renderMonths() {
+  try {
+    const r = await fetch("data/months/index.json", { cache: "no-store" });
+    if (!r.ok) return;
+    const months = await r.json();
+    if (!months.length) return;
+    document.getElementById("monthsList").innerHTML = months.map(m =>
+      `<li><a href="month.html#${esc(m.month)}">${esc(m.label)}: the chair’s monthly report</a></li>`).join("");
+    document.getElementById("monthsBox").hidden = false;
+  } catch (_) {}
+}
 function render(data) {
   TODAY_DATA = data;
+  renderMonths();
   renderStatus(data);
   DATES = (data.history || []).map(h => h.date).sort();
   if (!data.sample && !DATES.includes(data.date)) DATES.push(data.date);

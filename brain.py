@@ -494,12 +494,121 @@ def apply_rules(chair, experts, items, seconds):
     return new_seconds, cited
 
 
+# ----------------------------------------------------------------------------
+# Monthly report
+# ----------------------------------------------------------------------------
+
+MONTHS_DIR = DATA_DIR / "months"
+
+
+def month_label(ym):
+    return datetime.strptime(ym, "%Y-%m").strftime("%B %Y")
+
+
+def strip_cites(text):
+    return tidy(re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", str(text)))
+
+
+def build_month_report(ym):
+    """Gather the month's daily files, compute the numbers, ask the chair for a
+    longer piece, and write data/months/YYYY-MM.json."""
+    days = sorted((DATA_DIR / "days").glob(f"{ym}-*.json"))
+    if not days:
+        log(f"month {ym}: no daily files, skipping")
+        return
+    readings = sorted((json.loads(p.read_text()) for p in days), key=lambda r: r["date"])
+
+    start = readings[0]["previous"]
+    end = readings[-1]["seconds"]
+    secs = [r["seconds"] for r in readings]
+    moves = [{"date": r["date"], "from": r["previous"], "to": r["seconds"], "lede": r["chair"]["lede"]}
+             for r in readings if r["seconds"] != r["previous"]]
+    biggest = sorted(moves, key=lambda m: abs(m["to"] - m["from"]), reverse=True)[:5]
+    votes, split_days = {}, 0
+    for r in readings:
+        vs = set()
+        for e in r["experts"]:
+            votes.setdefault(e["role"], {"worse": 0, "hold": 0, "better": 0})
+            votes[e["role"]][e["vote"]] = votes[e["role"]].get(e["vote"], 0) + 1
+            vs.add(e["vote"])
+        if "worse" in vs and "better" in vs:
+            split_days += 1
+
+    stats = {
+        "month": ym, "label": month_label(ym), "days": len(readings),
+        "first_day": readings[0]["date"], "last_day": readings[-1]["date"],
+        "start": start, "end": end, "low": min(secs), "high": max(secs),
+        "moves": len(moves), "split_days": split_days, "votes": votes, "biggest": biggest,
+        "official": (load_json(OFFICIAL_FILE, None) or OFFICIAL_SEED)[-1][1],
+    }
+
+    lines = []
+    for r in readings:
+        v = ", ".join(f"{e['role']}={e['vote']}" for e in r["experts"])
+        lines.append(f"{r['date']}: {r['previous']}->{r['seconds']} | {v} | {r['chair']['lede']}")
+    seen, heads = set(), []
+    for r in readings:
+        for h in r["headlines"][:3]:
+            k = h["title"].lower()[:60]
+            if k not in seen:
+                seen.add(k)
+                heads.append(f"{r['date']} ({h['tag']}, {h['source']}): {h['title']}")
+    heads = heads[:40]
+
+    system = RULES + f"""
+You are the chair writing the monthly report for {stats['label']}. You have the daily verdicts and votes below.
+Write for a general reader, calm and concrete, no hype. Refer only to dates and events in the material.
+If the month has few days of data (the project may have started mid-month), say so plainly and keep it short.
+Return JSON:
+{{"title": "<short headline for the month, under 10 words>",
+  "summary": "<2-3 sentences: where the clock started and ended and the single biggest reason>",
+  "sections": [
+    {{"heading": "What moved the clock", "body": ["<paragraph>", "<paragraph>"]}},
+    {{"heading": "Where the experts disagreed", "body": ["<paragraph>"]}},
+    {{"heading": "What to watch next month", "body": ["<paragraph>"]}}
+  ]}}"""
+    user = (f"Month: {stats['label']}. Days with readings: {stats['days']} ({stats['first_day']} to {stats['last_day']}).\n"
+            f"Clock: started at {start} s, ended at {end} s, lowest {stats['low']} s, highest {stats['high']} s. "
+            f"Days with a move: {stats['moves']}. Days where experts voted in opposite directions: {split_days}.\n"
+            f"Official Bulletin clock: {stats['official']} s.\n\nDaily log:\n" + "\n".join(lines)
+            + "\n\nHeadlines cited:\n" + "\n".join(heads))
+    report = ask(system, user, max_tokens=3500)
+
+    sections = []
+    for sec in report.get("sections", [])[:5]:
+        body = sec.get("body", [])
+        if isinstance(body, str):
+            body = [body]
+        body = [strip_cites(p) for p in body if str(p).strip()]
+        if body:
+            sections.append({"heading": str(sec.get("heading", "")).strip()[:80], "body": body[:4]})
+    out = dict(stats)
+    out.update({
+        "title": str(report.get("title", stats["label"])).strip()[:120],
+        "summary": strip_cites(report.get("summary", "")),
+        "sections": sections,
+        "series": [{"date": r["date"], "seconds": r["seconds"]} for r in readings],
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    })
+    MONTHS_DIR.mkdir(parents=True, exist_ok=True)
+    (MONTHS_DIR / f"{ym}.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    months = sorted([p.stem for p in MONTHS_DIR.glob("????-??.json")], reverse=True)
+    (MONTHS_DIR / "index.json").write_text(json.dumps(
+        [{"month": m, "label": month_label(m)} for m in months]))
+    log(f"month {ym}: wrote report ({len(readings)} days, {start} -> {end})")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="skip the AI, write files anyway")
     ap.add_argument("--news-only", action="store_true", help="print filtered news and stop")
     ap.add_argument("--date", help="override the reading date (YYYY-MM-DD)")
+    ap.add_argument("--month", help="only build the monthly report for YYYY-MM and stop")
     args = ap.parse_args()
+
+    if args.month:
+        build_month_report(args.month)
+        return
 
     now = datetime.now(timezone.utc)
     today = args.date or now.strftime("%Y-%m-%d")
@@ -585,6 +694,14 @@ def main():
     days_dir = DATA_DIR / "days"
     days_dir.mkdir(exist_ok=True)
     (days_dir / f"{today}.json").write_text(json.dumps(latest, indent=2, ensure_ascii=False))
+
+    # On the 1st, write last month's report (never blocks the daily reading).
+    if now.day == 1 and not args.date:
+        prev_month = (now.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+        try:
+            build_month_report(prev_month)
+        except Exception as ex:
+            log(f"monthly report failed: {ex}")
 
     # Picture shown when the link is shared in chat apps.
     try:

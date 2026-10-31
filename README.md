@@ -12,6 +12,7 @@
 - Five AI "experts" each read the news and vote: Nuclear, Climate, Bio, AI & tech, Geopolitics.
 - A sixth AI, the chair, weighs the votes against yesterday's reading and sets the new time.
 - The site shows the clock, the chair's verdict, each expert's view, the headlines behind it, a daily archive with a calendar, a 30-day chart, and the official clock's full history since 1947.
+- On the 1st of each month the chair writes a monthly report: how the clock moved, what drove it, where the experts disagreed, what to watch next.
 - The official Bulletin reading is checked daily and shown next to ours, so you can see the difference.
 
 ## The rules
@@ -48,6 +49,8 @@ Files:
 | `data/days/` | Full archive, one file per day. |
 | `data/official.json` | The official Doomsday Clock history, updated automatically. |
 | `data/share.png` | Today's share image. |
+| `month.html` | The monthly report page. |
+| `data/months/` | Monthly reports, written by the chair on the 1st of each month. |
 
 ## Run your own
 
@@ -64,6 +67,7 @@ To test locally without an API key:
 pip install -r requirements.txt
 python brain.py --news-only    # show the filtered news and stop
 python brain.py --dry-run      # fake the AI, write the files
+python brain.py --month 2026-10   # write the monthly report for one month
 ```
 
 ## Author
