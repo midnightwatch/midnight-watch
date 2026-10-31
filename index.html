@@ -426,6 +426,12 @@ a:hover { text-decoration-color: var(--ember); }
 .history .note { color: var(--smoke); font-style: italic; font-size: 0.95rem; margin: 0.4rem 0 0; }
 
 .about p { margin: 0 0 0.8rem; }
+.embed-line {
+  border-top: 1px solid var(--char); border-bottom: 1px solid var(--char);
+  padding: 1rem 0; margin: 0; text-align: center; color: var(--ash);
+}
+.embed-line a { font-family: var(--display); font-weight: 700; letter-spacing: 0.03em; color: var(--bone); text-decoration-color: var(--ember); }
+.embed-line a:hover { color: var(--ember); }
 .about .warn {
   border-left: 3px solid var(--ember);
   padding-left: 1rem;
@@ -559,6 +565,8 @@ footer p { margin: 0 0 0.5rem; }
       <h2>Monthly reports</h2>
       <ul class="headlines" id="monthsList"></ul>
     </div>
+
+    <p class="embed-line">Want this clock on your own blog or site? It’s free, it stays live, and it takes one line. <a href="widget.html">See how →</a></p>
 
     <div class="about" id="what">
       <h2>What is the Doomsday Clock?</h2>

@@ -50,6 +50,8 @@ Files:
 | `data/official.json` | The official Doomsday Clock history, updated automatically. |
 | `data/share.png` | Today's share image. |
 | `month.html` | The monthly report page. |
+| `embed.html` | The embeddable widget (iframe). |
+| `widget.html` | Instructions page for embedding the widget. |
 | `data/months/` | Monthly reports, written by the chair on the 1st of each month. |
 
 ## Run your own

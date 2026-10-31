@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Watch widget</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --iron: #1a1513; --soot: #261e1a; --char: #35291f; --ash: #d9cfc4; --smoke: #8f8176; --bone: #f3ece2;
+  --ember: #e0561d; --ember-dim: #7a3214; --calm: #6f9a7a;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --iron: #f6f1ea; --soot: #ece5dc; --char: #d9cfc4; --ash: #3a302a; --smoke: #7a6d63; --bone: #1a1513;
+  --ember: #d04a12; --ember-dim: #e8b9a4; --calm: #3f7a4f; color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--iron); color: var(--ash); font-family: var(--display); }
+a { color: inherit; text-decoration: none; }
+.w { display: flex; align-items: center; justify-content: center; gap: 0.6em; height: 100%; padding: 4% 5%; font-size: var(--base, 16px); }
+.w.col { flex-direction: column; text-align: center; gap: 0.4em; }
+.clock { flex: none; width: var(--clock, 80px); height: var(--clock, 80px); }
+.clock svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.face { fill: var(--soot); stroke: var(--char); stroke-width: 3; }
+.tick { stroke: var(--ash); stroke-width: 3; opacity: 0.8; }
+.wedge { fill: var(--ember); opacity: 0.9; }
+.hand { stroke: var(--bone); stroke-linecap: round; }
+.pin { fill: var(--bone); }
+.t { display: grid; gap: 0.15em; min-width: 0; line-height: 1; }
+.big { font-weight: 900; color: var(--bone); white-space: nowrap; font-size: 1.8em; }
+.big span { color: var(--ember); }
+.delta { font-weight: 500; letter-spacing: 0.03em; color: var(--ember); font-size: 0.95em; white-space: nowrap; }
+.delta.calm { color: var(--calm); } .delta.flat { color: var(--smoke); }
+.brand { font-weight: 500; letter-spacing: 0.08em; color: var(--smoke); font-size: 0.72em; margin-top: 0.35em; text-transform: uppercase; white-space: nowrap; }
+.brand b { color: var(--ash); font-weight: 700; }
+@media (prefers-reduced-motion: no-preference) {
+  .wedge { animation: breathe 4s ease-in-out infinite; }
+  @keyframes breathe { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
+  .hand, .wedge { transition: all 1.4s cubic-bezier(.3,.9,.2,1); }
+}
+</style>
+</head>
+<body>
+<a class="w" id="link" href="https://midnightwatch.github.io/midnight-watch/" target="_blank" rel="noopener" aria-label="Midnight Watch, a daily AI Doomsday Clock">
+  <div class="clock">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <circle class="face" cx="100" cy="100" r="94"/>
+      <g id="ticks"></g>
+      <path id="wedge" class="wedge" d=""/>
+      <line id="hourHand" class="hand" x1="100" y1="100" x2="100" y2="52" stroke-width="7"/>
+      <line id="minHand" class="hand" x1="100" y1="100" x2="100" y2="30" stroke-width="4"/>
+      <circle class="pin" cx="100" cy="100" r="5"/>
+    </svg>
+  </div>
+  <div class="t">
+    <div class="big" id="big"><span>—</span> seconds to midnight</div>
+    <div class="delta" id="delta">loading</div>
+    <div class="brand"><b>Midnight Watch</b> · daily AI Doomsday Clock</div>
+  </div>
+</a>
+<script>
+const q = new URLSearchParams(location.search);
+if (q.get("theme") === "light") document.documentElement.dataset.theme = "light";
+function layout() {
+  const w = innerWidth, h = innerHeight, el = document.getElementById("link");
+  const col = w / h < 1.25;
+  el.classList.toggle("col", col);
+  // "base" is the em unit everything scales from; measured against the longest line, "84 seconds to midnight" ~ 11 ems wide at 1.8em.
+  let base, clock;
+  if (col) { base = Math.min(w / 20, h / 14); clock = Math.min(w * 0.5, h * 0.42); }
+  else { base = Math.min(h / 5.2, (w * 0.62) / 20); clock = h * 0.78; }
+  el.style.setProperty("--base", base + "px");
+  el.style.setProperty("--clock", clock + "px");
+}
+addEventListener("resize", layout); layout();
+const CX = 100, CY = 100, R = 94;
+function polar(deg, r) { const a = (deg - 90) * Math.PI / 180; return [CX + r * Math.cos(a), CY + r * Math.sin(a)]; }
+(function ticks() {
+  let out = "";
+  for (let i = 0; i < 12; i++) { const [x1, y1] = polar(i * 30, R - 12), [x2, y2] = polar(i * 30, R - 4); out += `<line class="tick" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`; }
+  document.getElementById("ticks").innerHTML = out;
+})();
+function setHands(sec) {
+  const mins = sec / 60;
+  const [mx, my] = polar(360 - mins * 6, R - 16), [hx, hy] = polar(360 - (mins / 60) * 30, R - 48);
+  document.getElementById("minHand").setAttribute("x2", mx); document.getElementById("minHand").setAttribute("y2", my);
+  document.getElementById("hourHand").setAttribute("x2", hx); document.getElementById("hourHand").setAttribute("y2", hy);
+  const visual = Math.max(mins * 6, 0.6) * 4;
+  const [sx, sy] = polar(360 - visual, R - 2), [ex, ey] = polar(360, R - 2);
+  document.getElementById("wedge").setAttribute("d", `M ${CX} ${CY} L ${sx} ${sy} A ${R - 2} ${R - 2} 0 0 1 ${ex} ${ey} Z`);
+}
+(async () => {
+  let d = null;
+  try { const r = await fetch("data/latest.json", { cache: "no-store" }); if (r.ok) d = await r.json(); } catch (_) {}
+  if (!d) { document.getElementById("delta").textContent = "could not load"; return; }
+  setHands(d.previous); setTimeout(() => setHands(d.seconds), 350);
+  document.getElementById("big").innerHTML = `<span>${d.seconds}</span> seconds to midnight`;
+  const diff = d.seconds - d.previous, el = document.getElementById("delta");
+  if (diff === 0) { el.textContent = "no change from yesterday"; el.className = "delta flat"; }
+  else { el.textContent = `${Math.abs(diff)} second${Math.abs(diff) === 1 ? "" : "s"} ${diff < 0 ? "closer" : "further"} than yesterday`; el.className = "delta" + (diff > 0 ? " calm" : ""); }
+  document.getElementById("link").href = "https://midnightwatch.github.io/midnight-watch/?ref=embed";
+})();
+</script>
+</body>
+</html>
