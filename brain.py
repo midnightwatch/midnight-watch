@@ -381,6 +381,15 @@ Never invent events. Use only names, numbers and places that appear in the headl
 "Pope" do not guess which pope. Be concrete and calm. Answer ONLY with a JSON object."""
 
 
+def tidy(text):
+    """Clean up punctuation left behind after removing citation markers."""
+    text = re.sub(r"\s+([.,;:])", r"\1", text)      # "word ," -> "word,"
+    text = re.sub(r"[,;:]+(?=[.,;:])", "", text)      # ",,." -> "."
+    text = re.sub(r"\(\s*\)", "", text)             # "()" leftovers
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
+
+
 def ask_expert(role, focus, scope, news, seconds):
     system = RULES + f"""
 You are the {role} expert. Your scope: {scope}.
@@ -402,7 +411,7 @@ score: -3 = clearly more dangerous today, 0 = no real change, +3 = clearly safer
     # Drop citation markers like [3], [3][8], (9,19,4), ([2]) from the displayed text.
     say = re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", say)
     say = re.sub(r"\s*\(\d+(?:[,\s]+\d+)+\)", "", say)
-    say = re.sub(r"\s+([.,;:])", r"\1", say).strip()[:500]
+    say = tidy(say)[:500]
     return {"role": role, "focus": focus, "vote": vote, "score": score,
             "say": say, "cites": cites}
 
@@ -545,7 +554,7 @@ def main():
     body = chair.get("body", [])
     if isinstance(body, str):
         body = [body]
-    body = [re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", str(p)).strip() for p in body if str(p).strip()][:4]
+    body = [tidy(re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", str(p))) for p in body if str(p).strip()][:4]
 
     latest = {
         "sample": False,

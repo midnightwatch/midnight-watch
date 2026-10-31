@@ -45,6 +45,7 @@
 }
 html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: inherit; -webkit-tap-highlight-color: transparent; }
+[hidden] { display: none !important; }
 body {
   margin: 0;
   background: var(--iron);
@@ -192,7 +193,8 @@ a:hover { text-decoration-color: var(--ember); }
   padding: 0.4rem 0.7rem;
 }
 .daybtn:hover { border-color: var(--ember); color: var(--bone); }
-.daybtn[disabled] { visibility: hidden; }
+.daybtn[disabled] { color: var(--char); border-color: var(--char); cursor: default; }
+.daybtn[disabled]:hover { border-color: var(--char); color: var(--char); }
 #dayNext { justify-self: end; }
 .daypick-wrap { position: relative; text-align: center; }
 .daypick {
@@ -200,7 +202,7 @@ a:hover { text-decoration-color: var(--ember); }
   font-family: var(--display); color: var(--bone); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em;
   border-bottom: 1px dashed var(--smoke); padding: 0 0 2px;
 }
-.daypick::after { content: " ▾"; color: var(--smoke); font-weight: 500; }
+
 .daypick:hover { border-bottom-color: var(--ember); }
 .cal {
   position: absolute; left: 50%; top: calc(100% + 0.6rem); transform: translateX(-50%);
@@ -602,17 +604,20 @@ function fmtShort(iso) {
   const d = new Date(iso + "T00:00:00Z");
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
 }
+function shiftDay(iso, n) {
+  const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
 function updateDayNav(date) {
   const nav = document.getElementById("daynav");
-  if (!TODAY_DATA || TODAY_DATA.sample || DATES.length < 2) { nav.hidden = true; return; }
+  if (!TODAY_DATA || TODAY_DATA.sample) { nav.hidden = true; return; }
   nav.hidden = false;
-  const i = DATES.indexOf(date);
-  const prev = DATES[i - 1], next = DATES[i + 1];
-  document.getElementById("dayPrev").disabled = !prev;
-  document.getElementById("dayNext").disabled = !next;
-  document.getElementById("dayPrevLbl").textContent = prev ? fmtShort(prev) : "";
-  document.getElementById("dayNextLbl").textContent = next ? fmtShort(next) : "";
-  document.getElementById("dayLbl").textContent = date === TODAY_DATA.date ? "Today" : fmtDate(date).replace(/^\w+, /, "");
+  const prev = shiftDay(date, -1), next = shiftDay(date, 1);
+  document.getElementById("dayPrev").disabled = !DATES.includes(prev);
+  document.getElementById("dayNext").disabled = !DATES.includes(next);
+  document.getElementById("dayPrevLbl").textContent = fmtShort(prev);
+  document.getElementById("dayNextLbl").textContent = fmtShort(next);
+  document.getElementById("dayLbl").textContent = fmtDate(date) + (date === TODAY_DATA.date ? " (today)" : "");
 }
 // ---------- calendar popover ----------
 const cal = document.getElementById("cal"), pickBtn = document.getElementById("dayPick");
@@ -711,8 +716,8 @@ async function showDay(date) {
     note.textContent = `The reading for ${fmtDate(date)} could not be loaded.`; note.hidden = false;
   }
 }
-document.getElementById("dayPrev").addEventListener("click", () => { const i = DATES.indexOf(CURRENT); if (i > 0) showDay(DATES[i - 1]); });
-document.getElementById("dayNext").addEventListener("click", () => { const i = DATES.indexOf(CURRENT); if (i < DATES.length - 1) showDay(DATES[i + 1]); });
+document.getElementById("dayPrev").addEventListener("click", () => showDay(shiftDay(CURRENT, -1)));
+document.getElementById("dayNext").addEventListener("click", () => showDay(shiftDay(CURRENT, 1)));
 window.addEventListener("hashchange", () => { const d = location.hash.replace("#", ""); if (DATES.includes(d)) showDay(d); else if (!d && TODAY_DATA) showDay(TODAY_DATA.date); });
 
 function renderReading(data) {
