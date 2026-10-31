@@ -1,0 +1,98 @@
+{
+  "sample": false,
+  "date": "2026-10-31",
+  "seconds": 84,
+  "previous": 85,
+  "generated_at": "2026-10-31T17:11:06+00:00",
+  "yesterday_lede": "",
+  "chair": {
+    "lede": "We move the clock 1 second closer to midnight, driven primarily by the worsening Ebola outbreak in the Congo and deadly floods in Syria.",
+    "body": [
+      "The Congo Ebola crisis has now exceeded 5,000 deaths, raising the risk of a broader regional health emergency and highlighting gaps in biosecurity response.",
+      "Severe flooding in eastern Syria killed five children among seven victims, underscoring escalating climate‑related humanitarian threats.",
+      "Other sectors show no significant change: nuclear arms sales and AI governance remain stable, and geopolitical tensions have not intensified beyond existing levels."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "No significant new nuclear developments; existing Patriot missile sales are ongoing and Iran's NPT discussion does not indicate immediate change."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Severe flooding in eastern Syria killed children [2] and storm warnings across major Australian cities signal extreme weather impacts, indicating a worsening climate situation."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "The Congo Ebola outbreak has surpassed 5,000 deaths, indicating a worsening humanitarian and biosecurity situation.[3][8][12]"
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "hold",
+      "say": "No clear shift in AI risk: OpenAI limits weapon info for teens (19) but also cuts funding target (9), while broader AI governance discussions continue (4,21). Net effect is neutral."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "hold",
+      "say": "No major geopolitical shift; US Patriot sale to Ukraine continues but does not alter the conflict dynamics, and Iran‑related tensions remain stable without new escalation."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Five children among seven dead in eastern Syria floods",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU2dLZS1NaklPODk2amZTY2YtUG5obEdwWW1hSWx1RFpQQWdWNDZFQkxFM3JxU2ZhaTVMdFI2X25GV1FfeVZTRkhoNUlNc3plQXQ5SWtqZEx4M0llYUhzeGVVMHE5cGZaczF5V2JDRTN6eXF3RGF1azU0TUlIUVg0aEp1TC1XY3R1cmJj?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Congo Ebola outbreak kills more than 5,000",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbllsVjgtOF8tYlNWQTMtSzkxZ1paY0Fud2RmVVRldXhsdi1ST3hDM2VyRHZIUUNHZjVOSHdSbHNOZE5nZ0I1NVRsT2lIS0N1dWllTm0yUThUVDVHcVNJZVZDdGljeUt4dGhYOTVsRy1FYlM1ZTJkMVZkTncwcHJGVmNvNDNYZnJBQUxvNnpvM1lLc0w1ZmVhVk5MUkt0YjAwZUFGYWZDczJSdUNJNWQ0djFDLW8tcjlJS0owaU4yZTRaZw?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Pope says ‘most urgent’ challenge facing AI race is need for institutional ethical framework",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQOWRPeWZ4eW5VbEV3YUxhOUZ1R1pCVE1TZUEzS2JMbzlLb3hseGNoZVI2LWM2N1BBMkRsX3dndzZnbWFfeHBsajhnM0J0WWdoeWlCenpqRVJzQmpiLXF3X21VZE1zNEVfQVRGUzV4UmxCMjBzWHVDTUZ3b3B3elcxSkFLSm9kZGx5UWRkc1dOZFVUQ0p0azhRZ2VLaEE4cTdK?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "OpenAI to limit weapons information for teens on ChatGPT in violence-prevention push",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOXotdk1SQjNVV0I0cTY5SF8wakFYNk9Za3pJM3JlOFF3YjBOR25PUnB6SnBFUmlzR2dSQXl4c3E2RjFzbVFGNXJSR2dyYUJwZnI3OU10MXY1SENMN2Uwd0h3QzJZaFkwVnZ4SGlGbWQtNlpXcEVUUUYtMDRiVXNILU91OVBpZmszZVZnUXUwanlxNFNod2Nfa3Z3eEYyRjdVTG9EVnZVSW1BUlM4Y3dfYVR1NkdJRVduZklvUmhkVXFVcVAwTnJST0pR?oc=5"
+    }
+  ]
+}
