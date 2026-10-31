@@ -509,6 +509,19 @@ def strip_cites(text):
     return tidy(re.sub(r"\s*\(?\[\d+(?:[,\s]*\d+)*\]\)?", "", str(text)))
 
 
+def fix_direction(text, delta):
+    """The model sometimes says 'back'/'forward' about the clock. Rewrite those
+    to the unambiguous 'closer to midnight' / 'further from midnight'."""
+    closer = delta < 0
+    toward = "closer to midnight" if closer else "further from midnight"
+    verbs = r"(moved|moves|moving|move|set|pushed|pushes|pushing|push|ticked|ticks|ticking|tick|turned|turns|wound)"
+    text = re.sub(verbs + r"\s+(the\s+clock\s+)?(back|backward|backwards|forward|forwards|ahead)\b",
+                  lambda m: f"{m.group(1)} {m.group(2) or ''}{toward}", text, flags=re.I)
+    text = re.sub(r"\b(clock\s+)(back|backward|backwards|forward|forwards|ahead)\b", r"\1" + toward, text, flags=re.I)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text
+
+
 def build_month_report(ym):
     """Gather the month's daily files, compute the numbers, ask the chair for a
     longer piece, and write data/months/YYYY-MM.json."""
@@ -590,13 +603,13 @@ Return JSON:
         body = sec.get("body", [])
         if isinstance(body, str):
             body = [body]
-        body = [strip_cites(p) for p in body if str(p).strip()]
+        body = [fix_direction(strip_cites(p), end - start) for p in body if str(p).strip()]
         if body:
             sections.append({"heading": str(sec.get("heading", "")).strip()[:80], "body": body[:4]})
     out = dict(stats)
     out.update({
-        "title": str(report.get("title", stats["label"])).strip()[:120],
-        "summary": strip_cites(report.get("summary", "")),
+        "title": fix_direction(str(report.get("title", stats["label"])).strip(), end - start)[:120],
+        "summary": fix_direction(strip_cites(report.get("summary", "")), end - start),
         "sections": sections,
         "series": [{"date": r["date"], "seconds": r["seconds"]} for r in readings],
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
