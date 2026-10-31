@@ -85,6 +85,9 @@ a:hover { text-decoration-color: var(--ember); }
 }
 .clock-btn {
   appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
   background: none;
   border: 0;
   padding: 0;
@@ -97,6 +100,8 @@ a:hover { text-decoration-color: var(--ember); }
   transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
 }
 .clock-btn:hover { transform: scale(1.015); }
+.clock-btn, .tab, .intro a { -webkit-tap-highlight-color: transparent; }
+.clock-btn:active { transform: scale(0.99); }
 .clock-btn svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .clock-btn .hint {
   position: absolute;
@@ -288,7 +293,8 @@ a:hover { text-decoration-color: var(--ember); }
 .compare .diff { grid-column: 1 / -1; font-family: var(--serif); font-style: italic; color: var(--ash); font-size: 1.05rem; }
 .tabs { display: flex; gap: 0.5rem; margin: 0 0 0.8rem; }
 .tab {
-  appearance: none; background: none; cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent; background: none; cursor: pointer;
   border: 1px solid var(--char); color: var(--smoke); border-radius: 3px;
   font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: 0.04em;
   padding: 0.3rem 0.8rem;
