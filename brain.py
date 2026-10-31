@@ -491,7 +491,13 @@ def main():
 
     prev = load_json(LATEST, None)
     history = load_json(HISTORY, [])
-    if prev and not prev.get("sample"):
+    if prev and not prev.get("sample") and prev.get("date") == today:
+        # Re-run on the same day: start from where that day started,
+        # so the reading is replaced, not stacked.
+        seconds = int(prev["previous"])
+        yesterday_lede = prev.get("yesterday_lede", "")
+        log("re-run on the same day, replacing today's reading")
+    elif prev and not prev.get("sample"):
         seconds = int(prev["seconds"])
         yesterday_lede = prev.get("chair", {}).get("lede", "")
     else:
@@ -541,6 +547,7 @@ def main():
         "seconds": new_seconds,
         "previous": seconds,
         "generated_at": now.isoformat(timespec="seconds"),
+        "yesterday_lede": yesterday_lede,
         "chair": {"lede": str(chair.get("lede", "")).strip()[:400], "body": body},
         "experts": [{"role": e["role"], "focus": e["focus"], "vote": e["vote"], "say": e["say"]}
                     for e in experts],
