@@ -558,6 +558,10 @@ def build_month_report(ym):
     system = RULES + f"""
 You are the chair writing the monthly report for {stats['label']}. You have the daily verdicts and votes below.
 Write for a general reader, calm and concrete, no hype. Refer only to dates and events in the material.
+Wording: fewer seconds means CLOSER to midnight (more danger); more seconds means FURTHER from midnight (safer).
+Say "closer to midnight" or "further from midnight". Never say "forward", "back", "up" or "down" about the clock.
+Disagreement: the material lists for each day which experts voted worse, hold or better. A day counts as a
+disagreement when at least one expert voted "worse" and another voted "better". Name the experts and the day.
 If the month has few days of data (the project may have started mid-month), say so plainly and keep it short.
 Return JSON:
 {{"title": "<short headline for the month, under 10 words>",
@@ -567,10 +571,17 @@ Return JSON:
     {{"heading": "Where the experts disagreed", "body": ["<paragraph>"]}},
     {{"heading": "What to watch next month", "body": ["<paragraph>"]}}
   ]}}"""
+    splits = []
+    for r in readings:
+        w = [e["role"] for e in r["experts"] if e["vote"] == "worse"]
+        b = [e["role"] for e in r["experts"] if e["vote"] == "better"]
+        if w and b:
+            splits.append(f"{r['date']}: worse={', '.join(w)}; better={', '.join(b)}")
+    split_text = "\n".join(splits) if splits else "(none)"
     user = (f"Month: {stats['label']}. Days with readings: {stats['days']} ({stats['first_day']} to {stats['last_day']}).\n"
             f"Clock: started at {start} s, ended at {end} s, lowest {stats['low']} s, highest {stats['high']} s. "
             f"Days with a move: {stats['moves']}. Days where experts voted in opposite directions: {split_days}.\n"
-            f"Official Bulletin clock: {stats['official']} s.\n\nDaily log:\n" + "\n".join(lines)
+            f"Official Bulletin clock: {stats['official']} s.\n\nDays with disagreement:\n{split_text}\n\nDaily log:\n" + "\n".join(lines)
             + "\n\nHeadlines cited:\n" + "\n".join(heads))
     report = ask(system, user, max_tokens=3500)
 
