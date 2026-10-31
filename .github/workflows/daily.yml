@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 0 * * *"      # every day at 00:00 UTC
   workflow_dispatch:         # lets you press "Run workflow" by hand
+    inputs:
+      month:
+        description: "Only write the monthly report for this month (YYYY-MM) and skip the daily reading"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -24,7 +29,13 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python brain.py
+          MONTH: ${{ github.event.inputs.month }}
+        run: |
+          if [ -n "$MONTH" ]; then
+            python brain.py --month "$MONTH"
+          else
+            python brain.py
+          fi
 
       - name: Commit today's reading
         run: |
