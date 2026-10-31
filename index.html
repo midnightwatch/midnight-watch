@@ -148,6 +148,14 @@ a:hover { text-decoration-color: var(--ember); }
   border-radius: 999px;
 }
 
+.intro {
+  max-width: 34rem;
+  margin: 1rem 0 0;
+  color: var(--smoke);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.intro a { color: var(--ash); }
 /* Verdict panel */
 .verdict {
   max-width: 760px;
@@ -307,6 +315,8 @@ footer a { color: var(--ash); }
     <p class="time-sub" id="timeSub">loading today’s reading</p>
     <p class="date-line" id="dateLine"></p>
     <p class="sample-flag" id="sampleFlag" hidden>Sample data. The daily run will replace this.</p>
+    <p class="intro">Midnight means global catastrophe. The closer the hands, the more danger the world is in.
+      This is an AI-run, daily version of the famous Doomsday Clock. <a href="#what" id="whatLink">What is the Doomsday Clock?</a></p>
   </section>
 
   <section class="verdict" id="verdict" aria-hidden="true">
@@ -338,8 +348,12 @@ footer a { color: var(--ash); }
       <p class="note" id="historyNote"></p>
     </div>
 
-    <div class="about">
-      <h2>How this works</h2>
+    <div class="about" id="what">
+      <h2>What is the Doomsday Clock?</h2>
+      <p>The Doomsday Clock is a symbol, not a real clock. It was created in 1947 by scientists who had worked on the first atomic bomb. It shows how close humanity is to destroying itself. Midnight means catastrophe. The nearer the hands are to midnight, the more danger the world is in.</p>
+      <p>Once a year, a board of scientists and experts at the Bulletin of the Atomic Scientists looks at the biggest threats to humanity: nuclear weapons, climate change, dangerous diseases, and new technology like AI. Then they move the hands closer to midnight or further away. In 1947 it started at 7 minutes to midnight. In 1991, after the Cold War ended, it was 17 minutes. Today it is 85 seconds, the closest it has ever been.</p>
+      <p>The number of seconds is not a measurement or a prediction. It is a way of saying “things got worse” or “things got better” compared to before.</p>
+      <h2 style="margin-top:2rem">How this works</h2>
       <p>Once a day a script collects the last 24 hours of world news from wire services and international outlets. Five AI experts each read it from their own angle: nuclear, climate, biological risk, AI and disruptive technology, and geopolitics. Each one scores the day and must point to real headlines.</p>
       <p>A sixth AI, the chair, weighs their views against yesterday’s reading and sets the clock. It can move at most five seconds a day, and holding still is always allowed. The board starts from the official 2026 setting of 85 seconds.</p>
       <p class="warn">This is a simulation. The real Doomsday Clock is set once a year by the Bulletin of the Atomic Scientists’ Science and Security Board, not by software. Treat this page as a daily mood reading, not a forecast.</p>
@@ -514,6 +528,11 @@ btn.addEventListener("click", () => {
   if (open) setTimeout(() => panel.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
 });
 
+document.getElementById("whatLink").addEventListener("click", (ev) => {
+  ev.preventDefault();
+  if (!panel.classList.contains("open")) btn.click();
+  setTimeout(() => document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" }), 500);
+});
 // ---------- load ----------
 (async () => {
   let data = SAMPLE;
