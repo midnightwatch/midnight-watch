@@ -75,6 +75,9 @@ a:hover { text-decoration-color: var(--ember); }
   color: var(--smoke);
 }
 .top strong { color: var(--ash); font-weight: 700; font-size: 1.25rem; }
+.top .status { text-align: right; line-height: 1.35; }
+.top .sub { font-size: 0.9rem; color: var(--smoke); opacity: 0.85; }
+.top .sub span { color: var(--ash); }
 
 /* Hero */
 .hero {
@@ -397,7 +400,11 @@ footer a { color: var(--ash); }
 
 <header class="top">
   <div><strong>Midnight Watch</strong></div>
-  <div id="status">reset daily at 00:00 UTC</div>
+  <div class="status" id="status">
+    <div>reset daily at 00:00 UTC</div>
+    <div class="sub" id="updatedLine"></div>
+    <div class="sub" id="nextLine"></div>
+  </div>
 </header>
 
 <main>
@@ -592,8 +599,33 @@ function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<"
 
 let TODAY_DATA = null, DATES = [], CURRENT = null;
 
+function ago(iso) {
+  const ms = Date.now() - new Date(iso).getTime();
+  const m = Math.round(ms / 60000);
+  if (m < 2) return "just now";
+  if (m < 60) return `${m} min ago`;
+  const h = Math.round(m / 60);
+  if (h < 36) return `${h} hour${h === 1 ? "" : "s"} ago`;
+  return `${Math.round(h / 24)} days ago`;
+}
+function untilMidnightUTC() {
+  const now = new Date();
+  const next = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+  const m = Math.round((next - now.getTime()) / 60000);
+  const h = Math.floor(m / 60), mm = m % 60;
+  return h > 0 ? `in ${h} h ${String(mm).padStart(2, "0")} min` : `in ${mm} min`;
+}
+function renderStatus(data) {
+  const u = document.getElementById("updatedLine"), n = document.getElementById("nextLine");
+  if (data.sample || !data.generated_at) { u.textContent = ""; n.textContent = ""; return; }
+  u.innerHTML = `last reading <span>${ago(data.generated_at)}</span>`;
+  n.innerHTML = `next reading <span>${untilMidnightUTC()}</span>`;
+}
+setInterval(() => { if (TODAY_DATA) renderStatus(TODAY_DATA); }, 60000);
+
 function render(data) {
   TODAY_DATA = data;
+  renderStatus(data);
   DATES = (data.history || []).map(h => h.date).sort();
   if (!data.sample && !DATES.includes(data.date)) DATES.push(data.date);
   renderReading(data);
