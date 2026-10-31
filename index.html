@@ -220,10 +220,8 @@ a:hover { text-decoration-color: var(--ember); }
   }
   .month-btn { animation: mb-rise 0.9s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes mb-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-  body.leaving .hero, body.leaving .top, body.leaving .verdict, body.leaving footer { transition: opacity 0.45s ease, transform 0.45s ease; }
-  body.leaving .hero { opacity: 0; transform: translateY(-28px) scale(0.98); }
-  body.leaving .top, body.leaving .verdict, body.leaving footer { opacity: 0; }
-  body.leaving .month-btn { transform: translateY(-6px); box-shadow: 0 0 60px 10px var(--ember-glow); border-color: var(--ember); }
+  body.leaving main, body.leaving .top, body.leaving footer { transition: opacity 0.3s ease; }
+  body.leaving main, body.leaving .top, body.leaving footer { opacity: 0; }
 }
 .intro {
   max-width: 34rem;
@@ -727,7 +725,7 @@ async function renderMonths() {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       ev.preventDefault();
       document.body.classList.add("leaving");
-      setTimeout(() => { location.href = btn.href; }, 480);
+      setTimeout(() => { location.href = btn.href; }, 300);
     });
   } catch (_) {}
 }
@@ -1011,6 +1009,8 @@ document.getElementById("whatLink").addEventListener("click", (ev) => {
   if (!panel.classList.contains("open")) btn.click();
   setTimeout(() => document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" }), 500);
 });
+// If the browser restores this page from memory (back button), undo the fade.
+window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
 // ---------- load ----------
 (async () => {
   let data = SAMPLE;
