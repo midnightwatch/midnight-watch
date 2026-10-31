@@ -186,6 +186,9 @@ a:hover { text-decoration-color: var(--ember); }
   margin-top: -1rem;
   font-family: var(--display);
 }
+#dayPrev { justify-self: start; }
+#dayNext { justify-self: end; }
+.daybtn { min-width: 7rem; text-align: center; }
 .daybtn {
   appearance: none; background: none; cursor: pointer;
   border: 1px solid var(--char); color: var(--ash); border-radius: 3px;
@@ -195,7 +198,6 @@ a:hover { text-decoration-color: var(--ember); }
 .daybtn:hover { border-color: var(--ember); color: var(--bone); }
 .daybtn[disabled] { color: var(--char); border-color: var(--char); cursor: default; }
 .daybtn[disabled]:hover { border-color: var(--char); color: var(--char); }
-#dayNext { justify-self: end; }
 .daypick-wrap { position: relative; text-align: center; }
 .daypick {
   appearance: none; background: none; border: 0; cursor: pointer;
@@ -239,7 +241,7 @@ a:hover { text-decoration-color: var(--ember); }
 .cal-grid .d.today-dot { box-shadow: inset 0 -3px 0 var(--ember); }
 @media (max-width: 560px) {
   .daynav { grid-template-columns: 1fr 1fr; }
-  .daypick-wrap { grid-column: 1 / -1; order: -1; }
+  .daypick-wrap { grid-column: 1 / -1; order: -1; justify-self: center; }
 }
 /* Verdict panel */
 .verdict {
