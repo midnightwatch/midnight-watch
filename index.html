@@ -389,6 +389,19 @@ footer {
   padding: 2rem 1rem 3rem;
 }
 footer a { color: var(--ash); }
+footer p { margin: 0 0 0.5rem; }
+.foot-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 0;
+  font-family: var(--display); font-weight: 500; letter-spacing: 0.03em; font-size: 1rem;
+}
+.foot-links > * { padding: 0 0.9rem; border-left: 1px solid var(--char); }
+.foot-links > *:first-child { border-left: 0; }
+.foot-links a { display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; color: var(--ash); }
+.foot-links a:hover { color: var(--ember); }
+@media (max-width: 560px) {
+  .foot-links { flex-direction: column; align-items: center; gap: 0.35rem; }
+  .foot-links > * { border-left: 0; padding: 0; }
+}
 
 @media (max-width: 560px) {
   .expert { grid-template-columns: 1fr; gap: 0.35rem; }
@@ -501,7 +514,13 @@ footer a { color: var(--ash); }
 </main>
 
 <footer>
-  Inspired by the <a href="https://thebulletin.org/doomsday-clock/" target="_blank" rel="noopener">Bulletin of the Atomic Scientists</a>, not affiliated with it. Open source, runs on free tools.
+  <p>Inspired by the <a href="https://thebulletin.org/doomsday-clock/" target="_blank" rel="noopener">Bulletin of the Atomic Scientists</a>, not affiliated with it.</p>
+  <p class="foot-links">
+    <a href="https://github.com/midnightwatch/midnight-watch" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Source on GitHub</a>
+    <span>Built by Sai Balaji Thadishetty</span>
+    <span>Open source, MIT</span>
+    <span>Free to run, no ads</span>
+  </p>
 </footer>
 
 <script>
