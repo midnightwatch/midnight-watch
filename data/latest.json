@@ -1,0 +1,98 @@
+{
+  "sample": false,
+  "date": "2026-10-31",
+  "seconds": 84,
+  "previous": 85,
+  "generated_at": "2026-10-31T17:38:51+00:00",
+  "yesterday_lede": "",
+  "chair": {
+    "lede": "We move the clock one second closer to midnight, driven primarily by worsening health and climate emergencies",
+    "body": [
+      "Severe flooding in eastern Syria killed five children, underscoring escalating climate‑related risks.",
+      "The Ebola outbreak in the Democratic Republic of Congo has now surpassed 5,000 deaths, marking a deepening bio‑security crisis,,.",
+      "While AI safety steps were noted, the combined impact of these health and climate shocks outweighs modest improvements elsewhere."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "Patriot missile sales to Ukraine continue (1) while Iranian lawmakers push NPT withdrawal (11), offsetting each other with no clear net change in nuclear risk."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Severe flooding in eastern Syria killed children and storm warnings across major Australian cities signal extreme weather risks."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "The Congo Ebola outbreak has killed over 5,000 people, indicating a worsening health crisis."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "better",
+      "say": "OpenAI reduced its funding target, limiting resources for risky scaling (9); it also restricted weapons‑related content for teen users on ChatGPT (19); the SEC is actively monitoring AI corporate disclosures (21). These steps modestly improve AI safety."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "US approval of a $2.1 billion Patriot missile sale to Ukraine heightens military tension with Russia (1). Meanwhile a rare local cease‑fire in Russian‑occupied Oleshky allows some residents to return, offering a modest de‑escalation (29)."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Five children among seven dead in eastern Syria floods",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU2dLZS1NaklPODk2amZTY2YtUG5obEdwWW1hSWx1RFpQQWdWNDZFQkxFM3JxU2ZhaTVMdFI2X25GV1FfeVZTRkhoNUlNc3plQXQ5SWtqZEx4M0llYUhzeGVVMHE5cGZaczF5V2JDRTN6eXF3RGF1azU0TUlIUVg0aEp1TC1XY3R1cmJj?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Congo Ebola outbreak kills more than 5,000",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbllsVjgtOF8tYlNWQTMtSzkxZ1paY0Fud2RmVVRldXhsdi1ST3hDM2VyRHZIUUNHZjVOSHdSbHNOZE5nZ0I1NVRsT2lIS0N1dWllTm0yUThUVDVHcVNJZVZDdGljeUt4dGhYOTVsRy1FYlM1ZTJkMVZkTncwcHJGVmNvNDNYZnJBQUxvNnpvM1lLc0w1ZmVhVk5MUkt0YjAwZUFGYWZDczJSdUNJNWQ0djFDLW8tcjlJS0owaU4yZTRaZw?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "US approves $2.1 billion Patriot missile sale to Ukraine",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUGRTc1V3SzhDNWZQUUVuQ3hsWmlKcUY3V3ZJb0poUEh6ZGZjSVZlNzlaWlF2SVVwU1M3RklET3hzdmtnVU54NXEtb0ZCYUc1WjZMR3Vya1Vfa0ZhSzhEUEg1NkF6bjlIODVJQW9mN0htVWM3dDRKbFF1MjVsMjkwQUdmNGpmNHBkWWl6dmtDeVFIYmptQ2VZZ0FyTHhqWVplU2RkZFhONnZNN3F0UWVWQUlJeno?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
+    }
+  ]
+}
