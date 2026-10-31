@@ -177,6 +177,68 @@ a:hover { text-decoration-color: var(--ember); }
   line-height: 1.5;
 }
 .intro a { color: var(--ash); }
+.daynav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: -1rem;
+  font-family: var(--display);
+}
+.daybtn {
+  appearance: none; background: none; cursor: pointer;
+  border: 1px solid var(--char); color: var(--ash); border-radius: 3px;
+  font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: 0.03em;
+  padding: 0.4rem 0.7rem;
+}
+.daybtn:hover { border-color: var(--ember); color: var(--bone); }
+.daybtn[disabled] { visibility: hidden; }
+#dayNext { justify-self: end; }
+.daypick-wrap { position: relative; text-align: center; }
+.daypick {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  font-family: var(--display); color: var(--bone); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em;
+  border-bottom: 1px dashed var(--smoke); padding: 0 0 2px;
+}
+.daypick::after { content: " ▾"; color: var(--smoke); font-weight: 500; }
+.daypick:hover { border-bottom-color: var(--ember); }
+.cal {
+  position: absolute; left: 50%; top: calc(100% + 0.6rem); transform: translateX(-50%);
+  z-index: 5; width: 19rem; max-width: calc(100vw - 2rem);
+  background: var(--soot); border: 1px solid var(--char); border-radius: 4px;
+  padding: 0.8rem; box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+}
+.cal-head { display: grid; grid-template-columns: auto 1fr auto; align-items: center; margin-bottom: 0.5rem; }
+.cal-title {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  text-align: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--bone); letter-spacing: 0.03em;
+}
+.cal-title:hover { color: var(--ember); }
+.cal-title.static { cursor: default; }
+.cal-title.static:hover { color: var(--bone); }
+.cal-grid.months, .cal-grid.years { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.cal-grid .m { aspect-ratio: auto; height: 2.6rem; }
+.cal-nav {
+  appearance: none; background: none; border: 1px solid var(--char); color: var(--ash); cursor: pointer;
+  width: 2rem; height: 2rem; border-radius: 3px; font-size: 1.3rem; line-height: 1; font-family: var(--serif);
+}
+.cal-nav:hover { border-color: var(--ember); color: var(--bone); }
+.cal-nav[disabled] { opacity: 0.25; cursor: default; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.cal-grid .wd { text-align: center; font-size: 0.8rem; color: var(--smoke); font-weight: 500; padding: 0.2rem 0 0.4rem; letter-spacing: 0.05em; }
+.cal-grid .d {
+  appearance: none; background: none; border: 1px solid transparent; border-radius: 3px;
+  font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--ash); cursor: pointer;
+  aspect-ratio: 1; display: grid; place-items: center;
+}
+.cal-grid .d:hover { border-color: var(--ember); color: var(--bone); }
+.cal-grid .d.off { color: var(--char); cursor: default; border-color: transparent; }
+.cal-grid .d.on { color: var(--iron); background: var(--ember); }
+.cal-grid .d.today-dot { box-shadow: inset 0 -3px 0 var(--ember); }
+@media (max-width: 560px) {
+  .daynav { grid-template-columns: 1fr 1fr; }
+  .daypick-wrap { grid-column: 1 / -1; order: -1; }
+}
 /* Verdict panel */
 .verdict {
   max-width: 760px;
@@ -370,6 +432,22 @@ footer a { color: var(--ash); }
       <p class="lede" id="chairLede"></p>
       <div id="chairBody"></div>
     </div>
+    <nav class="daynav" id="daynav" aria-label="Browse past readings" hidden>
+      <button class="daybtn" id="dayPrev" type="button">← <span id="dayPrevLbl"></span></button>
+      <div class="daypick-wrap">
+        <button class="daypick" id="dayPick" type="button" aria-haspopup="dialog" aria-expanded="false"><span id="dayLbl"></span></button>
+        <div class="cal" id="cal" role="dialog" aria-label="Pick a date" hidden>
+          <div class="cal-head">
+            <button class="cal-nav" id="calPrev" type="button" aria-label="Previous month">‹</button>
+            <button class="cal-title" id="calTitle" type="button"></button>
+            <button class="cal-nav" id="calNext" type="button" aria-label="Next month">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+      </div>
+      <button class="daybtn" id="dayNext" type="button"><span id="dayNextLbl"></span> →</button>
+    </nav>
+    <p class="note" id="dayNote" hidden></p>
 
     <div class="change-strip">
       <div><div class="n" id="prevN">—</div><div class="l">yesterday</div></div>
@@ -508,7 +586,138 @@ function deltaText(today, prev) {
 }
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
+let TODAY_DATA = null, DATES = [], CURRENT = null;
+
 function render(data) {
+  TODAY_DATA = data;
+  DATES = (data.history || []).map(h => h.date).sort();
+  if (!data.sample && !DATES.includes(data.date)) DATES.push(data.date);
+  renderReading(data);
+  renderHistory(data);
+  const wanted = location.hash.replace("#", "");
+  if (/^\d{4}-\d{2}-\d{2}$/.test(wanted) && wanted !== data.date && DATES.includes(wanted)) showDay(wanted);
+}
+
+function fmtShort(iso) {
+  const d = new Date(iso + "T00:00:00Z");
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+}
+function updateDayNav(date) {
+  const nav = document.getElementById("daynav");
+  if (!TODAY_DATA || TODAY_DATA.sample || DATES.length < 2) { nav.hidden = true; return; }
+  nav.hidden = false;
+  const i = DATES.indexOf(date);
+  const prev = DATES[i - 1], next = DATES[i + 1];
+  document.getElementById("dayPrev").disabled = !prev;
+  document.getElementById("dayNext").disabled = !next;
+  document.getElementById("dayPrevLbl").textContent = prev ? fmtShort(prev) : "";
+  document.getElementById("dayNextLbl").textContent = next ? fmtShort(next) : "";
+  document.getElementById("dayLbl").textContent = date === TODAY_DATA.date ? "Today" : fmtDate(date).replace(/^\w+, /, "");
+}
+// ---------- calendar popover ----------
+const cal = document.getElementById("cal"), pickBtn = document.getElementById("dayPick");
+let calYear = 0, calMonth = 0, calView = "days"; // month is 0-11
+function pad(n) { return String(n).padStart(2, "0"); }
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function hasMonth(y, m) { const k = `${y}-${pad(m + 1)}`; return DATES.some(d => d.startsWith(k)); }
+function hasYear(y) { return DATES.some(d => d.startsWith(String(y))); }
+function drawCal() {
+  const minD = DATES[0], maxD = DATES[DATES.length - 1];
+  const minY = +minD.slice(0, 4), maxY = +maxD.slice(0, 4);
+  const title = document.getElementById("calTitle");
+  const prev = document.getElementById("calPrev"), next = document.getElementById("calNext");
+  const grid = document.getElementById("calGrid");
+  grid.className = "cal-grid " + calView;
+  title.classList.remove("static");
+  let html = "";
+  if (calView === "days") {
+    const first = new Date(Date.UTC(calYear, calMonth, 1));
+    title.textContent = first.toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+    const thisMonth = `${calYear}-${pad(calMonth + 1)}`;
+    prev.disabled = thisMonth <= minD.slice(0, 7);
+    next.disabled = thisMonth >= maxD.slice(0, 7);
+    html = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map(w => `<div class="wd">${w}</div>`).join("");
+    const lead = (first.getUTCDay() + 6) % 7;
+    for (let i = 0; i < lead; i++) html += `<div></div>`;
+    const days = new Date(Date.UTC(calYear, calMonth + 1, 0)).getUTCDate();
+    for (let d = 1; d <= days; d++) {
+      const iso = `${calYear}-${pad(calMonth + 1)}-${pad(d)}`;
+      const has = DATES.includes(iso);
+      const cls = ["d", has ? "" : "off", iso === CURRENT ? "on" : "", iso === TODAY_DATA.date ? "today-dot" : ""].join(" ");
+      html += `<button type="button" class="${cls}" data-d="${iso}" ${has ? "" : "disabled"}>${d}</button>`;
+    }
+  } else if (calView === "months") {
+    title.textContent = String(calYear);
+    prev.disabled = calYear <= minY;
+    next.disabled = calYear >= maxY;
+    for (let m = 0; m < 12; m++) {
+      const has = hasMonth(calYear, m);
+      const on = calYear === +CURRENT.slice(0, 4) && m === +CURRENT.slice(5, 7) - 1;
+      html += `<button type="button" class="d m ${has ? "" : "off"} ${on ? "on" : ""}" data-m="${m}" ${has ? "" : "disabled"}>${MONTHS[m]}</button>`;
+    }
+  } else {
+    const start = Math.floor(calYear / 12) * 12;
+    title.textContent = `${start} – ${start + 11}`;
+    title.classList.add("static");
+    prev.disabled = start <= minY;
+    next.disabled = start + 11 >= maxY;
+    for (let y = start; y < start + 12; y++) {
+      const has = hasYear(y);
+      const on = y === +CURRENT.slice(0, 4);
+      html += `<button type="button" class="d m ${has ? "" : "off"} ${on ? "on" : ""}" data-y="${y}" ${has ? "" : "disabled"}>${y}</button>`;
+    }
+  }
+  grid.innerHTML = html;
+}
+function openCal() {
+  const [y, m] = CURRENT.split("-").map(Number);
+  calYear = y; calMonth = m - 1; calView = "days";
+  drawCal(); cal.hidden = false; pickBtn.setAttribute("aria-expanded", "true");
+}
+function closeCal() { cal.hidden = true; pickBtn.setAttribute("aria-expanded", "false"); }
+pickBtn.addEventListener("click", () => cal.hidden ? openCal() : closeCal());
+function calStep(dir) {
+  if (calView === "days") { calMonth += dir; if (calMonth < 0) { calMonth = 11; calYear--; } if (calMonth > 11) { calMonth = 0; calYear++; } }
+  else if (calView === "months") calYear += dir;
+  else calYear += 12 * dir;
+  drawCal();
+}
+document.getElementById("calPrev").addEventListener("click", () => calStep(-1));
+document.getElementById("calNext").addEventListener("click", () => calStep(1));
+document.getElementById("calTitle").addEventListener("click", () => {
+  if (calView === "days") calView = "months"; else if (calView === "months") calView = "years"; else return;
+  drawCal();
+});
+document.getElementById("calGrid").addEventListener("click", ev => {
+  const b = ev.target.closest("button.d"); if (!b || b.disabled) return;
+  if (b.dataset.y) { calYear = +b.dataset.y; calView = "months"; drawCal(); return; }
+  if (b.dataset.m) { calMonth = +b.dataset.m; calView = "days"; drawCal(); return; }
+  closeCal(); showDay(b.dataset.d);
+});
+const pickWrap = document.querySelector(".daypick-wrap");
+document.addEventListener("click", ev => { if (!cal.hidden && !ev.composedPath().includes(pickWrap)) closeCal(); });
+document.addEventListener("keydown", ev => { if (ev.key === "Escape") closeCal(); });
+async function showDay(date) {
+  const note = document.getElementById("dayNote");
+  note.hidden = true;
+  if (date === TODAY_DATA.date) { renderReading(TODAY_DATA); history.replaceState(null, "", location.pathname); return; }
+  if (!DATES.includes(date)) { note.textContent = `No reading for ${fmtDate(date)}.`; note.hidden = false; return; }
+  try {
+    const r = await fetch(`data/days/${date}.json`, { cache: "no-store" });
+    if (!r.ok) throw new Error("missing");
+    renderReading(await r.json());
+    history.replaceState(null, "", `#${date}`);
+  } catch (_) {
+    note.textContent = `The reading for ${fmtDate(date)} could not be loaded.`; note.hidden = false;
+  }
+}
+document.getElementById("dayPrev").addEventListener("click", () => { const i = DATES.indexOf(CURRENT); if (i > 0) showDay(DATES[i - 1]); });
+document.getElementById("dayNext").addEventListener("click", () => { const i = DATES.indexOf(CURRENT); if (i < DATES.length - 1) showDay(DATES[i + 1]); });
+window.addEventListener("hashchange", () => { const d = location.hash.replace("#", ""); if (DATES.includes(d)) showDay(d); else if (!d && TODAY_DATA) showDay(TODAY_DATA.date); });
+
+function renderReading(data) {
+  CURRENT = data.date;
+  updateDayNav(data.date);
   drawTicks();
   // sweep from yesterday to today
   setHands(data.previous);
@@ -539,8 +748,6 @@ function render(data) {
   document.getElementById("headlines").innerHTML = data.headlines.map(h => `
     <li><span class="tag">${esc(h.tag)}</span>${h.url && h.url !== "#" ? `<a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}</a>` : esc(h.title)}
       <div class="src">${esc(h.source)}</div></li>`).join("");
-
-  renderHistory(data);
 }
 
 // Official Doomsday Clock settings by the Bulletin of the Atomic Scientists,

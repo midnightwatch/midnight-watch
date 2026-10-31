@@ -572,6 +572,11 @@ def main():
     HISTORY.write_text(json.dumps(history, indent=0, ensure_ascii=False))
     log(f"wrote {LATEST.name} and {HISTORY.name}")
 
+    # Archive: one file per day, never overwritten by later days.
+    days_dir = DATA_DIR / "days"
+    days_dir.mkdir(exist_ok=True)
+    (days_dir / f"{today}.json").write_text(json.dumps(latest, indent=2, ensure_ascii=False))
+
     # Picture shown when the link is shared in chat apps.
     try:
         from share_image import draw_share_image
