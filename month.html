@@ -478,7 +478,7 @@ function render(d, months) {
     const t = (v.worse + v.hold + v.better) || 1;
     return `<div class="vrow"><div class="who">${esc(role)}</div><div class="bar"><span class="w" style="width:${100 * v.worse / t}%"></span><span class="h" style="width:${100 * v.hold / t}%"></span><span class="b" style="width:${100 * v.better / t}%"></span></div></div>`;
   }).join("");
-  const biggest = (d.biggest || []).map(m => `<li><span class="tag">${fmtDate(m.date)}</span>${m.from} → ${m.to} s. ${esc(m.lede)}</li>`).join("");
+  const biggest = (d.biggest || []).map(m => `<li><span class="tag">${fmtDate(m.date)} · ${m.from} → ${m.to} s</span><div>${esc(m.lede)}</div></li>`).join("");
   document.getElementById("report").innerHTML = `
     <div>
       <p class="eyebrow">${esc(d.label)} · ${d.days} day${d.days === 1 ? "" : "s"} of readings</p>

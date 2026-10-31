@@ -534,7 +534,8 @@ def build_month_report(ym):
     start = readings[0]["previous"]
     end = readings[-1]["seconds"]
     secs = [r["seconds"] for r in readings]
-    moves = [{"date": r["date"], "from": r["previous"], "to": r["seconds"], "lede": r["chair"]["lede"]}
+    moves = [{"date": r["date"], "from": r["previous"], "to": r["seconds"],
+              "lede": fix_direction(r["chair"]["lede"], r["seconds"] - r["previous"])}
              for r in readings if r["seconds"] != r["previous"]]
     biggest = sorted(moves, key=lambda m: abs(m["to"] - m["from"]), reverse=True)[:5]
     votes, split_days = {}, 0
@@ -696,7 +697,8 @@ def main():
         "previous": seconds,
         "generated_at": now.isoformat(timespec="seconds"),
         "yesterday_lede": yesterday_lede,
-        "chair": {"lede": str(chair.get("lede", "")).strip()[:400], "body": body},
+        "chair": {"lede": fix_direction(str(chair.get("lede", "")).strip(), new_seconds - seconds)[:400],
+                  "body": [fix_direction(p, new_seconds - seconds) for p in body]},
         "experts": [{"role": e["role"], "focus": e["focus"], "vote": e["vote"], "say": e["say"]}
                     for e in experts],
         "headlines": [{"tag": h["tag"], "title": h["title"], "source": h["source"], "url": h["url"]}
