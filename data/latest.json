@@ -3,54 +3,54 @@
   "date": "2026-10-31",
   "seconds": 84,
   "previous": 85,
-  "generated_at": "2026-10-31T17:14:01+00:00",
+  "generated_at": "2026-10-31T17:20:43+00:00",
   "yesterday_lede": "",
   "chair": {
-    "lede": "We move the clock one second closer to midnight, driven chiefly by the deadly floods in Syria and the escalating Ebola crisis in the Congo.",
+    "lede": "We move the clock back by one second, driven chiefly by the accelerating Ebola death toll in the Congo and heightened nuclear tensions from the US‑Ukraine missile sale and Iran’s NPT withdrawal push.",
     "body": [
-      "Severe flooding in eastern Syria killed five children among seven fatalities, underscoring worsening climate‑related humanitarian impacts.",
-      "The Ebola outbreak in the Democratic Republic of Congo has surpassed 5,000 deaths, raising the risk of regional spread and a major public‑health emergency.",
-      "While the US approval of a $2.1 bn Patriot missile sale to Ukraine adds to geopolitical tension, it does not alone justify a larger shift."
+      "The Congo Ebola outbreak now exceeds 5,000 deaths, a clear worsening of a global health threat that several bio experts flagged as a major risk. This alone justifies a modest negative adjustment.",
+      "Simultaneously, the US approval of a $2.1 billion Patriot missile sale to Ukraine and Iran’s calls to withdraw from the Nuclear Non‑Proliferation Treaty raise the specter of heightened nuclear conflict, reinforcing the need for a slight shift toward risk.",
+      "Other sectors—climate extremes in Syria and Australia, and mixed signals in AI investment and regulation—do not present a coordinated escalation strong enough to warrant a larger move."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "No substantive change in nuclear arsenals or doctrine; US Patriot missile approvals are defensive (1,6,15,18) and Iran's NPT withdrawal talk is rhetorical (11)."
+      "vote": "worse",
+      "say": "US approval of a $2.1 billion Patriot missile sale to Ukraine (1) and Iran lawmakers urging withdrawal from the NPT (11) suggest increased nuclear‑related tensions."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Recent severe floods in eastern Syria killed children [2] and storm warnings across multiple Australian cities signal heightened extreme weather events [7]."
+      "say": "Severe flooding in eastern Syria killed five children among seven victims, and storm warnings across multiple Australian cities indicate heightened extreme weather risk."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "The Congo Ebola outbreak has surpassed 5,000 deaths, indicating a worsening public health crisis and heightened risk of regional spread [3,8,12]."
+      "say": "The Congo Ebola outbreak has surpassed 5,000 deaths, indicating a worsening public health crisis."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "hold",
-      "say": "AI news shows mixed signals: OpenAI cuts funding (9) and limits weapon info for teens (19) suggest safety focus, while industry setbacks (13) and asset sales (17) have limited immediate impact."
+      "say": "OpenAI cut its funding target by $10 billion, indicating a slowdown in AI investment (9), while it also moved to limit weapons information for teens on ChatGPT (17) and the SEC is monitoring AI disclosures (19). The Pope called for an ethical framework for AI (4). These mixed signals suggest no clear net change, perhaps a slight tilt toward risk."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "worse",
-      "say": "US approval of a $2.1 bn Patriot missile sale to Ukraine (1) heightens the Russia‑Ukraine arms race, while Iran’s aggressive actions against US assets and its NPT withdrawal talk (10) raise regional tension. Meanwhile rival US and Russian resolutions on Western Sahara were blocked in the UN, showing diplomatic deadlock (22)."
+      "say": "US approval of a $2.1 billion Patriot missile sale to Ukraine heightens the Ukraine‑Russia conflict, while Iran’s aggressive actions and calls to withdraw from the NPT raise nuclear tensions, and rival US‑Russia resolutions on Western Sahara were defeated in the UN Security Council (22)."
     }
   ],
   "headlines": [
     {
-      "tag": "Climate",
-      "title": "Five children among seven dead in eastern Syria floods",
+      "tag": "Nuclear",
+      "title": "US approves $2.1 billion Patriot missile sale to Ukraine",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUGRTc1V3SzhDNWZQUUVuQ3hsWmlKcUY3V3ZJb0poUEh6ZGZjSVZlNzlaWlF2SVVwU1M3RklET3hzdmtnVU54NXEtb0ZCYUc1WjZMR3Vya1Vfa0ZhSzhEUEg1NkF6bjlIODVJQW9mN0htVWM3dDRKbFF1MjVsMjkwQUdmNGpmNHBkWWl6dmtDeVFIYmptQ2VZZ0FyTHhqWVplU2RkZFhONnZNN3F0UWVWQUlJeno?oc=5"
     },
     {
       "tag": "Bio",
@@ -65,34 +65,34 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbllsVjgtOF8tYlNWQTMtSzkxZ1paY0Fud2RmVVRldXhsdi1ST3hDM2VyRHZIUUNHZjVOSHdSbHNOZE5nZ0I1NVRsT2lIS0N1dWllTm0yUThUVDVHcVNJZVZDdGljeUt4dGhYOTVsRy1FYlM1ZTJkMVZkTncwcHJGVmNvNDNYZnJBQUxvNnpvM1lLc0w1ZmVhVk5MUkt0YjAwZUFGYWZDczJSdUNJNWQ0djFDLW8tcjlJS0owaU4yZTRaZw?oc=5"
     },
     {
+      "tag": "Nuclear",
+      "title": "Iran lawmakers call for withdrawal from NPT: Will we have war or peace?",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/31/iran-lawmakers-call-for-withdrawal-from-npt-will-we-have-war-or-peace?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Five children among seven dead in eastern Syria floods",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdWVXYi05clFmVk4yZXM2MVdNeEhHY19SeWVjMmtIVkZKY01jUGxnUzNoaVJMR2RYOWJsQ252OFkwRUJScXN0SXNWenY0U3BYMmw0OWtfRGl0Ql8wTjBzckZXYl9tQWoyMnNzTThTbnFsZFp3TEZocVRBaTlHcERSUFlpNTRHc0s2djQ5MDVTVWNBZjlpZjZMLVdwY1NQdUt0SnZEVDI3a1V5VlNm?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+    },
+    {
       "tag": "Bio",
       "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
       "source": "BBC",
       "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "tag": "Nuclear",
-      "title": "US approves $2.1 billion Patriot missile sale to Ukraine",
+      "tag": "AI & tech",
+      "title": "OpenAI slashes funding target by $10 billion amid tech rout, FT reports",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUGRTc1V3SzhDNWZQUUVuQ3hsWmlKcUY3V3ZJb0poUEh6ZGZjSVZlNzlaWlF2SVVwU1M3RklET3hzdmtnVU54NXEtb0ZCYUc1WjZMR3Vya1Vfa0ZhSzhEUEg1NkF6bjlIODVJQW9mN0htVWM3dDRKbFF1MjVsMjkwQUdmNGpmNHBkWWl6dmtDeVFIYmptQ2VZZ0FyTHhqWVplU2RkZFhONnZNN3F0UWVWQUlJeno?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "US approves sale of 500 Patriot missiles to Ukraine",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Trump admin approves potential Patriot missiles sale to Ukraine",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/americas/20261030-trump-admin-approves-potential-patriot-missiles-sale-to-ukraine"
-    },
-    {
-      "tag": "Geopolitics",
-      "title": "US approves a proposed $2.1 billion sale of Patriot interceptors to Ukraine after alleged holdup",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZGx4RUtRNkEya28zdk1wR3JiSFhtTDZGVFR0am5PSlZXRUZ6TmtQT2VLLXhSUzdoYjNoQ3ZSclB2T3pqTGFJWGJoOWRrZURNUXF4Q0g0T1NpNkVsN0V6cVlUTncyY1lPTFVvU1h1VGxmeFNxNWlKSm5FejE2d0tabHRjOU40dTFDbmNLTVVlbjZBYmtXNHQxd1Y5RHh3a1dROGM3Vg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTWw3N0l5dm5KUi1FQmllTEpEeUdkY1k5TVlFNTlnWWFlbTgtdUJfZE9RMjZiQlJEVXU2VFo2blVaWk1MZzNYMm9OYmdrSngtSk02YnhKNDdVMVZkS3hIMHpWZ2dnRjJZWjBzQ0lFRU4ySFFUQzdTdnUzN3JETGtCYlo3Y3kxeGJseG5veVJMSVVCRDVPYzB3TXQyaFE?oc=5"
     }
   ]
 }
