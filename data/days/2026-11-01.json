@@ -1,0 +1,98 @@
+{
+  "sample": false,
+  "date": "2026-11-01",
+  "seconds": 82,
+  "previous": 84,
+  "generated_at": "2026-11-01T00:26:31+00:00",
+  "yesterday_lede": "We move the clock back by one second as worsening Ebola outbreak and severe Australian storms increase immediate biological and climate risks.",
+  "chair": {
+    "lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
+    "body": [
+      "North Korea’s defence research institutes tested a major weapon system, raising immediate strategic and nuclear tension (21). This development adds a fresh, high‑impact threat beyond the geopolitical stalemate noted yesterday.",
+      "The Ebola outbreak in the Democratic Republic of Congo has now surpassed 5,000 deaths with over 10,000 infections, and Nigeria reports two suspected cases in its northeast, intensifying the biological risk landscape (3, 7, 10, 13).",
+      "Severe weather warnings across the US Southwest and major Australian cities increase short‑term climate hazards, while a major Binance theft linked to North Korean hackers underscores growing cyber‑enabled financial vulnerability (2, 4, 6, 20)."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "North Korea’s defence research institutes tested a major weapon system, indicating heightened nuclear/strategic risk. (21)"
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "In the past day heavy rains threaten flooding in the US Southwest and severe storm warnings bring hail, damaging winds and flash‑flood risk to major Australian cities, indicating heightened extreme‑weather risk. No new climate‑policy improvements were reported."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "Ebola deaths in the DRC have topped 5,000 with over 10,000 infections and Nigeria reports two suspected cases in the northeast, prompting isolation and contact tracing. These developments increase outbreak risk and strain response capacity."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Recent reports link North Korean state-backed hackers to a massive Binance theft, highlighting growing cyber‑crime capabilities. This escalation in AI‑enabled financial attacks raises immediate risk to global digital infrastructure."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "hold",
+      "say": "Tensions persist with US‑Russia deadlock in the UN Security Council (5) and Iran’s threatening rhetoric, but limited ceasefire interest in the Black Sea (22) and a rare local ceasefire in Oleshky (24) show modest de‑escalation, while Taiwan’s coast‑guard patrols (25) keep regional frictions alive."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Geopolitics",
+      "title": "North Korea says defence research institutes tested major weapon system",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOa2szXzlwbFhuTl8xcVFPLU9JTTFnUTYtT1pYWGxTbEFhUmxWV1E5NkxvbTZvOEtETEp4YjdMaEhDbG1MSzIweE5kYXpSM3FWVEpUWEFFNUZTUFdaNzN2UldqMHlVdDZsT3NaNm9PQl9xSFpfMm1FR3JCUTA0Z2hiQ0EtUXpKZ3MwLThwQmZ3R0JxZ2lRZ2hjcEpkWjI0R2FyUGdIQ3VZZUVwRl96UVByZklTSm1KY1RVRExaSlptRUtLbHRld0FVN2lEYUcwbUU?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU2dLZS1NaklPODk2amZTY2YtUG5obEdwWW1hSWx1RFpQQWdWNDZFQkxFM3JxU2ZhaTVMdFI2X25GV1FfeVZTRkhoNUlNc3plQXQ5SWtqZEx4M0llYUhzeGVVMHE5cGZaczF5V2JDRTN6eXF3RGF1azU0TUlIUVg0aEp1TC1XY3R1cmJj?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Nigeria reports two suspected Ebola cases in northeast region",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLVJNVjgwa3JjQjJTZV9qaEtOR0hPeUVlUU5fVmg1NmpMcmtWR2QycWNERWphd21IckhyYnNQMllfLUtrSDhCV1p4cEV4RWhmYURFbW91dVJ0YzVUMUJPNFctZG5FX1ZSdS1KemxhbWdmRTRSX2R0TEZMbm5tdVVDSDNUbnBreFJrT0tlQXE1VzVmSllTdVZoVVpqOXV1WXh3ZGpaNmZqWmdlS010Zi1NcWxQai1WU2k0dE96SDVuUld0WkxhSm9VSlFR?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Bio",
+      "title": "Health authorities probe two suspected Ebola cases in northeast Nigeria",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/10/31/health-authorities-probe-two-suspected-ebola-cases-in-northeast-nigeria?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Heavy rains expected to bring flooding risk to already saturated parts of the US Southwest",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0hITmxKR0lIeDgxSVFIcXBOUTFDZlFUVVNlLVhScjVlZUZKTWZVZTd3WUZQc0ZvYWFiZnpmbmNZMFpxZy1EaGpORm1vdVZYR2ZfSlNiOU5pRTVHUl9GMlZpamw3QWpkdUlJYktXUDZJRmpSVHVZeTNKM09iT1l1MmVoZkstd190VTd6U0RlMkNZejE2VEFfOVRSU3BQSnowU1JrZ0RMUQ?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+    }
+  ]
+}

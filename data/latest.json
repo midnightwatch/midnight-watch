@@ -1,51 +1,57 @@
 {
   "sample": false,
-  "date": "2026-10-31",
-  "seconds": 84,
-  "previous": 85,
-  "generated_at": "2026-10-31T21:51:48+00:00",
-  "yesterday_lede": "",
+  "date": "2026-11-01",
+  "seconds": 82,
+  "previous": 84,
+  "generated_at": "2026-11-01T00:26:31+00:00",
+  "yesterday_lede": "We move the clock back by one second as worsening Ebola outbreak and severe Australian storms increase immediate biological and climate risks.",
   "chair": {
-    "lede": "We move the clock back by one second as worsening Ebola outbreak and severe Australian storms increase immediate biological and climate risks.",
+    "lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
     "body": [
-      "The Ebola crisis in the Democratic Republic of Congo has now exceeded 5,000 deaths with over 10,000 infections, and Nigeria reports two suspected cases, indicating a heightened risk of regional spread.",
-      "Severe storm warnings across Melbourne, Canberra, Sydney and Brisbane signal an acute escalation in extreme weather events, reflecting a negative shift in climate risk.",
-      "While nuclear and geopolitical risks remain unchanged, the combination of a worsening bio‑hazard and acute climate threats justifies a modest one‑second move toward midnight."
+      "North Korea’s defence research institutes tested a major weapon system, raising immediate strategic and nuclear tension (21). This development adds a fresh, high‑impact threat beyond the geopolitical stalemate noted yesterday.",
+      "The Ebola outbreak in the Democratic Republic of Congo has now surpassed 5,000 deaths with over 10,000 infections, and Nigeria reports two suspected cases in its northeast, intensifying the biological risk landscape (3, 7, 10, 13).",
+      "Severe weather warnings across the US Southwest and major Australian cities increase short‑term climate hazards, while a major Binance theft linked to North Korean hackers underscores growing cyber‑enabled financial vulnerability (2, 4, 6, 20)."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "No new nuclear tests, deployments, or treaty changes reported; only heightened rhetoric from Iran and a Patriot missile sale (1) which does not affect nuclear risk."
+      "vote": "worse",
+      "say": "North Korea’s defence research institutes tested a major weapon system, indicating heightened nuclear/strategic risk. (21)"
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Severe storm warnings across multiple Australian cities indicate heightened extreme weather risk, suggesting a negative climate shift."
+      "say": "In the past day heavy rains threaten flooding in the US Southwest and severe storm warnings bring hail, damaging winds and flash‑flood risk to major Australian cities, indicating heightened extreme‑weather risk. No new climate‑policy improvements were reported."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "Ebola deaths in DR Congo have surpassed 5,000 with over 10,000 infections, and Nigeria reports two suspected Ebola cases with isolation and contact tracing underway, indicating heightened outbreak risk."
+      "say": "Ebola deaths in the DRC have topped 5,000 with over 10,000 infections and Nigeria reports two suspected cases in the northeast, prompting isolation and contact tracing. These developments increase outbreak risk and strain response capacity."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "OpenAI slashed its funding target by $10 billion, potentially limiting safety investments, while reports link North Korean hackers to a record Binance hack and highlight broader cryptocurrency platform vulnerabilities, raising AI‑enabled cyber‑risk."
+      "say": "Recent reports link North Korean state-backed hackers to a massive Binance theft, highlighting growing cyber‑crime capabilities. This escalation in AI‑enabled financial attacks raises immediate risk to global digital infrastructure."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "hold",
-      "say": "No clear shift in major geopolitical risks: UN Security Council deadlock on Western Sahara (17) and Iran's threatening rhetoric (43) persist, while limited cease‑fire interest in the Black Sea (21) and Egypt's caution about Iran escalation (25) balance each other."
+      "say": "Tensions persist with US‑Russia deadlock in the UN Security Council (5) and Iran’s threatening rhetoric, but limited ceasefire interest in the Black Sea (22) and a rare local ceasefire in Oleshky (24) show modest de‑escalation, while Taiwan’s coast‑guard patrols (25) keep regional frictions alive."
     }
   ],
   "headlines": [
+    {
+      "tag": "Geopolitics",
+      "title": "North Korea says defence research institutes tested major weapon system",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOa2szXzlwbFhuTl8xcVFPLU9JTTFnUTYtT1pYWGxTbEFhUmxWV1E5NkxvbTZvOEtETEp4YjdMaEhDbG1MSzIweE5kYXpSM3FWVEpUWEFFNUZTUFdaNzN2UldqMHlVdDZsT3NaNm9PQl9xSFpfMm1FR3JCUTA0Z2hiQ0EtUXpKZ3MwLThwQmZ3R0JxZ2lRZ2hjcEpkWjI0R2FyUGdIQ3VZZUVwRl96UVByZklTSm1KY1RVRExaSlptRUtLbHRld0FVN2lEYUcwbUU?oc=5"
+    },
     {
       "tag": "Bio",
       "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
@@ -72,27 +78,21 @@
     },
     {
       "tag": "Climate",
+      "title": "Heavy rains expected to bring flooding risk to already saturated parts of the US Southwest",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0hITmxKR0lIeDgxSVFIcXBOUTFDZlFUVVNlLVhScjVlZUZKTWZVZTd3WUZQc0ZvYWFiZnpmbmNZMFpxZy1EaGpORm1vdVZYR2ZfSlNiOU5pRTVHUl9GMlZpamw3QWpkdUlJYktXUDZJRmpSVHVZeTNKM09iT1l1MmVoZkstd190VTd6U0RlMkNZejE2VEFfOVRSU3BQSnowU1JrZ0RMUQ?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Climate",
       "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
       "source": "The Guardian",
       "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
-    },
-    {
-      "tag": "Geopolitics",
-      "title": "Iran targeted US air defenses then hit aircraft and buildings on Mideast bases, AP analysis finds",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMnA4dnBfVkNUZ1dxQWFVbGtlSWpSMDVfWnBXUHI2Qk5wWE9jUWlUZFpySkhzZVVuQ0pfOURlM0Q3RFlNbHNvaFh2Snk2TndhNnhQckdpQW92VjMwUXpZTVVyMUVuSEpzNkhzdEZPXzV2aVpHWVJ0WThGSHp6cE9ISm5HMngxNlgtckcwUFdqY2hRUHc?oc=5"
-    },
-    {
-      "tag": "Geopolitics",
-      "title": "Iran's leader says response to attack would have no 'geographic limits,' and other Mideast news",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQcC1sSkxtLWVVWVpCXzVQc1pIeHhrdnBEYkY1ZjZmQjQtZE9CdWNOdkFPalphUHVmWTJ0dk1NUUNtX2Y4RVJ1U0FQZ21BM1VkQTFUOU1IVHNRd2kwMGs4c0VqUG81X2hRbVlvU0NCOFRiYjR4TDdhajltTmRRazJBbUotYUs3Q3o0aEg4UDBONEhodw?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Trump admin approves potential Patriot missiles sale to Ukraine",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/americas/20261030-trump-admin-approves-potential-patriot-missiles-sale-to-ukraine"
     }
   ]
 }

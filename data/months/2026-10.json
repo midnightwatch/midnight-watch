@@ -46,25 +46,25 @@
     }
   ],
   "official": 85,
-  "title": "Clock ticks closer to midnight one second",
-  "summary": "The Doomsday Clock began October 2026 at 85 seconds to midnight and ended at 84 seconds, moving closer to midnight by one second. The shift was driven primarily by a worsening Ebola outbreak in the Congo and severe storms in Australia, raising biological and climate risks.",
+  "title": "Ebola Outbreak Pushes Clock closer to midnight",
+  "summary": "The clock started October at 85 seconds and ended at 84 seconds, moving closer to midnight due to a worsening Ebola outbreak and severe storms in Australia. The single biggest driver was the surge in Ebola deaths in the Democratic Republic of Congo, which raised biological and climate risk assessments.",
   "sections": [
     {
       "heading": "What moved the clock",
       "body": [
-        "The clock was moved closer to midnight by one second on 2026-10-31 because experts judged the Ebola outbreak in the Democratic Republic of Congo, now with over 5,000 deaths, and the emergence of suspected cases in Nigeria, as escalating biological danger. Additionally, severe storms across Australia heightened immediate climate risk, prompting the overall assessment of increased danger."
+        "On October 31 the clock was moved closer to midnight one second from 85 to 84 seconds. Experts cited a worsening Ebola outbreak in the Democratic Republic of Congo, with deaths exceeding 5,000 and fears of regional spread, as a key biological risk. Severe storms in Australia were also noted as increasing immediate climate risk, reinforcing the decision to move the clock closer to midnight."
       ]
     },
     {
       "heading": "Where the experts disagreed",
       "body": [
-        "No experts disagreed on the direction of the clock this month; all votes were either hold or worse, with no day showing both a \"worse\" and a \"better\" vote."
+        "There were no days in October where experts voted in opposite directions; all votes were either hold or worse, so no disagreement occurred."
       ]
     },
     {
       "heading": "What to watch next month",
       "body": [
-        "Monitor the spread of Ebola in Central Africa and any further developments in Australian weather extremes, as both could influence the clock’s position in November."
+        "Monitor the trajectory of the Ebola outbreak in Central Africa and any further developments in Australian extreme weather, as both could influence biological and climate risk assessments for November."
       ]
     }
   ],
@@ -74,5 +74,5 @@
       "seconds": 84
     }
   ],
-  "generated_at": "2026-10-31T22:26:35+00:00"
+  "generated_at": "2026-11-01T00:27:40+00:00"
 }
