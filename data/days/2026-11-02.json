@@ -1,16 +1,61 @@
 {
   "sample": false,
   "date": "2026-11-02",
-  "seconds": 80,
-  "previous": 82,
-  "generated_at": "2026-11-02T00:28:14+00:00",
-  "yesterday_lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
+  "seconds": 84.6,
+  "previous": 85.0,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "Escalating extreme weather events",
+      "weight": 0.1,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "new",
+      "delta": 0.1
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.1,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "new",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-disinfo",
+      "area": "AI & tech",
+      "name": "Fake nuclear alerts via hacked apps",
+      "weight": 0.1,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "new",
+      "delta": 0.1
+    },
+    {
+      "id": "geo-ukraine",
+      "area": "Geopolitics",
+      "name": "Oleshky ceasefire collapse and Kherson evacuations",
+      "weight": 0.1,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "new",
+      "delta": 0.1
+    }
+  ],
+  "pressures_before": [],
+  "generated_at": "2026-11-02T13:26:59+00:00",
+  "yesterday_lede": "",
   "chair": {
-    "lede": "We move the clock two seconds closer to midnight as escalating climate floods, AI‑related fatality lawsuit, and heightened Iran‑Hormuz tensions together raise immediate existential risks.",
+    "lede": "Four new pressures emerge, pushing the clock down by 1.0 second overall.",
     "body": [
-      "Severe weather events surged with flash floods in Arizona and Colorado and catastrophic flooding in Ecuador linked to El Niño, underscoring accelerating climate impacts.",
-      "The lawsuit over a fatal ChatGPT misguidance incident highlights the growing real‑world dangers of AI misuse, while a DW report flags AI‑enabled biological weapon concerns.",
-      "Geopolitical tensions rose sharply with Iran’s IRGC reporting two tankers exploding after hitting mines in the Strait of Hormuz and Russia’s near‑completion of a giant radar in Kaliningrad, both heightening the risk of military escalation."
+      "Severe flash flooding in the U.S. Southwest and a second cyclone threatening India illustrate a sharp rise in climate‑related disasters, warranting a modest pressure addition.",
+      "An anthrax outbreak that killed hippos in the Virunga National Park highlights a new zoonotic risk amplified by drought and conflict.",
+      "Cyber‑enabled disinformation campaigns sent fake nuclear and chemical alerts to emergency apps in Ukraine and Russia, raising panic and safety concerns.",
+      "The expiration of the Oleshky ceasefire and renewed civilian evacuations in Kherson signal a deterioration in the Ukraine conflict."
     ]
   },
   "experts": [
@@ -18,81 +63,81 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "hold",
-      "say": "Tensions around Iran and the Strait of Hormuz persist, with reports of tankers hitting mines (21) and heightened diplomatic activity, but no new nuclear weapons developments or tests were reported."
+      "say": "No new nuclear weapon test, treaty change, or substantive escalation appears; the reports are about drills, talks, and cyber‑alert hoaxes, which do not add a fresh danger beyond existing pressures."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Recent extreme weather reports – flash floods in Arizona and Colorado, heavy‑rain flood risk across the US Southwest, and catastrophic Ecuador floods linked to El Niño – indicate worsening climate impacts in the last day."
+      "say": "Severe flash flooding in the Southwest and Colorado and a second Indian cyclone this week highlight escalating extreme weather, while drought‑linked anthrax deaths in Congo’s Virunga park (10) show climate stress on ecosystems. The shift of US Democrats away from climate policy (18) adds political risk."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "hold",
-      "say": "No new disease outbreaks, lab incidents, or antimicrobial resistance issues reported; the only bio news was the negative Ebola test in Nigeria, which does not increase risk."
+      "vote": "worse",
+      "say": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park, highlighting a new zoonotic disease event that could spill over to humans amid drought and conflict."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "The fatal ChatGPT misguidance lawsuit (20) shows real AI misuse harming individuals, and the DW piece on AI‑enabled biological weapons (13) highlights emerging existential threats. Both indicate heightened risk today."
+      "say": "Recent cyberattacks spoofed emergency alert apps in Ukraine and Russia, spreading fake nuclear and radiation warnings. This new misuse of AI‑enabled disinformation heightens the risk of panic and undermines critical infrastructure safety."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "worse",
-      "say": "Escalations rose with Iran’s IRGC reporting two tankers exploding in Hormuz, the Kherson cease‑fire ending and power cuts in Ukraine, Russia advancing a giant radar near Kaliningrad heightening NATO tensions, and Gulf leaders scrambling to prevent a new US‑Iran clash."
+      "say": "The expiration of the Oleshky ceasefire and renewed evacuations in Kherson signal a worsening of the Ukraine conflict (41)."
     }
   ],
   "headlines": [
     {
       "tag": "Climate",
-      "title": "Flash floods trigger evacuations in Arizona and Colorado amid heavy rains in southwest",
+      "title": "Flash flooding triggers evacuations in Southwest and dire warning for Colorado spa town",
       "source": "AP",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNDh4NktGVGxZOF80aEhPdnUtRmdDb0VFOWxTSEh4NTNkRFlyTTdzUWkwd3lfenZ4cVp3bFptRE5qVGloSU00OGs4SldjZHlvZjBLNVp0allfNE1KZmU3dGpoQ3pxNElSa1JpLXgzZzA1NkFJMExnVktzVzdDLUFSNUhrVFJORVMzS1VtMjZqZ0NpRnNnakFIem9wbG9rMmpoNEJaMHNwcFZwVk8wWVI4dUZ1dVg0bVdT?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Heavy rains expected to bring flooding risk to already saturated parts of the US Southwest",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0hITmxKR0lIeDgxSVFIcXBOUTFDZlFUVVNlLVhScjVlZUZKTWZVZTd3WUZQc0ZvYWFiZnpmbmNZMFpxZy1EaGpORm1vdVZYR2ZfSlNiOU5pRTVHUl9GMlZpamw3QWpkdUlJYktXUDZJRmpSVHVZeTNKM09iT1l1MmVoZkstd190VTd6U0RlMkNZejE2VEFfOVRSU3BQSnowU1JrZ0RMUQ?oc=5"
+      "title": "India evacuates thousands ahead of second cyclone in a week",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQamt2aGgxc1Nia3g0N3czYnM3M1Qxa2VNR19DN1hYUTdkVWkxMzRxdlJuUXluTm9NdDRQdHZxTU4zOV9BVzV2a0dfQUVPQlRObDRDU0pmbWVXWnBEdlFIQ2NtY2NWdmRGREtLYUJNeDNMeFFlSUs5ZTRRM0NRMmh4cFYwUWVxOXVNczJmajh3LWIzT2lHalNFaDJxMlJVc25tWTZjODFpR01KODU2?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Video captures house collapsing due to Ecuador floods",
+      "title": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park",
       "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/1/video-captures-house-collapsing-due-to-ecuador-floods?traffic_source=rss"
+      "url": "https://www.aljazeera.com/news/2026/11/2/anthrax-outbreak-kills-hippos-in-dr-congos-virunga-national-park?traffic_source=rss"
     },
     {
       "tag": "AI & tech",
-      "title": "Parents of woman who died of seizure after ChatGPT misguidance sue OpenAI",
+      "title": "Ukraine and Russia report fake emergency alerts after cyberattack targets apps",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSjQxRVBYSHRNOF9zQ2l4RldLcXhabTFZWjVtWkhRaGZ3c25xemVZZmJjU1FiQUxMYlpzdmFvQkp1RGRFcWpaVGlOel9vLWx4ZDdfdDdlbm9DWTBXU1B2ZTNHQVFfU1EyQ1VaSHE2NFNqTXEwSEdxZmJEM3piSHhQc1YwUnM0SmxQVFFXYkQtM3BkdW5hclJpdEZwNXZ0M01mRXVUWQ?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Hackers send fake nuclear threat alert to Ukraine emergency app",
       "source": "The Guardian",
-      "url": "https://www.theguardian.com/us-news/2026/nov/01/chatgpt-woman-seizure-lawsuit-openai"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "Biological weapons: The weaponization of disease",
-      "source": "DW",
-      "url": "https://www.dw.com/en/biological-weapons-the-weaponization-of-disease/a-79819662?maca=en-rss-en-world-4025-rdf"
+      "url": "https://www.theguardian.com/world/2026/nov/02/hackers-fake-nuclear-chemical-threat-alert-kyiv-ukraine-emergency-app"
     },
     {
       "tag": "Geopolitics",
-      "title": "Iran's IRGC Navy says two tankers 'exploded' after hitting mines in Hormuz",
+      "title": "Oleshky ceasefire expires, Ukraine evacuates civilians from parts of Kherson region",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmk2dmxjdk1sOW96UkZiaUlJVXhzc1pJMjZJUnY2WGtvaXd4aXRJY3d4UTNoUmFJdUVQQjlkb0JPSmxEc2YzS1JOZ2NSWmpTUnhzYzBiU1hfeXBvb2F2WEp2NHc5YkFfUUNKSHc2NW1PMUVKT0xqUTdOa0tfUmZpQWE2SDFtdzJ5TmZleWpLd0Zid1JWR2Z0d0dOeVMwekFzNTNTYndHMmMyV0poZ2h0UmFOVWc2M3o3Z2h6TUR2SQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSUVsaHdZVWc4UnNlZ0l1bXlXNnBlWnZWc2FsMGdhWWpvODNmYjRQeDBEUUp2WjFwM2Q1WFRyWlFTLUNuT2FJajVQSF9RTWp6SWVNZFhlMVk4Z3NkRkhmT2g0MlhZY0VOV3IwalU2ZjJybVVGMEI5eEtHbXNweVRDNVVENnptNDBnazY5eUNTb09ZZzliNnI1aUlIeWxGUnpES2U1bWZVUEZOai1BZjZLMWFtVkN3WVNvQ0lzZjZ1eWpNaTJNVlB3?oc=5"
     },
     {
-      "tag": "Geopolitics",
-      "title": "Russia's giant new radar in Kaliningrad raises alarm in NATO",
-      "source": "DW",
-      "url": "https://www.dw.com/en/russia-s-giant-new-radar-in-kaliningrad-raises-alarm-in-nato/a-79797815?maca=en-rss-en-world-4025-rdf"
+      "tag": "Nuclear",
+      "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5"
     },
     {
-      "tag": "Geopolitics",
-      "title": "Iran war live: Tankers hit in Hormuz; Trump again says conflict to end soon",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/11/2/iran-war-live-tankers-hit-in-hormuz-trump-again-says-conflict-to-end-soon?traffic_source=rss"
+      "tag": "Nuclear",
+      "title": "Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5"
     }
   ]
 }
