@@ -1,10 +1,63 @@
 {
   "sample": false,
-  "date": "2026-11-02",
-  "seconds": 84.4,
-  "previous": 85.0,
+  "date": "2026-11-03",
+  "seconds": 84.0,
+  "previous": 84.4,
+  "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "new",
+      "delta": 0.2
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -36,16 +89,14 @@
       "delta": 0.2
     }
   ],
-  "pressures_before": [],
-  "generated_at": "2026-11-02T13:30:00+00:00",
-  "yesterday_lede": "",
+  "generated_at": "2026-11-02T23:28:56+00:00",
+  "yesterday_lede": "We hold the clock at 85.0 seconds, with the single biggest concern being the surge of extreme weather events across multiple regions.",
   "chair": {
-    "lede": "We hold the clock at 85.0 seconds, with the single biggest concern being the surge of extreme weather events across multiple regions.",
+    "lede": "We hold the clock at 84.1 seconds, with the biggest shift coming from a new human bird‑flu case and a coordinated fridge‑cyberattack in Europe.",
     "body": [
-      "Flash flooding in the U.S. Southwest and Colorado, combined with a second cyclone threatening India, represent new climate‑driven hazards not covered in the baseline.",
-      "An anthrax outbreak killing hippos in the Virunga National Park highlights a novel zoonotic risk linked to drought and conflict in the Democratic Republic of Congo.",
-      "Cyber‑enabled fake emergency alerts about nuclear and chemical threats in Ukraine and Russia demonstrate a fresh AI‑driven vulnerability.",
-      "These developments collectively add modest pressure but do not yet warrant moving the clock."
+      "The baseline remains unchanged for climate extremes, the Congo anthrax outbreak, and the earlier fake nuclear alerts, as no new developments altered those risks.",
+      "A Washington state resident died after contracting avian influenza, marking the first confirmed human case of this strain in the United States and adding a fresh biological pressure.",
+      "Across Europe, supermarkets experienced a coordinated cyberattack that seized refrigeration units, threatening food supply chains and representing a new AI‑tech infrastructure threat."
     ]
   },
   "experts": [
@@ -53,81 +104,81 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "hold",
-      "say": "No new nuclear weapon tests, treaty changes, or substantive escalation reported; the items are drills, partnership talks, and cyber‑alert hoaxes, which do not add fresh danger."
+      "say": "No new nuclear weapon tests, treaty changes, or credible threats appeared; the North Korea drill comment and the fake warning are not new dangers."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
-      "vote": "worse",
-      "say": "Flash flooding in the Southwest and Colorado and a second cyclone threatening India highlight new extreme weather events, while the anthrax outbreak linked to drought in DR Congo (10) shows climate‑driven wildlife threats. Additionally, US Democrats shifting climate policy focus to energy bills (18) signals a rollback of climate action."
+      "vote": "hold",
+      "say": "Recent flash floods in the Southwest and a cyclone threat in India add more extreme weather events, but they fall under the already‑tracked climate‑extreme pressure, so no new change."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park, highlighting a new zoonotic disease flare-up that could threaten wildlife and human health."
+      "say": "A Washington state resident died after contracting avian influenza, indicating a new human bird‑flu case and potential spread beyond animals (headlines 3, 8). This adds a fresh biological threat not covered by the existing anthrax pressure."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "Recent cyberattacks spoofed emergency alert apps in Ukraine and Russia, sending false nuclear and chemical warnings, indicating a new misuse of AI‑enabled disinformation tools and a fresh vulnerability in critical infrastructure."
+      "say": "A coordinated cyberattack on supermarket refrigeration systems across Europe represents a new infrastructure threat not covered by existing pressures."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "hold",
-      "say": "No new war, treaty collapse, or major incident emerged; existing ceasefire lapses and cyber alerts are continuations of ongoing tensions (e.g., 12,24,21)."
+      "say": "No new developments beyond the ongoing Ukraine conflict and other existing pressures."
     }
   ],
   "headlines": [
+    {
+      "tag": "Bio",
+      "title": "Washington state resident dies from bird flu following exposure to infected cattle",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQb0d4NUNUbjhBbTN0TGtuakFKQV80M0JUcEFKbjVfel9LVkFuZmtfWHBNdjFVcm1LTTA4UkRlV01KSXBzbE91U1JTOEdjdXQzbERuNksyOTBqTHJtMDMzTW5yaXluVXNFZGRCTWxySDNjV0JJTkJFYk5VbWQ4eEtWUlNJWVBFZTFET0o0ZmZoaGRyWkRHcllv?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Washington state resident dies from ‘severe illness’ after contracting bird flu",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/us-news/2026/nov/02/bird-flu-death-washington"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "New cyberattack on supermarket fridges sweeps across Europe",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "If hackers can take control of a supermarket freezer, how vulnerable is other tech?",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/ckpqg8lve73go?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "EU says fridge attacks 'deliberate attempt to disrupt' bloc's food supply",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/eu-says-fridge-attacks-deliberate-attempt-to-disrupt-bloc-s-food-supply"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Fake nuclear warning from hacked app sparks unease but not panic in Ukraine",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cwx28mngxz8do?at_medium=RSS&at_campaign=rss"
+    },
     {
       "tag": "Climate",
       "title": "Flash flooding triggers evacuations in Southwest and dire warning for Colorado spa town",
       "source": "AP",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNDh4NktGVGxZOF80aEhPdnUtRmdDb0VFOWxTSEh4NTNkRFlyTTdzUWkwd3lfenZ4cVp3bFptRE5qVGloSU00OGs4SldjZHlvZjBLNVp0allfNE1KZmU3dGpoQ3pxNElSa1JpLXgzZzA1NkFJMExnVktzVzdDLUFSNUhrVFJORVMzS1VtMjZqZ0NpRnNnakFIem9wbG9rMmpoNEJaMHNwcFZwVk8wWVI4dUZ1dVg0bVdT?oc=5"
-    },
-    {
-      "tag": "Climate",
-      "title": "India evacuates thousands ahead of second cyclone in a week",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQamt2aGgxc1Nia3g0N3czYnM3M1Qxa2VNR19DN1hYUTdkVWkxMzRxdlJuUXluTm9NdDRQdHZxTU4zOV9BVzV2a0dfQUVPQlRObDRDU0pmbWVXWnBEdlFIQ2NtY2NWdmRGREtLYUJNeDNMeFFlSUs5ZTRRM0NRMmh4cFYwUWVxOXVNczJmajh3LWIzT2lHalNFaDJxMlJVc25tWTZjODFpR01KODU2?oc=5"
-    },
-    {
-      "tag": "Climate",
-      "title": "Thousands evacuated as India braces for second cyclone in a week",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/11/2/thousands-evacuated-as-india-braces-for-second-cyclone-in-a-week?traffic_source=rss"
-    },
-    {
-      "tag": "Climate",
-      "title": "Colorado town braces for historic flood as heavy rains batter south-west",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/us-news/2026/nov/02/colorado-flash-flooding-arizona-new-mexico"
-    },
-    {
-      "tag": "Climate",
-      "title": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/11/2/anthrax-outbreak-kills-hippos-in-dr-congos-virunga-national-park?traffic_source=rss"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "Ukraine and Russia report fake emergency alerts after cyberattack targets apps",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSjQxRVBYSHRNOF9zQ2l4RldLcXhabTFZWjVtWkhRaGZ3c25xemVZZmJjU1FiQUxMYlpzdmFvQkp1RGRFcWpaVGlOel9vLWx4ZDdfdDdlbm9DWTBXU1B2ZTNHQVFfU1EyQ1VaSHE2NFNqTXEwSEdxZmJEM3piSHhQc1YwUnM0SmxQVFFXYkQtM3BkdW5hclJpdEZwNXZ0M01mRXVUWQ?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Ukraine and Russia both hit by cyberattacks on emergency apps",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/video/20261102-ukraine-and-russia-both-hit-by-cyberattacks-on-emergency-apps"
-    },
-    {
-      "tag": "Climate",
-      "title": "For US Democrats, climate policy is now about energy bills",
-      "source": "DW",
-      "url": "https://www.dw.com/en/for-us-democrats-climate-policy-is-now-about-energy-bills/a-79808783?maca=en-rss-en-world-4025-rdf"
     }
   ]
 }
