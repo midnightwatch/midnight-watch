@@ -56,6 +56,7 @@ OFFICIAL_SEED = [
     [2020, 100], [2023, 90], [2025, 89], [2026, 85],
 ]
 BULLETIN_URL = "https://thebulletin.org/doomsday-clock/"
+BULLETIN_STATEMENT_URL = "https://thebulletin.org/doomsday-clock/current-time/"
 
 START_SECONDS = 85        # official reading when the project started (the anchor)
 MAX_MOVE = 0.5            # max seconds the clock can move in one day, all pressures together
@@ -301,8 +302,46 @@ def fetch_official():
     return secs
 
 
+def bulletin_text():
+    """Plain text of the Bulletin's clock pages, for summarising a new setting."""
+    out = []
+    for url in (BULLETIN_STATEMENT_URL, BULLETIN_URL):
+        try:
+            r = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0 (compatible; MidnightWatch/1.0)"})
+            r.raise_for_status()
+            page = re.sub(r"<(script|style|nav|footer|header)[^>]*>.*?</\1>", " ", r.text, flags=re.S | re.I)
+            out.append(clean(page))
+        except Exception as ex:
+            log(f"bulletin text failed: {url}: {ex}")
+    return "\n\n".join(out)[:9000]
+
+
+def official_reason(year, seconds, previous):
+    """Ask the model to summarise, from the Bulletin's own pages, why the clock
+    was set this year. Returns a short string, or None if it cannot."""
+    text = bulletin_text()
+    if len(text) < 500:
+        return None
+    unit = f"{seconds} seconds" if seconds < 120 else f"{seconds / 60:g} minutes"
+    system = """You summarise the Bulletin of the Atomic Scientists' annual Doomsday Clock statement.
+Use ONLY the page text given. Do not add events that are not in it. Do not invent names or numbers.
+Write one or two plain sentences, under 45 words, naming the main reasons the Bulletin gives for this year's setting.
+Answer ONLY with a JSON object: {"reason": "<sentences>"}"""
+    user = (f"Year: {year}. New setting: {unit} to midnight (previous setting: {previous} seconds).\n\n"
+            f"Page text:\n{text}")
+    try:
+        out = ask(system, user, max_tokens=1200)
+        reason = tidy(strip_cites(str(out.get("reason", "")).strip()))
+        return reason[:400] if len(reason) > 20 else None
+    except Exception as ex:
+        log(f"official reason failed: {ex}")
+        return None
+
+
 def update_official(now):
-    """Keep data/official.json current. Returns the list of [year, seconds]."""
+    """Keep data/official.json current. Entries are [year, seconds] or
+    [year, seconds, reason]; the reason is written automatically when the
+    Bulletin sets a new time."""
     official = load_json(OFFICIAL_FILE, None)
     if not isinstance(official, list) or not official:
         official = [list(x) for x in OFFICIAL_SEED]
@@ -315,8 +354,18 @@ def update_official(now):
         official.append([now.year, current])
     else:
         log(f"official clock: {current} s (unchanged)")
+    # A new setting without a reason yet (or one from an earlier run that failed): write it.
+    tail = official[-1]
+    if len(tail) == 2 and tail[0] > OFFICIAL_SEED[-1][0]:
+        prev = official[-2][1] if len(official) > 1 else tail[1]
+        reason = official_reason(tail[0], tail[1], prev)
+        if reason:
+            tail.append(reason)
+            log(f"official reason written for {tail[0]}: {reason}")
+        else:
+            log(f"official reason for {tail[0]} not written yet, will retry tomorrow")
     DATA_DIR.mkdir(exist_ok=True)
-    OFFICIAL_FILE.write_text(json.dumps(official))
+    OFFICIAL_FILE.write_text(json.dumps(official, ensure_ascii=False))
     return official
 
 # ----------------------------------------------------------------------------
@@ -382,10 +431,24 @@ def ask(system, user, max_tokens=2500):
     raise RuntimeError("All LLM providers failed: " + ("; ".join(errors) or "no API key set"))
 
 
-RULES = """You are part of a simulated Doomsday Clock board. The clock shows seconds to midnight;
+ANCHOR_INFO = {"year": OFFICIAL_SEED[-1][0], "seconds": OFFICIAL_SEED[-1][1], "reason": ""}
+
+
+def set_anchor_info(official):
+    """Remember the latest official setting so the prompts talk about the right baseline."""
+    tail = official[-1]
+    ANCHOR_INFO.update({"year": tail[0], "seconds": tail[1], "reason": tail[2] if len(tail) > 2 else ""})
+
+
+def rules():
+    a = ANCHOR_INFO
+    known = ("That baseline already includes everything true then: the wars in Ukraine and Gaza, nuclear "
+             "modernisation, climate change, the AI race, weak institutions." if a["year"] <= 2026 else
+             f"The Bulletin's own reasons: {a['reason']}" if a["reason"] else
+             "That baseline already includes everything that was true when it was set.")
+    return f"""You are part of a simulated Doomsday Clock board. The clock shows seconds to midnight;
 fewer seconds means closer to catastrophe. The Bulletin of the Atomic Scientists set the official clock
-to 85 seconds in January 2026. That baseline already includes everything true then: the wars in Ukraine
-and Gaza, nuclear modernisation, climate change, the AI race, weak institutions. The board tracks only
+to {a['seconds']} seconds in January {a['year']}. {known} The board tracks only
 what has changed SINCE then, as a short list of open "pressures", each weighing some seconds.
 News is bad every day; ongoing situations, routine tension, familiar warnings and scheduled events are
 not reasons to move. Only a new development counts: a new war or attack, a weapon test, a treaty collapse,
@@ -412,7 +475,7 @@ def pressures_block(pressures):
 
 
 def ask_expert(role, focus, scope, news, seconds, pressures):
-    system = RULES + f"""
+    system = rules() + f"""
 You are the {role} expert. Your scope: {scope}.
 Say whether today's news adds a NEW danger in your area, makes an open pressure worse or better, or changes nothing.
 Return JSON: {{"vote": "worse"|"hold"|"better", "score": -3..3, "say": "<2-3 plain sentences, under 70 words, naming the headline numbers you relied on>", "cites": [headline numbers]}}
@@ -443,7 +506,7 @@ def ask_chair(experts, news, seconds, yesterday_lede, pressures, anchor):
     views = "\n".join(
         f"- {e['role']} (vote {e['vote']}, score {e['score']:+d}, cites {e['cites']}): {e['say']}"
         for e in experts)
-    system = RULES + f"""
+    system = rules() + f"""
 You are the chair. You read the five experts and update the list of open pressures. The clock is then
 {anchor} seconds minus the total weight of the pressures; you do not set the time directly.
 Weights are in seconds. Guide: 0.3 = a worrying new development; 1.0 = a serious ongoing danger beyond the
@@ -451,7 +514,7 @@ baseline; 3.0 = a crisis with a real chance of catastrophe; 5.0 or more = war be
 a global pandemic. The whole year 2025 moved the official clock by 4 seconds, so weights must be modest.
 Keep existing pressures and their ids unless something changed. Raise a weight only for a cited headline that
 makes it worse. Lower it or close it when the danger clearly eases, with a cited headline. Add a pressure only
-for a new development since January 2026 that the baseline does not cover; a new pressure starts small.
+for a new development since January {ANCHOR_INFO['year']} that the baseline does not cover; a new pressure starts small.
 Do not add a pressure for something already listed; update that one instead. "same" for every pressure is a
 normal day. Do not repeat yesterday's reasoning if nothing new happened.
 Return JSON: {{"pressures": [{{"id": "<short-slug, keep existing ids>", "area": "Nuclear|Climate|Bio|AI & tech|Geopolitics",
@@ -636,6 +699,7 @@ def fix_direction(text, delta):
 def build_month_report(ym):
     """Gather the month's daily files, compute the numbers, ask the chair for a
     longer piece, and write data/months/YYYY-MM.json."""
+    set_anchor_info(load_json(OFFICIAL_FILE, None) or [list(x) for x in OFFICIAL_SEED])
     days = sorted((DATA_DIR / "days").glob(f"{ym}-*.json"))
     if not days:
         log(f"month {ym}: no daily files, skipping")
@@ -680,7 +744,7 @@ def build_month_report(ym):
                 heads.append(f"{r['date']} ({h['tag']}, {h['source']}): {h['title']}")
     heads = heads[:40]
 
-    system = RULES + f"""
+    system = rules() + f"""
 You are the chair writing the monthly report for {stats['label']}. You have the daily verdicts and votes below.
 Write for a general reader, calm and concrete, no hype. Refer only to dates and events in the material.
 Wording: fewer seconds means CLOSER to midnight (more danger); more seconds means FURTHER from midnight (safer).
@@ -759,8 +823,9 @@ def main():
 
     prev = load_json(LATEST, None)
     history = load_json(HISTORY, [])
-    update_official(now)
-    anchor = float((load_json(OFFICIAL_FILE, None) or OFFICIAL_SEED)[-1][1])
+    official = update_official(now)
+    set_anchor_info(official)
+    anchor = float(official[-1][1])
     if args.restart:
         seconds, pressures, yesterday_lede = anchor, [], ""
         log("restart: today starts from the official clock, earlier readings are kept")
@@ -779,6 +844,20 @@ def main():
         seconds = anchor
         pressures = []
         yesterday_lede = ""
+    # The Bulletin set a new time: start clean from it. Every open pressure is now part of the baseline.
+    if pressures and prev and float(prev.get("anchor", anchor)) != anchor:
+        log(f"official clock changed since yesterday ({prev.get('anchor')} -> {anchor}): closing {len(pressures)} open pressures")
+        for p in pressures:
+            p["status"] = "closed"; p["delta"] = -float(p["weight"]); p["weight"] = 0.0
+        closed_by_reset = pressures
+        pressures = []
+        shown_yesterday = seconds   # what the site showed yesterday, kept as "previous"
+        seconds = anchor
+    elif prev and prev.get("official_reset") and prev.get("date") == today:
+        closed_by_reset, shown_yesterday = [], float(prev["previous"])
+        seconds = anchor            # re-run on the reset day starts from the new official time
+    else:
+        closed_by_reset, shown_yesterday = [], seconds
     pressures_before = [dict(p) for p in pressures]
     log(f"date {today}, starting from {seconds} seconds with {len(pressures)} open pressures (anchor {anchor})")
 
@@ -803,6 +882,7 @@ def main():
     new_seconds, new_pressures, cited, notes = apply_rules(chair, experts, items, pressures, anchor, today)
     for n in notes:
         log(n)
+    new_pressures = new_pressures + closed_by_reset
     for p in new_pressures:
         log(f"  pressure {p['id']}: {p['weight']:.1f} s ({p['status']}, {p['delta']:+.1f})")
     log(f"verdict: {seconds} -> {new_seconds}")
@@ -825,7 +905,8 @@ def main():
         "sample": False,
         "date": today,
         "seconds": new_seconds,
-        "previous": seconds,
+        "previous": shown_yesterday,
+        "official_reset": bool(closed_by_reset) or bool(prev and prev.get("official_reset") and prev.get("date") == today),
         "anchor": anchor,
         "pressures": new_pressures,
         "pressures_before": pressures_before,

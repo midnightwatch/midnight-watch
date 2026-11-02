@@ -475,6 +475,39 @@ svg.zoomed #coarse, svg.zoomed #sliver { opacity: 0; }
 .history .dot { fill: var(--bone); }
 .history .lbl { font-family: var(--display); font-size: 13px; fill: var(--smoke); font-weight: 500; }
 .history .note { color: var(--smoke); font-style: italic; font-size: 0.95rem; margin: 0.4rem 0 0; }
+.history .hit { fill: transparent; cursor: pointer; }
+.history .dot.picked { fill: var(--ember); stroke: var(--bone); stroke-width: 1.5; }
+.offcard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.6rem 0 0;
+  padding: 0.8rem 0.6rem;
+  background: var(--soot);
+  border: 1px solid var(--char);
+  border-radius: 10px;
+}
+.offnav {
+  appearance: none; background: none; border: 1px solid var(--char); color: var(--ash);
+  width: 2.2rem; height: 2.2rem; border-radius: 50%; font-size: 1.4rem; line-height: 1; cursor: pointer;
+  display: grid; place-items: center; padding: 0 0 0.15rem;
+}
+.offnav:hover:not(:disabled) { border-color: var(--ember); color: var(--bone); }
+.offnav:disabled { opacity: 0.3; cursor: default; }
+.offhead { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; align-items: baseline; font-family: var(--display); }
+.offyear { font-size: 1.7rem; font-weight: 900; color: var(--bone); line-height: 1; }
+.offtime { font-size: 1.1rem; font-weight: 700; color: var(--ash); }
+.offchange { font-size: 0.95rem; font-weight: 500; color: var(--smoke); }
+.offchange.neg { color: var(--ember); } .offchange.pos { color: var(--calm); }
+.offwhy { margin: 0.35rem 0 0; font-size: 1rem; line-height: 1.45; }
+@media (max-width: 480px) {
+  .history .lbl { font-size: 22px; }
+  .history .dot { r: 4px; }
+  .offcard { grid-template-columns: 1fr 1fr; }
+  .offbody { grid-column: 1 / -1; grid-row: 1; }
+  .offnav { justify-self: start; } .offnav + .offnav, #offNext { justify-self: end; }
+}
 
 .about p { margin: 0 0 0.8rem; }
 .embed-line {
@@ -646,7 +679,7 @@ footer p { margin: 0 0 0.5rem; }
     <div class="about" id="what">
       <h2>What is the Doomsday Clock?</h2>
       <p>The Doomsday Clock is a symbol, not a real clock. It was created in 1947 by scientists who had worked on the first atomic bomb. It shows how close humanity is to destroying itself. Midnight means catastrophe. The nearer the hands are to midnight, the more danger the world is in.</p>
-      <p>Once a year, a board of scientists and experts at the Bulletin of the Atomic Scientists looks at the biggest threats to humanity: nuclear weapons, climate change, dangerous diseases, and new technology like AI. Then they move the hands closer to midnight or further away. In 1947 it started at 7 minutes to midnight. In 1991, after the Cold War ended, it was 17 minutes. Today it is 85 seconds, the closest it has ever been.</p>
+      <p>Once a year, a board of scientists and experts at the Bulletin of the Atomic Scientists looks at the biggest threats to humanity: nuclear weapons, climate change, dangerous diseases, and new technology like AI. Then they move the hands closer to midnight or further away. In 1947 it started at 7 minutes to midnight. In 1991, after the Cold War ended, it was 17 minutes. <span id="officialNow">Today it is 85 seconds, the closest it has ever been.</span></p>
       <p>The number of seconds is not a measurement or a prediction. It is a way of saying “things got worse” or “things got better” compared to before.</p>
       <h2 style="margin-top:2rem">How this works</h2>
       <p>Once a day a script collects the last 24 hours of world news from wire services and international outlets. Five AI experts each read it from their own angle: nuclear, climate, biological risk, AI and disruptive technology, and geopolitics. Each one scores the day and must point to real headlines.</p>
@@ -1101,6 +1134,38 @@ let OFFICIAL = [
   [2020, 100], [2023, 90], [2025, 89], [2026, 85]
 ];
 let OFFICIAL_NOW = OFFICIAL[OFFICIAL.length - 1][1];
+// Why the Bulletin set the clock each year, in a sentence or two. Summarised from the Bulletin's timeline.
+const REASONS = {
+  1947: "The first setting, two years after Hiroshima and Nagasaki, as the Cold War begins.",
+  1949: "The Soviet Union tests its first atomic bomb. The nuclear arms race is on.",
+  1953: "The US tests a hydrogen bomb; the Soviet Union follows within a year. Closest to midnight for the next 67 years.",
+  1960: "Scientists on both sides start talking (Pugwash, the International Geophysical Year) and the superpowers avoid direct clashes over Suez, Taiwan and Lebanon.",
+  1963: "The US and the Soviet Union sign the Partial Test Ban Treaty, ending atmospheric nuclear tests.",
+  1968: "France and China test their own bombs, the Vietnam War escalates, and wars break out in South Asia and the Middle East.",
+  1969: "About 100 nations sign the Nuclear Non-Proliferation Treaty and the US ratifies it.",
+  1972: "The US and the Soviet Union sign SALT I and the Anti-Ballistic Missile Treaty, the first limits on their arsenals.",
+  1974: "India tests a nuclear device, SALT II talks stall, and both superpowers build multi-warhead missiles.",
+  1980: "The Soviet war in Afghanistan begins and arms talks freeze. The US Senate refuses to ratify SALT II.",
+  1981: "Afghanistan, the Iran–Iraq war, new US and Soviet missiles in Europe, and a Reagan administration that talks of winning the Cold War rather than ending it.",
+  1984: "The arms race intensifies, Pershing II and cruise missiles are deployed in Western Europe, and US–Soviet talks are at a near standstill.",
+  1988: "The US and the Soviet Union sign the INF Treaty, scrapping a whole class of nuclear missiles. Relations warm.",
+  1990: "The Berlin Wall falls, Germany reunites, and the Iron Curtain lifts. The Cold War is ending.",
+  1991: "START I is signed, both sides pull back tactical weapons and halt tests. The Bulletin declares the arms race over. Furthest from midnight ever.",
+  1995: "Military spending stays at Cold War levels and loose nuclear weapons and expertise spread after the Soviet collapse.",
+  1998: "India and Pakistan both test nuclear weapons within weeks of each other; US–Russian arms cuts stall.",
+  2002: "Little progress on disarmament. The US withdraws from the ABM Treaty and unsecured weapons-grade material raises fears of nuclear terrorism.",
+  2007: "North Korea's first nuclear test, Iran's nuclear programme, 26,000 warheads still deployed. Climate change is added as a threat to civilisation.",
+  2010: "New START is agreed and the Copenhagen climate summit produces the first shared pledges to limit warming. A rare step back.",
+  2012: "Governments fail to act on climate change, nuclear stockpiles and nuclear power safety after Fukushima.",
+  2015: "Unchecked climate change and a new round of nuclear modernisation in the US and Russia.",
+  2017: "Loose talk about nuclear weapons from the new US president, a threatened US–Russia arms race, and climate science dismissed at the top. First move in half-minutes.",
+  2018: "World leaders fail to deal with nuclear and climate dangers; hyperbole and provocation between the US and North Korea raise the risk of war by miscalculation. Left unchanged in 2019.",
+  2020: "The INF Treaty dies, US–Iran tensions spike, climate action stalls. Set in seconds for the first time: 100. Held in 2021 and 2022.",
+  2023: "Russia's invasion of Ukraine and its nuclear threats, with fighting at the Zaporizhzhia plant and New START suspended. Held in 2024.",
+  2025: "The war in Ukraine grinds on, the Middle East is in crisis, arsenals grow, and AI reaches the battlefield and social media.",
+  2026: "Russia's war in Ukraine, US and Israeli strikes on Iran, India–Pakistan clashes, and the expiry of New START. The Bulletin calls it a failure of leadership. Closest ever."
+};
+let OFFICIAL_PICK = null;
 let HIST = [], TODAY = OFFICIAL_NOW, VIEW = "days";
 
 function fmtSecs(sec) {
@@ -1108,7 +1173,15 @@ function fmtSecs(sec) {
   const m = sec / 60;
   return (m % 1 === 0 ? m : m.toFixed(1)) + " min";
 }
+function renderOfficialLine() {
+  const [yr, sec] = OFFICIAL[OFFICIAL.length - 1];
+  const lowest = Math.min(...OFFICIAL.map(o => o[1]));
+  const tail = sec === lowest ? ", the closest it has ever been" : "";
+  const el = document.getElementById("officialNow");
+  if (el) el.textContent = `Since ${yr} it has been ${fmtSecs(sec)}${tail}.`;
+}
 function renderCompare() {
+  renderOfficialLine();
   const d = Math.round((TODAY - OFFICIAL_NOW) * 10) / 10;
   const diff = d === 0 ? "Midnight Watch agrees with the official clock today."
     : `Midnight Watch is ${fmt1(Math.abs(d))} seconds ${d < 0 ? "closer to" : "further from"} midnight than the official clock.`;
@@ -1167,7 +1240,14 @@ function drawChart() {
     });
     pts.push(`${x(thisYear)},${y(OFFICIAL_NOW)}`);
     svg += `<polyline class="step" points="${pts.join(" ")}"/>`;
-    OFFICIAL.forEach(([yr, sec]) => { svg += `<circle class="dot" cx="${x(yr)}" cy="${y(sec)}" r="2.5"/>`; });
+    if (OFFICIAL_PICK === null || !OFFICIAL.some(o => o[0] === OFFICIAL_PICK)) OFFICIAL_PICK = OFFICIAL[OFFICIAL.length - 1][0];
+    OFFICIAL.forEach(([yr, sec]) => {
+      const on = yr === OFFICIAL_PICK;
+      svg += `<circle class="dot ${on ? "picked" : ""}" cx="${x(yr)}" cy="${y(sec)}" r="${on ? 5 : 3}"/>`;
+    });
+    OFFICIAL.forEach(([yr, sec]) => {
+      svg += `<circle class="hit" data-year="${yr}" cx="${x(yr)}" cy="${y(sec)}" r="14"><title>${yr}: ${fmtSecs(sec)} to midnight</title></circle>`;
+    });
     // our readings, placed in the current year
     HIST.forEach(h => {
       const d = new Date(h.date + "T00:00:00Z");
@@ -1178,9 +1258,46 @@ function drawChart() {
       svg += `<text class="lbl" x="${x(yr)}" y="${H - 10}" text-anchor="middle">${yr}</text>`;
     });
     svg += `</svg>`;
-    el.innerHTML = svg;
-    note.textContent = `The official clock, as set by the Bulletin of the Atomic Scientists each year. Furthest from midnight: 17 minutes in 1991. Closest: ${OFFICIAL_NOW} seconds now. The ember dots at the right edge are Midnight Watch's daily readings; at this scale a few seconds barely shows, which is why the 30-day view exists.`;
+    el.innerHTML = svg + renderOfficialCard();
+    // Pick the nearest setting to where the person taps or hovers, so points a year apart are still easy to hit.
+    const svgNode = el.querySelector("svg");
+    const nearest = ev => {
+      const r = svgNode.getBoundingClientRect(), xv = (ev.clientX - r.left) / r.width * W;
+      let best = OFFICIAL[0][0], bd = Infinity;
+      OFFICIAL.forEach(([yr]) => { const d = Math.abs(x(yr) - xv); if (d < bd) { bd = d; best = yr; } });
+      return best;
+    };
+    svgNode.addEventListener("click", ev => { OFFICIAL_PICK = nearest(ev); drawChart(); });
+    svgNode.addEventListener("mousemove", ev => {
+      if (!window.matchMedia("(hover: hover)").matches) return;
+      const yr = nearest(ev); if (yr !== OFFICIAL_PICK) { OFFICIAL_PICK = yr; drawChart(); }
+    });
+    svgNode.style.cursor = "pointer";
+    el.querySelector("#offPrev")?.addEventListener("click", () => stepOfficial(-1));
+    el.querySelector("#offNext")?.addEventListener("click", () => stepOfficial(1));
+    note.textContent = `The official clock, as set by the Bulletin of the Atomic Scientists each year. Tap or hover a point to read why it moved. The ember dots at the right edge are Midnight Watch's daily readings; at this scale a few seconds barely shows, which is why the 30-day view exists.`;
   }
+}
+function stepOfficial(dir) {
+  const i = OFFICIAL.findIndex(o => o[0] === OFFICIAL_PICK);
+  const j = Math.max(0, Math.min(OFFICIAL.length - 1, i + dir));
+  OFFICIAL_PICK = OFFICIAL[j][0]; drawChart();
+}
+function renderOfficialCard() {
+  const i = OFFICIAL.findIndex(o => o[0] === OFFICIAL_PICK);
+  if (i < 0) return "";
+  const [yr, sec] = OFFICIAL[i], prev = i > 0 ? OFFICIAL[i - 1][1] : null;
+  const d = prev === null ? 0 : sec - prev;
+  const change = prev === null ? "first setting" : d === 0 ? "unchanged" : `${fmtSecs(Math.abs(d))} ${d < 0 ? "closer" : "further"} than ${OFFICIAL[i - 1][0]}`;
+  const why = OFFICIAL[i][2] || REASONS[yr] || "The Bulletin's reason for this setting is being written and will appear after the next daily run.";
+  return `<div class="offcard" aria-live="polite">
+    <button type="button" class="offnav" id="offPrev" ${i === 0 ? "disabled" : ""} aria-label="Earlier setting">‹</button>
+    <div class="offbody">
+      <div class="offhead"><span class="offyear">${yr}</span><span class="offtime">${fmtSecs(sec)} to midnight</span><span class="offchange ${d < 0 ? "neg" : d > 0 ? "pos" : ""}">${change}</span></div>
+      <p class="offwhy">${esc(why)}</p>
+    </div>
+    <button type="button" class="offnav" id="offNext" ${i === OFFICIAL.length - 1 ? "disabled" : ""} aria-label="Later setting">›</button>
+  </div>`;
 }
 document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
   VIEW = t.dataset.view;
