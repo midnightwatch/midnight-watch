@@ -740,6 +740,7 @@ def main():
     ap.add_argument("--news-only", action="store_true", help="print filtered news and stop")
     ap.add_argument("--date", help="override the reading date (YYYY-MM-DD)")
     ap.add_argument("--month", help="only build the monthly report for YYYY-MM and stop")
+    ap.add_argument("--restart", action="store_true", help="keep the archive, but start today from the official clock with no open pressures")
     args = ap.parse_args()
 
     if args.month:
@@ -760,7 +761,10 @@ def main():
     history = load_json(HISTORY, [])
     update_official(now)
     anchor = float((load_json(OFFICIAL_FILE, None) or OFFICIAL_SEED)[-1][1])
-    if prev and not prev.get("sample") and prev.get("date") == today:
+    if args.restart:
+        seconds, pressures, yesterday_lede = anchor, [], ""
+        log("restart: today starts from the official clock, earlier readings are kept")
+    elif prev and not prev.get("sample") and prev.get("date") == today:
         # Re-run on the same day: start from where that day started,
         # so the reading is replaced, not stacked.
         seconds = float(prev["previous"])
