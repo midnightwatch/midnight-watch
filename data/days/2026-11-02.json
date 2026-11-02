@@ -1,61 +1,51 @@
 {
   "sample": false,
   "date": "2026-11-02",
-  "seconds": 84.6,
+  "seconds": 84.4,
   "previous": 85.0,
   "anchor": 85.0,
   "pressures": [
     {
       "id": "climate-extreme",
       "area": "Climate",
-      "name": "Escalating extreme weather events",
-      "weight": 0.1,
+      "name": "New extreme weather events",
+      "weight": 0.2,
       "since": "2026-11-02",
       "last_seen": "2026-11-02",
       "status": "new",
-      "delta": 0.1
+      "delta": 0.2
     },
     {
       "id": "bio-anthrax",
       "area": "Bio",
       "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.1,
+      "weight": 0.2,
       "since": "2026-11-02",
       "last_seen": "2026-11-02",
       "status": "new",
-      "delta": 0.1
+      "delta": 0.2
     },
     {
-      "id": "ai-disinfo",
+      "id": "ai-cyberalert",
       "area": "AI & tech",
-      "name": "Fake nuclear alerts via hacked apps",
-      "weight": 0.1,
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.2,
       "since": "2026-11-02",
       "last_seen": "2026-11-02",
       "status": "new",
-      "delta": 0.1
-    },
-    {
-      "id": "geo-ukraine",
-      "area": "Geopolitics",
-      "name": "Oleshky ceasefire collapse and Kherson evacuations",
-      "weight": 0.1,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "new",
-      "delta": 0.1
+      "delta": 0.2
     }
   ],
   "pressures_before": [],
-  "generated_at": "2026-11-02T13:26:59+00:00",
+  "generated_at": "2026-11-02T13:30:00+00:00",
   "yesterday_lede": "",
   "chair": {
-    "lede": "Four new pressures emerge, pushing the clock down by 1.0 second overall.",
+    "lede": "We hold the clock at 85.0 seconds, with the single biggest concern being the surge of extreme weather events across multiple regions.",
     "body": [
-      "Severe flash flooding in the U.S. Southwest and a second cyclone threatening India illustrate a sharp rise in climate‑related disasters, warranting a modest pressure addition.",
-      "An anthrax outbreak that killed hippos in the Virunga National Park highlights a new zoonotic risk amplified by drought and conflict.",
-      "Cyber‑enabled disinformation campaigns sent fake nuclear and chemical alerts to emergency apps in Ukraine and Russia, raising panic and safety concerns.",
-      "The expiration of the Oleshky ceasefire and renewed civilian evacuations in Kherson signal a deterioration in the Ukraine conflict."
+      "Flash flooding in the U.S. Southwest and Colorado, combined with a second cyclone threatening India, represent new climate‑driven hazards not covered in the baseline.",
+      "An anthrax outbreak killing hippos in the Virunga National Park highlights a novel zoonotic risk linked to drought and conflict in the Democratic Republic of Congo.",
+      "Cyber‑enabled fake emergency alerts about nuclear and chemical threats in Ukraine and Russia demonstrate a fresh AI‑driven vulnerability.",
+      "These developments collectively add modest pressure but do not yet warrant moving the clock."
     ]
   },
   "experts": [
@@ -63,31 +53,31 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "hold",
-      "say": "No new nuclear weapon test, treaty change, or substantive escalation appears; the reports are about drills, talks, and cyber‑alert hoaxes, which do not add a fresh danger beyond existing pressures."
+      "say": "No new nuclear weapon tests, treaty changes, or substantive escalation reported; the items are drills, partnership talks, and cyber‑alert hoaxes, which do not add fresh danger."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Severe flash flooding in the Southwest and Colorado and a second Indian cyclone this week highlight escalating extreme weather, while drought‑linked anthrax deaths in Congo’s Virunga park (10) show climate stress on ecosystems. The shift of US Democrats away from climate policy (18) adds political risk."
+      "say": "Flash flooding in the Southwest and Colorado and a second cyclone threatening India highlight new extreme weather events, while the anthrax outbreak linked to drought in DR Congo (10) shows climate‑driven wildlife threats. Additionally, US Democrats shifting climate policy focus to energy bills (18) signals a rollback of climate action."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park, highlighting a new zoonotic disease event that could spill over to humans amid drought and conflict."
+      "say": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park, highlighting a new zoonotic disease flare-up that could threaten wildlife and human health."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "Recent cyberattacks spoofed emergency alert apps in Ukraine and Russia, spreading fake nuclear and radiation warnings. This new misuse of AI‑enabled disinformation heightens the risk of panic and undermines critical infrastructure safety."
+      "say": "Recent cyberattacks spoofed emergency alert apps in Ukraine and Russia, sending false nuclear and chemical warnings, indicating a new misuse of AI‑enabled disinformation tools and a fresh vulnerability in critical infrastructure."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "worse",
-      "say": "The expiration of the Oleshky ceasefire and renewed evacuations in Kherson signal a worsening of the Ukraine conflict (41)."
+      "vote": "hold",
+      "say": "No new war, treaty collapse, or major incident emerged; existing ceasefire lapses and cyber alerts are continuations of ongoing tensions (e.g., 12,24,21)."
     }
   ],
   "headlines": [
@@ -105,6 +95,18 @@
     },
     {
       "tag": "Climate",
+      "title": "Thousands evacuated as India braces for second cyclone in a week",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/11/2/thousands-evacuated-as-india-braces-for-second-cyclone-in-a-week?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Colorado town braces for historic flood as heavy rains batter south-west",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/us-news/2026/nov/02/colorado-flash-flooding-arizona-new-mexico"
+    },
+    {
+      "tag": "Climate",
       "title": "Anthrax outbreak kills hippos in DR Congo’s Virunga National Park",
       "source": "Al Jazeera",
       "url": "https://www.aljazeera.com/news/2026/11/2/anthrax-outbreak-kills-hippos-in-dr-congos-virunga-national-park?traffic_source=rss"
@@ -117,27 +119,15 @@
     },
     {
       "tag": "Nuclear",
-      "title": "Hackers send fake nuclear threat alert to Ukraine emergency app",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/world/2026/nov/02/hackers-fake-nuclear-chemical-threat-alert-kyiv-ukraine-emergency-app"
+      "title": "Ukraine and Russia both hit by cyberattacks on emergency apps",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/video/20261102-ukraine-and-russia-both-hit-by-cyberattacks-on-emergency-apps"
     },
     {
-      "tag": "Geopolitics",
-      "title": "Oleshky ceasefire expires, Ukraine evacuates civilians from parts of Kherson region",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSUVsaHdZVWc4UnNlZ0l1bXlXNnBlWnZWc2FsMGdhWWpvODNmYjRQeDBEUUp2WjFwM2Q1WFRyWlFTLUNuT2FJajVQSF9RTWp6SWVNZFhlMVk4Z3NkRkhmT2g0MlhZY0VOV3IwalU2ZjJybVVGMEI5eEtHbXNweVRDNVVENnptNDBnazY5eUNTb09ZZzliNnI1aUlIeWxGUnpES2U1bWZVUEZOai1BZjZLMWFtVkN3WVNvQ0lzZjZ1eWpNaTJNVlB3?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Erdogan says South Korea could partner in Turkey's Sinop nuclear project, Yonhap reports",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWlldndLdklSWDlnQjF3TFRqT0toSUlZUE1yQmNTem9aTDd0OE9WWlk1cy00aWpGYTFaWXdkLURmTkRMbUZOTWFxRFdZeUJfWTZMdlJUdHQ4MVcxb194VThjaFprTmk3NWNFWlFtX3VZS0NCV1FaM0RLaUNqcHl5SHRHUHZmQXFyWU5OV3hnUW0tNVlVSTRNUjAwTUYxMmZjM1dNc0RPc1VSaF9rd21BZy1zOEhHZ21NQkpxbC1WMHlGQVRocEE3NU9n?oc=5"
+      "tag": "Climate",
+      "title": "For US Democrats, climate policy is now about energy bills",
+      "source": "DW",
+      "url": "https://www.dw.com/en/for-us-democrats-climate-policy-is-now-about-energy-bills/a-79808783?maca=en-rss-en-world-4025-rdf"
     }
   ]
 }
