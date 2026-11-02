@@ -470,15 +470,16 @@ function chart(series, official) {
 }
 function render(d, months) {
   document.title = `${d.label}: ${d.title}`;
-  const delta = d.end - d.start;
-  const dtxt = delta === 0 ? "no change" : `${Math.abs(delta)} s ${delta < 0 ? "closer" : "further"}`;
+  const f1 = v => (Math.round(v * 10) / 10).toFixed(1);
+  const delta = Math.round((d.end - d.start) * 10) / 10;
+  const dtxt = delta === 0 ? "no change" : `${f1(Math.abs(delta))} s ${delta < 0 ? "closer" : "further"}`;
   const i = months.findIndex(m => m.month === d.month);
   const newer = months[i - 1], older = months[i + 1];
   const votes = Object.entries(d.votes || {}).map(([role, v]) => {
     const t = (v.worse + v.hold + v.better) || 1;
     return `<div class="vrow"><div class="who">${esc(role)}</div><div class="bar"><span class="w" style="width:${100 * v.worse / t}%"></span><span class="h" style="width:${100 * v.hold / t}%"></span><span class="b" style="width:${100 * v.better / t}%"></span></div></div>`;
   }).join("");
-  const biggest = (d.biggest || []).map(m => `<li><span class="tag">${fmtDate(m.date)} · ${m.from} → ${m.to} s</span><div>${esc(m.lede)}</div></li>`).join("");
+  const biggest = (d.biggest || []).map(m => `<li><span class="tag">${fmtDate(m.date)} · ${f1(m.from)} → ${f1(m.to)} s</span><div>${esc(m.lede)}</div></li>`).join("");
   document.getElementById("report").innerHTML = `
     <div>
       <p class="eyebrow">${esc(d.label)} · ${d.days} day${d.days === 1 ? "" : "s"} of readings</p>
@@ -486,9 +487,9 @@ function render(d, months) {
       <p class="summary">${esc(d.summary)}</p>
     </div>
     <div class="kpis">
-      <div class="box"><div class="n">${d.start}</div><div class="l">start</div></div>
-      <div class="box"><div class="n ember">${d.end}</div><div class="l">end</div></div>
-      <div class="box"><div class="n">${d.low}–${d.high}</div><div class="l">range</div></div>
+      <div class="box"><div class="n">${f1(d.start)}</div><div class="l">start</div></div>
+      <div class="box"><div class="n ember">${f1(d.end)}</div><div class="l">end</div></div>
+      <div class="box"><div class="n">${f1(d.low)}–${f1(d.high)}</div><div class="l">range</div></div>
       <div class="box"><div class="n">${d.moves}</div><div class="l">days moved</div></div>
       <div class="box"><div class="n">${d.official}</div><div class="l">official</div></div>
     </div>

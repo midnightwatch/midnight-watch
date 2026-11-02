@@ -109,10 +109,11 @@ async function load() {
   }
   if (!d) { document.getElementById("delta").textContent = "could not load"; return; }
   setHands(d.previous); setTimeout(() => setHands(d.seconds), 350);
-  document.getElementById("big").innerHTML = `<span>${d.seconds}</span> seconds to midnight`;
-  const diff = d.seconds - d.previous, el = document.getElementById("delta");
+  const f1 = v => (Math.round(v * 10) / 10).toFixed(1);
+  document.getElementById("big").innerHTML = `<span>${f1(d.seconds)}</span> seconds to midnight`;
+  const diff = Math.round((d.seconds - d.previous) * 10) / 10, el = document.getElementById("delta");
   if (diff === 0) { el.textContent = "no change from yesterday"; el.className = "delta flat"; }
-  else { el.textContent = `${Math.abs(diff)} second${Math.abs(diff) === 1 ? "" : "s"} ${diff < 0 ? "closer" : "further"} than yesterday`; el.className = "delta" + (diff > 0 ? " calm" : ""); }
+  else { el.textContent = `${f1(Math.abs(diff))} seconds ${diff < 0 ? "closer" : "further"} than yesterday`; el.className = "delta" + (diff > 0 ? " calm" : ""); }
   document.getElementById("link").href = "https://midnightwatch.github.io/midnight-watch/?ref=embed";
 }
 function reloadAtMidnight() {

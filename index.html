@@ -99,15 +99,15 @@ a:hover { text-decoration-color: var(--ember); }
 .top .sub { font-size: 0.9rem; color: var(--smoke); opacity: 0.85; }
 .top .sub span { color: var(--ash); }
 
-/* Hero */
+/* Hero: the dial seen up close */
 .hero {
   display: grid;
   justify-items: center;
   text-align: center;
-  padding: 2rem 1rem 1rem;
+  padding: 0.6rem 0 1rem;
   gap: 0.2rem;
 }
-.clock-btn {
+.dial {
   appearance: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -117,20 +117,20 @@ a:hover { text-decoration-color: var(--ember); }
   padding: 0;
   margin: 0;
   cursor: pointer;
-  width: min(84vw, 460px);
-  aspect-ratio: 1;
-  border-radius: 50%;
+  width: 100%;
+  height: clamp(280px, 54vh, 600px);
+  padding-bottom: 2.4rem;
   position: relative;
-  transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+  display: block;
+  overflow: hidden;
 }
-.clock-btn:hover { transform: scale(1.015); }
-.clock-btn, .tab, .intro a { -webkit-tap-highlight-color: transparent; }
-.clock-btn:active { transform: scale(0.99); }
-.clock-btn svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.clock-btn .hint {
+.dial svg { width: 100%; height: 100%; display: block; }
+.dial:focus-visible { outline: none; }
+.dial:focus-visible::after { content: ""; position: absolute; inset: 4px; border: 2px solid var(--ember); border-radius: 6px; pointer-events: none; }
+.dial .hint {
   position: absolute;
   left: 50%;
-  bottom: 17%;
+  bottom: 0.55rem;
   transform: translateX(-50%);
   font-family: var(--display);
   font-weight: 700;
@@ -140,44 +140,60 @@ a:hover { text-decoration-color: var(--ember); }
   color: var(--ember);
   pointer-events: none;
   white-space: nowrap;
-  transition: color 0.3s;
+  opacity: 0;
+  transition: opacity 0.6s, color 0.3s;
 }
-.clock-btn:hover .hint { color: var(--bone); }
-.clock-btn .hint::after { content: "▾"; display: block; text-align: center; font-size: 1.1rem; line-height: 0.9; margin-top: 0.15rem; }
-/* pulsing ring that invites the tap; stops once the panel is open */
-.clock-btn::before {
-  content: ""; position: absolute; inset: -3%; border-radius: 50%;
-  border: 2px solid var(--ember); opacity: 0; pointer-events: none;
+.dial.ready .hint { opacity: 1; }
+.dial:hover .hint { color: var(--bone); }
+.scroll-cue {
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.1rem;
+  margin: 1.1rem 0 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ember);
+  text-decoration: none;
 }
+.scroll-cue:hover { color: var(--bone); }
+.scroll-cue .arr { font-size: 1.25rem; line-height: 0.9; }
 @media (prefers-reduced-motion: no-preference) {
-  .clock-btn[aria-expanded="false"]::before { animation: ring 2.8s ease-out infinite; }
-  @keyframes ring {
-    0% { transform: scale(0.96); opacity: 0.55; }
-    70% { transform: scale(1.06); opacity: 0; }
-    100% { transform: scale(1.06); opacity: 0; }
-  }
-  .clock-btn[aria-expanded="false"] .hint::after { animation: nudge 1.6s ease-in-out infinite; }
-  @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+  .scroll-cue .arr { animation: nudge 1.6s ease-in-out infinite; }
+  @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 }
 
-.face { fill: var(--soot); stroke: var(--char); stroke-width: 2; }
-.rim { fill: none; stroke: var(--char); stroke-width: 10; }
-.tick { stroke: var(--smoke); stroke-width: 1.2; opacity: 0.55; }
-.tick.hour { stroke: var(--ash); stroke-width: 2.6; opacity: 0.9; }
-.wedge { fill: var(--ember); opacity: 0.9; filter: url(#glow); }
-.hand { stroke: var(--bone); stroke-linecap: round; }
-.hand.hourh { stroke-width: 9; }
-.hand.minh { stroke-width: 5; }
-.pin { fill: var(--bone); }
-.midnight { font-family: var(--display); font-weight: 900; font-size: 34px; fill: var(--bone); }
-
+.bezel { fill: url(#bezelGrad); }
+.bezel-line { fill: none; stroke: #16110e; stroke-width: 6; }
+.face { fill: url(#faceGrad); }
+.rim { fill: none; stroke: var(--char); vector-effect: non-scaling-stroke; }
+.rim.inner { stroke-width: 1.5; }
+.tick { stroke: var(--smoke); stroke-width: 1; opacity: 0.5; vector-effect: non-scaling-stroke; }
+.tick.five { opacity: 0.8; stroke-width: 1.5; }
+.tick.minute { stroke: var(--ash); stroke-width: 2.4; opacity: 1; }
+.tick.coarse { stroke: var(--ash); stroke-width: 1.5; opacity: 0.55; }
+.tick.coarse.hour { stroke: var(--bone); stroke-width: 3; opacity: 1; }
+.wedge { fill: var(--ember); opacity: 0.7; }
+.sliver { fill: var(--ember); opacity: 0.22; }
+.hand { fill: var(--bone); stroke: var(--iron); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.hand.ghost { fill: none; stroke: var(--smoke); stroke-width: 1.5; stroke-dasharray: 6 5; opacity: 0; }
+.hand.ghost.on { opacity: 0.85; }
+.tip { fill: var(--ember); stroke: var(--bone); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.pin { fill: var(--bone); stroke: var(--iron); stroke-width: 2; }
+.pin-dot { fill: var(--ember); }
+#coarse, #sliver { transition: opacity 0.5s; }
+svg.zoomed #coarse, svg.zoomed #sliver { opacity: 0; }
+.numeral { font-family: var(--display); font-weight: 900; fill: var(--bone); }
+.numeral.minor { fill: var(--smoke); font-weight: 700; }
+.lbl { font-family: var(--display); font-weight: 700; fill: var(--ash); letter-spacing: 0.08em; }
+.lbl.mid { fill: var(--ember); font-weight: 900; }
+.lbl.ghostlbl { fill: var(--smoke); font-weight: 500; }
 @media (prefers-reduced-motion: no-preference) {
   .wedge { animation: breathe 4s ease-in-out infinite; }
-  @keyframes breathe {
-    0%, 100% { opacity: 0.78; }
-    50% { opacity: 1; }
-  }
-  .hand, .wedge { transition: all 1.6s cubic-bezier(.3,.9,.2,1); }
+  @keyframes breathe { 0%, 100% { opacity: 0.6; } 50% { opacity: 0.8; } }
+  .hand.ghost { transition: opacity 0.8s; }
 }
 
 .time-big {
@@ -391,6 +407,28 @@ a:hover { text-decoration-color: var(--ember); }
 .vote.better { color: var(--calm); }
 .vote.hold { color: var(--smoke); }
 
+/* Pressures: what is pushing the clock away from the official baseline */
+.pressures { list-style: none; margin: 0; padding: 0; }
+.pressures li {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr auto;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--char);
+}
+.pressures li:last-child { border-bottom: 1px solid var(--char); }
+.pressures .w { font-family: var(--display); font-weight: 900; font-size: 1.6rem; line-height: 1; color: var(--ember); }
+.pressures .w.closed { color: var(--smoke); text-decoration: line-through; }
+.pressures .name { color: var(--bone); }
+.pressures .name small { display: block; color: var(--smoke); font-size: 0.9rem; }
+.pressures .st { font-family: var(--display); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.03em; padding: 0.1rem 0.5rem; border: 1px solid currentColor; border-radius: 3px; color: var(--smoke); white-space: nowrap; }
+.pressures .st.up, .pressures .st.new { color: var(--ember); }
+.pressures .st.down, .pressures .st.closed, .pressures .st.fading { color: var(--calm); }
+.pressures-sum { margin: 0.6rem 0 0; color: var(--smoke); font-size: 0.95rem; }
+.pressures-empty { margin: 0; color: var(--smoke); }
+@media (max-width: 480px) { .pressures li { grid-template-columns: 4.2rem 1fr; } .pressures .st { grid-column: 2; justify-self: start; } }
+
 .headlines { list-style: none; margin: 0; padding: 0; }
 .headlines li {
   padding: 0.7rem 0;
@@ -491,22 +529,39 @@ footer p { margin: 0 0 0.5rem; }
 
 <main>
   <section class="hero">
-    <button class="clock-btn" id="clockBtn" aria-expanded="false" aria-controls="verdict" aria-label="Open today’s verdict">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <button class="dial" id="clockBtn" aria-expanded="false" aria-controls="verdict" aria-label="Open today’s verdict">
+      <svg id="dialSvg" viewBox="-1120 -1120 2240 2240" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="6" result="b"/>
+          <filter id="glow" x="-30%" y="-300%" width="160%" height="700%">
+            <feGaussianBlur stdDeviation="14" result="b"/>
             <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
+          <radialGradient id="faceGrad" cx="50%" cy="42%" r="60%">
+            <stop offset="0" stop-color="#2d241f"/>
+            <stop offset="0.75" stop-color="#241c18"/>
+            <stop offset="1" stop-color="#1c1613"/>
+          </radialGradient>
+          <linearGradient id="bezelGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a3a2e"/>
+            <stop offset="0.5" stop-color="#2b211b"/>
+            <stop offset="1" stop-color="#3d2f26"/>
+          </linearGradient>
         </defs>
-        <circle class="rim" cx="200" cy="200" r="188"/>
-        <circle class="face" cx="200" cy="200" r="178"/>
-        <g id="ticks"></g>
-        <path id="wedge" class="wedge" d=""/>
-        <text class="midnight" x="200" y="62" text-anchor="middle">12</text>
-        <line id="hourHand" class="hand hourh" x1="200" y1="200" x2="200" y2="105"/>
-        <line id="minHand" class="hand minh" x1="200" y1="200" x2="200" y2="60"/>
-        <circle class="pin" cx="200" cy="200" r="7"/>
+        <circle class="bezel" cx="0" cy="0" r="1060"/>
+        <circle class="bezel-line" cx="0" cy="0" r="1034"/>
+        <circle class="face" cx="0" cy="0" r="1000"/>
+        <circle class="rim inner" cx="0" cy="0" r="1000"/>
+        <g id="coarse"></g>
+        <path id="sliver" class="sliver" d=""/>
+        <path id="wedge" class="wedge" d="" filter="url(#glow)"/>
+        <g id="fine"></g>
+        <path id="ghostHour" class="hand hourh ghost" d=""/>
+        <path id="ghostMin" class="hand minh ghost" d=""/>
+        <path id="hourHand" class="hand hourh" d=""/>
+        <path id="minHand" class="hand minh" d=""/>
+        <circle id="tipDot" class="tip" cx="0" cy="-940" r="9"/>
+        <circle class="pin" cx="0" cy="0" r="30"/>
+        <circle class="pin-dot" cx="0" cy="0" r="11"/>
       </svg>
       <span class="hint">tap to read why</span>
     </button>
@@ -514,6 +569,7 @@ footer p { margin: 0 0 0.5rem; }
     <p class="time-big" id="timeBig">—</p>
     <p class="time-sub" id="timeSub">loading today’s reading</p>
     <p class="date-line" id="dateLine"></p>
+    <a class="scroll-cue" id="scrollCue" href="#verdict" hidden>Scroll down to read why<span class="arr">▾</span></a>
     <p class="sample-flag" id="sampleFlag" hidden>Sample data. The daily run will replace this.</p>
     <a class="month-btn" id="monthBtn" href="month.html" hidden>
       <span class="mb-dot"></span>
@@ -553,6 +609,12 @@ footer p { margin: 0 0 0.5rem; }
       <div><div class="n" id="todayN">—</div><div class="l">today</div></div>
     </div>
 
+    <div id="pressuresBox" hidden>
+      <h2>What is pushing the clock</h2>
+      <ul class="pressures" id="pressures"></ul>
+      <p class="pressures-sum" id="pressuresSum"></p>
+    </div>
+
     <div>
       <h2>What each expert said</h2>
       <div class="experts" id="experts"></div>
@@ -588,7 +650,7 @@ footer p { margin: 0 0 0.5rem; }
       <p>The number of seconds is not a measurement or a prediction. It is a way of saying “things got worse” or “things got better” compared to before.</p>
       <h2 style="margin-top:2rem">How this works</h2>
       <p>Once a day a script collects the last 24 hours of world news from wire services and international outlets. Five AI experts each read it from their own angle: nuclear, climate, biological risk, AI and disruptive technology, and geopolitics. Each one scores the day and must point to real headlines.</p>
-      <p>A sixth AI, the chair, weighs their views against yesterday’s reading and sets the clock. It can move at most five seconds a day, and holding still is always allowed. The board starts from the official 2026 setting of 85 seconds.</p>
+      <p>A sixth AI, the chair, keeps a short list of open pressures: dangers that are new since the Bulletin set the official clock, each weighing some seconds. The clock is the official reading minus their total. The clock moves at most half a second a day, every change needs a cited headline, and a pressure that leaves the news fades away by itself.</p>
       <p class="warn">This is a simulation. The real Doomsday Clock is set once a year by the Bulletin of the Atomic Scientists’ Science and Security Board, not by software. Treat this page as a daily mood reading, not a forecast.</p>
     </div>
   </section>
@@ -643,43 +705,138 @@ const SAMPLE = {
 };
 
 // ---------- clock drawing ----------
-const CX = 200, CY = 200, R = 178;
-function polar(angleDeg, radius) {
-  const a = (angleDeg - 90) * Math.PI / 180;
-  return [CX + radius * Math.cos(a), CY + radius * Math.sin(a)];
+// Real geometry, no exaggeration: the minute hand moves 6 degrees per minute,
+// so 85 seconds before midnight is 8.5 degrees left of 12. Centre is (0,0), rim radius 1000.
+const R = 1000, FULL = [-1120, -1120, 2240, 2240];
+const svgEl = document.getElementById("dialSvg"), dialEl = document.getElementById("clockBtn");
+const REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const pt = (secs, radius) => { const a = -secs * 0.1 * Math.PI / 180; return [radius * Math.sin(a), -radius * Math.cos(a)]; };
+const fmt1 = v => (Math.round(v * 10) / 10).toFixed(1);
+let VIEW_BOX = FULL.slice(), ZOOM = null, ZOOMED = false, SHOWN = { seconds: 85, previous: 85, hand: 85, ghost: 85 }, anim = null;
+
+function setViewBox(vb) { VIEW_BOX = vb; svgEl.setAttribute("viewBox", vb.map(v => v.toFixed(2)).join(" ")); }
+function dialSize() { const r = dialEl.getBoundingClientRect(); return [Math.max(1, r.width), Math.max(1, r.height)]; }
+
+// The zoomed camera: from a little beyond the hands to a little past midnight, edge to edge.
+function zoomBox(secs) {
+  const [w, h] = dialSize();
+  const left = Math.max(secs * 1.15 + 8, 40), right = Math.min(secs * 0.22 + 4, 26);
+  const x1 = pt(left, R + 36)[0], x2 = pt(-right, R + 36)[0];
+  const W = (x2 - x1) * 1.06, H = W * h / w;
+  const cx = (x1 + x2) / 2;
+  return [cx - W / 2, -R - H * 0.2, W, H];
 }
-function drawTicks() {
-  const g = document.getElementById("ticks");
+function unitsPerPx() { return VIEW_BOX[2] / dialSize()[0]; }
+
+// Big ticks and numerals: read at the full-dial size.
+function drawCoarse() {
   let out = "";
   for (let i = 0; i < 60; i++) {
-    const isHour = i % 5 === 0;
-    const r1 = isHour ? R - 22 : R - 12;
-    const [x1, y1] = polar(i * 6, r1);
-    const [x2, y2] = polar(i * 6, R - 4);
-    out += `<line class="tick ${isHour ? "hour" : ""}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+    const isHour = i % 5 === 0, [x1, y1] = pt(-i * 60, isHour ? R - 95 : R - 45), [x2, y2] = pt(-i * 60, R - 16);
+    out += `<line class="tick coarse ${isHour ? "hour" : ""}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
   }
-  g.innerHTML = out;
+  [[0, "12"], [900, "3"], [1800, "6"], [2700, "9"]].forEach(([sec, t]) => {
+    const [x, y] = pt(-sec, R - 215);
+    out += `<text class="numeral" x="${x}" y="${y + 58}" text-anchor="middle" font-size="165">${t}</text>`;
+  });
+  document.getElementById("coarse").innerHTML = out;
 }
-function setHands(secondsToMidnight) {
-  // minutes before midnight, on a 60-minute dial
-  const minsBefore = secondsToMidnight / 60;
-  const minAngle = 360 - minsBefore * 6;             // minute hand
-  const hourAngle = 360 - (minsBefore / 60) * 30;    // hour hand, nearly 12
-  const [mx, my] = polar(minAngle, R - 26);
-  const [hx, hy] = polar(hourAngle, R - 88);
-  document.getElementById("minHand").setAttribute("x2", mx);
-  document.getElementById("minHand").setAttribute("y2", my);
-  document.getElementById("hourHand").setAttribute("x2", hx);
-  document.getElementById("hourHand").setAttribute("y2", hy);
-  // wedge of remaining time, visually widened so it stays readable
-  const visualAngle = Math.max(minsBefore * 6, 0.6) * 4; // 4x exaggeration
-  const start = 360 - visualAngle;
-  const [sx, sy] = polar(start, R - 2);
-  const [ex, ey] = polar(360, R - 2);
-  const large = visualAngle > 180 ? 1 : 0;
-  document.getElementById("wedge").setAttribute("d",
-    `M ${CX} ${CY} L ${sx} ${sy} A ${R - 2} ${R - 2} 0 ${large} 1 ${ex} ${ey} Z`);
+// Fine ticks: one tooth per second, sized for the zoomed camera, redrawn when the camera changes.
+function drawFine(zb) {
+  const upp = zb[2] / dialSize()[0];               // units per CSS pixel at this zoom
+  const span = Math.ceil(zb[2] / (R * 0.1 * Math.PI / 180)) + 20;   // seconds visible, plus margin
+  const lo = -40, hi = span;
+  let out = "";
+  for (let s = lo; s <= hi; s++) {
+    const minute = s % 60 === 0, five = s % 5 === 0;
+    const len = (minute ? 46 : five ? 30 : 16) * upp;
+    const [x1, y1] = pt(s, R - 4 - len), [x2, y2] = pt(s, R - 4);
+    out += `<line class="tick ${minute ? "minute" : five ? "five" : ""}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+    if (minute && s > 0) {
+      const [lx, ly] = pt(s, R - 70 * upp), a = s * 0.1;
+      out += `<text class="lbl" font-size="${15 * upp}" x="${lx}" y="${ly}" text-anchor="middle" transform="rotate(${-a} ${lx} ${ly})">${s / 60} MIN</text>`;
+    }
+  }
+  const [mx, my] = pt(0, R - 70 * upp);
+  out += `<text class="lbl mid" font-size="${15 * upp}" x="${mx}" y="${my}" text-anchor="middle">MIDNIGHT</text>`;
+  // tenths of a second around the hand, so the decimal is visible
+  const centre = Math.round(SHOWN.seconds);
+  for (let t = -20; t <= 20; t++) {
+    const sec = centre + t / 10;
+    if (Math.abs(sec - Math.round(sec)) < 0.01) continue;
+    const [x1, y1] = pt(sec, R - 4 - 7 * upp), [x2, y2] = pt(sec, R - 4);
+    out += `<line class="tick" style="opacity:.3" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+  }
+  document.getElementById("fine").innerHTML = out;
 }
+// A tapered hand pointing at `secs` before midnight: tip radius, base half-width, tip half-width, tail.
+function handPath(secs, tipR, wBase, wTip, tail) {
+  const a = -secs * 0.1;
+  return `M ${-wTip} ${-tipR} L ${wTip} ${-tipR} L ${wBase} ${-tipR * 0.12} L ${wBase * 0.8} ${tail} L ${-wBase * 0.8} ${tail} L ${-wBase} ${-tipR * 0.12} Z`
+    .replace(/^/, "") + `|rotate(${a})`;
+}
+function setHandPath(id, secs, tipR, wBase, wTip, tail) {
+  const el = document.getElementById(id), [d, tr] = handPath(secs, tipR, wBase, wTip, tail).split("|");
+  el.setAttribute("d", d); el.setAttribute("transform", tr);
+}
+function setHands(secs, ghost) {
+  if (ghost) SHOWN.ghost = secs; else SHOWN.hand = secs;
+  const upp = unitsPerPx();
+  const tipR = R - Math.min(64 * upp, 70);
+  const [mx, my] = pt(secs, tipR);
+  setHandPath(ghost ? "ghostMin" : "minHand", secs, tipR, 16, 3, 120);
+  setHandPath(ghost ? "ghostHour" : "hourHand", secs / 60, R * 0.62, 24, 6, 120);
+  if (!ghost) {
+    const dot = document.getElementById("tipDot"); dot.setAttribute("cx", mx); dot.setAttribute("cy", my);
+    dot.setAttribute("r", Math.min(6 * upp, 11));
+    // the remaining time, as a band along the rim between the hand and midnight
+    const ri = R - Math.min(92 * upp, 110), big = secs * 0.1 > 180 ? 1 : 0;
+    const [sx, sy] = pt(secs, R - 2), [ex, ey] = pt(0, R - 2), [ix, iy] = pt(0, ri), [jx, jy] = pt(secs, ri);
+    document.getElementById("wedge").setAttribute("d", `M ${sx} ${sy} A ${R - 2} ${R - 2} 0 ${big} 1 ${ex} ${ey} L ${ix} ${iy} A ${ri} ${ri} 0 ${big} 0 ${jx} ${jy} Z`);
+    // the true sliver from the centre, honest geometry
+    document.getElementById("sliver").setAttribute("d", `M 0 0 L ${sx} ${sy} A ${R - 2} ${R - 2} 0 ${big} 1 ${ex} ${ey} Z`);
+  }
+}
+const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+function tween(ms, step, done) {
+  if (anim) cancelAnimationFrame(anim);
+  if (REDUCE || ms === 0) { step(1); done && done(); return; }
+  const t0 = performance.now();
+  const frame = now => { const k = Math.min(1, (now - t0) / ms); step(ease(k)); if (k < 1) anim = requestAnimationFrame(frame); else { anim = null; done && done(); } };
+  anim = requestAnimationFrame(frame);
+}
+function camera(to, ms, done) {
+  const from = VIEW_BOX.slice();
+  svgEl.classList.toggle("zoomed", to !== FULL);
+  tween(ms, k => { setViewBox(from.map((v, i) => v + (to[i] - v) * k)); setHands(SHOWN.hand, false); setHands(SHOWN.ghost, true); }, done);
+}
+function sweep(from, to, ms, done) {
+  const big = document.getElementById("timeBig").querySelector("span");
+  tween(ms, k => { const v = from + (to - from) * k; setHands(v, false); if (big) big.textContent = fmt1(v); }, done);
+}
+// The opening sequence: full dial, zoom into the hands, grey out yesterday, sweep to today.
+function playOpening(data) {
+  SHOWN = { seconds: data.seconds, previous: data.previous, hand: data.previous, ghost: data.previous };
+  dialEl.classList.remove("ready");
+  document.getElementById("ghostMin").classList.remove("on"); document.getElementById("ghostHour").classList.remove("on");
+  drawCoarse();
+  if (ZOOMED) { ZOOM = zoomBox(Math.max(data.seconds, data.previous)); drawFine(ZOOM); setViewBox(ZOOM); }
+  else { svgEl.classList.remove("zoomed"); setViewBox(FULL); }
+  setHands(data.previous, true); setHands(data.previous, false);
+  const finish = () => {
+    document.getElementById("ghostMin").classList.add("on"); document.getElementById("ghostHour").classList.add("on");
+    sweep(data.previous, data.seconds, 1400, () => { setHands(data.seconds, false); dialEl.classList.add("ready"); });
+  };
+  if (REDUCE) { setHands(data.seconds, false); document.getElementById("ghostMin").classList.add("on"); document.getElementById("ghostHour").classList.add("on"); dialEl.classList.add("ready"); return; }
+  setTimeout(finish, 600);
+}
+function zoomOut(done) { ZOOMED = false; camera(FULL, 1100, () => { setHands(SHOWN.seconds, false); done && done(); }); }
+function zoomIn(done) { ZOOM = zoomBox(Math.max(SHOWN.seconds, SHOWN.previous)); drawFine(ZOOM); camera(ZOOM, 1300, () => { ZOOMED = true; setHands(SHOWN.seconds, false); done && done(); }); }
+let resizeT = null;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeT);
+  resizeT = setTimeout(() => { if (ZOOMED) { ZOOM = zoomBox(Math.max(SHOWN.seconds, SHOWN.previous)); drawFine(ZOOM); setViewBox(ZOOM); setHands(SHOWN.seconds, false); } }, 150);
+});
 
 // ---------- rendering ----------
 function fmtDate(iso) {
@@ -687,13 +844,12 @@ function fmtDate(iso) {
   return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 }
 function deltaText(today, prev) {
-  const d = today - prev;
+  const d = Math.round((today - prev) * 10) / 10;
   if (d === 0) return { cls: "flat", text: "no change from yesterday" };
-  const n = Math.abs(d);
-  const unit = n === 1 ? "second" : "seconds";
+  const n = fmt1(Math.abs(d));
   return d < 0
-    ? { cls: "", text: `${n} ${unit} closer than yesterday` }
-    : { cls: "calm", text: `${n} ${unit} further than yesterday` };
+    ? { cls: "", text: `${n} seconds closer than yesterday` }
+    : { cls: "calm", text: `${n} seconds further than yesterday` };
 }
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
@@ -891,12 +1047,8 @@ window.addEventListener("hashchange", () => { const d = location.hash.replace("#
 function renderReading(data) {
   CURRENT = data.date;
   updateDayNav(data.date);
-  drawTicks();
-  // sweep from yesterday to today
-  setHands(data.previous);
-  requestAnimationFrame(() => setTimeout(() => setHands(data.seconds), 300));
-
-  document.getElementById("timeBig").innerHTML = `<span>${data.seconds}</span> seconds to midnight`;
+  document.getElementById("timeBig").innerHTML = `<span>${fmt1(data.previous)}</span> seconds to midnight`;
+  playOpening(data);
   const dt = deltaText(data.seconds, data.previous);
   document.getElementById("timeSub").innerHTML = `<span class="delta ${dt.cls}">${dt.text}</span>`;
   document.getElementById("dateLine").textContent = `Reading for ${fmtDate(data.date)}`;
@@ -904,10 +1056,26 @@ function renderReading(data) {
 
   document.getElementById("chairLede").textContent = data.chair.lede;
   document.getElementById("chairBody").innerHTML = data.chair.body.map(p => `<p>${esc(p)}</p>`).join("");
-  document.getElementById("prevN").textContent = data.previous;
-  document.getElementById("todayN").textContent = data.seconds;
+  document.getElementById("prevN").textContent = fmt1(data.previous);
+  document.getElementById("todayN").textContent = fmt1(data.seconds);
   document.getElementById("arrow").textContent = data.seconds < data.previous ? "→" : data.seconds > data.previous ? "←" : "=";
 
+  const pr = Array.isArray(data.pressures) ? data.pressures : [];
+  const pbox = document.getElementById("pressuresBox");
+  pbox.hidden = data.sample || !("pressures" in data);
+  if (!pbox.hidden) {
+    const stWord = { new: "new today", up: "worse", down: "easing", same: "unchanged", fading: "fading", closed: "closed" };
+    const open = pr.filter(p => p.weight > 0);
+    document.getElementById("pressures").innerHTML = pr.map(p => `
+      <li><span class="w ${p.status === "closed" ? "closed" : ""}">${p.status === "closed" ? fmt1(-p.delta) : fmt1(p.weight)}&thinsp;s</span>
+        <span class="name">${esc(p.name)}<small>${esc(p.area)} · since ${fmtShort(p.since)}${p.delta ? ` · ${p.delta > 0 ? "+" : "−"}${fmt1(Math.abs(p.delta))} today` : ""}</small></span>
+        <span class="st ${esc(p.status)}">${stWord[p.status] || esc(p.status)}</span></li>`).join("");
+    const total = open.reduce((a, p) => a + p.weight, 0);
+    document.getElementById("pressuresSum").textContent = open.length
+      ? `The official clock says ${fmt1(data.anchor ?? OFFICIAL_NOW)}. ${open.length} open pressure${open.length === 1 ? "" : "s"} take${open.length === 1 ? "s" : ""} ${fmt1(total)} seconds off it, so Midnight Watch reads ${fmt1(data.seconds)}.`
+      : `No open pressures. The clock sits on the official reading of ${fmt1(data.anchor ?? OFFICIAL_NOW)} seconds.`;
+    if (!pr.length) document.getElementById("pressures").innerHTML = "";
+  }
   const voteWord = { worse: "closer", better: "further", hold: "hold" };
   document.getElementById("experts").innerHTML = data.experts.map(e => `
     <div class="expert">
@@ -936,17 +1104,17 @@ let OFFICIAL_NOW = OFFICIAL[OFFICIAL.length - 1][1];
 let HIST = [], TODAY = OFFICIAL_NOW, VIEW = "days";
 
 function fmtSecs(sec) {
-  if (sec < 120) return `${sec} s`;
+  if (sec < 120) return `${sec % 1 === 0 ? sec : fmt1(sec)} s`;
   const m = sec / 60;
   return (m % 1 === 0 ? m : m.toFixed(1)) + " min";
 }
 function renderCompare() {
-  const d = TODAY - OFFICIAL_NOW;
+  const d = Math.round((TODAY - OFFICIAL_NOW) * 10) / 10;
   const diff = d === 0 ? "Midnight Watch agrees with the official clock today."
-    : `Midnight Watch is ${Math.abs(d)} second${Math.abs(d) === 1 ? "" : "s"} ${d < 0 ? "closer to" : "further from"} midnight than the official clock.`;
+    : `Midnight Watch is ${fmt1(Math.abs(d))} seconds ${d < 0 ? "closer to" : "further from"} midnight than the official clock.`;
   document.getElementById("compare").innerHTML = `
     <div class="box"><div class="n">${OFFICIAL_NOW}</div><div class="l">official clock (Bulletin, ${OFFICIAL[OFFICIAL.length - 1][0]})</div></div>
-    <div class="box"><div class="n ours">${TODAY}</div><div class="l">midnight watch (today)</div></div>
+    <div class="box"><div class="n ours">${fmt1(TODAY)}</div><div class="l">midnight watch (today)</div></div>
     <div class="diff">${diff}</div>`;
 }
 function renderHistory(data) {
@@ -981,7 +1149,7 @@ function drawChart() {
     const min = Math.min(...hist.map(h => h.seconds)), max = Math.max(...hist.map(h => h.seconds));
     note.textContent = hist.length === 1
       ? "First reading. The line grows one point per day. The dashed line is the official clock."
-      : `Lower is closer to midnight. Range over ${hist.length} days: ${min} to ${max} seconds. The dashed line is the official clock.`;
+      : `Lower is closer to midnight. Range over ${hist.length} days: ${fmt1(min)} to ${fmt1(max)} seconds. The dashed line is the official clock.`;
   } else {
     // Official history 1947 to now as steps, our daily readings as a tail.
     const thisYear = new Date().getUTCFullYear() + 1;
@@ -1019,22 +1187,31 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.querySelectorAll(".tab").forEach(b => { const on = b === t; b.classList.toggle("active", on); b.setAttribute("aria-selected", String(on)); });
   drawChart();
 }));
-// ---------- open / close ----------
+// ---------- tap: zoom in and open the verdict / zoom out and close it ----------
 const btn = document.getElementById("clockBtn");
 const panel = document.getElementById("verdict");
-btn.addEventListener("click", () => {
-  const open = !panel.classList.contains("open");
+const cue = document.getElementById("scrollCue");
+function setPanel(open) {
   panel.classList.toggle("open", open);
   panel.setAttribute("aria-hidden", String(!open));
   btn.setAttribute("aria-expanded", String(open));
-  btn.querySelector(".hint").textContent = open ? "tap to close" : "tap to read why";
-  if (open) setTimeout(() => panel.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+  btn.querySelector(".hint").textContent = open ? "tap to zoom out" : "tap to read why";
+  cue.hidden = !open;
+}
+btn.addEventListener("click", () => {
+  if (!dialEl.classList.contains("ready") || anim) return;
+  if (ZOOMED) { setPanel(false); zoomOut(); }
+  else zoomIn(() => setPanel(true));
 });
 
 document.getElementById("whatLink").addEventListener("click", (ev) => {
   ev.preventDefault();
-  if (!panel.classList.contains("open")) btn.click();
-  setTimeout(() => document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" }), 500);
+  const go = () => document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (panel.classList.contains("open")) go(); else if (dialEl.classList.contains("ready") && !anim) zoomIn(() => { setPanel(true); setTimeout(go, 300); });
+});
+document.getElementById("scrollCue").addEventListener("click", (ev) => {
+  ev.preventDefault();
+  document.getElementById("verdict").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 // If the browser restores this page from memory (back button), undo the fade.
 window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));

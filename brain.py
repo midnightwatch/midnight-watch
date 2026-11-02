@@ -57,10 +57,19 @@ OFFICIAL_SEED = [
 ]
 BULLETIN_URL = "https://thebulletin.org/doomsday-clock/"
 
-START_SECONDS = 85        # official reading when the project started
-MAX_MOVE = 5              # max seconds the clock can move in one day
-MIN_SECONDS = 1           # never reach midnight
+START_SECONDS = 85        # official reading when the project started (the anchor)
+MAX_MOVE = 0.5            # max seconds the clock can move in one day, all pressures together
+MIN_SECONDS = 1.0         # never reach midnight
 MAX_SECONDS = 17 * 60     # the furthest the real clock has ever been
+
+# Pressures: the board keeps a short list of open dangers beyond the official
+# baseline, each with a weight in seconds. Clock = anchor - sum of weights.
+MAX_OPEN_PRESSURES = 8
+MAX_PRESSURE = 10.0       # one pressure can never weigh more than this
+PRESSURE_STEP = 0.3       # max change of one pressure in one day
+FADE_AFTER_DAYS = 7       # not in the news for this long: the weight starts to fade
+FADE_RATE = 0.9           # ...by this factor per day
+CLOSE_BELOW = 0.1         # weights under this are closed
 NEWS_WINDOW_HOURS = 24
 MAX_ITEMS_TO_MODEL = 45   # keep the prompt small for free-tier token limits
 
@@ -374,9 +383,14 @@ def ask(system, user, max_tokens=2500):
 
 
 RULES = """You are part of a simulated Doomsday Clock board. The clock shows seconds to midnight;
-fewer seconds means closer to catastrophe. Judge only what changed in the LAST 24 HOURS compared
-to the day before, not the overall state of the world (that is already priced into the current time).
-Most days nothing meaningful changes and the honest answer is "hold". Cite headlines by their [number].
+fewer seconds means closer to catastrophe. The Bulletin of the Atomic Scientists set the official clock
+to 85 seconds in January 2026. That baseline already includes everything true then: the wars in Ukraine
+and Gaza, nuclear modernisation, climate change, the AI race, weak institutions. The board tracks only
+what has changed SINCE then, as a short list of open "pressures", each weighing some seconds.
+News is bad every day; ongoing situations, routine tension, familiar warnings and scheduled events are
+not reasons to move. Only a new development counts: a new war or attack, a weapon test, a treaty collapse,
+an outbreak crossing borders, a major cyber or AI incident; or a danger clearly easing: a ceasefire that
+holds, talks that succeed, an outbreak contained. Most days the honest answer is "hold". Cite headlines by their [number].
 Never invent events. Use only names, numbers and places that appear in the headlines; if a headline says
 "Pope" do not guess which pope. Be concrete and calm. Answer ONLY with a JSON object."""
 
@@ -390,12 +404,21 @@ def tidy(text):
     return text.strip()
 
 
-def ask_expert(role, focus, scope, news, seconds):
+def pressures_block(pressures):
+    if not pressures:
+        return "(none open: the clock sits on the official baseline)"
+    return "\n".join(f"- {p['id']} | {p['area']} | {p['name']} | weight {p['weight']:.1f} s | since {p['since']} | last in the news {p['last_seen']}"
+                     for p in pressures)
+
+
+def ask_expert(role, focus, scope, news, seconds, pressures):
     system = RULES + f"""
 You are the {role} expert. Your scope: {scope}.
+Say whether today's news adds a NEW danger in your area, makes an open pressure worse or better, or changes nothing.
 Return JSON: {{"vote": "worse"|"hold"|"better", "score": -3..3, "say": "<2-3 plain sentences, under 70 words, naming the headline numbers you relied on>", "cites": [headline numbers]}}
-score: -3 = clearly more dangerous today, 0 = no real change, +3 = clearly safer. A vote of worse/better requires at least one cite."""
-    user = f"Current reading: {seconds} seconds to midnight.\n\nNews from the last 24 hours:\n{news}"
+score: -3 = a clearly new or sharply worse danger, 0 = nothing new beyond what the open pressures already cover, +3 = a danger clearly easing. A vote of worse/better requires at least one cite."""
+    user = (f"Current reading: {seconds} seconds to midnight.\n\nOpen pressures already counted in the reading:\n{pressures_block(pressures)}"
+            f"\n\nNews from the last 24 hours:\n{news}")
     out = ask(system, user, max_tokens=2000)
     vote = out.get("vote", "hold")
     if vote not in ("worse", "hold", "better"):
@@ -416,23 +439,31 @@ score: -3 = clearly more dangerous today, 0 = no real change, +3 = clearly safer
             "say": say, "cites": cites}
 
 
-def ask_chair(experts, news, seconds, yesterday_lede):
+def ask_chair(experts, news, seconds, yesterday_lede, pressures, anchor):
     views = "\n".join(
         f"- {e['role']} (vote {e['vote']}, score {e['score']:+d}, cites {e['cites']}): {e['say']}"
         for e in experts)
     system = RULES + f"""
-You are the chair. You read the five experts, weigh them, and set the new time.
-Rules: move at most {MAX_MOVE} seconds in either direction; one or two mild negatives usually mean a move of 0 or 1 second;
-a big move (3-5) needs a major event confirmed by more than one expert; "no change" is a normal outcome.
-Do not repeat yesterday's reasoning if nothing new happened.
-Return JSON: {{"delta": -{MAX_MOVE}..{MAX_MOVE} (negative = closer to midnight),
+You are the chair. You read the five experts and update the list of open pressures. The clock is then
+{anchor} seconds minus the total weight of the pressures; you do not set the time directly.
+Weights are in seconds. Guide: 0.3 = a worrying new development; 1.0 = a serious ongoing danger beyond the
+baseline; 3.0 = a crisis with a real chance of catastrophe; 5.0 or more = war between nuclear powers or
+a global pandemic. The whole year 2025 moved the official clock by 4 seconds, so weights must be modest.
+Keep existing pressures and their ids unless something changed. Raise a weight only for a cited headline that
+makes it worse. Lower it or close it when the danger clearly eases, with a cited headline. Add a pressure only
+for a new development since January 2026 that the baseline does not cover; a new pressure starts small.
+Do not add a pressure for something already listed; update that one instead. "same" for every pressure is a
+normal day. Do not repeat yesterday's reasoning if nothing new happened.
+Return JSON: {{"pressures": [{{"id": "<short-slug, keep existing ids>", "area": "Nuclear|Climate|Bio|AI & tech|Geopolitics",
+"name": "<5-8 words>", "weight": <seconds, one decimal>, "status": "new|up|down|same|closed", "headlines": [numbers that justify a change]}}],
 "lede": "<one sentence stating the decision and the single biggest reason>",
 "body": ["<paragraph>", "<paragraph>", "<paragraph>"],
 "headlines": [headline numbers that drove the decision, 3 to 6 of them]}}"""
-    user = (f"Current reading: {seconds} seconds to midnight.\n"
+    user = (f"Official baseline: {anchor} seconds. Current reading: {seconds} seconds to midnight.\n"
+            f"Open pressures:\n{pressures_block(pressures)}\n"
             f"Yesterday's chair lede: {yesterday_lede or '(none, first day)'}\n\n"
             f"Expert views:\n{views}\n\nNews from the last 24 hours:\n{news}")
-    return ask(system, user, max_tokens=3000)
+    return ask(system, user, max_tokens=3500)
 
 # ----------------------------------------------------------------------------
 # Fake AI for --dry-run (no key needed)
@@ -445,7 +476,7 @@ def fake_run(items, seconds):
         cites = [i["id"] for i in mine[:2]]
         experts.append({"role": role, "focus": focus, "vote": "hold", "score": 0, "cites": cites,
                         "say": f"Dry run. {len(mine)} {role} items seen. No judgment made."})
-    chair = {"delta": 0, "lede": "Dry run: the clock holds because no AI was asked.",
+    chair = {"pressures": [], "lede": "Dry run: the clock holds because no AI was asked.",
              "body": ["This file was written by brain.py --dry-run.",
                       "The news fetch and the file format are being tested.",
                       "A real run replaces this with the chair's reasoning."],
@@ -463,35 +494,115 @@ def load_json(path, default):
         return default
 
 
-def apply_rules(chair, experts, items, seconds):
-    try:
-        delta = int(chair.get("delta", 0))
-    except (TypeError, ValueError):
-        delta = 0
-    delta = max(-MAX_MOVE, min(MAX_MOVE, delta))
+def slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", str(text).lower()).strip("-")[:40] or "pressure"
 
+
+def apply_rules(chair, experts, items, pressures, anchor, today):
+    """Turn the chair's answer into the new pressures list, with the hard rules
+    applied in code. Returns (new_seconds, new_pressures, cited, notes)."""
     valid_ids = {i["id"] for i in items}
     cited = [int(h) for h in chair.get("headlines", []) if str(h).isdigit() and int(h) in valid_ids]
-    if delta != 0 and not cited:
-        log("chair moved the clock without citing a headline -> forced hold")
-        delta = 0
+    total = sum(e["score"] for e in experts)
+    worse = sum(1 for e in experts if e["vote"] == "worse")
+    better = sum(1 for e in experts if e["vote"] == "better")
+    old = {p["id"]: p for p in pressures}
+    notes = []
+
+    proposed = chair.get("pressures", [])
+    if not isinstance(proposed, list):
+        proposed = []
+    out, seen = [], set()
+    for q in proposed:
+        if not isinstance(q, dict):
+            continue
+        pid = slug(q.get("id") or q.get("name"))
+        if pid in seen:
+            continue
+        seen.add(pid)
+        status = str(q.get("status", "same")).lower()
+        heads = [int(h) for h in q.get("headlines", []) if str(h).isdigit() and int(h) in valid_ids]
+        try:
+            want = float(q.get("weight", 0))
+        except (TypeError, ValueError):
+            want = 0.0
+        want = max(0.0, min(MAX_PRESSURE, want))
+        prev = old.get(pid)
+
+        if prev is None:
+            # New pressure: needs a cited headline and an expert voting worse.
+            if status == "closed" or not heads or worse == 0:
+                if status != "closed":
+                    notes.append(f"new pressure '{pid}' rejected: no headline or no expert voted worse")
+                continue
+            if len(out) >= MAX_OPEN_PRESSURES:
+                notes.append(f"new pressure '{pid}' rejected: too many open")
+                continue
+            w = min(want, PRESSURE_STEP)
+            out.append({"id": pid, "area": str(q.get("area", "Geopolitics"))[:20], "name": str(q.get("name", pid))[:80],
+                        "weight": w, "since": today, "last_seen": today, "status": "new", "delta": w})
+            continue
+
+        base = float(prev["weight"])
+        if status == "closed":
+            w, last_seen = 0.0, today
+            if not heads:
+                w, status = base, "same"
+                notes.append(f"'{pid}' close rejected: no headline")
+        elif status in ("up", "down"):
+            if not heads:
+                w, status, last_seen = base, "same", prev["last_seen"]
+                notes.append(f"'{pid}' {status} rejected: no headline")
+            else:
+                w = max(base - PRESSURE_STEP, min(base + PRESSURE_STEP, want))
+                last_seen = today
+                if status == "up" and w <= base:
+                    status = "same"
+                if status == "down" and w >= base:
+                    status = "same"
+        else:
+            w, status, last_seen = base, "same", prev["last_seen"]
+        out.append({"id": pid, "area": prev["area"], "name": str(q.get("name") or prev["name"])[:80],
+                    "weight": w, "since": prev["since"], "last_seen": last_seen, "status": status, "delta": w - base})
+
+    # Pressures the chair forgot to list stay open unchanged.
+    for pid, prev in old.items():
+        if pid not in seen:
+            out.append(dict(prev, status="same", delta=0.0))
 
     # The chair cannot move against a clear expert consensus.
-    total = sum(e["score"] for e in experts)
-    if delta < 0 and total > 0 or delta > 0 and total < 0:
-        log(f"chair delta {delta} contradicts expert total {total:+d} -> forced hold")
-        delta = 0
+    net = sum(p["delta"] for p in out)            # positive = clock moves closer to midnight
+    if (net > 0 and total > 0) or (net < 0 and total < 0):
+        notes.append(f"net change {net:+.1f} contradicts expert total {total:+d} -> forced hold")
+        for p in out:
+            p["weight"] -= p["delta"]; p["delta"] = 0.0; p["status"] = "same" if p["weight"] > 0 else p["status"]
+        out = [p for p in out if p["weight"] > 0 or p["status"] != "new"]
 
-    # A big move (3-5) needs at least two experts voting that way.
-    if abs(delta) >= 3:
-        want = "worse" if delta < 0 else "better"
-        agree = sum(1 for e in experts if e["vote"] == want)
-        if agree < 2:
-            log(f"big move {delta} backed by only {agree} expert(s) -> capped at 2")
-            delta = 2 if delta > 0 else -2
+    # Fade: a pressure that has not been in the news for a while loses weight by itself.
+    for p in out:
+        if p["status"] == "same" and p["weight"] > 0:
+            quiet = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(p["last_seen"], "%Y-%m-%d")).days
+            if quiet >= FADE_AFTER_DAYS:
+                faded = p["weight"] * FADE_RATE
+                p["delta"] += faded - p["weight"]; p["weight"] = faded; p["status"] = "fading"
 
-    new_seconds = max(MIN_SECONDS, min(MAX_SECONDS, seconds + delta))
-    return new_seconds, cited
+    # Total move today is capped.
+    net = sum(p["delta"] for p in out)
+    if abs(net) > MAX_MOVE:
+        k = MAX_MOVE / abs(net)
+        notes.append(f"total change {net:+.1f} capped at {MAX_MOVE}")
+        for p in out:
+            p["weight"] -= p["delta"] * (1 - k); p["delta"] *= k
+
+    for p in out:
+        p["weight"] = round(max(0.0, min(MAX_PRESSURE, p["weight"])), 1)
+        p["delta"] = round(p["delta"], 1)
+    closed = [p for p in out if p["weight"] < CLOSE_BELOW]
+    for p in closed:
+        p["status"] = "closed"; p["delta"] = round(-float(old.get(p["id"], {}).get("weight", 0)), 1)
+    out.sort(key=lambda p: -p["weight"])
+    new_seconds = round(max(MIN_SECONDS, min(MAX_SECONDS, anchor - sum(p["weight"] for p in out))), 1)
+    return new_seconds, out, cited, notes
 
 
 # ----------------------------------------------------------------------------
@@ -647,20 +758,25 @@ def main():
 
     prev = load_json(LATEST, None)
     history = load_json(HISTORY, [])
+    update_official(now)
+    anchor = float((load_json(OFFICIAL_FILE, None) or OFFICIAL_SEED)[-1][1])
     if prev and not prev.get("sample") and prev.get("date") == today:
         # Re-run on the same day: start from where that day started,
         # so the reading is replaced, not stacked.
-        seconds = int(prev["previous"])
+        seconds = float(prev["previous"])
+        pressures = prev.get("pressures_before", [])
         yesterday_lede = prev.get("yesterday_lede", "")
         log("re-run on the same day, replacing today's reading")
     elif prev and not prev.get("sample"):
-        seconds = int(prev["seconds"])
+        seconds = float(prev["seconds"])
+        pressures = [p for p in prev.get("pressures", []) if p.get("weight", 0) > 0]
         yesterday_lede = prev.get("chair", {}).get("lede", "")
     else:
-        seconds = START_SECONDS
+        seconds = anchor
+        pressures = []
         yesterday_lede = ""
-    log(f"date {today}, starting from {seconds} seconds")
-    update_official(now)
+    pressures_before = [dict(p) for p in pressures]
+    log(f"date {today}, starting from {seconds} seconds with {len(pressures)} open pressures (anchor {anchor})")
 
     items = fetch_news(now)
     log(f"{len(items)} items sent to the board")
@@ -675,12 +791,16 @@ def main():
         experts = []
         for role, focus, scope in EXPERTS:
             log(f"asking {role} expert")
-            experts.append(ask_expert(role, focus, scope, news, seconds))
+            experts.append(ask_expert(role, focus, scope, news, seconds, pressures))
             time.sleep(int(os.environ.get("CALL_DELAY", "8")))  # stay under free-tier tokens-per-minute
         log("asking chair")
-        chair = ask_chair(experts, news, seconds, yesterday_lede)
+        chair = ask_chair(experts, news, seconds, yesterday_lede, pressures, anchor)
 
-    new_seconds, cited = apply_rules(chair, experts, items, seconds)
+    new_seconds, new_pressures, cited, notes = apply_rules(chair, experts, items, pressures, anchor, today)
+    for n in notes:
+        log(n)
+    for p in new_pressures:
+        log(f"  pressure {p['id']}: {p['weight']:.1f} s ({p['status']}, {p['delta']:+.1f})")
     log(f"verdict: {seconds} -> {new_seconds}")
 
     by_id = {i["id"]: i for i in items}
@@ -702,6 +822,9 @@ def main():
         "date": today,
         "seconds": new_seconds,
         "previous": seconds,
+        "anchor": anchor,
+        "pressures": new_pressures,
+        "pressures_before": pressures_before,
         "generated_at": now.isoformat(timespec="seconds"),
         "yesterday_lede": yesterday_lede,
         "chair": {"lede": fix_direction(str(chair.get("lede", "")).strip(), new_seconds - seconds)[:400],

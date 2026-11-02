@@ -17,14 +17,15 @@
 
 ## The rules
 
-The AI is not trusted to behave on its own. Hard rules in code:
+The clock is anchored to the official Bulletin reading (85 seconds, January 2026). The board keeps a short list of open "pressures": dangers that are new since then, each with a weight in seconds. The clock is the official reading minus the total weight. The AI is not trusted to behave on its own. Hard rules in code:
 
-- Maximum move of 5 seconds per day in either direction.
-- Every move must cite a real headline. No citation, no move.
+- The clock moves at most 0.5 seconds per day, all pressures together. Readings are kept to a tenth of a second.
+- A pressure can change by at most 0.3 seconds a day and can never weigh more than 10 seconds.
+- A new pressure needs a cited headline and at least one expert voting "worse"; it starts small.
+- Raising, lowering or closing a pressure needs a cited headline. No citation, no change.
 - The chair cannot move against the experts' combined score.
-- A move of 3 seconds or more needs at least two experts voting the same way.
-- "No change" is a normal, expected outcome.
-- Starting point: the official reading at launch (85 seconds, January 2026).
+- A pressure that has not been in the news for 7 days fades by itself, 10% a day, and closes when it is nearly gone.
+- At most 8 pressures can be open. "No change" is a normal, expected outcome.
 
 ## How it runs
 

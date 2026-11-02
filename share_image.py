@@ -48,7 +48,7 @@ def draw_share_image(seconds, previous, date_text, out_path):
         x2, y2 = polar(cx, cy, i * 6, R - 6 * S)
         d.line([x1, y1, x2, y2], fill=ASH if hour else SMOKE, width=(4 if hour else 2) * S)
     mins = seconds / 60
-    visual = max(mins * 6, 0.6) * 4
+    visual = max(mins * 6, 0.6) * 4  # widened so the sliver stays visible at thumbnail size
     d.pieslice([cx - R + 3 * S, cy - R + 3 * S, cx + R - 3 * S, cy + R - 3 * S],
                start=270 - visual, end=270, fill=EMBER)
     hx, hy = polar(cx, cy, 360 - (mins / 60) * 30, R - 110 * S)
@@ -61,13 +61,14 @@ def draw_share_image(seconds, previous, date_text, out_path):
     x = 620 * S
     d.text((x, 150 * S), "MIDNIGHT WATCH", fill=SMOKE, font=font(30 * S))
     big = font(150 * S)
-    d.text((x, 190 * S), str(seconds), fill=EMBER, font=big)
-    nw = d.textlength(str(seconds), font=big)
+    num = f"{seconds:.1f}"
+    d.text((x, 190 * S), num, fill=EMBER, font=big)
+    nw = d.textlength(num, font=big)
     d.text((x + nw + 20 * S, 275 * S), "seconds", fill=BONE, font=font(60 * S))
     d.text((x, 350 * S), "to midnight", fill=BONE, font=font(60 * S))
-    delta = seconds - previous
+    delta = round(seconds - previous, 1)
     sub = ("no change from yesterday" if delta == 0 else
-           f"{abs(delta)} second{'s' if abs(delta) != 1 else ''} {'closer' if delta < 0 else 'further'} than yesterday")
+           f"{abs(delta):.1f} seconds {'closer' if delta < 0 else 'further'} than yesterday")
     d.text((x, 445 * S), sub, fill=EMBER if delta < 0 else ASH, font=font(30 * S))
     d.text((x, 495 * S), f"Daily AI Doomsday Clock  ·  {date_text}", fill=SMOKE, font=font(22 * S))
     d.text((x, 540 * S), "midnightwatch.github.io/midnight-watch", fill=SMOKE, font=font(20 * S))
