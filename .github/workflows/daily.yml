@@ -10,7 +10,7 @@ on:
         required: false
         default: ""
       reset:
-        description: "Type RESET to wipe all readings and restart from the official clock (keeps official.json)"
+        description: "RESTART = keep old readings, start today from the official clock. RESET = wipe everything and start over."
         required: false
         default: ""
 
@@ -43,6 +43,8 @@ jobs:
           fi
           if [ -n "$MONTH" ]; then
             python brain.py --month "$MONTH"
+          elif [ "$RESET" = "RESTART" ]; then
+            python brain.py --restart
           else
             python brain.py
           fi
