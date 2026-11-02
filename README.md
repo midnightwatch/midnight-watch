@@ -31,7 +31,7 @@ The AI is not trusted to behave on its own. Hard rules in code:
 | Part | Tool | Cost |
 |---|---|---|
 | Hosting | GitHub Pages | free |
-| Daily job | GitHub Actions (cron, 00:00 UTC) | free |
+| Daily job | GitHub Actions (cron, runs 23:00 UTC, published 00:00 UTC) | free |
 | News | RSS feeds (AP, Reuters, BBC, Al Jazeera, DW, UN News, Bulletin, IAEA, Carbon Brief, NPR, Guardian, France 24) | free |
 | AI | Groq (primary), Gemini (backup), both free tier | free |
 | Visitor count | GoatCounter | free |
@@ -43,7 +43,8 @@ Files:
 | `index.html` | The whole website. Reads the JSON files in `data/`. |
 | `brain.py` | The daily job: fetch news, ask the six AIs, apply the rules, write the data files. |
 | `share_image.py` | Draws the picture shown when the link is shared in chat apps. |
-| `.github/workflows/daily.yml` | Runs `brain.py` every day and commits the result. |
+| `.github/workflows/daily.yml` | Runs `brain.py` at 23:00 UTC and commits the result, dated for the next day. The site shows it from 00:00 UTC. |
+| `.github/workflows/publish.yml` | Waits until 00:00 UTC and renames `data/share-next.png` to `data/share.png`. |
 | `data/latest.json` | Today's reading. |
 | `data/history.json` | One line per day: date and seconds. |
 | `data/days/` | Full archive, one file per day. |

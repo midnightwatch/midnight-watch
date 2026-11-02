@@ -636,7 +636,14 @@ def main():
         return
 
     now = datetime.now(timezone.utc)
-    today = args.date or now.strftime("%Y-%m-%d")
+    # The job runs at 23:00 UTC so the reading is ready before midnight.
+    # A run in the 23:00 hour is dated for the next day; the site keeps it
+    # hidden until 00:00 UTC. A run at any other hour is dated today.
+    reading_day = now + timedelta(hours=1) if now.hour == 23 else now
+    today = args.date or reading_day.strftime("%Y-%m-%d")
+    early = today > now.strftime("%Y-%m-%d")
+    if early:
+        log(f"early run: reading dated {today}, published by the site at 00:00 UTC")
 
     prev = load_json(LATEST, None)
     history = load_json(HISTORY, [])
@@ -722,8 +729,8 @@ def main():
     (days_dir / f"{today}.json").write_text(json.dumps(latest, indent=2, ensure_ascii=False))
 
     # On the 1st, write last month's report (never blocks the daily reading).
-    if now.day == 1 and not args.date:
-        prev_month = (now.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+    if reading_day.day == 1 and not args.date:
+        prev_month = (reading_day.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
         try:
             build_month_report(prev_month)
         except Exception as ex:
@@ -733,8 +740,11 @@ def main():
     try:
         from share_image import draw_share_image
         nice_date = datetime.strptime(today, "%Y-%m-%d").strftime("%-d %B %Y")
-        draw_share_image(new_seconds, seconds, nice_date, DATA_DIR / "share.png")
-        log("wrote share.png")
+        # An early run writes share-next.png; the publish workflow renames it
+        # to share.png at 00:00 UTC so link previews don't change early.
+        name = "share-next.png" if early else "share.png"
+        draw_share_image(new_seconds, seconds, nice_date, DATA_DIR / name)
+        log(f"wrote {name}")
     except Exception as ex:
         log(f"share image skipped: {ex}")
 

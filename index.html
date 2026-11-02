@@ -715,10 +715,16 @@ function untilMidnightUTC() {
   const h = Math.floor(m / 60), mm = m % 60;
   return h > 0 ? `in ${h} h ${String(mm).padStart(2, "0")} min` : `in ${mm} min`;
 }
+function utcToday() { return new Date().toISOString().slice(0, 10); }
+// A reading is written up to an hour before its date; it counts as published at 00:00 UTC of that date.
+function publishedAt(data) {
+  const g = new Date(data.generated_at).getTime(), m = new Date(data.date + "T00:00:00Z").getTime();
+  return new Date(Math.max(g, m)).toISOString();
+}
 function renderStatus(data) {
   const u = document.getElementById("updatedLine"), n = document.getElementById("nextLine");
   if (data.sample || !data.generated_at) { u.textContent = ""; n.textContent = ""; return; }
-  u.innerHTML = `last reading <span>${ago(data.generated_at)}</span>`;
+  u.innerHTML = `last reading <span>${ago(publishedAt(data))}</span>`;
   n.innerHTML = `next reading <span>${untilMidnightUTC()}</span>`;
 }
 setInterval(() => { if (TODAY_DATA) renderStatus(TODAY_DATA); }, 60000);
@@ -727,7 +733,7 @@ async function renderMonths() {
   try {
     const r = await fetch("data/months/index.json", { cache: "no-store" });
     if (!r.ok) return;
-    const months = await r.json();
+    const months = (await r.json()).filter(m => m.month < utcToday().slice(0, 7));
     if (!months.length) return;
     document.getElementById("monthsList").innerHTML = months.map(m =>
       `<li><a href="month.html#${esc(m.month)}">${esc(m.label)}: the chair’s monthly report</a></li>`).join("");
@@ -1033,16 +1039,33 @@ document.getElementById("whatLink").addEventListener("click", (ev) => {
 // If the browser restores this page from memory (back button), undo the fade.
 window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
 // ---------- load ----------
-(async () => {
+// The daily job runs at 23:00 UTC and dates its reading for the next day.
+// Anything dated after today (UTC) stays hidden until 00:00, when the page reloads the data.
+async function loadAll() {
   let data = SAMPLE;
+  const today = utcToday();
   try {
     const r = await fetch("data/latest.json", { cache: "no-store" });
     if (r.ok) {
       data = await r.json();
+      let history = [];
       try {
         const h = await fetch("data/history.json", { cache: "no-store" });
-        if (h.ok) data.history = await h.json();
+        if (h.ok) history = (await h.json()).filter(x => x.date <= today);
       } catch (_) {}
+      if (!data.sample && data.date > today) {
+        // Tomorrow's reading is already written; show the latest published day instead.
+        const last = history.length ? history[history.length - 1].date : null;
+        let shown = null;
+        if (last) {
+          try {
+            const d = await fetch(`data/days/${last}.json`, { cache: "no-store" });
+            if (d.ok) shown = await d.json();
+          } catch (_) {}
+        }
+        data = shown || SAMPLE;
+      }
+      data.history = history;
       try {
         const o = await fetch("data/official.json", { cache: "no-store" });
         if (o.ok) {
@@ -1056,7 +1079,14 @@ window.addEventListener("pageshow", () => document.body.classList.remove("leavin
     }
   } catch (_) {}
   render(data);
-})();
+}
+function reloadAtMidnight() {
+  const now = new Date();
+  const next = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1) + 3000;
+  setTimeout(async () => { await loadAll(); reloadAtMidnight(); }, next - now.getTime());
+}
+loadAll();
+reloadAtMidnight();
 </script>
 <script data-goatcounter="https://midnightwatch.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

@@ -94,9 +94,19 @@ function setHands(sec) {
   const [sx, sy] = polar(360 - visual, R - 2), [ex, ey] = polar(360, R - 2);
   document.getElementById("wedge").setAttribute("d", `M ${CX} ${CY} L ${sx} ${sy} A ${R - 2} ${R - 2} 0 0 1 ${ex} ${ey} Z`);
 }
-(async () => {
+async function load() {
   let d = null;
+  const today = new Date().toISOString().slice(0, 10);
   try { const r = await fetch("data/latest.json", { cache: "no-store" }); if (r.ok) d = await r.json(); } catch (_) {}
+  if (d && d.date > today) {
+    // Tomorrow's reading is written early; show the latest published day until 00:00 UTC.
+    d = null;
+    try {
+      const h = await (await fetch("data/history.json", { cache: "no-store" })).json();
+      const past = h.filter(x => x.date <= today);
+      if (past.length) { const r = await fetch(`data/days/${past[past.length - 1].date}.json`, { cache: "no-store" }); if (r.ok) d = await r.json(); }
+    } catch (_) {}
+  }
   if (!d) { document.getElementById("delta").textContent = "could not load"; return; }
   setHands(d.previous); setTimeout(() => setHands(d.seconds), 350);
   document.getElementById("big").innerHTML = `<span>${d.seconds}</span> seconds to midnight`;
@@ -104,7 +114,14 @@ function setHands(sec) {
   if (diff === 0) { el.textContent = "no change from yesterday"; el.className = "delta flat"; }
   else { el.textContent = `${Math.abs(diff)} second${Math.abs(diff) === 1 ? "" : "s"} ${diff < 0 ? "closer" : "further"} than yesterday`; el.className = "delta" + (diff > 0 ? " calm" : ""); }
   document.getElementById("link").href = "https://midnightwatch.github.io/midnight-watch/?ref=embed";
-})();
+}
+function reloadAtMidnight() {
+  const now = new Date();
+  const next = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1) + 3000;
+  setTimeout(async () => { await load(); reloadAtMidnight(); }, next - now.getTime());
+}
+load();
+reloadAtMidnight();
 </script>
 </body>
 </html>
