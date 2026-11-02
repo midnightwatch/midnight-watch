@@ -1,0 +1,42 @@
+name: Midnight Watch publish preview at midnight
+
+# The daily job runs at 23:00 UTC and leaves the new share picture as
+# data/share-next.png. This job starts at 23:30, waits until exactly
+# 00:00 UTC, then renames it to data/share.png so link previews change
+# at midnight (plus GitHub's 1-10 minute deploy and cache delay).
+
+on:
+  schedule:
+    - cron: "30 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait until 00:00 UTC
+        run: |
+          now=$(date -u +%s)
+          midnight=$(date -u -d "tomorrow 00:00" +%s)
+          wait=$((midnight - now))
+          # If we started after midnight (late cron), don't wait a whole day.
+          if [ "$wait" -gt 3600 ]; then wait=0; fi
+          echo "waiting $wait seconds"
+          sleep "$wait"
+
+      - uses: actions/checkout@v4
+
+      - name: Publish the share picture
+        run: |
+          if [ ! -f data/share-next.png ]; then
+            echo "no pending picture"; exit 0
+          fi
+          git config user.name "midnight-watch-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git mv -f data/share-next.png data/share.png
+          git commit -m "Publish preview for $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push
