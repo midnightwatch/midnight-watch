@@ -9,6 +9,10 @@ on:
         description: "Only write the monthly report for this month (YYYY-MM) and skip the daily reading"
         required: false
         default: ""
+      reset:
+        description: "Type RESET to wipe all readings and restart from the official clock (keeps official.json)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -30,7 +34,13 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MONTH: ${{ github.event.inputs.month }}
+          RESET: ${{ github.event.inputs.reset }}
         run: |
+          if [ "$RESET" = "RESET" ]; then
+            echo "resetting all readings"
+            rm -f data/latest.json data/history.json data/share.png data/share-next.png
+            rm -rf data/days data/months
+          fi
           if [ -n "$MONTH" ]; then
             python brain.py --month "$MONTH"
           else
@@ -41,7 +51,7 @@ jobs:
         run: |
           git config user.name "midnight-watch-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/
+          git add -A data/
           git commit -m "Reading written $(date -u +'%Y-%m-%d %H:%M') UTC" || echo "nothing changed"
           git pull --rebase
           git push
