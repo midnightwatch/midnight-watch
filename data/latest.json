@@ -1,80 +1,56 @@
 {
   "sample": false,
-  "date": "2026-11-01",
-  "seconds": 82,
-  "previous": 84,
-  "generated_at": "2026-11-01T00:26:31+00:00",
-  "yesterday_lede": "We move the clock back by one second as worsening Ebola outbreak and severe Australian storms increase immediate biological and climate risks.",
+  "date": "2026-11-02",
+  "seconds": 80,
+  "previous": 82,
+  "generated_at": "2026-11-02T00:28:14+00:00",
+  "yesterday_lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
   "chair": {
-    "lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
+    "lede": "We move the clock two seconds closer to midnight as escalating climate floods, AI‑related fatality lawsuit, and heightened Iran‑Hormuz tensions together raise immediate existential risks.",
     "body": [
-      "North Korea’s defence research institutes tested a major weapon system, raising immediate strategic and nuclear tension (21). This development adds a fresh, high‑impact threat beyond the geopolitical stalemate noted yesterday.",
-      "The Ebola outbreak in the Democratic Republic of Congo has now surpassed 5,000 deaths with over 10,000 infections, and Nigeria reports two suspected cases in its northeast, intensifying the biological risk landscape (3, 7, 10, 13).",
-      "Severe weather warnings across the US Southwest and major Australian cities increase short‑term climate hazards, while a major Binance theft linked to North Korean hackers underscores growing cyber‑enabled financial vulnerability (2, 4, 6, 20)."
+      "Severe weather events surged with flash floods in Arizona and Colorado and catastrophic flooding in Ecuador linked to El Niño, underscoring accelerating climate impacts.",
+      "The lawsuit over a fatal ChatGPT misguidance incident highlights the growing real‑world dangers of AI misuse, while a DW report flags AI‑enabled biological weapon concerns.",
+      "Geopolitical tensions rose sharply with Iran’s IRGC reporting two tankers exploding after hitting mines in the Strait of Hormuz and Russia’s near‑completion of a giant radar in Kaliningrad, both heightening the risk of military escalation."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "worse",
-      "say": "North Korea’s defence research institutes tested a major weapon system, indicating heightened nuclear/strategic risk. (21)"
+      "vote": "hold",
+      "say": "Tensions around Iran and the Strait of Hormuz persist, with reports of tankers hitting mines (21) and heightened diplomatic activity, but no new nuclear weapons developments or tests were reported."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "In the past day heavy rains threaten flooding in the US Southwest and severe storm warnings bring hail, damaging winds and flash‑flood risk to major Australian cities, indicating heightened extreme‑weather risk. No new climate‑policy improvements were reported."
+      "say": "Recent extreme weather reports – flash floods in Arizona and Colorado, heavy‑rain flood risk across the US Southwest, and catastrophic Ecuador floods linked to El Niño – indicate worsening climate impacts in the last day."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "worse",
-      "say": "Ebola deaths in the DRC have topped 5,000 with over 10,000 infections and Nigeria reports two suspected cases in the northeast, prompting isolation and contact tracing. These developments increase outbreak risk and strain response capacity."
+      "vote": "hold",
+      "say": "No new disease outbreaks, lab incidents, or antimicrobial resistance issues reported; the only bio news was the negative Ebola test in Nigeria, which does not increase risk."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "Recent reports link North Korean state-backed hackers to a massive Binance theft, highlighting growing cyber‑crime capabilities. This escalation in AI‑enabled financial attacks raises immediate risk to global digital infrastructure."
+      "say": "The fatal ChatGPT misguidance lawsuit (20) shows real AI misuse harming individuals, and the DW piece on AI‑enabled biological weapons (13) highlights emerging existential threats. Both indicate heightened risk today."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "hold",
-      "say": "Tensions persist with US‑Russia deadlock in the UN Security Council (5) and Iran’s threatening rhetoric, but limited ceasefire interest in the Black Sea (22) and a rare local ceasefire in Oleshky (24) show modest de‑escalation, while Taiwan’s coast‑guard patrols (25) keep regional frictions alive."
+      "vote": "worse",
+      "say": "Escalations rose with Iran’s IRGC reporting two tankers exploding in Hormuz, the Kherson cease‑fire ending and power cuts in Ukraine, Russia advancing a giant radar near Kaliningrad heightening NATO tensions, and Gulf leaders scrambling to prevent a new US‑Iran clash."
     }
   ],
   "headlines": [
     {
-      "tag": "Geopolitics",
-      "title": "North Korea says defence research institutes tested major weapon system",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOa2szXzlwbFhuTl8xcVFPLU9JTTFnUTYtT1pYWGxTbEFhUmxWV1E5NkxvbTZvOEtETEp4YjdMaEhDbG1MSzIweE5kYXpSM3FWVEpUWEFFNUZTUFdaNzN2UldqMHlVdDZsT3NaNm9PQl9xSFpfMm1FR3JCUTA0Z2hiQ0EtUXpKZ3MwLThwQmZ3R0JxZ2lRZ2hjcEpkWjI0R2FyUGdIQ3VZZUVwRl96UVByZklTSm1KY1RVRExaSlptRUtLbHRld0FVN2lEYUcwbUU?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "Congo’s Ebola deaths top 5,000 as fear of continent-wide spread mounts",
+      "tag": "Climate",
+      "title": "Flash floods trigger evacuations in Arizona and Colorado amid heavy rains in southwest",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU2dLZS1NaklPODk2amZTY2YtUG5obEdwWW1hSWx1RFpQQWdWNDZFQkxFM3JxU2ZhaTVMdFI2X25GV1FfeVZTRkhoNUlNc3plQXQ5SWtqZEx4M0llYUhzeGVVMHE5cGZaczF5V2JDRTN6eXF3RGF1azU0TUlIUVg0aEp1TC1XY3R1cmJj?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "Nigeria reports two suspected Ebola cases in northeast region",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLVJNVjgwa3JjQjJTZV9qaEtOR0hPeUVlUU5fVmg1NmpMcmtWR2QycWNERWphd21IckhyYnNQMllfLUtrSDhCV1p4cEV4RWhmYURFbW91dVJ0YzVUMUJPNFctZG5FX1ZSdS1KemxhbWdmRTRSX2R0TEZMbm5tdVVDSDNUbnBreFJrT0tlQXE1VzVmSllTdVZoVVpqOXV1WXh3ZGpaNmZqWmdlS010Zi1NcWxQai1WU2k0dE96SDVuUld0WkxhSm9VSlFR?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "tag": "Bio",
-      "title": "Health authorities probe two suspected Ebola cases in northeast Nigeria",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/10/31/health-authorities-probe-two-suspected-ebola-cases-in-northeast-nigeria?traffic_source=rss"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNDh4NktGVGxZOF80aEhPdnUtRmdDb0VFOWxTSEh4NTNkRFlyTTdzUWkwd3lfenZ4cVp3bFptRE5qVGloSU00OGs4SldjZHlvZjBLNVp0allfNE1KZmU3dGpoQ3pxNElSa1JpLXgzZzA1NkFJMExnVktzVzdDLUFSNUhrVFJORVMzS1VtMjZqZ0NpRnNnakFIem9wbG9rMmpoNEJaMHNwcFZwVk8wWVI4dUZ1dVg0bVdT?oc=5"
     },
     {
       "tag": "Climate",
@@ -83,16 +59,40 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0hITmxKR0lIeDgxSVFIcXBOUTFDZlFUVVNlLVhScjVlZUZKTWZVZTd3WUZQc0ZvYWFiZnpmbmNZMFpxZy1EaGpORm1vdVZYR2ZfSlNiOU5pRTVHUl9GMlZpamw3QWpkdUlJYktXUDZJRmpSVHVZeTNKM09iT1l1MmVoZkstd190VTd6U0RlMkNZejE2VEFfOVRSU3BQSnowU1JrZ0RMUQ?oc=5"
     },
     {
-      "tag": "AI & tech",
-      "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss"
+      "tag": "Climate",
+      "title": "Video captures house collapsing due to Ecuador floods",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/1/video-captures-house-collapsing-due-to-ecuador-floods?traffic_source=rss"
     },
     {
-      "tag": "Climate",
-      "title": "Storm warnings for Melbourne, Canberra, Sydney and Brisbane as cold front ‘packs a punch’",
+      "tag": "AI & tech",
+      "title": "Parents of woman who died of seizure after ChatGPT misguidance sue OpenAI",
       "source": "The Guardian",
-      "url": "https://www.theguardian.com/australia-news/2026/oct/31/weather-bom-storm-warnings-melbourne-canberra-sydney-brisbane"
+      "url": "https://www.theguardian.com/us-news/2026/nov/01/chatgpt-woman-seizure-lawsuit-openai"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Biological weapons: The weaponization of disease",
+      "source": "DW",
+      "url": "https://www.dw.com/en/biological-weapons-the-weaponization-of-disease/a-79819662?maca=en-rss-en-world-4025-rdf"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Iran's IRGC Navy says two tankers 'exploded' after hitting mines in Hormuz",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmk2dmxjdk1sOW96UkZiaUlJVXhzc1pJMjZJUnY2WGtvaXd4aXRJY3d4UTNoUmFJdUVQQjlkb0JPSmxEc2YzS1JOZ2NSWmpTUnhzYzBiU1hfeXBvb2F2WEp2NHc5YkFfUUNKSHc2NW1PMUVKT0xqUTdOa0tfUmZpQWE2SDFtdzJ5TmZleWpLd0Zid1JWR2Z0d0dOeVMwekFzNTNTYndHMmMyV0poZ2h0UmFOVWc2M3o3Z2h6TUR2SQ?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Russia's giant new radar in Kaliningrad raises alarm in NATO",
+      "source": "DW",
+      "url": "https://www.dw.com/en/russia-s-giant-new-radar-in-kaliningrad-raises-alarm-in-nato/a-79797815?maca=en-rss-en-world-4025-rdf"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Iran war live: Tankers hit in Hormuz; Trump again says conflict to end soon",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/11/2/iran-war-live-tankers-hit-in-hormuz-trump-again-says-conflict-to-end-soon?traffic_source=rss"
     }
   ]
 }

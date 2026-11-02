@@ -1,0 +1,98 @@
+{
+  "sample": false,
+  "date": "2026-11-02",
+  "seconds": 80,
+  "previous": 82,
+  "generated_at": "2026-11-02T00:28:14+00:00",
+  "yesterday_lede": "We move the clock closer to midnight two seconds as new nuclear weapon testing by North Korea and escalating Ebola cases in the DRC compound existing biological and strategic risks.",
+  "chair": {
+    "lede": "We move the clock two seconds closer to midnight as escalating climate floods, AI‑related fatality lawsuit, and heightened Iran‑Hormuz tensions together raise immediate existential risks.",
+    "body": [
+      "Severe weather events surged with flash floods in Arizona and Colorado and catastrophic flooding in Ecuador linked to El Niño, underscoring accelerating climate impacts.",
+      "The lawsuit over a fatal ChatGPT misguidance incident highlights the growing real‑world dangers of AI misuse, while a DW report flags AI‑enabled biological weapon concerns.",
+      "Geopolitical tensions rose sharply with Iran’s IRGC reporting two tankers exploding after hitting mines in the Strait of Hormuz and Russia’s near‑completion of a giant radar in Kaliningrad, both heightening the risk of military escalation."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "Tensions around Iran and the Strait of Hormuz persist, with reports of tankers hitting mines (21) and heightened diplomatic activity, but no new nuclear weapons developments or tests were reported."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Recent extreme weather reports – flash floods in Arizona and Colorado, heavy‑rain flood risk across the US Southwest, and catastrophic Ecuador floods linked to El Niño – indicate worsening climate impacts in the last day."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "No new disease outbreaks, lab incidents, or antimicrobial resistance issues reported; the only bio news was the negative Ebola test in Nigeria, which does not increase risk."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "The fatal ChatGPT misguidance lawsuit (20) shows real AI misuse harming individuals, and the DW piece on AI‑enabled biological weapons (13) highlights emerging existential threats. Both indicate heightened risk today."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Escalations rose with Iran’s IRGC reporting two tankers exploding in Hormuz, the Kherson cease‑fire ending and power cuts in Ukraine, Russia advancing a giant radar near Kaliningrad heightening NATO tensions, and Gulf leaders scrambling to prevent a new US‑Iran clash."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Flash floods trigger evacuations in Arizona and Colorado amid heavy rains in southwest",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNDh4NktGVGxZOF80aEhPdnUtRmdDb0VFOWxTSEh4NTNkRFlyTTdzUWkwd3lfenZ4cVp3bFptRE5qVGloSU00OGs4SldjZHlvZjBLNVp0allfNE1KZmU3dGpoQ3pxNElSa1JpLXgzZzA1NkFJMExnVktzVzdDLUFSNUhrVFJORVMzS1VtMjZqZ0NpRnNnakFIem9wbG9rMmpoNEJaMHNwcFZwVk8wWVI4dUZ1dVg0bVdT?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Heavy rains expected to bring flooding risk to already saturated parts of the US Southwest",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ0hITmxKR0lIeDgxSVFIcXBOUTFDZlFUVVNlLVhScjVlZUZKTWZVZTd3WUZQc0ZvYWFiZnpmbmNZMFpxZy1EaGpORm1vdVZYR2ZfSlNiOU5pRTVHUl9GMlZpamw3QWpkdUlJYktXUDZJRmpSVHVZeTNKM09iT1l1MmVoZkstd190VTd6U0RlMkNZejE2VEFfOVRSU3BQSnowU1JrZ0RMUQ?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Video captures house collapsing due to Ecuador floods",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/1/video-captures-house-collapsing-due-to-ecuador-floods?traffic_source=rss"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Parents of woman who died of seizure after ChatGPT misguidance sue OpenAI",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/us-news/2026/nov/01/chatgpt-woman-seizure-lawsuit-openai"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Biological weapons: The weaponization of disease",
+      "source": "DW",
+      "url": "https://www.dw.com/en/biological-weapons-the-weaponization-of-disease/a-79819662?maca=en-rss-en-world-4025-rdf"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Iran's IRGC Navy says two tankers 'exploded' after hitting mines in Hormuz",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZmk2dmxjdk1sOW96UkZiaUlJVXhzc1pJMjZJUnY2WGtvaXd4aXRJY3d4UTNoUmFJdUVQQjlkb0JPSmxEc2YzS1JOZ2NSWmpTUnhzYzBiU1hfeXBvb2F2WEp2NHc5YkFfUUNKSHc2NW1PMUVKT0xqUTdOa0tfUmZpQWE2SDFtdzJ5TmZleWpLd0Zid1JWR2Z0d0dOeVMwekFzNTNTYndHMmMyV0poZ2h0UmFOVWc2M3o3Z2h6TUR2SQ?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Russia's giant new radar in Kaliningrad raises alarm in NATO",
+      "source": "DW",
+      "url": "https://www.dw.com/en/russia-s-giant-new-radar-in-kaliningrad-raises-alarm-in-nato/a-79797815?maca=en-rss-en-world-4025-rdf"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Iran war live: Tankers hit in Hormuz; Trump again says conflict to end soon",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/11/2/iran-war-live-tankers-hit-in-hormuz-trump-again-says-conflict-to-end-soon?traffic_source=rss"
+    }
+  ]
+}
