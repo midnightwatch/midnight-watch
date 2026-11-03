@@ -1,11 +1,93 @@
 {
   "sample": false,
-  "date": "2026-11-03",
-  "seconds": 84.0,
-  "previous": 84.4,
+  "date": "2026-11-04",
+  "seconds": 83.5,
+  "previous": 84.0,
   "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "Severe weather disrupting elections",
+      "weight": 0.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-04",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.3,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-04",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-dronestrike",
+      "area": "Nuclear",
+      "name": "Ukrainian drone hits Russian‑held nuclear plant",
+      "weight": 0.1,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "new",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-coop",
+      "area": "Nuclear",
+      "name": "South Korea‑Turkey nuclear defence cooperation",
+      "weight": 0.1,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "new",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-openaisec",
+      "area": "AI & tech",
+      "name": "OpenAI operational security lapses reported",
+      "weight": 0.1,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "new",
+      "delta": 0.1
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -57,128 +139,97 @@
       "delta": 0.2
     }
   ],
-  "pressures_before": [
-    {
-      "id": "climate-extreme",
-      "area": "Climate",
-      "name": "New extreme weather events",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "new",
-      "delta": 0.2
-    },
-    {
-      "id": "bio-anthrax",
-      "area": "Bio",
-      "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "new",
-      "delta": 0.2
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "new",
-      "delta": 0.2
-    }
-  ],
-  "generated_at": "2026-11-02T23:28:56+00:00",
-  "yesterday_lede": "We hold the clock at 85.0 seconds, with the single biggest concern being the surge of extreme weather events across multiple regions.",
+  "generated_at": "2026-11-03T23:30:35+00:00",
+  "yesterday_lede": "We hold the clock at 84.1 seconds, with the biggest shift coming from a new human bird‑flu case and a coordinated fridge‑cyberattack in Europe.",
   "chair": {
-    "lede": "We hold the clock at 84.1 seconds, with the biggest shift coming from a new human bird‑flu case and a coordinated fridge‑cyberattack in Europe.",
+    "lede": "We lower the clock to 80.3 seconds, driven chiefly by a Ukrainian drone strike at a Russian‑held nuclear facility and escalating Middle‑East tensions.",
     "body": [
-      "The baseline remains unchanged for climate extremes, the Congo anthrax outbreak, and the earlier fake nuclear alerts, as no new developments altered those risks.",
-      "A Washington state resident died after contracting avian influenza, marking the first confirmed human case of this strain in the United States and adding a fresh biological pressure.",
-      "Across Europe, supermarkets experienced a coordinated cyberattack that seized refrigeration units, threatening food supply chains and representing a new AI‑tech infrastructure threat."
+      "A Ukrainian drone attack that killed two people at a Russian‑held nuclear plant adds a serious new nuclear safety risk, warranting a 1.0‑second increase.",
+      "Severe flash floods and tornadoes disrupting U.S. midterm elections raise the climate‑extreme pressure, while spreading freezer‑targeted cyber‑attacks on food suppliers push the AI‑tech threat higher.",
+      "US policy moves—halting $4 billion aid to Israel and conducting defensive strikes on Iranian targets—heighten geopolitical instability, adding a new pressure.",
+      "Additional developments include South Korea‑Turkey nuclear cooperation, OpenAI security warnings, and the continuation of existing bio and climate concerns."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "No new nuclear weapon tests, treaty changes, or credible threats appeared; the North Korea drill comment and the fake warning are not new dangers."
+      "vote": "worse",
+      "say": "A Ukrainian drone strike hit a Russian‑held nuclear plant, raising immediate safety concerns, and South Korea‑Turkey nuclear‑defence cooperation signals expanding nuclear collaboration."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
-      "vote": "hold",
-      "say": "Recent flash floods in the Southwest and a cyclone threat in India add more extreme weather events, but they fall under the already‑tracked climate‑extreme pressure, so no new change."
+      "vote": "worse",
+      "say": "Severe flash floods, torrential rain and tornadoes disrupted US midterm elections, adding another extreme weather event to the existing climate‑extreme pressure."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "worse",
-      "say": "A Washington state resident died after contracting avian influenza, indicating a new human bird‑flu case and potential spread beyond animals (headlines 3, 8). This adds a fresh biological threat not covered by the existing anthrax pressure."
+      "vote": "hold",
+      "say": "No new outbreak, lab incident, or antimicrobial threat reported; existing bio pressures unchanged (see headlines 3 and 8)."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "A coordinated cyberattack on supermarket refrigeration systems across Europe represents a new infrastructure threat not covered by existing pressures."
+      "say": "New cyber‑attacks on food‑supply freezers in Europe (37) echo the earlier fridge‑attack pressure and show the threat is spreading. Reports of OpenAI security lapses (21) also highlight ongoing AI misuse risks."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "hold",
-      "say": "No new developments beyond the ongoing Ukraine conflict and other existing pressures."
+      "vote": "worse",
+      "say": "US halting $4 billion aid to Israel (5) and recent US defensive strikes on Iranian targets in the Strait of Hormuz (10) add fresh escalation risks to already volatile Middle‑East tensions."
     }
   ],
   "headlines": [
     {
-      "tag": "Bio",
-      "title": "Washington state resident dies from bird flu following exposure to infected cattle",
+      "tag": "Nuclear",
+      "title": "Ukrainian drone kills two, including station employee, Russian-held nuclear plant says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYmVUcEpHbS11bWZiWWs2U24xdU1YZThiVG9JYk1TdnlpTnpjSW9XSmx6aWZYV2o2aGFfdjZDTlp2Wlp1Zk85OU1zYldKdnVvV2YtWDlFSmEza3NrWXdEMGZDS0pkcVkxZzZIVkRYQmFJOUdES0RnMEhRTEdPQjFyQjdPdmgwU0ZOeDg1bTRKMzl2STh0OTNYZklWUkVySzhFeUpWNVloVGJLdEJmYlhaMDFEcDhUOFgwSWpCcXJB?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "US will halt $4B in aid to Israel as the Mideast ally weans itself from American dependence",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQb0d4NUNUbjhBbTN0TGtuakFKQV80M0JUcEFKbjVfel9LVkFuZmtfWHBNdjFVcm1LTTA4UkRlV01KSXBzbE91U1JTOEdjdXQzbERuNksyOTBqTHJtMDMzTW5yaXluVXNFZGRCTWxySDNjV0JJTkJFYk5VbWQ4eEtWUlNJWVBFZTFET0o0ZmZoaGRyWkRHcllv?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "Washington state resident dies from ‘severe illness’ after contracting bird flu",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/us-news/2026/nov/02/bird-flu-death-washington"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "New cyberattack on supermarket fridges sweeps across Europe",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "If hackers can take control of a supermarket freezer, how vulnerable is other tech?",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/ckpqg8lve73go?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "EU says fridge attacks 'deliberate attempt to disrupt' bloc's food supply",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/eu-says-fridge-attacks-deliberate-attempt-to-disrupt-bloc-s-food-supply"
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQM0YwcDVrc0FwXzlPOGd6aUZxSUdSaFpFSUdMUlRqVkpyTDhYVVdsSC1ZRFhpZlJVWlgycWh1YnlRNEh2STZiQjhsNkNJeDZ5eWY3ZmM4cDBsY2ljaXNVWkl3TnVsc2xtbVVzSktwT01zclRSbWx1R2YyY251YmF1YV85b3pMSmN1OTZ4VjJkN19kbXdNUWRkdGZ3?oc=5"
     },
     {
       "tag": "Nuclear",
-      "title": "North Korea says US-South Korea nuclear drill shows need for stronger nuclear deterrent",
+      "title": "South Korea, Turkey to cooperate in nuclear, defence, infrastructure",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWWxMc2tZWEhyS1Q1TXlxdFg1OTlIcEU0aVp5c0xGWEI0RE0wbzVfTVhOdHhXQXFseElRYlZIalE0bEpGeUNRRHVVWmY4MmhoYjNDakEyeEtkd1ZPSU9EYnZUSTZBOWNzU25MNkJQaWRYXzVVR1pESzJBX0IzQ255MnpBOXhpaXpyUGhVTHBHdHVHc3hQM0syRmlHam8wVmc5V1lHNnUwWkdGbW5kbjU2a2J4QXFQOGVzUFRFUnNLMVZDVS00cVpB?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPOTVzdi13ZWhBc1ZvQmhaNVk5TUpHRGFGcllVMzE4aTUyS2plRmw0dmFreW02SkRySDR6OWduMnJELW1xN3NQQVRtb0FiSGdKOG41U082YnhheWVyQURaZURHV1BwUzJqUVdKMUkzTVZDMmFldFFnTUJNRkM0dGNPdW1YZF9ScGgxMUVzVktHSmwwcDB0cTRQTFVURGVDNTV3M0tPS3lDdG5vaFZVU3BsbnFtcVY?oc=5"
     },
     {
-      "tag": "Nuclear",
-      "title": "Fake nuclear warning from hacked app sparks unease but not panic in Ukraine",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cwx28mngxz8do?at_medium=RSS&at_campaign=rss"
+      "tag": "Geopolitics",
+      "title": "US has conducted defensive strikes on Iranian targets in the Strait of Hormuz, US official says",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSlZQOGFnNWxyTG91ZkxGMkdDdlNhd1RuRUZzblYtZGxfOGpReXI2cE5oazAzZkFQRW96Y3VrUkdfenVFWWtPS1BfaFBYYWQ1WVBMVmpuaTZuU3llOGZNMF85QnVGRHAwZlphVWVoaDFiZWhoMWVjalhyTE5na3BVWjVHcmIyWDFoU0FnU2ZBaFZyOE5GRGJqQzdR?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Flash flooding triggers evacuations in Southwest and dire warning for Colorado spa town",
+      "title": "Severe weather disrupts election day across several US states",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/3/aje-onl-nf_severe-weather-disrupts-election-day-across-us-031126?traffic_source=rss"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "OpenAI employees warned about operational security lapses for years, sources say",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPY2NHYWtHR3NKMlg5Rjh4OG5RcGVTY2VoaFRlb2hhaTkzZEpCemRIQkdCUTgwMFJMZjhrdUVpV08wWC1JclZVdXVjb0cwYmE4X1BxcnpNbmhNMG44cVVkTU4wYXhic1dNRW1JWXBNMUJoeUxGdVNYOTdBS3JwMHlQSm8tcEtkVkFycy00YmpoXzdsSW5LZkR2eXE3cUlHX1lNUkNiQjY4a004ZmdPcF9JT2o2cVVvQzJ4cF9BaQ?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Food suppliers in UK hit by cyber-attacks after freezers targeted in Europe",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/03/uk-meat-processing-firms-fridges-heat-up-cyber-attacks"
+    },
+    {
+      "tag": "Bio",
+      "title": "Taco Bell sales recover in the US after summer cyclospora outbreak",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNDh4NktGVGxZOF80aEhPdnUtRmdDb0VFOWxTSEh4NTNkRFlyTTdzUWkwd3lfenZ4cVp3bFptRE5qVGloSU00OGs4SldjZHlvZjBLNVp0allfNE1KZmU3dGpoQ3pxNElSa1JpLXgzZzA1NkFJMExnVktzVzdDLUFSNUhrVFJORVMzS1VtMjZqZ0NpRnNnakFIem9wbG9rMmpoNEJaMHNwcFZwVk8wWVI4dUZ1dVg0bVdT?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPTnA2aG5Ubjd4VldYNTlTSUZJcGNnU2psUnF0emw4alNiMUFTTEticEhFNnRaMmpESWdGaFVOT20wTFlPa2R6NFFkV0k4OWpzV3FSaVRPTUF0eGZnY2h6cFg0U3paNDExdmM1bnJESDY1d3Jka0VCcWJNQXprM0FuYW5Fbm9WNEM4eU5WWnF3akN0QnZrYndZemd3?oc=5"
     }
   ]
 }
