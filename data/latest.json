@@ -1,11 +1,93 @@
 {
   "sample": false,
-  "date": "2026-11-04",
-  "seconds": 83.5,
-  "previous": 84.0,
+  "date": "2026-11-05",
+  "seconds": 83.0,
+  "previous": 83.5,
   "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-05",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.3,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "new",
+      "delta": 0.2
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -67,118 +149,60 @@
       "delta": 0.0
     }
   ],
-  "pressures_before": [
-    {
-      "id": "climate-extreme",
-      "area": "Climate",
-      "name": "New extreme weather events",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-anthrax",
-      "area": "Bio",
-      "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-birdflu",
-      "area": "Bio",
-      "name": "Human case of avian influenza in Washington",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "new",
-      "delta": 0.2
-    },
-    {
-      "id": "ai-fridgeattack",
-      "area": "AI & tech",
-      "name": "Cyberattack on European supermarket refrigeration",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "new",
-      "delta": 0.2
-    }
-  ],
-  "generated_at": "2026-11-04T19:16:44+00:00",
-  "yesterday_lede": "We hold the clock at 84.1 seconds, with the biggest shift coming from a new human bird‑flu case and a coordinated fridge‑cyberattack in Europe.",
+  "generated_at": "2026-11-04T23:35:20+00:00",
+  "yesterday_lede": "The clock moves to 83.5 seconds, 0.5 closer to midnight than yesterday: ebola evacuation adds a fresh bio‑risk.",
   "chair": {
-    "lede": "The clock moves to 83.5 seconds, 0.5 closer to midnight than yesterday: ebola evacuation adds a fresh bio‑risk.",
+    "lede": "The clock moves to 83.0 seconds, 0.5 closer to midnight than yesterday: uS threats to resume attacks on Iran raise nuclear tension.",
     "body": [
-      "The evacuation of a British healthcare worker with Ebola from the Democratic Republic of Congo introduces a new cross‑border biological threat that was not covered by the baseline or existing pressures.",
-      "Climate adaptation funding shortfalls reported by the UN and Reuters deepen the existing climate‑extreme pressure, reflecting a worsening gap between needs and resources.",
-      "Multiple reports of cyberattacks on French blood‑bank systems expand the AI‑related cyber risk, prompting an increase to the fake‑alert pressure."
+      "The nuclear expert flagged a fresh escalation as the United States is reported to be considering resuming attacks on Iran, a development not covered in the baseline.",
+      "A UN report highlighted that climate adaptation financing remains far below what is needed, worsening the existing extreme‑weather pressure.",
+      "Multiple cyber incidents targeting French blood banks have emerged, adding a new AI & tech risk beyond the previously tracked alerts."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "No new nuclear weapons development, test, treaty change or safety incident appears; the IAEA reports are routine monitoring and programme updates, not new risks."
+      "vote": "worse",
+      "say": "US threats to resume attacks on Iran and North Korea’s missile launch both raise nuclear tension beyond existing pressures."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Reports that rich countries are falling far short on climate adaptation funding indicate a worsening of the existing adaptation shortfall pressure."
+      "say": "The UN report shows climate adaptation financing far below needs, worsening the existing extreme‑weather pressure. The new Brazilian deforestation roadmap is announced but its impact is not yet realised, so no offset yet."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "worse",
-      "say": "A British healthcare worker evacuated from the Democratic Republic of Congo with Ebola indicates a new cross‑border case, adding a fresh bio‑risk beyond the existing anthrax and bird‑flu pressures."
+      "vote": "hold",
+      "say": "No new biological threat emerged; the Ebola evacuation reported in headlines 3 and 13 is already covered by the existing bio-ebola pressure."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
-      "vote": "worse",
-      "say": "Recent reports of cyberattacks on French blood bank systems (headlines 9 and 13) show new threats to critical health infrastructure, expanding the AI‑related cyber risk beyond the previously noted fake emergency alerts."
+      "vote": "hold",
+      "say": "Today's AI & tech headlines report continued cyberattacks on French blood banks and related infrastructure, which are extensions of the existing pressure already tracked, with no new weaponized AI developments or mitigations."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "hold",
-      "say": "No new war, treaty collapse, or major geopolitical shift reported; headlines discuss aid cuts, diplomatic statements, and missile launches that reflect ongoing tensions already accounted for."
+      "say": "No new war, treaty collapse, or major geopolitical escalation appeared; the headlines discuss political rhetoric and election impacts without a concrete new danger."
     }
   ],
   "headlines": [
     {
-      "tag": "Climate",
-      "title": "Rich countries fall far short on climate adaptation funding, UN says",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRU9vWl9vaGMyTFJKRzM2c2ttb1NKdFFhcDczVU5ld3E0b0NVR05xekdSbGdPSmFPTjZsdGI3ek8xZGFub0JJNDRfZG1OS1dMclhITF9SNk1SUm45R1c4QUhIcDFYRnEyRGxEOEJWNWVLUVpzN0c5Zk4xeFlUVFBwYzljMElKNFRyMUp2ZWctTnFRLVhHb2lBMkRHUi1sS2Z4Ny1lTVU5MTZjSFNHSVotSEI3WjI4WTVqbzdB?oc=5"
+      "tag": "Nuclear",
+      "title": "Will the US resume its attacks on Iran?",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/inside-story/2026/11/4/will-the-us-resume-its-attacks-on-iran?traffic_source=rss"
     },
     {
       "tag": "Climate",
       "title": "‘The world is not ready’: Climate adaptation cash falls far short as warming heads past 1.5°C",
       "source": "UN News",
       "url": "https://news.un.org/feed/view/en/story/2026/11/1168725"
-    },
-    {
-      "tag": "Bio",
-      "title": "British healthcare worker with Ebola evacuated from DR Congo to UK",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/world/2026/nov/04/british-healthcare-worker-ebola-evacuated-drc-to-uk-document-shows"
     },
     {
       "tag": "AI & tech",
@@ -193,16 +217,28 @@
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPeDBfdnUzSGUzellWZVNfdElQclhWWFFORHpKZGJZSnREN1RRNC1SaFdsRmFaTDN6WFJYMGdSc2pOOUFpTnF5cHNsVHVaQl9DOS1ycVphdWh6dnFnbGp6WGhDU2wycWw0SHpqV3VEYzQ3cDhzUDVtZFoxaFF1TVc0SzBGaGF1QmoxN2ZhNUdfYy14em90N2dyUm1zV0tZY0Zmd0xyLWdiUkExNVRtRFozaVhYQzhEcFo1UzRYWGdIYlplSEpocUxVMVNkR2k1cXB3MW5kM0pwM21zRy0x?oc=5"
     },
     {
-      "tag": "Nuclear",
-      "title": "IAEA Report Confirms Japanese Monitoring Data of ALPS-Treated Water Prior to Discharge under Additional Measures",
-      "source": "IAEA",
-      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-report-confirms-japanese-monitoring-data-of-alps-treated-water-prior-to-discharge-under-additional-measures"
+      "tag": "AI & tech",
+      "title": "French blood storage impacted by freezer hacks as theories swirl about culprits",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c8vgxyvz6y9ro?at_medium=RSS&at_campaign=rss"
     },
     {
-      "tag": "Nuclear",
-      "title": "The Lise Meitner Programme Explores the Nuclear Fuel Cycle in France and IAEA HQ",
-      "source": "IAEA",
-      "url": "http://www.iaea.org/newscenter/news/the-lise-meitner-programme-explores-the-nuclear-fuel-cycle-in-france-and-iaea-hq"
+      "tag": "AI & tech",
+      "title": "French blood banks hacked in latest cyber-attack on Europe",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/04/france-national-blood-service-hack-cyber-attack-europe"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "French blood banks foil new cyberattack targeting refrigerators",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/france/20261104-french-blood-banks-foil-new-cyberattack-targeting-refrigerators"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "North Korea launches missiles toward the sea as Pyongyang protests against US claims on Binance hack",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOaTQ2OEJBMGZkOXY0S1pkeEpQU1ZEUTAySjQwekdEM0FNY3JickJzSnZOMnNqM1NtbWFnYkNxMXp4S0dvcER5VHRlcVpZb2lSSlRMUm9JdDJrWGVIOVFlUHlFeGQzUlp0bE9sOVpCWVUzbmZmZU9SUWtzN29DMmxITzBwYllTSlFqWG4zVnRabUJJMjQ?oc=5"
     }
   ]
 }
