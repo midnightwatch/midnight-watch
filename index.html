@@ -105,12 +105,15 @@ a:hover { text-decoration-color: var(--ember); }
   display: grid;
   justify-items: center;
   text-align: center;
-  padding: 0.6rem 0 1rem;
+  padding: 0 0 0.6rem;
   gap: 0.2rem;
   position: sticky;
   top: 0;
   background: var(--iron);
+  width: 100%;
 }
+.after-hero { display: grid; justify-items: center; text-align: center; gap: 0.2rem; padding: 1.2rem 1.2rem 0; }
+.hero > header.top { width: 100%; justify-self: stretch; text-align: left; margin-bottom: 0.2rem; }
 @media (prefers-reduced-motion: reduce) { .hero { position: static; } }
 .dial {
   appearance: none;
@@ -546,6 +549,9 @@ footer p { margin: 0 0 0.5rem; }
 </head>
 <body>
 
+<main>
+  <div class="hero-track" id="heroTrack">
+  <section class="hero" id="hero">
 <header class="top">
   <h1 class="brand"><strong>Midnight Watch</strong> <span class="sr">: a daily AI Doomsday Clock</span></h1>
   <div class="status" id="status">
@@ -554,10 +560,6 @@ footer p { margin: 0 0 0.5rem; }
     <div class="sub" id="nextLine"></div>
   </div>
 </header>
-
-<main>
-  <div class="hero-track" id="heroTrack">
-  <section class="hero">
     <button class="dial" id="clockBtn" aria-pressed="false" aria-label="Zoom in on the clock">
       <svg id="dialSvg" viewBox="-1120 -1120 2240 2240" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -599,6 +601,10 @@ footer p { margin: 0 0 0.5rem; }
     <p class="time-sub" id="timeSub">loading today’s reading</p>
     <p class="date-line" id="dateLine"></p>
     <a class="scroll-cue" id="scrollCue" href="#verdict">Scroll to zoom in and read why<span class="arr">▾</span></a>
+  </section>
+  </div>
+
+  <section class="after-hero">
     <p class="sample-flag" id="sampleFlag" hidden>Sample data. The daily run will replace this.</p>
     <a class="month-btn" id="monthBtn" href="month.html" hidden>
       <span class="mb-dot"></span>
@@ -608,7 +614,6 @@ footer p { margin: 0 0 0.5rem; }
     <p class="intro">Midnight means global catastrophe. The closer the hands, the more danger the world is in.
       This is an AI-run, daily version of the famous Doomsday Clock. <a href="#what" id="whatLink">What is the Doomsday Clock?</a></p>
   </section>
-  </div>
 
   <section class="verdict" id="verdict">
     <div class="chair">
@@ -1304,6 +1309,13 @@ const hero = document.querySelector(".hero");
 let PROGRESS = 0, scrollRaf = null;
 const ZOOM_DISTANCE = () => Math.round(Math.min(window.innerHeight * 0.9, 700));   // px of scrolling for the full zoom
 function layoutTrack() {
+  // Size the dial so the sticky block (header + dial + reading) fits in one screen; then the zoom
+  // happens with nothing else moving, and the page only scrolls on once the zoom is complete.
+  const rest = hero.offsetHeight - dialEl.offsetHeight;
+  const avail = window.innerHeight - rest - 8;
+  const h = Math.max(200, Math.min(0.5 * window.innerHeight, avail, 560));
+  dialEl.style.height = `${h}px`;
+  ZOOM = null;
   if (REDUCE) { track.style.height = ""; return; }
   track.style.height = `${hero.offsetHeight + ZOOM_DISTANCE()}px`;
 }
