@@ -458,6 +458,19 @@ Never invent events. Use only names, numbers and places that appear in the headl
 "Pope" do not guess which pope. Be concrete and calm. Answer ONLY with a JSON object."""
 
 
+def build_lede(chair, before, after):
+    """The chair gives only the reason; the code states the move, so the numbers are always right."""
+    reason = tidy(strip_cites(str(chair.get("reason") or chair.get("lede") or "").strip())).rstrip(".")
+    reason = re.sub(r"^(we|the board|the chair|today)\s+(hold|holds|lower|lowers|raise|raises|move|moves|keep|keeps)[^,:]*?(,|:)\s*", "", reason, flags=re.I)
+    reason = reason[:1].lower() + reason[1:] if reason else ""
+    d = round(after - before, 1)
+    if d == 0:
+        head = f"The clock holds at {after:.1f} seconds"
+    else:
+        head = f"The clock moves to {after:.1f} seconds, {abs(d):.1f} {'closer to' if d < 0 else 'further from'} midnight than yesterday"
+    return (f"{head}: {reason}." if reason else f"{head}.")[:400]
+
+
 def tidy(text):
     """Clean up punctuation left behind after removing citation markers."""
     text = re.sub(r"\s+([.,;:])", r"\1", text)      # "word ," -> "word,"
@@ -517,9 +530,11 @@ makes it worse. Lower it or close it when the danger clearly eases, with a cited
 for a new development since January {ANCHOR_INFO['year']} that the baseline does not cover; a new pressure starts small.
 Do not add a pressure for something already listed; update that one instead. "same" for every pressure is a
 normal day. Do not repeat yesterday's reasoning if nothing new happened.
+Never state the new time or how many seconds the clock moves, in the reason or the body: the code applies
+hard caps after you answer, so any number you write would be wrong. Describe what changed and why in words.
 Return JSON: {{"pressures": [{{"id": "<short-slug, keep existing ids>", "area": "Nuclear|Climate|Bio|AI & tech|Geopolitics",
 "name": "<5-8 words>", "weight": <seconds, one decimal>, "status": "new|up|down|same|closed", "headlines": [numbers that justify a change]}}],
-"lede": "<one sentence stating the decision and the single biggest reason>",
+"reason": "<the single biggest reason for today's decision, one clause, no numbers of seconds>",
 "body": ["<paragraph>", "<paragraph>", "<paragraph>"],
 "headlines": [headline numbers that drove the decision, 3 to 6 of them]}}"""
     user = (f"Official baseline: {anchor} seconds. Current reading: {seconds} seconds to midnight.\n"
@@ -649,17 +664,26 @@ def apply_rules(chair, experts, items, pressures, anchor, today):
                 faded = p["weight"] * FADE_RATE
                 p["delta"] += faded - p["weight"]; p["weight"] = faded; p["status"] = "fading"
 
-    # Total move today is capped.
-    net = sum(p["delta"] for p in out)
-    if abs(net) > MAX_MOVE:
-        k = MAX_MOVE / abs(net)
-        notes.append(f"total change {net:+.1f} capped at {MAX_MOVE}")
-        for p in out:
-            p["weight"] -= p["delta"] * (1 - k); p["delta"] *= k
-
+    # Round each change to a tenth, then cap the total exactly: trim the largest changes first until the sum fits.
     for p in out:
-        p["weight"] = round(max(0.0, min(MAX_PRESSURE, p["weight"])), 1)
         p["delta"] = round(p["delta"], 1)
+    net = round(sum(p["delta"] for p in out), 1)
+    if abs(net) > MAX_MOVE:
+        notes.append(f"total change {net:+.1f} capped at {MAX_MOVE}")
+        sign = 1 if net > 0 else -1
+        excess = round(abs(net) - MAX_MOVE, 1)
+        while excess > 0:   # shave 0.1 at a time from the largest change, so the trim is spread evenly
+            movers = [q for q in out if q["delta"] * sign > 0]
+            if not movers:
+                break
+            q = max(movers, key=lambda q: abs(q["delta"]))
+            q["delta"] = round(q["delta"] - sign * 0.1, 1)
+            excess = round(excess - 0.1, 1)
+    for p in out:
+        base = float(old.get(p["id"], {}).get("weight", 0.0))
+        p["weight"] = round(max(0.0, min(MAX_PRESSURE, base + p["delta"])), 1)
+        p["delta"] = round(p["weight"] - base, 1)
+    out = [p for p in out if not (p["status"] == "new" and p["weight"] <= 0)]   # a new pressure trimmed to nothing never existed
     closed = [p for p in out if p["weight"] < CLOSE_BELOW]
     for p in closed:
         p["status"] = "closed"; p["delta"] = round(-float(old.get(p["id"], {}).get("weight", 0)), 1)
@@ -912,7 +936,7 @@ def main():
         "pressures_before": pressures_before,
         "generated_at": now.isoformat(timespec="seconds"),
         "yesterday_lede": yesterday_lede,
-        "chair": {"lede": fix_direction(str(chair.get("lede", "")).strip(), new_seconds - seconds)[:400],
+        "chair": {"lede": build_lede(chair, seconds, new_seconds),
                   "body": [fix_direction(p, new_seconds - seconds) for p in body]},
         "experts": [{"role": e["role"], "focus": e["focus"], "vote": e["vote"], "say": e["say"]}
                     for e in experts],
