@@ -100,13 +100,18 @@ a:hover { text-decoration-color: var(--ember); }
 .top .sub span { color: var(--ash); }
 
 /* Hero: the dial seen up close */
+.hero-track { position: relative; }
 .hero {
   display: grid;
   justify-items: center;
   text-align: center;
   padding: 0.6rem 0 1rem;
   gap: 0.2rem;
+  position: sticky;
+  top: 0;
+  background: var(--iron);
 }
+@media (prefers-reduced-motion: reduce) { .hero { position: static; } }
 .dial {
   appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -116,9 +121,9 @@ a:hover { text-decoration-color: var(--ember); }
   border: 0;
   padding: 0;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
   width: 100%;
-  height: clamp(280px, 54vh, 600px);
+  height: clamp(240px, 46vh, 560px);
   padding-bottom: 2.4rem;
   position: relative;
   display: block;
@@ -183,7 +188,7 @@ a:hover { text-decoration-color: var(--ember); }
 .tip { fill: var(--ember); stroke: var(--bone); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .pin { fill: var(--bone); stroke: var(--iron); stroke-width: 2; }
 .pin-dot { fill: var(--ember); }
-#coarse, #sliver { transition: opacity 0.5s; }
+#coarse, #sliver { transition: opacity 0.2s; }
 svg.zoomed #coarse, svg.zoomed #sliver { opacity: 0; }
 .numeral { font-family: var(--display); font-weight: 900; fill: var(--bone); }
 .numeral.minor { fill: var(--smoke); font-weight: 700; }
@@ -332,16 +337,6 @@ svg.zoomed #coarse, svg.zoomed #sliver { opacity: 0; }
   padding: 0 1.2rem 3rem;
   display: grid;
   gap: 2.4rem;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transform: translateY(14px);
-  transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.8s ease;
-}
-.verdict.open {
-  opacity: 1;
-  max-height: 20000px;
-  transform: none;
 }
 .verdict h2 {
   font-family: var(--display);
@@ -561,8 +556,9 @@ footer p { margin: 0 0 0.5rem; }
 </header>
 
 <main>
+  <div class="hero-track" id="heroTrack">
   <section class="hero">
-    <button class="dial" id="clockBtn" aria-expanded="false" aria-controls="verdict" aria-label="Open today’s verdict">
+    <button class="dial" id="clockBtn" aria-pressed="false" aria-label="Zoom in on the clock">
       <svg id="dialSvg" viewBox="-1120 -1120 2240 2240" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <filter id="glow" x="-30%" y="-300%" width="160%" height="700%">
@@ -596,13 +592,13 @@ footer p { margin: 0 0 0.5rem; }
         <circle class="pin" cx="0" cy="0" r="30"/>
         <circle class="pin-dot" cx="0" cy="0" r="11"/>
       </svg>
-      <span class="hint">tap to read why</span>
+      <span class="hint">scroll to zoom in</span>
     </button>
 
     <p class="time-big" id="timeBig">—</p>
     <p class="time-sub" id="timeSub">loading today’s reading</p>
     <p class="date-line" id="dateLine"></p>
-    <a class="scroll-cue" id="scrollCue" href="#verdict" hidden>Scroll down to read why<span class="arr">▾</span></a>
+    <a class="scroll-cue" id="scrollCue" href="#verdict">Scroll to zoom in and read why<span class="arr">▾</span></a>
     <p class="sample-flag" id="sampleFlag" hidden>Sample data. The daily run will replace this.</p>
     <a class="month-btn" id="monthBtn" href="month.html" hidden>
       <span class="mb-dot"></span>
@@ -612,8 +608,9 @@ footer p { margin: 0 0 0.5rem; }
     <p class="intro">Midnight means global catastrophe. The closer the hands, the more danger the world is in.
       This is an AI-run, daily version of the famous Doomsday Clock. <a href="#what" id="whatLink">What is the Doomsday Clock?</a></p>
   </section>
+  </div>
 
-  <section class="verdict" id="verdict" aria-hidden="true">
+  <section class="verdict" id="verdict">
     <div class="chair">
       <h2>The chair’s verdict</h2>
       <p class="lede" id="chairLede"></p>
@@ -853,8 +850,10 @@ function playOpening(data) {
   dialEl.classList.remove("ready");
   document.getElementById("ghostMin").classList.remove("on"); document.getElementById("ghostHour").classList.remove("on");
   drawCoarse();
-  if (ZOOMED) { ZOOM = zoomBox(Math.max(data.seconds, data.previous)); drawFine(ZOOM); setViewBox(ZOOM); }
-  else { svgEl.classList.remove("zoomed"); setViewBox(FULL); }
+  ZOOM = zoomBox(Math.max(data.seconds, data.previous)); drawFine(ZOOM);
+  layoutTrack();
+  if (REDUCE) { svgEl.classList.add("zoomed"); setViewBox(ZOOM); ZOOMED = true; }
+  else { PROGRESS = -1; onScroll(); if (PROGRESS < 0) applyProgress(0); }
   setHands(data.previous, true); setHands(data.previous, false);
   const finish = () => {
     document.getElementById("ghostMin").classList.add("on"); document.getElementById("ghostHour").classList.add("on");
@@ -863,13 +862,6 @@ function playOpening(data) {
   if (REDUCE) { setHands(data.seconds, false); document.getElementById("ghostMin").classList.add("on"); document.getElementById("ghostHour").classList.add("on"); dialEl.classList.add("ready"); return; }
   setTimeout(finish, 600);
 }
-function zoomOut(done) { ZOOMED = false; camera(FULL, 1100, () => { setHands(SHOWN.seconds, false); done && done(); }); }
-function zoomIn(done) { ZOOM = zoomBox(Math.max(SHOWN.seconds, SHOWN.previous)); drawFine(ZOOM); camera(ZOOM, 1300, () => { ZOOMED = true; setHands(SHOWN.seconds, false); done && done(); }); }
-let resizeT = null;
-window.addEventListener("resize", () => {
-  clearTimeout(resizeT);
-  resizeT = setTimeout(() => { if (ZOOMED) { ZOOM = zoomBox(Math.max(SHOWN.seconds, SHOWN.previous)); drawFine(ZOOM); setViewBox(ZOOM); setHands(SHOWN.seconds, false); } }, 150);
-});
 
 // ---------- rendering ----------
 function fmtDate(iso) {
@@ -1304,31 +1296,56 @@ document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () =>
   document.querySelectorAll(".tab").forEach(b => { const on = b === t; b.classList.toggle("active", on); b.setAttribute("aria-selected", String(on)); });
   drawChart();
 }));
-// ---------- tap: zoom in and open the verdict / zoom out and close it ----------
+// ---------- scroll drives the camera: full dial at the top, zoomed into the teeth once you scroll ----------
 const btn = document.getElementById("clockBtn");
 const panel = document.getElementById("verdict");
-const cue = document.getElementById("scrollCue");
-function setPanel(open) {
-  panel.classList.toggle("open", open);
-  panel.setAttribute("aria-hidden", String(!open));
-  btn.setAttribute("aria-expanded", String(open));
-  btn.querySelector(".hint").textContent = open ? "tap to zoom out" : "tap to read why";
-  cue.hidden = !open;
+const track = document.getElementById("heroTrack");
+const hero = document.querySelector(".hero");
+let PROGRESS = 0, scrollRaf = null;
+const ZOOM_DISTANCE = () => Math.round(Math.min(window.innerHeight * 0.9, 700));   // px of scrolling for the full zoom
+function layoutTrack() {
+  if (REDUCE) { track.style.height = ""; return; }
+  track.style.height = `${hero.offsetHeight + ZOOM_DISTANCE()}px`;
 }
+function applyProgress(k) {
+  PROGRESS = k;
+  const e = ease(k);
+  if (!ZOOM) { ZOOM = zoomBox(Math.max(SHOWN.seconds, SHOWN.previous)); drawFine(ZOOM); }
+  setViewBox(FULL.map((v, i) => v + (ZOOM[i] - v) * e));
+  const fade = String(Math.max(0, Math.min(1, 1 - (k - 0.25) / 0.3)));
+  document.getElementById("coarse").style.opacity = fade; document.getElementById("sliver").style.opacity = fade * 0.22;
+  svgEl.classList.toggle("zoomed", k > 0.5);
+  ZOOMED = k > 0.98;
+  setHands(SHOWN.hand, false); setHands(SHOWN.ghost, true);
+  btn.querySelector(".hint").textContent = k < 0.02 ? "scroll to zoom in" : k > 0.98 ? "scroll up to zoom out" : "";
+  document.getElementById("scrollCue").style.opacity = k < 0.05 ? "1" : "0";
+}
+function onScroll() {
+  if (scrollRaf || REDUCE) return;
+  scrollRaf = requestAnimationFrame(() => {
+    scrollRaf = null;
+    const top = track.getBoundingClientRect().top + window.scrollY;
+    const k = Math.max(0, Math.min(1, (window.scrollY - top) / ZOOM_DISTANCE()));
+    if (Math.abs(k - PROGRESS) > 0.001) applyProgress(k);
+  });
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+window.addEventListener("resize", () => { ZOOM = null; layoutTrack(); if (!REDUCE) { PROGRESS = -1; onScroll(); } });
+// Tap or click on the dial: scroll to the other end of the zoom.
 btn.addEventListener("click", () => {
-  if (!dialEl.classList.contains("ready") || anim) return;
-  if (ZOOMED) { setPanel(false); zoomOut(); }
-  else zoomIn(() => setPanel(true));
+  if (REDUCE || !dialEl.classList.contains("ready")) return;
+  const top = track.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: PROGRESS > 0.5 ? top : top + ZOOM_DISTANCE(), behavior: "smooth" });
 });
 
 document.getElementById("whatLink").addEventListener("click", (ev) => {
   ev.preventDefault();
-  const go = () => document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" });
-  if (panel.classList.contains("open")) go(); else if (dialEl.classList.contains("ready") && !anim) zoomIn(() => { setPanel(true); setTimeout(go, 300); });
+  document.getElementById("what").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 document.getElementById("scrollCue").addEventListener("click", (ev) => {
   ev.preventDefault();
-  document.getElementById("verdict").scrollIntoView({ behavior: "smooth", block: "start" });
+  const top = track.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: top + ZOOM_DISTANCE(), behavior: "smooth" });
 });
 // If the browser restores this page from memory (back button), undo the fade.
 window.addEventListener("pageshow", () => document.body.classList.remove("leaving"));
