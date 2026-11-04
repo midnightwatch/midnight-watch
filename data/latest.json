@@ -9,7 +9,7 @@
     {
       "id": "climate-extreme",
       "area": "Climate",
-      "name": "Severe weather disrupting elections",
+      "name": "New extreme weather events",
       "weight": 0.3,
       "since": "2026-11-02",
       "last_seen": "2026-11-04",
@@ -17,11 +17,21 @@
       "delta": 0.1
     },
     {
-      "id": "ai-fridgeattack",
-      "area": "AI & tech",
-      "name": "Cyberattack on European supermarket refrigeration",
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
       "weight": 0.3,
-      "since": "2026-11-03",
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.3,
+      "since": "2026-11-02",
       "last_seen": "2026-11-04",
       "status": "up",
       "delta": 0.1
@@ -30,16 +40,6 @@
       "id": "bio-anthrax",
       "area": "Bio",
       "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
       "weight": 0.2,
       "since": "2026-11-02",
       "last_seen": "2026-11-02",
@@ -57,34 +57,14 @@
       "delta": 0.0
     },
     {
-      "id": "nuclear-dronestrike",
-      "area": "Nuclear",
-      "name": "Ukrainian drone hits Russian‑held nuclear plant",
-      "weight": 0.1,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-04",
-      "status": "new",
-      "delta": 0.1
-    },
-    {
-      "id": "nuclear-coop",
-      "area": "Nuclear",
-      "name": "South Korea‑Turkey nuclear defence cooperation",
-      "weight": 0.1,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-04",
-      "status": "new",
-      "delta": 0.1
-    },
-    {
-      "id": "ai-openaisec",
+      "id": "ai-fridgeattack",
       "area": "AI & tech",
-      "name": "OpenAI operational security lapses reported",
-      "weight": 0.1,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-04",
-      "status": "new",
-      "delta": 0.1
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
     }
   ],
   "pressures_before": [
@@ -139,97 +119,90 @@
       "delta": 0.2
     }
   ],
-  "generated_at": "2026-11-03T23:30:35+00:00",
+  "generated_at": "2026-11-04T19:16:44+00:00",
   "yesterday_lede": "We hold the clock at 84.1 seconds, with the biggest shift coming from a new human bird‑flu case and a coordinated fridge‑cyberattack in Europe.",
   "chair": {
-    "lede": "We lower the clock to 80.3 seconds, driven chiefly by a Ukrainian drone strike at a Russian‑held nuclear facility and escalating Middle‑East tensions.",
+    "lede": "The clock moves to 83.5 seconds, 0.5 closer to midnight than yesterday: ebola evacuation adds a fresh bio‑risk.",
     "body": [
-      "A Ukrainian drone attack that killed two people at a Russian‑held nuclear plant adds a serious new nuclear safety risk, warranting a 1.0‑second increase.",
-      "Severe flash floods and tornadoes disrupting U.S. midterm elections raise the climate‑extreme pressure, while spreading freezer‑targeted cyber‑attacks on food suppliers push the AI‑tech threat higher.",
-      "US policy moves—halting $4 billion aid to Israel and conducting defensive strikes on Iranian targets—heighten geopolitical instability, adding a new pressure.",
-      "Additional developments include South Korea‑Turkey nuclear cooperation, OpenAI security warnings, and the continuation of existing bio and climate concerns."
+      "The evacuation of a British healthcare worker with Ebola from the Democratic Republic of Congo introduces a new cross‑border biological threat that was not covered by the baseline or existing pressures.",
+      "Climate adaptation funding shortfalls reported by the UN and Reuters deepen the existing climate‑extreme pressure, reflecting a worsening gap between needs and resources.",
+      "Multiple reports of cyberattacks on French blood‑bank systems expand the AI‑related cyber risk, prompting an increase to the fake‑alert pressure."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "worse",
-      "say": "A Ukrainian drone strike hit a Russian‑held nuclear plant, raising immediate safety concerns, and South Korea‑Turkey nuclear‑defence cooperation signals expanding nuclear collaboration."
+      "vote": "hold",
+      "say": "No new nuclear weapons development, test, treaty change or safety incident appears; the IAEA reports are routine monitoring and programme updates, not new risks."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Severe flash floods, torrential rain and tornadoes disrupted US midterm elections, adding another extreme weather event to the existing climate‑extreme pressure."
+      "say": "Reports that rich countries are falling far short on climate adaptation funding indicate a worsening of the existing adaptation shortfall pressure."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "hold",
-      "say": "No new outbreak, lab incident, or antimicrobial threat reported; existing bio pressures unchanged (see headlines 3 and 8)."
+      "vote": "worse",
+      "say": "A British healthcare worker evacuated from the Democratic Republic of Congo with Ebola indicates a new cross‑border case, adding a fresh bio‑risk beyond the existing anthrax and bird‑flu pressures."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "New cyber‑attacks on food‑supply freezers in Europe (37) echo the earlier fridge‑attack pressure and show the threat is spreading. Reports of OpenAI security lapses (21) also highlight ongoing AI misuse risks."
+      "say": "Recent reports of cyberattacks on French blood bank systems (headlines 9 and 13) show new threats to critical health infrastructure, expanding the AI‑related cyber risk beyond the previously noted fake emergency alerts."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "worse",
-      "say": "US halting $4 billion aid to Israel (5) and recent US defensive strikes on Iranian targets in the Strait of Hormuz (10) add fresh escalation risks to already volatile Middle‑East tensions."
+      "vote": "hold",
+      "say": "No new war, treaty collapse, or major geopolitical shift reported; headlines discuss aid cuts, diplomatic statements, and missile launches that reflect ongoing tensions already accounted for."
     }
   ],
   "headlines": [
     {
-      "tag": "Nuclear",
-      "title": "Ukrainian drone kills two, including station employee, Russian-held nuclear plant says",
+      "tag": "Climate",
+      "title": "Rich countries fall far short on climate adaptation funding, UN says",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYmVUcEpHbS11bWZiWWs2U24xdU1YZThiVG9JYk1TdnlpTnpjSW9XSmx6aWZYV2o2aGFfdjZDTlp2Wlp1Zk85OU1zYldKdnVvV2YtWDlFSmEza3NrWXdEMGZDS0pkcVkxZzZIVkRYQmFJOUdES0RnMEhRTEdPQjFyQjdPdmgwU0ZOeDg1bTRKMzl2STh0OTNYZklWUkVySzhFeUpWNVloVGJLdEJmYlhaMDFEcDhUOFgwSWpCcXJB?oc=5"
-    },
-    {
-      "tag": "Geopolitics",
-      "title": "US will halt $4B in aid to Israel as the Mideast ally weans itself from American dependence",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQM0YwcDVrc0FwXzlPOGd6aUZxSUdSaFpFSUdMUlRqVkpyTDhYVVdsSC1ZRFhpZlJVWlgycWh1YnlRNEh2STZiQjhsNkNJeDZ5eWY3ZmM4cDBsY2ljaXNVWkl3TnVsc2xtbVVzSktwT01zclRSbWx1R2YyY251YmF1YV85b3pMSmN1OTZ4VjJkN19kbXdNUWRkdGZ3?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "South Korea, Turkey to cooperate in nuclear, defence, infrastructure",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPOTVzdi13ZWhBc1ZvQmhaNVk5TUpHRGFGcllVMzE4aTUyS2plRmw0dmFreW02SkRySDR6OWduMnJELW1xN3NQQVRtb0FiSGdKOG41U082YnhheWVyQURaZURHV1BwUzJqUVdKMUkzTVZDMmFldFFnTUJNRkM0dGNPdW1YZF9ScGgxMUVzVktHSmwwcDB0cTRQTFVURGVDNTV3M0tPS3lDdG5vaFZVU3BsbnFtcVY?oc=5"
-    },
-    {
-      "tag": "Geopolitics",
-      "title": "US has conducted defensive strikes on Iranian targets in the Strait of Hormuz, US official says",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSlZQOGFnNWxyTG91ZkxGMkdDdlNhd1RuRUZzblYtZGxfOGpReXI2cE5oazAzZkFQRW96Y3VrUkdfenVFWWtPS1BfaFBYYWQ1WVBMVmpuaTZuU3llOGZNMF85QnVGRHAwZlphVWVoaDFiZWhoMWVjalhyTE5na3BVWjVHcmIyWDFoU0FnU2ZBaFZyOE5GRGJqQzdR?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRU9vWl9vaGMyTFJKRzM2c2ttb1NKdFFhcDczVU5ld3E0b0NVR05xekdSbGdPSmFPTjZsdGI3ek8xZGFub0JJNDRfZG1OS1dMclhITF9SNk1SUm45R1c4QUhIcDFYRnEyRGxEOEJWNWVLUVpzN0c5Zk4xeFlUVFBwYzljMElKNFRyMUp2ZWctTnFRLVhHb2lBMkRHUi1sS2Z4Ny1lTVU5MTZjSFNHSVotSEI3WjI4WTVqbzdB?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Severe weather disrupts election day across several US states",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/3/aje-onl-nf_severe-weather-disrupts-election-day-across-us-031126?traffic_source=rss"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "OpenAI employees warned about operational security lapses for years, sources say",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPY2NHYWtHR3NKMlg5Rjh4OG5RcGVTY2VoaFRlb2hhaTkzZEpCemRIQkdCUTgwMFJMZjhrdUVpV08wWC1JclZVdXVjb0cwYmE4X1BxcnpNbmhNMG44cVVkTU4wYXhic1dNRW1JWXBNMUJoeUxGdVNYOTdBS3JwMHlQSm8tcEtkVkFycy00YmpoXzdsSW5LZkR2eXE3cUlHX1lNUkNiQjY4a004ZmdPcF9JT2o2cVVvQzJ4cF9BaQ?oc=5"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "Food suppliers in UK hit by cyber-attacks after freezers targeted in Europe",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/technology/2026/nov/03/uk-meat-processing-firms-fridges-heat-up-cyber-attacks"
+      "title": "‘The world is not ready’: Climate adaptation cash falls far short as warming heads past 1.5°C",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168725"
     },
     {
       "tag": "Bio",
-      "title": "Taco Bell sales recover in the US after summer cyclospora outbreak",
+      "title": "British healthcare worker with Ebola evacuated from DR Congo to UK",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/world/2026/nov/04/british-healthcare-worker-ebola-evacuated-drc-to-uk-document-shows"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Cyberattack hits French blood bank site but no blood products are compromised",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPTnA2aG5Ubjd4VldYNTlTSUZJcGNnU2psUnF0emw4alNiMUFTTEticEhFNnRaMmpESWdGaFVOT20wTFlPa2R6NFFkV0k4OWpzV3FSaVRPTUF0eGZnY2h6cFg0U3paNDExdmM1bnJESDY1d3Jka0VCcWJNQXprM0FuYW5Fbm9WNEM4eU5WWnF3akN0QnZrYndZemd3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPS09zV09Sa2ZhQmNxSjByY3hPZldOYjFXUEdkMTdycnV0OXl6NTBXck9QcERJN1Z5SWhtOERhektQVE92ZUVrZXROc3BHSExMN0VpQXB1YkZmM2t1bFFWZk9tekZSY0t4Z0F0YndCc3NCUnBOa2pCLXVUQ1l0TUZFR1hzQ29JWm5NNGl6Sk0xckhhVGlvbU5tOWM1Mmp6YUtHSkpFOEdMTm94WkRhZDNVNVNpUGd0QQ?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "French blood banks hit alongside cyberattack on European supermarkets",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPeDBfdnUzSGUzellWZVNfdElQclhWWFFORHpKZGJZSnREN1RRNC1SaFdsRmFaTDN6WFJYMGdSc2pOOUFpTnF5cHNsVHVaQl9DOS1ycVphdWh6dnFnbGp6WGhDU2wycWw0SHpqV3VEYzQ3cDhzUDVtZFoxaFF1TVc0SzBGaGF1QmoxN2ZhNUdfYy14em90N2dyUm1zV0tZY0Zmd0xyLWdiUkExNVRtRFozaVhYQzhEcFo1UzRYWGdIYlplSEpocUxVMVNkR2k1cXB3MW5kM0pwM21zRy0x?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA Report Confirms Japanese Monitoring Data of ALPS-Treated Water Prior to Discharge under Additional Measures",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-report-confirms-japanese-monitoring-data-of-alps-treated-water-prior-to-discharge-under-additional-measures"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "The Lise Meitner Programme Explores the Nuclear Fuel Cycle in France and IAEA HQ",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/news/the-lise-meitner-programme-explores-the-nuclear-fuel-cycle-in-france-and-iaea-hq"
     }
   ]
 }
