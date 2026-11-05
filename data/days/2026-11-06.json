@@ -1,0 +1,252 @@
+{
+  "sample": false,
+  "date": "2026-11-06",
+  "seconds": 82.8,
+  "previous": 83.0,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-06",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.3,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-05",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.3,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "new",
+      "delta": 0.2
+    }
+  ],
+  "generated_at": "2026-11-05T23:36:44+00:00",
+  "yesterday_lede": "The clock moves to 83.0 seconds, 0.5 closer to midnight than yesterday: uS threats to resume attacks on Iran raise nuclear tension.",
+  "chair": {
+    "lede": "The clock moves to 82.8 seconds, 0.2 closer to midnight than yesterday: new climate adaptation funding shortfalls and rapid AI advancements raise fresh pressures.",
+    "body": [
+      "UN and Guardian reports highlight falling climate adaptation funding and a growing share of displaced people living in climate danger zones, worsening the climate‑extreme pressure.",
+      "Anthropic's rapid acceleration of AI models and OpenAI's launch of GPT‑6 Cyber with a critical cybersecurity rating introduce a new high‑risk AI development pressure.",
+      "India's final‑stage talks to expand missile sales to the Philippines add a fresh nuclear proliferation concern."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "India is in final-stage talks to expand missile sales to the Philippines, raising proliferation concerns."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "New UN reports highlight falling climate adaptation funding and that three‑quarters of displaced people now live in climate danger zones, while a UK report flags dangerous reliance on China for critical minerals. These developments add fresh pressure to the climate‑extreme area."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "No new disease outbreak or major bio‑security change; existing Ebola evacuation and vaccine trial updates continue existing pressures without worsening them."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Anthropic is rapidly accelerating AI development despite calls for slowdown and OpenAI launched GPT‑6 Cyber with a 'Critical' cybersecurity rating, indicating a new high‑risk AI system."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "hold",
+      "say": "No new war, treaty collapse, or major incident reported; ongoing tensions and diplomatic moves are covered by existing pressures."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Why are wealthy countries failing developing nations?",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/inside-story/2026/11/5/why-are-wealthy-countries-failing-developing-nations?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "UK found to be ‘dangerously’ reliant on China for critical minerals needed for defence and AI",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/world/2026/nov/05/uk-dangerously-reliant-on-china-critical-minerals-military-ai-renewable-energy"
+    },
+    {
+      "tag": "Climate",
+      "title": "Three in four displaced people live in climate danger zones, UN says",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/environment/20261105-un-displaced-people-climate-risks"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeU5MeHUxWDhnY0d4UE9OUFVjSWpLVnd1UEw4a1ZiY2EzaU85b2Q0NHFlRkFGMk9OakM1VjVVTzB1NnktZ3RKaW9MQ3ZlOTItV21ZcUd6WU9zQVRyZmRvN0FPYXRFbEZ6aDBCdENjZHRoV3pFWUJoelZEN2xaNkFKZUYxVXFhUWtjTjEtbTdKMnBxRVBUMFUwMmo3Q0ZhZw?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "OpenAI launches GPT-6 Cyber with 'Critical' cybersecurity rating",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZnpqZW1wbThoTUY1UWpZWi1aeU5rMzZxMDVRMnRUWWo3R1Z1cnJrblN1bVVpbXVGcldYOTNyT3d2MFVnZTlsNS0yZ0J3aDRlYXpUdmlmc0lTUWduYTZzLWpaYkowc1h5MFBwd0tja3RDbjZMcUcybFByX29ZUkl2V0IxdWhkSU5sb2VsT1VHWUs4Z0tVMkZqU2wxak1hYjNSSFQ2Zm1Ea1d5d25jNkE?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "India in final-stage talks to expand missile sale to Philippines, sources say",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNV000QWU5a0lPSXVaZDVhb0pJOXkzUjN0MWVXMVNZemNfS2E3SFhXMEdwNzVyLWw5UGU4dlFaYzVlUzkwQ0RGUlgxZUg1ZEJQTWd0aDdLWlpza2hZR1NMZzRJTEV5U1U2cjZ3bnVpZUtjc3lKdzZKd3dDY2VscFk1ejhiTHNJYWIxdm01SV85YzBxU0dnWHB6c1ROd01wZURpSE5MQnVLVThUbnlRSXNHR0dDZWIzSmRjRXRjZWFuTQ?oc=5"
+    }
+  ]
+}
