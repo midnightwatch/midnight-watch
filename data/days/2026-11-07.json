@@ -1,0 +1,264 @@
+{
+  "sample": false,
+  "date": "2026-11-07",
+  "seconds": 82.3,
+  "previous": 82.8,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.7,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.4,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-07",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-06",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.3,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-04",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-06T23:28:51+00:00",
+  "yesterday_lede": "The clock moves to 82.8 seconds, 0.2 closer to midnight than yesterday: new climate adaptation funding shortfalls and rapid AI advancements raise fresh pressures.",
+  "chair": {
+    "lede": "The clock moves to 82.3 seconds, 0.5 closer to midnight than yesterday: new severe flooding in the US and worsening Ebola security situation.",
+    "body": [
+      "Severe flooding in the southwestern United States adds a fresh shock to the existing climate‑extreme pressure, while China's modest CO2 drop does not offset the disaster, prompting an increase in the climate weight.",
+      "Militant raids in eastern DRC forced Ebola patients to flee and resulted in dozens of killings, worsening the outbreak's security context and raising the Ebola pressure.",
+      "High‑value AI‑driven scams and a North Korean hacker operation that took down a major crypto exchange expand the cyber‑misuse threat, leading to a higher AI & tech weight."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "Satellite images show new construction near Iran missile bases, indicating possible escalation of regional tensions beyond existing US‑Iran threats."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Severe flooding in the southwestern US adds a fresh extreme‑weather shock to the existing climate‑extreme pressure, while China’s quarterly CO2 drop offers a modest easing but does not offset the new disaster."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "Militant raids forced Ebola patients to flee and armed men killed dozens in Ebola‑hit eastern DRC, worsening the outbreak security situation."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "New AI‑driven impersonation scams stealing $129 million (9) and a North Korean hacker operation that took down Binance (36) add fresh cyber‑misuse risks beyond existing pressures."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Missile attack on a tanker in the Gulf and new construction near Iran missile bases indicate escalating regional military tension, worsening the nuclear‑related pressure."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Desert icons collapse as southwestern US gets pummeled with rain and flooding",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQb2ZjanctVTdKS0xQeHZPTW5zVk03dUkyLUtpcjZBVEkxcl9JNEVtaVFGQWhKZjZBV3VBWElqakJudlhRN3VhbGlOOEtnZmJjMFZnc25ZdThoNHlFS1NLZE8tb1c4UzhSTEQybm8zeDd4VXZGQmZzMVJsN0VMaFJaaTR3bXpXN2stWEZsUWdJbzBFcngwUmVSRDJ2YlpJTzhF?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Analysis: China’s quarterly CO2 falls 3% in largest drop since Covid",
+      "source": "Carbon Brief",
+      "url": "https://www.carbonbrief.org/analysis-chinas-quarterly-co2-falls-3-in-largest-drop-since-covid"
+    },
+    {
+      "tag": "Bio",
+      "title": "Islamist militants force Ebola patients to flee in deadly Congo raid",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUjdvMzhsUExDa2lhS3Z4VmpOVlhEWldzTUN2SFhBZFpfVXEtZ0RnNW9mRGFfTnVMTnhKUEdGMGpSR1MyS3lGTTBINE92Zkl0S1AtSHdFaUFIQVZNTXczZW05LWtaUm5CUkZCRTFLbTF2WGZhbDRNYy1uOERxekdIOC1RSDBodVBDdlRIdnlubHN3d0pzMC1WbmU4MHV1aXF3Nm8tX1NCMUUtaUluNnRQUQ?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Armed men kill at least 33 in village in Ebola-hit eastern DRC",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/11/6/armed-men-kill-at-least-33-in-village-in-ebola-hit-eastern-drc?traffic_source=rss"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "3 charged in scheme to use AI to impersonate CEOs and attorneys to steal $129 million",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVGp0Vmt2N095WHZQZ1NLZnBMUGJpS09iWk4tbVB5QjFqbWdoYUhwUkJpbkE4STVlZVdMSXhOb1J2OS1SSW1xbWVxSkhrNjNocmZVWGdraTI2cnFkNzdlQVFhd0VNdWFlWkxzWFZzYW5Gend3c0QxZFc2TGVLMEpuMkFJTlB1MDlpMWstQWFBUkVRYXR0dGhjVjd1WFBPN2NiMHk5X1BPRERxMW50SEE?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "North Korea's army of world-class hackers is secret weapon that took down Binance",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbFdzUlg5LTJNVHdsSWIyX2UycEcwbERwS29uTTVaNXhBbHY4V0ZvR0VJWktxcm5OdkxuUWE1Q3ctWVFZZ2dKclYwX21iVnl4VEJ4dWplSm84enVCallLSGdHejVrQTQ4bXUxUXBuLXZReDRpenpXQ3dIRUtiNlZva3dta2pFWV9ZeVlKU0RldWczLU0wREdvMTNkQXQ5Zzl6UzI2TkwwMVdLTnpfXzJlYUZ6UURtU01EZnRTdmI0YWdOMzZndXRmX29HWG0?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Seafarer killed in suspected missile attack on tanker in Gulf",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQlB2Sm9vTXA4Rlp1QWxROTNzaUJ5TG0teEFKRWs1cmY3VFZkZXd6RlVzQmxNTGcxcmwyMG9SOUZlRVdKS0o2V08xbzdaRW5sbGNBTDdpRUduU0xsQUV3czAybnlIU0FPQUs1ZFR1RE41U3BpZXhIeHFYeEI1b2RRamRWQnhpOUVESHM2TENjNS1XUQ?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
+    }
+  ]
+}
