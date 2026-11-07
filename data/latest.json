@@ -1,11 +1,93 @@
 {
   "sample": false,
-  "date": "2026-11-07",
-  "seconds": 82.3,
-  "previous": 82.8,
+  "date": "2026-11-08",
+  "seconds": 81.9,
+  "previous": 82.3,
   "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.8,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-08",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -87,96 +169,14 @@
       "delta": 0.0
     }
   ],
-  "pressures_before": [
-    {
-      "id": "climate-extreme",
-      "area": "Climate",
-      "name": "New extreme weather events",
-      "weight": 0.6,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-06",
-      "status": "up",
-      "delta": 0.2
-    },
-    {
-      "id": "bio-ebola",
-      "area": "Bio",
-      "name": "Ebola case evacuated from DR Congo",
-      "weight": 0.3,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-04",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
-      "weight": 0.3,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-04",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-anthrax",
-      "area": "Bio",
-      "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-birdflu",
-      "area": "Bio",
-      "name": "Human case of avian influenza in Washington",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-fridgeattack",
-      "area": "AI & tech",
-      "name": "Cyberattack on European supermarket refrigeration",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "nuclear-us-iran",
-      "area": "Nuclear",
-      "name": "US threats to resume attacks on Iran",
-      "weight": 0.2,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-05",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-bloodbank-cyber",
-      "area": "AI & tech",
-      "name": "Cyberattack on French blood banks",
-      "weight": 0.2,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-05",
-      "status": "same",
-      "delta": 0.0
-    }
-  ],
-  "generated_at": "2026-11-06T23:28:51+00:00",
-  "yesterday_lede": "The clock moves to 82.8 seconds, 0.2 closer to midnight than yesterday: new climate adaptation funding shortfalls and rapid AI advancements raise fresh pressures.",
+  "generated_at": "2026-11-07T23:26:54+00:00",
+  "yesterday_lede": "The clock moves to 82.3 seconds, 0.5 closer to midnight than yesterday: new severe flooding in the US and worsening Ebola security situation.",
   "chair": {
-    "lede": "The clock moves to 82.3 seconds, 0.5 closer to midnight than yesterday: new severe flooding in the US and worsening Ebola security situation.",
+    "lede": "The clock moves to 81.9 seconds, 0.4 closer to midnight than yesterday: iran lifting its missile‑range limit raises nuclear tension.",
     "body": [
-      "Severe flooding in the southwestern United States adds a fresh shock to the existing climate‑extreme pressure, while China's modest CO2 drop does not offset the disaster, prompting an increase in the climate weight.",
-      "Militant raids in eastern DRC forced Ebola patients to flee and resulted in dozens of killings, worsening the outbreak's security context and raising the Ebola pressure.",
-      "High‑value AI‑driven scams and a North Korean hacker operation that took down a major crypto exchange expand the cyber‑misuse threat, leading to a higher AI & tech weight."
+      "Iran announced it has removed its self‑imposed missile‑range cap, expanding its strike capability and reviving concerns about regional nuclear escalation.",
+      "Satellite data highlighted a growing landfill methane issue, adding a fresh climate emissions worry beyond existing extreme‑weather reports.",
+      "Pro‑Russian hacker groups have leaked personal data of Italian officials, marking a new state‑linked cyber threat that complements existing AI‑related alerts."
     ]
   },
   "experts": [
@@ -184,81 +184,69 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "worse",
-      "say": "Satellite images show new construction near Iran missile bases, indicating possible escalation of regional tensions beyond existing US‑Iran threats."
+      "say": "Iran announced it has lifted its self‑imposed limit on missile ranges, expanding its strike capability and heightening nuclear tension."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Severe flooding in the southwestern US adds a fresh extreme‑weather shock to the existing climate‑extreme pressure, while China’s quarterly CO2 drop offers a modest easing but does not offset the new disaster."
+      "say": "New satellite data shows a growing landfill methane problem, adding to climate emissions concerns (10)."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "worse",
-      "say": "Militant raids forced Ebola patients to flee and armed men killed dozens in Ebola‑hit eastern DRC, worsening the outbreak security situation."
+      "vote": "hold",
+      "say": "No new outbreak, weaponized pathogen, or major containment change appears in today’s headlines; the Ebola vaccine discussion (3) is informational, not a new danger."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "New AI‑driven impersonation scams stealing $129 million (9) and a North Korean hacker operation that took down Binance (36) add fresh cyber‑misuse risks beyond existing pressures."
+      "say": "Recent reports of pro‑Russian hackers leaking data of Italy's foreign minister and other officials (headlines 8,11,20) show a new state‑linked cyber intrusion targeting government figures, adding a fresh AI‑enabled cyber threat beyond existing pressures."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "worse",
-      "say": "Missile attack on a tanker in the Gulf and new construction near Iran missile bases indicate escalating regional military tension, worsening the nuclear‑related pressure."
+      "say": "Iran lifted its self‑imposed missile‑range limit and the US carried out new targeted strikes on Iran, escalating nuclear tensions beyond the existing US‑Iran pressure."
     }
   ],
   "headlines": [
     {
-      "tag": "Climate",
-      "title": "Desert icons collapse as southwestern US gets pummeled with rain and flooding",
+      "tag": "Nuclear",
+      "title": "Iran says it has lifted its self-imposed limit on missile ranges, and other Mideast news",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQb2ZjanctVTdKS0xQeHZPTW5zVk03dUkyLUtpcjZBVEkxcl9JNEVtaVFGQWhKZjZBV3VBWElqakJudlhRN3VhbGlOOEtnZmJjMFZnc25ZdThoNHlFS1NLZE8tb1c4UzhSTEQybm8zeDd4VXZGQmZzMVJsN0VMaFJaaTR3bXpXN2stWEZsUWdJbzBFcngwUmVSRDJ2YlpJTzhF?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTWlBaG5BYjY0T3dxT1Z6aFlidmJqREpvYzlzdXFOQW8wZFpLaWZSUktyc0dhZXJQdUd3UlJHLVVITURzd2VnWEFtR2w4cVcydHVIVXFCci1yOUJXVnpQWXAteGNWQUZNcWZjcERDZ01KeXFpd1hNN1Z1QmdIY0c5N2ZsOWxKQ1RHdnk4LW1QNVpyZw?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Analysis: China’s quarterly CO2 falls 3% in largest drop since Covid",
-      "source": "Carbon Brief",
-      "url": "https://www.carbonbrief.org/analysis-chinas-quarterly-co2-falls-3-in-largest-drop-since-covid"
-    },
-    {
-      "tag": "Bio",
-      "title": "Islamist militants force Ebola patients to flee in deadly Congo raid",
+      "title": "As COP31 comes to Turkey, satellites reveal a landfill methane problem",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUjdvMzhsUExDa2lhS3Z4VmpOVlhEWldzTUN2SFhBZFpfVXEtZ0RnNW9mRGFfTnVMTnhKUEdGMGpSR1MyS3lGTTBINE92Zkl0S1AtSHdFaUFIQVZNTXczZW05LWtaUm5CUkZCRTFLbTF2WGZhbDRNYy1uOERxekdIOC1RSDBodVBDdlRIdnlubHN3d0pzMC1WbmU4MHV1aXF3Nm8tX1NCMUUtaUluNnRQUQ?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "Armed men kill at least 33 in village in Ebola-hit eastern DRC",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/11/6/armed-men-kill-at-least-33-in-village-in-ebola-hit-eastern-drc?traffic_source=rss"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOVRwcWFYZndwYUxDdEZaT2ZaeENLZ3lvOFJiOFRBREdZTng1Tmhtbm1YTE9MUy1sM2FDNkhvSE9nakhabFpHdXhOclZHeWgtXzlPRmhzNzlKcjR4OXE5U01wRWZBZ2pGZFJocHhTeWZmRkxBVnM0RTQwd0Jmemhjd0IyUFRDM2lzMHBsT3Q5V0o4cXBsU01PN2ZBN2MzZGxvQXJVemxZSXBnQnk4eTdZSXNOZ3JNY3c?oc=5"
     },
     {
       "tag": "AI & tech",
-      "title": "3 charged in scheme to use AI to impersonate CEOs and attorneys to steal $129 million",
+      "title": "Italy’s Meloni blames pro-Russian hackers for leak of foreign minister’s data on the dark web",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVGp0Vmt2N095WHZQZ1NLZnBMUGJpS09iWk4tbVB5QjFqbWdoYUhwUkJpbkE4STVlZVdMSXhOb1J2OS1SSW1xbWVxSkhrNjNocmZVWGdraTI2cnFkNzdlQVFhd0VNdWFlWkxzWFZzYW5Gend3c0QxZFc2TGVLMEpuMkFJTlB1MDlpMWstQWFBUkVRYXR0dGhjVjd1WFBPN2NiMHk5X1BPRERxMW50SEE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSnhobklXSzBuM2dmR0dmam80Z3BmWDRZUG05bmRRNnQ5RmJ5em5jUGlEbFFPeVN4MmNBa3JSTjF3N1hLdlJYamUtVVFQcHo0dEEzOU4yb1lEUWlLRTUxYlNTcXlrRlUzVHRQc25xdWJXY0lPNXd1U3pWYVpKWG5UclkzX0p3SGhjdVJjVEZVMGNSbFFzNWdseQ?oc=5"
     },
     {
       "tag": "AI & tech",
-      "title": "North Korea's army of world-class hackers is secret weapon that took down Binance",
+      "title": "Italy foreign minister says he has been targeted by pro-Russian hackers over Ukraine backing",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbFdzUlg5LTJNVHdsSWIyX2UycEcwbERwS29uTTVaNXhBbHY4V0ZvR0VJWktxcm5OdkxuUWE1Q3ctWVFZZ2dKclYwX21iVnl4VEJ4dWplSm84enVCallLSGdHejVrQTQ4bXUxUXBuLXZReDRpenpXQ3dIRUtiNlZva3dta2pFWV9ZeVlKU0RldWczLU0wREdvMTNkQXQ5Zzl6UzI2TkwwMVdLTnpfXzJlYUZ6UURtU01EZnRTdmI0YWdOMzZndXRmX29HWG0?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNYWZNYXdzeHF4Ymh3blFVa2M3MlNpVWRUN0FjRXlkcWtVTjdwd0ZWZF9FSXpISWczYURGdmxzWVh1RE9SQ0NvaUhkTFV5dXg2dExMU1lGOVNJYnAyRUFGMUF2U1RMR0dlbFRiT3JmNV92Q3E0LUh6ZHU2Vm1WN2RvMk1hQWZyVTNlbGNCWFEyd3RtSkZaTHlEanRmOWJ3Qk1BQ3BSSDFwamdUb3pGWmVrQ1BWMnQwMW9rTFE?oc=5"
     },
     {
-      "tag": "Nuclear",
-      "title": "Seafarer killed in suspected missile attack on tanker in Gulf",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQlB2Sm9vTXA4Rlp1QWxROTNzaUJ5TG0teEFKRWs1cmY3VFZkZXd6RlVzQmxNTGcxcmwyMG9SOUZlRVdKS0o2V08xbzdaRW5sbGNBTDdpRUduU0xsQUV3czAybnlIU0FPQUs1ZFR1RE41U3BpZXhIeHFYeEI1b2RRamRWQnhpOUVESHM2TENjNS1XUQ?oc=5"
-    },
-    {
-      "tag": "Nuclear",
-      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+      "tag": "AI & tech",
+      "title": "Italian foreign minister says hackers leaked his personal data",
       "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
+      "url": "https://www.bbc.co.uk/news/articles/cr20wvge32j3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "US military carries out new targeted strikes on Iran as Tehran's leaders weigh mediator's proposals",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONzhSRFZOUUdVTUxvUEhJUkpCcGZrSnNyX0pSc081QmlIUXY1NmZHZUFiU1lDYWFDdFJncWtkdVRxQWRjSGV2Z3FXVEItNmRNMG4zN0VfWjVXWm9xdjJkZ1VLSVc4NTZzUkZ0bDV1V0VWVC1mamVrQlB6VHhPUEJ0eGhDMWdBOFZrZU5qRno5RFJyZ1FuWExPVXFjNmFCSmRMX1VnZWp3?oc=5"
     }
   ]
 }
