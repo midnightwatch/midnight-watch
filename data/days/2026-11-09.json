@@ -1,0 +1,252 @@
+{
+  "sample": false,
+  "date": "2026-11-09",
+  "seconds": 81.9,
+  "previous": 81.9,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.8,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.8,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-08",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-08T23:27:31+00:00",
+  "yesterday_lede": "The clock moves to 81.9 seconds, 0.4 closer to midnight than yesterday: iran lifting its missile‑range limit raises nuclear tension.",
+  "chair": {
+    "lede": "The clock holds at 81.9 seconds: weakening AI copyright law adds a new risk to the AI & tech domain.",
+    "body": [
+      "The Guardian reported that Australia is moving to weaken AI copyright protections, a step that could enable large‑scale misuse of AI‑generated content and increase the potential for disinformation or illicit activities.",
+      "Reuters detailed a drone strike that forced the shutdown of the Khor Mor gas field in Iraq, raising regional energy security concerns and the risk of further escalation in a volatile area.",
+      "No other open pressures showed material change; existing climate, nuclear, bio and other tech risks remain at their current levels."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "better",
+      "say": "Restoring power to the Zaporizhzhia nuclear plant reduces the risk of a nuclear accident, easing the existing nuclear safety pressure."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "hold",
+      "say": "Recent climate news includes flood relief to US reservoirs and a UN chief urging stronger action on warming; these are policy and mitigation signals, not new threats or worsening of existing pressures."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "No new outbreak, lab incident, or antimicrobial resistance news appeared; existing bio pressures remain unchanged."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Weakening AI copyright law could facilitate misuse of AI-generated content, adding a new risk in the AI domain."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Drone attack suspends production at Iraq's Khor Mor gas field, raising regional tension (24), and Russia's targeting of emergency crews in Ukraine (4) shows escalation of existing conflicts."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "AI & tech",
+      "title": "Weakening AI copyright law will spell ‘disaster for creativity’, global music body warns Albanese",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Production suspended at Iraq's Khor Mor gas field after drone attack, sources say",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSjc4dFNBUmN3UHp3Uk5FLUhNOElWeTVLRDNzSHZsSTAyUWZ4elN0eHdYUVJ5MDZBb0Y3MDNaNzlWbTRHMnctUFY5dGdNWWtKUnZTdHRPeXl1UUhlUE9mdTU0d2ZWTk9Hak9HaHVXaVBJQ3BoVXdfZnFxelF2aUc1MEV1U0JFQ1lDQ0s3RXhtRnk2dmoxZ2h4a3FRazE4Y3VpbGlDYW1zdE1DcDYxU3R4aE9zOWxkdTNuRVFxMzRlTDEtMDNHRmpr?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Power restored to Zaporizhzhia nuclear plant, IAEA says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORkE4VEFBVF9KWlRaRk9HRmtvVGh4cTlxanVleGY5WXZtVnNVSF9LTEQtd0NvbW9YbnE0TndLS052dU5kaUZtRjJrUzZiMXVhVFdWTlNBT2xGV203cTdOREg1YmZDMGRkM081d1hzbjJJWlR4ZG9tTVpSX19rZkVHdGhhRVVmbHVFRVhfVTJnVWFvRVlSYTdLSGRmTHd2WGxMZm15RTNGQ05DLVRXVm1jMDh1Rms?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Floods bring rare relief to US Southwest reservoirs as Lake Powell rises 20 feet",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdXNFdmVGaVVYNTREa3c1U180SmlSbE1iT3pBMGpJVjZ6YURXQmJkb0FwN285blBJNk1WRHJqRWVKbWNsU0M3V0czNHUyZG5VQkNoVFNHZHBZbEtPMmU2TFYtc3o4NEpUdEoyOVFyQzQ4RXFwNm11cnB4eXJqREE1RlNaTE94Y3pzS1VEckxIU1dzT3hnMFVnYmdTRzlfSGtpa2RHWndycnN6NU9aSEtXaDZ3?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "AP Exclusive: Departing UN chief calls this ‘a moment of truth’ in fight to curb global warming",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYTJVbllMbTh0TklFUktNN2I4TVZEeVkwYjJ4cWVSNjNjV05JWDZwaDFvR3dubmV4YjRFUUI0TlFMMk1EVWFTb08yZ2J1VHRXSm1ndFpRU0N6VmpCUjZWWE9ST29icmpJeEFOWlhKeUE3MXl1YUZ0YVJLVnh3S1ZCbmI5T1poRUJMWUphZ0JSNG5ET21VR3pLVGJLTEZ1bVZOSmpQNDRfMDM?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Russia targets emergency crews at the site of a deadly strike in southern Ukraine",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUlFnYVBkWHBXdnhJcHBhOTM4U0t0WnZHVkYwY3FQc3lUd3hpallTaHFGN1BuaVFWUEtITnVDSWFaWUdTZktXdjg5MUk0bWtsSkFsYk9xS21Lc2N0cnpPeHBEeVZDdW5RZ1h0NUs3Sk8wbGhiTmtTQjVjSjRrcEVsdTNjMk8wTDRuaDUxSlFrT0FvS2VsVkZVVVNYUmpXaW9jbUZZZGVzVzBDWE0?oc=5"
+    }
+  ]
+}
