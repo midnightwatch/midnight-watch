@@ -1,0 +1,252 @@
+{
+  "sample": false,
+  "date": "2026-11-10",
+  "seconds": 81.7,
+  "previous": 81.9,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.0,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-10",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 0.8,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-09T23:30:37+00:00",
+  "yesterday_lede": "The clock holds at 81.9 seconds: weakening AI copyright law adds a new risk to the AI & tech domain.",
+  "chair": {
+    "lede": "The clock moves to 81.7 seconds, 0.2 closer to midnight than yesterday: a newly reported flesh‑eating screwworm outbreak adds a fresh biological threat.",
+    "body": [
+      "The recent Reuters report on the US flesh‑eating screwworm outbreak introduces a biological danger not previously tracked, prompting a new pressure in the bio domain.",
+      "Extreme heat affecting millions in India and deadly floods in Iraq deepen the existing climate‑extreme pressure, leading to a modest increase in its weight.",
+      "Missile interceptions over Saudi Arabia that damaged an Aramco facility represent a fresh geopolitical escalation, adding a new pressure."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "better",
+      "say": "IAEA report that Slovakia is committed to strengthening nuclear and radiation safety regulatory framework shows a concrete step to improve safety (cite 10)."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "New extreme heat affecting 146.5 million Indians (24) and deadly floods in Iraq (30) show climate impacts are intensifying, while farmers in Turkey face looming droughts ahead of COP31 (15). These fresh events deepen the existing climate‑extreme pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "The Reuters piece on the US flesh‑eating screwworm outbreak adds a new biological threat not previously tracked, worsening the bio pressure landscape."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "hold",
+      "say": "No new AI misuse, cyberattack, or regulatory change beyond existing pressures; recent headlines cover ongoing climate talks and routine tech developments."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Saudi Arabia intercepted missiles that hit an Aramco building in Riyadh, indicating a new escalation of regional hostilities. This adds a fresh danger beyond the existing pressures."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Nuclear",
+      "title": "Saudi Arabia intercepts missiles as Aramco building in Riyadh is damaged, and other Mideast news",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOU1hPV0p1dkZfcU92OEJVMkYtQTNHb3hKSDdGZHp5U1RkUTZlc2dzTU9oNjQ4dk5nUGZ6WVhkTlk2VTJ0cFkxOHozbE9aWUJObXFUYVBCZEwtaktnOGExQjVfUlhNdFlxRV9KeHMzS1Rsc2c3OFAxNHF6RjM2X0FRamhCalJsTk1BY1g2NFhHX2ZnUQ?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "How the US was left exposed to the flesh-eating screwworm, years into the outbreak",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQQ0JJcUkwd2hGRGRTazdFTXJGNndoR0dqdEEzRXV4Zlc0QXBuXzc2Wk9vTEZhVnoyeXpqbGkyWTk2S29SUWJtRng0V1VTVUFQSjYwc2Y0SEFUM2d6NjNBcEo2cHFrRVdTVUVaVUIyTkF5WXdUYmxobWdoVFptblpEMVN0SGNVeS1XeTVYc2FUZHJhejdTZGQ0SFg3cGU0Ym1MNjhFWmNDU01xcGpSSDhrdGlZcG9rN0Z5Zmd1ZEk1MnF6WDRSb29yWTZ2bURzRFMtMk9KMg?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "‘Exceptional’ extreme temperatures to continue into next year, UN reports",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168760"
+    },
+    {
+      "tag": "Climate",
+      "title": "Deadly floods hit Iraq as thunderstorms sweep across region",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/environment/2026/nov/09/deadly-floods-iraq-thunderstorms-iran-portugal-japan-snow"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA Mission says Slovakia is Committed to Strengthening Nuclear and Radiation Safety Regulatory Framework",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-mission-says-slovakia-is-committed-to-strengthening-nuclear-and-radiation-safety-regulatory-framework"
+    },
+    {
+      "tag": "Climate",
+      "title": "Farmers fight to adapt as droughts loom in COP31 host Turkey",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPckJXbkdoLUk4Wmx4NnVPdEZLV3hnZEE1TjNmMXJfX2RzYUxJRl8xcDBxVTh6bVR5b3Zwa2lNdDdUUzdJeW1fbWhfT3FjbTYyMVdfeE9CTUtwX2hZX2dFWmRuVVJDQ2xJSEtaLWRTbGhtbUJxd015Z2gzcmU3REtxYUotUWFGZHRuQi1zaUlCd0d5N2lxUHBXQ3NEbnd0R1VCeS1zdEJwQnVqZw?oc=5"
+    }
+  ]
+}
