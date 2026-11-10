@@ -1,0 +1,252 @@
+{
+  "sample": false,
+  "date": "2026-11-11",
+  "seconds": 81.7,
+  "previous": 81.7,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.0,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-10",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.0,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-10",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola case evacuated from DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-07",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-10T23:26:52+00:00",
+  "yesterday_lede": "The clock moves to 81.7 seconds, 0.2 closer to midnight than yesterday: a newly reported flesh‑eating screwworm outbreak adds a fresh biological threat.",
+  "chair": {
+    "lede": "The clock holds at 81.7 seconds: new Ebola cases broaden the outbreak scope.",
+    "body": [
+      "The IOM reported a surge to seventy‑one confirmed Ebola cases along transit routes in the DRC, expanding the biological threat and prompting an increase in the Ebola pressure weight.",
+      "Australia’s launch of an AI safety regulator and mandatory breach reporting after the OpenAI portal hack strengthens oversight, allowing a modest reduction in the fake‑alert pressure.",
+      "A US soldier’s arrest in Britain on suspicion of Russian‑linked espionage introduces a fresh geopolitical tension, adding a new pressure to the list."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "No new nuclear weapons development, test, or treaty collapse reported; Jordan’s pledge to strengthen radiation safety is a routine safety commitment and does not alter existing pressures."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "better",
+      "say": "A new analysis projects a 0.4% dip in global fossil‑fuel CO₂ emissions in 2026 as the Iran conflict reduces oil use, indicating a modest easing of climate pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "New Ebola cases detected along transit routes in DRC increase the outbreak scope, worsening the existing Ebola pressure."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "better",
+      "say": "Australia announced new AI safety regulator and mandatory breach reporting after the OpenAI government portal hack, strengthening oversight of AI risks."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "The arrest of a US soldier in Britain on suspicion of Russian-linked espionage (9) adds a fresh intelligence tension between NATO allies and Russia, worsening the geopolitical pressure."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Bio",
+      "title": "Ebola: IOM urges wider surveillance beyond formal routes in DR Congo",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168781"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Australia to launch AI safety regulator after OpenAI’s breach of a government portal",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZ01VX2RRcFVIUlZEYy1Ra3o1cjV1RkR1QlhhQ2FYdExZWFNtU0tBRW1zRVZrc1FEa2huTE1BMlNIWVJmTXoxemFyX1JwVVM2OXRnTzdsVjFvTjNSbE9xZXBaUG5NZDhwcnFRRnZ0R0xPaVVka3FQazFsaUNoa3F3NGphQXd5U2ZHYTZpSWE5MThRZUNhc0cySkZEQTVkcnR5TDRlM2ZFbkJfSC1aOEtHWWpLR2xmNUp4Ql9BQmhvS2o?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Australia to mandate AI breach reporting, create regulator after OpenAI breach",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZVJXX0F6amhIRlpRZGpsTmNHenBVYndTci03aEFma05jOHYtNElITWF6TnVscnNfTndvaHFjeEVHNTRfSGZubWxESVlLQ295RWNCb3ZWMmpBdDJ0aVNYYktyb1RVTVRaZTFQVmRORXZ2TmpfakRQWm1aNGdlS0J3d3pENXc3NmNoSDN4Rms4UDNkYzFLNkFBSjJJSHRoNUhhYktVNl9XYmdNdFZVNjdTdk9YQlR4bDRpcmc?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "US soldier assigned to NATO unit arrested in Britain on suspicion of espionage linked to Russia",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUE1BdG9yN2hIRmJMbEFZdlEzZi1fUWpETU5WYU44WjJJZEJBTWYxNFF6X1pkSmVQUU1KbnRLWlJuMk9JTjZEd2VScHdHZGMxQTQ0bDgxclBIdmZqWVVPWFlzTjFBM3lUR0lWN04tZ0FfTlY1UTR5eHgya3VRVVQwTy0xZ1h4ZXNpWWI0ZXQ4V0V0WEN3OHlETTE0Zw?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA Mission says Jordan is Committed to Strengthening Radiation and Nuclear Safety Oversight",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-mission-says-jordan-is-committed-to-strengthening-radiation-and-nuclear-safety-oversight"
+    },
+    {
+      "tag": "Climate",
+      "title": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
+      "source": "Carbon Brief",
+      "url": "https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-set-to-dip-in-2026-as-iran-conflict-hits-oil-use"
+    }
+  ]
+}
