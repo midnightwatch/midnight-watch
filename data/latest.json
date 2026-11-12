@@ -1,11 +1,93 @@
 {
   "sample": false,
-  "date": "2026-11-12",
-  "seconds": 81.8,
-  "previous": 81.7,
+  "date": "2026-11-13",
+  "seconds": 81.3,
+  "previous": 81.8,
   "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.5,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-13",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -75,178 +157,80 @@
       "last_seen": "2026-11-05",
       "status": "fading",
       "delta": 0.0
-    },
-    {
-      "id": "bio-ebola",
-      "area": "Bio",
-      "name": "Ebola case evacuated from DR Congo",
-      "weight": 0.0,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-12",
-      "status": "closed",
-      "delta": -0.4
     }
   ],
-  "pressures_before": [
-    {
-      "id": "climate-extreme",
-      "area": "Climate",
-      "name": "New extreme weather events",
-      "weight": 1.0,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-10",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "nuclear-us-iran",
-      "area": "Nuclear",
-      "name": "US threats to resume attacks on Iran",
-      "weight": 0.7,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-08",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-ebola",
-      "area": "Bio",
-      "name": "Ebola case evacuated from DR Congo",
-      "weight": 0.4,
-      "since": "2026-11-04",
-      "last_seen": "2026-11-11",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
-      "weight": 0.4,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-11",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-anthrax",
-      "area": "Bio",
-      "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-birdflu",
-      "area": "Bio",
-      "name": "Human case of avian influenza in Washington",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-fridgeattack",
-      "area": "AI & tech",
-      "name": "Cyberattack on European supermarket refrigeration",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-bloodbank-cyber",
-      "area": "AI & tech",
-      "name": "Cyberattack on French blood banks",
-      "weight": 0.2,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-05",
-      "status": "same",
-      "delta": 0.0
-    }
-  ],
-  "generated_at": "2026-11-11T23:41:31+00:00",
-  "yesterday_lede": "The clock holds at 81.7 seconds: new Ebola cases broaden the outbreak scope.",
+  "generated_at": "2026-11-12T23:34:22+00:00",
+  "yesterday_lede": "The clock moves to 81.8 seconds, 0.1 further from midnight than yesterday: climate‑finance pledges have collapsed, raising extreme‑weather risk.",
   "chair": {
-    "lede": "The clock moves to 81.8 seconds, 0.1 further from midnight than yesterday: climate‑finance pledges have collapsed, raising extreme‑weather risk.",
+    "lede": "The clock moves to 81.3 seconds, 0.5 closer to midnight than yesterday: funding cuts and drought worsen climate risk.",
     "body": [
-      "The climate‑extreme pressure has been upgraded as new reports highlight a severe El Niño‑linked flood threat in Kenya and a 70% drop in climate‑finance pledges at COP31, deepening the risk of catastrophic weather events.",
-      "The Ebola outbreak pressure is closed because Kenya has discharged its last patient and begun the 42‑day countdown to being declared Ebola‑free, effectively ending the immediate threat.",
-      "United Airlines’ decision to block AI agents reduces a potential misuse vector in aviation security, prompting a modest increase in the AI‑tech pressure."
+      "The recent DOGE decision to cut $470 M from climate project funding and the severe drought threatening Iraq’s historic marshes add fresh pressure to the climate sector, prompting an increase to the existing extreme‑weather pressure.",
+      "A new legal push against AI developers to halt the deployment of advanced models introduces an additional, albeit modest, AI‑related risk.",
+      "Other sectors show no substantive change; existing pressures remain unchanged."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "Iran's security chief reiterates the country will not allow enriched nuclear material to leave, confirming existing stance without new escalation."
+      "vote": "better",
+      "say": "IAEA reports operational safety commitment at Korea's Kori Unit 2, indicating improved nuclear safety, a positive development."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "El Niño‑linked flood fears in Kenya signal fresh extreme‑weather risk and a sharp 70% drop in climate‑finance pledges at COP31 shows mitigation funding is collapsing. Both add new pressure to the climate‑extreme category."
+      "say": "Funding cuts by DOGE gut $470 M for climate projects (7) and worsening drought threatens Iraq's historic marshes (24), both add fresh climate risks beyond existing pressures."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "better",
-      "say": "Kenya has released its last Ebola patient and begun the 42‑day countdown to being declared Ebola‑free, effectively ending the outbreak that was previously an open pressure (bio‑ebola)."
+      "say": "Kenya began a 42‑day countdown after the last Ebola patient was discharged, indicating the outbreak is ending and reducing bio risk. (8)"
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
-      "vote": "better",
-      "say": "United Airlines moves to block AI agents from its platform, reducing potential misuse of AI in aviation security (14)."
+      "vote": "worse",
+      "say": "Advocacy groups suing AI giants to freeze new models highlights a new, heightened risk of catastrophic AI misuse (headline 4)."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "hold",
-      "say": "No new war, treaty collapse, or major incident reported; the headlines cover routine diplomatic moves and ongoing health or climate issues already reflected in existing pressures."
+      "say": "No new development beyond the ongoing Gaza conflict already reflected in the baseline; the other items are routine or continuations."
     }
   ],
   "headlines": [
     {
       "tag": "Climate",
-      "title": "'It can kill us': Kenyans fear impact of El Niño with floods predicted",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c8wy9y37z30vo?at_medium=RSS&at_campaign=rss"
+      "title": "DOGE cuts cost tribes $470M, gutting funding for climate projects",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQXMxV3gxNWtQeHh3RlJHZVA3RGxaOXRXN0Z6ODdldUVEbnNkNm5EU0Z1ODkzaExyXzNEWjJsWHB6aDFzamN1SFRVbjUyUTlEVzdsd1JsMVc4ZEFyeGdJS0xLdjdYTC1tOGtfZVBCeUl4X3BXWVJBMGJKMzVob2lzZXU3alVvQWxoTHprdXBUc1FLa011ZGNPVkVDSlFURE1fWGh4UTJWRnlNTlhIM2FveQ?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "Analysis: Climate-finance pledges fall 70% as countries meet at COP31",
-      "source": "Carbon Brief",
-      "url": "https://www.carbonbrief.org/analysis-climate-finance-pledges-fall-70-as-countries-meet-at-cop31"
-    },
-    {
-      "tag": "Bio",
-      "title": "Kenya releases last Ebola patient, starts 42-day countdown to disease-free status",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOb0JFd2U5WjhCeFZQTlRBQTBpQng0Mkh4YV95T1FXTDVsNVJVZGdHSEx3Sk1tWlM3akQ3bG41TkVtN05YNlB2WHFrQ3FCcjEwVVJubHhtTEFfckZ3RHMzMTBsTU90S0ZUWExuY1l5V3dwNHUySWk4eUlvWGMxSXVjR3pZWTgtQk92Yl84NFl0aEpnSDFDZjBKT0xzN0ZKbXJyb2dVeTBVOXZRb0Vlb2V2TWFVeUM2V0dQemtjQ0VvckkwbGhSaVZrUmx5SDczNWZ6QVFKdWhpM1N6V0ttZTUxRTlPWQ?oc=5"
-    },
-    {
-      "tag": "Bio",
-      "title": "Kenya discharges last Ebola patient in major milestone towards virus-free status",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/cwe9kzv0g0v7o?at_medium=RSS&at_campaign=rss"
+      "title": "Drought threatens Iraq's marshes, risking one of the oldest ways of life",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/12/nx-s1-6026458/drought-threatens-iraqs-marshes-risking-one-of-the-oldest-ways-of-life"
     },
     {
       "tag": "AI & tech",
-      "title": "United Airlines moves to block AI agents from its platform over security concerns",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVlJLSUtLZnlkQ2FuamtrbzJqMUw5RFVQWnAtV0tyUmI4YVJzeXpSYS0wS2dGSkdvb0RybTR5ck9FRFFGY25pb1V6cm1RbFpSTGhhZUNIN3BjVHFyTmpoYVJOTWhGZjFDb21WNUYtMFFVUWgzUG9CTURNUTFsQWtUcGw5Tmh5TFA3ZHRKZzhRWFVVRjZFaFBWQzZrV0tkYkZSS2FMWGN5OFpTM1JsR0xKSEhkYWFKRFBKcVFTU0hDaktQMEox?oc=5"
+      "title": "Advocacy groups sue AI giants to freeze new models, warning of ‘catastrophic’ risks",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNU3o4X0NMQVZxQ3g1Z216LW05QnZDQ2ZLZEc5cUhtU3NJSTJkWVoxTWsxUWUtNW05Ti04UHdCNEVKcnVZVEhnNXZoUks0N3BodVpGMjdYMEtUaFRHQnRwNUViNzdxUnEyWXVXMlgyeWQzaTg0N0NuRFFCbEFpM3pMaHViWFlvV1RVNEdfXzdEQWdwdFNSbkRIQU0yX3Q4aW1WTFhiNDNEWTFWcTlJYVJsMDVBaWNhV2g0Si1jcEdJRkRnQQ?oc=5"
     },
     {
       "tag": "Nuclear",
-      "title": "Iran will not allow enriched nuclear material to leave the country, security chief says",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNSmRMSFZZUld1UEFab291N25WYXZVNENjbmtrWVU0OEEwZm84Z2RONXZHM0JnY2FId2ROLTRvek9lWmZiSFNQNlMwVVpVQ0Q1V3NsSDk1alc5Z0JoMExVY3NpYjVSVDhXd3RtYmo2M2lsdHoydlUteHlDMkp5QlZsWGQxam1JUXFuRkV0UHhOTVB0ZWtxeUhCTkNHNkRMMG5TaUdQaHBUYTlmMkhBRjBWUkZUTlNMVU1ISzFfVlduXzBJd3p0U0psdDNTa1F4Zw?oc=5"
+      "title": "IAEA Sees Commitment to Operational Safety at Unit 2 of Kori Nuclear Power Plant in Republic of Korea",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-sees-commitment-to-operational-safety-at-unit-2-of-kori-nuclear-power-plant-in-republic-of-korea"
+    },
+    {
+      "tag": "Bio",
+      "title": "Kenya begins countdown towards end of Ebola after last patient discharged",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168790"
     }
   ]
 }

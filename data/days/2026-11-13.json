@@ -1,0 +1,236 @@
+{
+  "sample": false,
+  "date": "2026-11-13",
+  "seconds": 81.3,
+  "previous": 81.8,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.5,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-13",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-12",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-12T23:34:22+00:00",
+  "yesterday_lede": "The clock moves to 81.8 seconds, 0.1 further from midnight than yesterday: climate‑finance pledges have collapsed, raising extreme‑weather risk.",
+  "chair": {
+    "lede": "The clock moves to 81.3 seconds, 0.5 closer to midnight than yesterday: funding cuts and drought worsen climate risk.",
+    "body": [
+      "The recent DOGE decision to cut $470 M from climate project funding and the severe drought threatening Iraq’s historic marshes add fresh pressure to the climate sector, prompting an increase to the existing extreme‑weather pressure.",
+      "A new legal push against AI developers to halt the deployment of advanced models introduces an additional, albeit modest, AI‑related risk.",
+      "Other sectors show no substantive change; existing pressures remain unchanged."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "better",
+      "say": "IAEA reports operational safety commitment at Korea's Kori Unit 2, indicating improved nuclear safety, a positive development."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Funding cuts by DOGE gut $470 M for climate projects (7) and worsening drought threatens Iraq's historic marshes (24), both add fresh climate risks beyond existing pressures."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "better",
+      "say": "Kenya began a 42‑day countdown after the last Ebola patient was discharged, indicating the outbreak is ending and reducing bio risk. (8)"
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Advocacy groups suing AI giants to freeze new models highlights a new, heightened risk of catastrophic AI misuse (headline 4)."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "hold",
+      "say": "No new development beyond the ongoing Gaza conflict already reflected in the baseline; the other items are routine or continuations."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "DOGE cuts cost tribes $470M, gutting funding for climate projects",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQXMxV3gxNWtQeHh3RlJHZVA3RGxaOXRXN0Z6ODdldUVEbnNkNm5EU0Z1ODkzaExyXzNEWjJsWHB6aDFzamN1SFRVbjUyUTlEVzdsd1JsMVc4ZEFyeGdJS0xLdjdYTC1tOGtfZVBCeUl4X3BXWVJBMGJKMzVob2lzZXU3alVvQWxoTHprdXBUc1FLa011ZGNPVkVDSlFURE1fWGh4UTJWRnlNTlhIM2FveQ?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Drought threatens Iraq's marshes, risking one of the oldest ways of life",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/12/nx-s1-6026458/drought-threatens-iraqs-marshes-risking-one-of-the-oldest-ways-of-life"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Advocacy groups sue AI giants to freeze new models, warning of ‘catastrophic’ risks",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNU3o4X0NMQVZxQ3g1Z216LW05QnZDQ2ZLZEc5cUhtU3NJSTJkWVoxTWsxUWUtNW05Ti04UHdCNEVKcnVZVEhnNXZoUks0N3BodVpGMjdYMEtUaFRHQnRwNUViNzdxUnEyWXVXMlgyeWQzaTg0N0NuRFFCbEFpM3pMaHViWFlvV1RVNEdfXzdEQWdwdFNSbkRIQU0yX3Q4aW1WTFhiNDNEWTFWcTlJYVJsMDVBaWNhV2g0Si1jcEdJRkRnQQ?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA Sees Commitment to Operational Safety at Unit 2 of Kori Nuclear Power Plant in Republic of Korea",
+      "source": "IAEA",
+      "url": "http://www.iaea.org/newscenter/pressreleases/iaea-sees-commitment-to-operational-safety-at-unit-2-of-kori-nuclear-power-plant-in-republic-of-korea"
+    },
+    {
+      "tag": "Bio",
+      "title": "Kenya begins countdown towards end of Ebola after last patient discharged",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168790"
+    }
+  ]
+}
