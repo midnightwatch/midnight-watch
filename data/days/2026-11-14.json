@@ -1,0 +1,268 @@
+{
+  "sample": false,
+  "date": "2026-11-14",
+  "seconds": 80.8,
+  "previous": 81.3,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-14",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-14",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.2,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.5,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-13",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.7,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-08",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-13T23:33:03+00:00",
+  "yesterday_lede": "The clock moves to 81.3 seconds, 0.5 closer to midnight than yesterday: funding cuts and drought worsen climate risk.",
+  "chair": {
+    "lede": "The clock moves to 80.8 seconds, 0.5 closer to midnight than yesterday: iran’s threat to halt UN monitoring and fresh extreme‑weather events raise nuclear and climate risks.",
+    "body": [
+      "Iran announced it will not allow UN nuclear agency monitors to operate while it feels threatened, and the IAEA expressed heightened concern over Iran’s enrichment activities. This escalation deepens the existing US‑Iran nuclear tension.",
+      "Across the United States, larger and more frequent wildfires are endangering water supplies, while Storm Charles has produced severe floods and flight cancellations in southern Europe, adding fresh climate stress beyond the baseline.",
+      "The Democratic Republic of the Congo’s Ebola outbreak is worsening as armed groups impede response efforts, prompting the addition of a new bio‑security pressure."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "Iran says UN nuclear monitoring halted due to threats and IAEA raises concerns over Iran's enrichment plant, indicating heightened nuclear tension beyond existing US‑Iran pressure."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "New, larger wildfires threatening US water supplies and Storm Charles causing floods across southern Europe add fresh extreme‑weather risks, while COP31 finance shortfalls and tepid responses to urgent climate finance pleas worsen the climate pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "The DRC Ebola outbreak is worsening as armed groups obstruct response, expanding transmission risk (8)."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "hold",
+      "say": "No new AI misuse incidents or breakthroughs that add or reduce risk; recent items discuss market impacts, policy talks, and product launches (e.g., OpenAI ChatGPT Wallet, Nvidia scandal, AI summit) but no new danger."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Iran tells the UN nuclear agency monitoring cannot proceed under threat, indicating heightened tension over its nuclear program."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Nuclear",
+      "title": "Iran tells UN nuclear agency that monitoring cannot proceed while it is under threat",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSUhIeGdPMTNhOEtBdjc2VlJIaHpPZDh2NTdEb283VFY0Uzg0TVEyYzk4OW8zWXRJY2taTWFmVGJaY1YwYnMzTHBLVENmX2JUX1BxN0Vxa2hScmFMR3BLSjBuSUZIZEN2V0NBYmc2TVItTnYzSzRXWFBnUmxfUnhUVDJxQk5Ra0FhTUs4dXZpaER5ZDlpZTlRb045bkZXblJobGxJbWVKZHI4ZGVuQnlubXBjSzNwQQ?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Bigger and more-frequent wildfires threaten water supplies across the US",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUS1kSVUzQU5sb1R3dGZ4eDJZVDlMNWc0SlhDekxrYXZ0amtyaHUtTUNobGNUeGVCOEhXNG51b2lHbk5rZ2k3S2tKVThnLWxmMmFlMkxfSEk3RThCQ3hDN3praFNBU255MUFveGhGUEthcG5JRnp5MkJfS1ZDQ2ZPX2EyaDV3UnZPd3BodUhGUkxvaWRrbl92Z0xEQ1NWVTA?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "DR Congo Ebola outbreak: Unrest fuelled by armed groups holds back response",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168797"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA increasingly concerned about Iranian enrichment plant, its report says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcEw4cVpnMkIxMTVtZEJlQmN3OHlsLUxxZnQxMWlfV3VfWTBYeHA2VEpBVWxpZk9TejdSaDgzazdlQUlMZy00aEhmZS1GYnhpVmU1bzdQTWM2VUJqd2dOWWowa1VQSWppQVdYSi1PVm0zX2J1b1hFU1QwaGs5N3lDZkJ3bEY5OG9Tai15M3VoRXVycFVBWjYwWjQ5dUhDcEJ4SWFHSXZxNDg5b2k2OG1DUVBoTHBDWE84dmVfZXc4WQ?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Storm Charles causes floods and flight cancellations across southern Europe",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/environment/2026/nov/13/storm-charles-floods-flight-cancellations-southern-europe-weather"
+    },
+    {
+      "tag": "Climate",
+      "title": "Urgent climate finance pleas at COP31 face a non-urgent response",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRGRkQm1STlJ6Q0dPcE9JZll3eGQwa0tRNDMxMGxKVXBZQWR5bUt0akZIVjQzMUFXdHc3TUtiS0NuT0RnTmJGaGw5dHM3Y0tFQ1BwaUR2N2FsV2lKaXNzTXEybnFoTE1lWXdwMGFkbGZ4SEU3WG1BbWIwUWhGRmctbm5SN2QwX0NwMlBURHIyYmRVQW1RN1liOEx6eFdNUDVzMlJTQXJNV0xfWVl5dGFJM1cwbHI?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "COP31: Climate finance falls short as calls grow for polluters to pay",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168802"
+    }
+  ]
+}
