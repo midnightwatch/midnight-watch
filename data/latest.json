@@ -1,7 +1,7 @@
 {
   "sample": false,
-  "date": "2026-11-15",
-  "seconds": 80.8,
+  "date": "2026-11-16",
+  "seconds": 80.3,
   "previous": 80.8,
   "official_reset": false,
   "anchor": 85.0,
@@ -37,6 +37,16 @@
       "delta": 0.0
     },
     {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
       "id": "ai-litigation",
       "area": "AI & tech",
       "name": "Lawsuits to freeze new AI models",
@@ -45,6 +55,16 @@
       "last_seen": "2026-11-13",
       "status": "same",
       "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.2,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.2
     },
     {
       "id": "bio-anthrax",
@@ -105,8 +125,8 @@
       "weight": 1.6,
       "since": "2026-11-02",
       "last_seen": "2026-11-14",
-      "status": "up",
-      "delta": 0.1
+      "status": "same",
+      "delta": 0.0
     },
     {
       "id": "nuclear-us-iran",
@@ -115,8 +135,8 @@
       "weight": 0.9,
       "since": "2026-11-05",
       "last_seen": "2026-11-14",
-      "status": "up",
-      "delta": 0.2
+      "status": "same",
+      "delta": 0.0
     },
     {
       "id": "ai-cyberalert",
@@ -165,8 +185,8 @@
       "weight": 0.2,
       "since": "2026-11-14",
       "last_seen": "2026-11-14",
-      "status": "new",
-      "delta": 0.2
+      "status": "same",
+      "delta": 0.0
     },
     {
       "id": "ai-fridgeattack",
@@ -189,14 +209,14 @@
       "delta": 0.0
     }
   ],
-  "generated_at": "2026-11-14T23:26:33+00:00",
-  "yesterday_lede": "The clock moves to 80.8 seconds, 0.5 closer to midnight than yesterday: iran’s threat to halt UN monitoring and fresh extreme‑weather events raise nuclear and climate risks.",
+  "generated_at": "2026-11-15T23:37:18+00:00",
+  "yesterday_lede": "The clock holds at 80.8 seconds: aI-driven disinformation ahead of Nigeria's 2027 election adds a new misuse risk.",
   "chair": {
-    "lede": "The clock holds at 80.8 seconds: aI-driven disinformation ahead of Nigeria's 2027 election adds a new misuse risk.",
+    "lede": "The clock moves to 80.3 seconds, 0.5 closer to midnight than yesterday: new AI cheating incident and fresh Houthi missile escalation.",
     "body": [
-      "The latest headlines report a surge in AI‑generated misinformation targeting Nigeria’s upcoming election, a development not covered by the baseline and representing a fresh threat to democratic stability.",
-      "While existing pressures remain unchanged, this new AI disinformation risk warrants the creation of a modest pressure, reflecting its potential to undermine trust in electoral processes.",
-      "No other significant new developments were identified, so all other pressures retain their previous status."
+      "Today's headlines reveal two distinct developments that were not present in the baseline. In South Korea, a top scorer admitted using AI to cheat on a national tax exam, highlighting a new misuse risk for generative AI tools. In the Middle East, the Houthis launched ballistic missiles toward Riyadh, and Saudi forces intercepted additional missiles and drones, marking a fresh escalation in the Yemen‑Saudi conflict.",
+      "Both events represent new threats beyond the ongoing baseline pressures and therefore merit the addition of modest‑weight pressures to the board’s list.",
+      "The rest of the existing pressures remain unchanged as no further developments altered their status."
     ]
   },
   "experts": [
@@ -204,63 +224,57 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "hold",
-      "say": "No new nuclear weapon test, conflict, or treaty collapse reported; headlines focus on planned nuclear talks and reductions, which do not constitute a new danger (e.g.."
+      "say": "No new nuclear weapon tests, deployments, or treaty changes appeared; the Trident submarine patrol highlights existing fleet aging concerns already reflected in baseline pressures."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "hold",
-      "say": "Recent climate news includes flood relief in the US Southwest reservoirs (2) and calls for faster climate action at COP31, but these are routine developments and do not add a new danger or markedly change existing pressures."
+      "say": "No new climate‑related danger or policy shift beyond ongoing protests and diplomatic statements; the haze apology and Pope's deforestation call do not constitute a new pressure."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "hold",
-      "say": "No new disease outbreak, lab incident, or antimicrobial threat reported in the last 24 hours; existing bio pressures unchanged."
+      "say": "Ebola situation in DR Congo continues but is already reflected in existing pressure; no new outbreak or containment reported."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "AI-driven disinformation ahead of Nigeria's 2027 election raises a new misuse risk (headline 11), adding to existing AI threats."
+      "say": "AI cheating on South Korea's tax exam shows new misuse of generative AI tools, adding to existing AI safety concerns (9)."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "hold",
-      "say": "No new wars, attacks, treaty collapses, or major incidents appeared; the headlines focus on diplomatic meetings and climate reports, which do not add fresh geopolitical danger."
+      "vote": "worse",
+      "say": "Houthis launched ballistic missiles toward Riyadh airport and Saudi‑led forces intercepted missiles and drones, indicating a fresh escalation in the Yemen‑Saudi conflict. This adds a new regional security danger beyond existing pressures."
     }
   ],
   "headlines": [
     {
       "tag": "AI & tech",
-      "title": "Nigeria's upcoming election marred by rising AI disinformation",
-      "source": "DW",
-      "url": "https://www.dw.com/en/nigeria-s-upcoming-election-marred-by-rising-ai-disinformation/a-79946897?maca=en-rss-en-world-4025-rdf"
-    },
-    {
-      "tag": "Climate",
-      "title": "Floods bring rare relief to US Southwest reservoirs as Lake Powell rises 20 feet",
-      "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdXNFdmVGaVVYNTREa3c1U180SmlSbE1iT3pBMGpJVjZ6YURXQmJkb0FwN285blBJNk1WRHJqRWVKbWNsU0M3V0czNHUyZG5VQkNoVFNHZHBZbEtPMmU2TFYtc3o4NEpUdEoyOVFyQzQ4RXFwNm11cnB4eXJqREE1RlNaTE94Y3pzS1VEckxIU1dzT3hnMFVnYmdTRzlfSGtpa2RHWndycnN6NU9aSEtXaDZ3?oc=5"
-    },
-    {
-      "tag": "Climate",
-      "title": "UN climate chief urges speed as COP31 confronts fossil fuel divide",
+      "title": "Top scorer on South Korean tax exam confesses to cheating with AI",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMUdMa3BVSk45alRMRFZoSmM0ZllsLVVMcEdKaDZpbzh5UW5EeGR2WHVmYTh5aE1KRnlleEIwMEVyc1o0VVVael9pMHVaa25BSmpZYUpENWxCZ09aOW1VRlJqZkhMcjVSWnlXcFNBaGFzSUkwbG85SlpZZF9jYlltMHkzRC1fSUxVSFNRQ2hfVEdUMzdXSHc4TzBzZnFFZFhtSU1fNjJVcFppZ1Z2REp6bFdDV0NGbGlRVHc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVjJtaVF1ZGdVTmRVNlB2Mk5GeEVtaTk2UHIxbW16RHU2M0hNQ1hTZW1XTkVPTzlYQnNYV2FDMlZGQjZpMXdySHZhMDFUMDkxOWJybnE4ekV6LVRuV3p5bHZiU3dTVWsyNkpOTkdaV3gxR3plNTF1TTdyVDlIUklCekFkNG5yaFdQZ3lQVjhyQXNxX09UQnVuYlhLMjNoMVVDZFk4R2xhQVd4T2xjaWNfdVZFZW4?oc=5"
     },
     {
-      "tag": "Climate",
-      "title": "COP31: Protesters, UN urge swift climate deal",
-      "source": "DW",
-      "url": "https://www.dw.com/en/cop31-protesters-un-urge-swift-climate-deal/a-79948501?maca=en-rss-en-world-4025-rdf"
+      "tag": "Nuclear",
+      "title": "Yemen's Houthis say they launched ballistic missiles towards Riyadh airport, financial centre",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2NSdXVjeDlTU0lLeTAtMGs5RmdHaW0wTVhVbzUwempOYUdlNVB3NXprMGZqYksyVjhLUU1OV250QlczemJOT2tXcVFIZEJYb0dwblVCblExbnFmZkVyeGZnZ0NJY3Z3a3NTcmxUQ21tR0ZsQVdhTTNRNWJaZW5pOEk4RDNEMXN3aExOaEE0QVNzaXV3UTM3ZjlNa2hDenRtajR2aGVGT3RQR0NOSnY1VHQ3czdCSkJWSUgxaFFYNThEUlBBMVpn?oc=5"
     },
     {
-      "tag": "Climate",
-      "title": "'Climate action is alive': Triumphant Democrats attend COP31 summit shunned by Trump",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/environment/20261114-climate-action-is-alive-triumphant-democrats-take-on-cop31-shunned-by-trump"
+      "tag": "Nuclear",
+      "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOemlqVE1TdmREQ0t3TjczWnBWVGZ3TkxTc0ZPVC1fZFlrUDJCZC1KV0liZGdUTHBXZEZpWG9SNkJJSlBYSjVPbE1aUnNtWHl2eE1FbzlURGRwckdIT3R2NG9rVm1oX1V0VEZoWmYxM1dSbmhNc1BidnFLX19YRVU3Q2tzR1F5Vk1QX3dDNXVCeXZ6bmVES0lZNTBlR3E0Z1hJcXFyYXpMam80TGRWbURod1NsUXBwZldjdHFVejFwaWtmVmo3ZWYzYW5QMzk?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Trident nuclear submarine concludes record underwater deployment",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/uk-news/2026/nov/15/trident-nuclear-submarine-hms-vengeance-record-tour"
     }
   ]
 }

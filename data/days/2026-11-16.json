@@ -1,0 +1,280 @@
+{
+  "sample": false,
+  "date": "2026-11-16",
+  "seconds": 80.3,
+  "previous": 80.8,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.2,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.2,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.2,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-15T23:37:18+00:00",
+  "yesterday_lede": "The clock holds at 80.8 seconds: aI-driven disinformation ahead of Nigeria's 2027 election adds a new misuse risk.",
+  "chair": {
+    "lede": "The clock moves to 80.3 seconds, 0.5 closer to midnight than yesterday: new AI cheating incident and fresh Houthi missile escalation.",
+    "body": [
+      "Today's headlines reveal two distinct developments that were not present in the baseline. In South Korea, a top scorer admitted using AI to cheat on a national tax exam, highlighting a new misuse risk for generative AI tools. In the Middle East, the Houthis launched ballistic missiles toward Riyadh, and Saudi forces intercepted additional missiles and drones, marking a fresh escalation in the Yemen‑Saudi conflict.",
+      "Both events represent new threats beyond the ongoing baseline pressures and therefore merit the addition of modest‑weight pressures to the board’s list.",
+      "The rest of the existing pressures remain unchanged as no further developments altered their status."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "No new nuclear weapon tests, deployments, or treaty changes appeared; the Trident submarine patrol highlights existing fleet aging concerns already reflected in baseline pressures."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "hold",
+      "say": "No new climate‑related danger or policy shift beyond ongoing protests and diplomatic statements; the haze apology and Pope's deforestation call do not constitute a new pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "Ebola situation in DR Congo continues but is already reflected in existing pressure; no new outbreak or containment reported."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "AI cheating on South Korea's tax exam shows new misuse of generative AI tools, adding to existing AI safety concerns (9)."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Houthis launched ballistic missiles toward Riyadh airport and Saudi‑led forces intercepted missiles and drones, indicating a fresh escalation in the Yemen‑Saudi conflict. This adds a new regional security danger beyond existing pressures."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "AI & tech",
+      "title": "Top scorer on South Korean tax exam confesses to cheating with AI",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVjJtaVF1ZGdVTmRVNlB2Mk5GeEVtaTk2UHIxbW16RHU2M0hNQ1hTZW1XTkVPTzlYQnNYV2FDMlZGQjZpMXdySHZhMDFUMDkxOWJybnE4ekV6LVRuV3p5bHZiU3dTVWsyNkpOTkdaV3gxR3plNTF1TTdyVDlIUklCekFkNG5yaFdQZ3lQVjhyQXNxX09UQnVuYlhLMjNoMVVDZFk4R2xhQVd4T2xjaWNfdVZFZW4?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Yemen's Houthis say they launched ballistic missiles towards Riyadh airport, financial centre",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2NSdXVjeDlTU0lLeTAtMGs5RmdHaW0wTVhVbzUwempOYUdlNVB3NXprMGZqYksyVjhLUU1OV250QlczemJOT2tXcVFIZEJYb0dwblVCblExbnFmZkVyeGZnZ0NJY3Z3a3NTcmxUQ21tR0ZsQVdhTTNRNWJaZW5pOEk4RDNEMXN3aExOaEE0QVNzaXV3UTM3ZjlNa2hDenRtajR2aGVGT3RQR0NOSnY1VHQ3czdCSkJWSUgxaFFYNThEUlBBMVpn?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOemlqVE1TdmREQ0t3TjczWnBWVGZ3TkxTc0ZPVC1fZFlrUDJCZC1KV0liZGdUTHBXZEZpWG9SNkJJSlBYSjVPbE1aUnNtWHl2eE1FbzlURGRwckdIT3R2NG9rVm1oX1V0VEZoWmYxM1dSbmhNc1BidnFLX19YRVU3Q2tzR1F5Vk1QX3dDNXVCeXZ6bmVES0lZNTBlR3E0Z1hJcXFyYXpMam80TGRWbURod1NsUXBwZldjdHFVejFwaWtmVmo3ZWYzYW5QMzk?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Trident nuclear submarine concludes record underwater deployment",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/uk-news/2026/nov/15/trident-nuclear-submarine-hms-vengeance-record-tour"
+    }
+  ]
+}
