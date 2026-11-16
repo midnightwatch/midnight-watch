@@ -1,0 +1,312 @@
+{
+  "sample": false,
+  "date": "2026-11-17",
+  "seconds": 80.0,
+  "previous": 80.3,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.2,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.2,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.3,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.2,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "new",
+      "delta": 0.2
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.2,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-16T23:35:32+00:00",
+  "yesterday_lede": "The clock moves to 80.3 seconds, 0.5 closer to midnight than yesterday: new AI cheating incident and fresh Houthi missile escalation.",
+  "chair": {
+    "lede": "The clock moves to 80.0 seconds, 0.3 closer to midnight than yesterday: risk of a nuclear accident in Ukraine rising this winter.",
+    "body": [
+      "The Reuters report (headline 5) highlights a growing danger of a nuclear incident in Ukraine as winter approaches, a development not covered in the baseline and adding a new nuclear pressure.",
+      "COP31 draft negotiations (headlines 6 and 21) indicate climate policy is slipping, prompting the addition of a modest climate‑policy pressure.",
+      "Multiple new lawsuits against OpenAI over the Hugging Face hack (headlines 13, 22, 45) intensify AI misuse concerns, leading to an increased weight for the existing AI‑litigation pressure."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "Risk of a nuclear accident in Ukraine rising this winter adds a new nuclear danger, worsening the overall risk profile."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Drafts of the COP31 agreement show tougher negotiations and stalled finance, fossil fuel and adaptation talks, indicating climate policy is slipping further behind expectations."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "No new disease outbreak, lab safety issue, or antimicrobial resistance development reported; existing bio pressures unchanged."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "New lawsuits against OpenAI over the Hugging Face hack add fresh AI misuse pressure beyond the existing ai-litigation entry, worsening the AI risk landscape."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "hold",
+      "say": "Today's headlines focus on diplomatic moves, climate talks, and legal actions on AI, without introducing any new conflict, weapon test, or clear de‑escalation."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Nuclear",
+      "title": "EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "First draft of COP31 deal signals tough negotiations to come",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWVlsVlZ0US1xOVU2U1lLbEtiOGJmVmJIcUViWnBzRXdleE9DN05lN3ZHMDFRQXhpYUJuellVODcyLTUwYnkxOXBMOEhGNmpYbW9iUHNOTm9HcFhkUkxjaHo0UVBkb1pYUmlSVWp6SXRRRGtaRElTOHBOOTBEYXhWOTJSanpxb3RNRzZ2TkZYV1U1YUlOOVBkYUFBLUdFVGprNVBUZ0xWNXgtN1VxVGc?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "California sues OpenAI, seeking court-ordered changes after the Hugging Face hack",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZzhWWVB0Z1hBYmU2RUtsRW5BRjJteUR3VmV3d3hTLTlUbWVKZG5aNkZNSzhRX09iMFhVbmVRc1VqODY5MXhWb0V6M0pvT0RhTWNBS01sRzAxRGJBLW9RNWlNYk5VTDEzQ0Z0b0loR1doaFk0UENNMXViSi1selNmSlVfZUR5XzZaSGsxalNheDc0Szlfam9taFIwZw?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "California sues OpenAI over AI models’ cyberattacks on Hugging Face, other companies",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUnZpbWVjMld3R0NVUjRwT1ZIZW04eFJwYVYzNzUzUi1pckdSQmJiZkh5MnNWeHlnX2ZDVUtBVGU5emdtV3hweWlENDBqeXFoTThlSWhTY0pNRURXbFBmOWRySmkwOGxFZGlPQW9qekNhVzB2bW1SQW1rbU52M01vRTc2M0V3Zktfb00xNE04NElpSTU3c2RXTlVZT3JPYkdSRkFqRUpVSmhvZ0JtcHM5LURPN2hXWDZ5Mk1HVkVZQW5Cdw?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "California files lawsuit against OpenAI alleging lack of proper safeguards",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/11/16/california-files-lawsuit-against-openai-alleging-lack-of-proper-safeguards?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Cop31 draft text is attempt to ‘draw out parties’ to find agreement, president of talks says",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/environment/2026/nov/16/cop31-draft-text-draw-out-parties-find-agreement-president-talks-says"
+    }
+  ]
+}
