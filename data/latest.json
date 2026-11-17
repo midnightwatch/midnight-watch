@@ -1,11 +1,133 @@
 {
   "sample": false,
-  "date": "2026-11-17",
-  "seconds": 80.0,
-  "previous": 80.3,
+  "date": "2026-11-18",
+  "seconds": 79.5,
+  "previous": 80.0,
   "official_reset": false,
   "anchor": 85.0,
   "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 1.7,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-18",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-18",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.2,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "new",
+      "delta": 0.1
+    }
+  ],
+  "pressures_before": [
     {
       "id": "climate-extreme",
       "area": "Climate",
@@ -117,126 +239,15 @@
       "delta": 0.0
     }
   ],
-  "pressures_before": [
-    {
-      "id": "climate-extreme",
-      "area": "Climate",
-      "name": "New extreme weather events",
-      "weight": 1.6,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-14",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "nuclear-us-iran",
-      "area": "Nuclear",
-      "name": "US threats to resume attacks on Iran",
-      "weight": 0.9,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-14",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-cyberalert",
-      "area": "AI & tech",
-      "name": "Fake nuclear/chemical emergency alerts",
-      "weight": 0.4,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-11",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "geopolitics-houthi-missile",
-      "area": "Geopolitics",
-      "name": "Houthis launch missiles toward Riyadh",
-      "weight": 0.3,
-      "since": "2026-11-16",
-      "last_seen": "2026-11-16",
-      "status": "new",
-      "delta": 0.3
-    },
-    {
-      "id": "ai-litigation",
-      "area": "AI & tech",
-      "name": "Lawsuits to freeze new AI models",
-      "weight": 0.3,
-      "since": "2026-11-13",
-      "last_seen": "2026-11-13",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-misuse",
-      "area": "AI & tech",
-      "name": "AI cheating on national exam",
-      "weight": 0.2,
-      "since": "2026-11-16",
-      "last_seen": "2026-11-16",
-      "status": "new",
-      "delta": 0.2
-    },
-    {
-      "id": "bio-anthrax",
-      "area": "Bio",
-      "name": "Anthrax outbreak in DR Congo wildlife",
-      "weight": 0.2,
-      "since": "2026-11-02",
-      "last_seen": "2026-11-02",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-birdflu",
-      "area": "Bio",
-      "name": "Human case of avian influenza in Washington",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-ebola",
-      "area": "Bio",
-      "name": "Ebola outbreak worsening in DR Congo",
-      "weight": 0.2,
-      "since": "2026-11-14",
-      "last_seen": "2026-11-14",
-      "status": "same",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-fridgeattack",
-      "area": "AI & tech",
-      "name": "Cyberattack on European supermarket refrigeration",
-      "weight": 0.2,
-      "since": "2026-11-03",
-      "last_seen": "2026-11-03",
-      "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "ai-bloodbank-cyber",
-      "area": "AI & tech",
-      "name": "Cyberattack on French blood banks",
-      "weight": 0.2,
-      "since": "2026-11-05",
-      "last_seen": "2026-11-05",
-      "status": "fading",
-      "delta": 0.0
-    }
-  ],
-  "generated_at": "2026-11-16T23:35:32+00:00",
-  "yesterday_lede": "The clock moves to 80.3 seconds, 0.5 closer to midnight than yesterday: new AI cheating incident and fresh Houthi missile escalation.",
+  "generated_at": "2026-11-17T23:41:32+00:00",
+  "yesterday_lede": "The clock moves to 80.0 seconds, 0.3 closer to midnight than yesterday: risk of a nuclear accident in Ukraine rising this winter.",
   "chair": {
-    "lede": "The clock moves to 80.0 seconds, 0.3 closer to midnight than yesterday: risk of a nuclear accident in Ukraine rising this winter.",
+    "lede": "The clock moves to 79.5 seconds, 0.5 closer to midnight than yesterday: uS strike on an Iranian missile launch site sharply raises nuclear tension.",
     "body": [
-      "The Reuters report (headline 5) highlights a growing danger of a nuclear incident in Ukraine as winter approaches, a development not covered in the baseline and adding a new nuclear pressure.",
-      "COP31 draft negotiations (headlines 6 and 21) indicate climate policy is slipping, prompting the addition of a modest climate‑policy pressure.",
-      "Multiple new lawsuits against OpenAI over the Hugging Face hack (headlines 13, 22, 45) intensify AI misuse concerns, leading to an increased weight for the existing AI‑litigation pressure."
+      "A Reuters report (headline 11) confirmed a US strike on Iran's Qeshm Island missile launch site, intensifying the nuclear standoff already reflected in the US‑Iran pressure.",
+      "The same day, Ukrainian drones hit the Kerch Bridge (headline 6), adding a fresh nuclear‑related vulnerability in the region and prompting the creation of a new pressure.",
+      "A new study (headline 2) quantifies emissions from US data centres, worsening the climate pressure, while the Ebola outbreak in the DRC has accelerated (headline 8), leading to an increased bio weight and the addition of a measles‑free status loss (headline 13).",
+      "Finally, a cyberattack on Norway's Equinor oil and gas infrastructure (headline 14) introduces a new AI‑tech threat to critical energy systems."
     ]
   },
   "experts": [
@@ -244,69 +255,75 @@
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
       "vote": "worse",
-      "say": "Risk of a nuclear accident in Ukraine rising this winter adds a new nuclear danger, worsening the overall risk profile."
+      "say": "US strike on Iranian missile launch site (11) and Ukrainian drone attack on the Kerch Bridge (6) introduce fresh nuclear‑related escalations, worsening the existing US‑Iran tension and highlighting vulnerability of critical infrastructure."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
       "vote": "worse",
-      "say": "Drafts of the COP31 agreement show tougher negotiations and stalled finance, fossil fuel and adaptation talks, indicating climate policy is slipping further behind expectations."
+      "say": "A new study quantifies US data‑center pollution, adding a fresh emissions source to climate risk (2)."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
-      "vote": "hold",
-      "say": "No new disease outbreak, lab safety issue, or antimicrobial resistance development reported; existing bio pressures unchanged."
+      "vote": "worse",
+      "say": "Ebola cases in the DRC have surged, doubling and killing at a record pace, and the US lost its measles‑free status as outbreaks accelerate (13). Both represent a clear worsening of existing disease threats."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "New lawsuits against OpenAI over the Hugging Face hack add fresh AI misuse pressure beyond the existing ai-litigation entry, worsening the AI risk landscape."
+      "say": "A fresh cyberattack on Norway's Equinor oil and gas systems (headline 14) adds a new threat to critical energy infrastructure, which is not covered by existing pressures."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
-      "vote": "hold",
-      "say": "Today's headlines focus on diplomatic moves, climate talks, and legal actions on AI, without introducing any new conflict, weapon test, or clear de‑escalation."
+      "vote": "worse",
+      "say": "The Ebola outbreak in the DRC has accelerated, with cases doubling and deaths soaring (headlines 3, 8), worsening the bio pressure already tracked. Additionally, the U.S. strike on Iran's missile launch site on Qeshm Island (headline 11) escalates nuclear tensions."
     }
   ],
   "headlines": [
     {
-      "tag": "Nuclear",
-      "title": "EXCLUSIVE: Risk of nuclear accident in Ukraine increasing this winter, atomic safety regulators say",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNRjlIbUpKS3NfVi1Oai13Y213OWJ4S0FkU0RIa1hDU1o2ZHBBN05zUXRKQnFZUDlXZ1hhbUxGS2wwUUJIbEVRSmNsSXFRNk10dEhIS0NuWVFHSHBPRFNxUUluT0ZZRlByUVhGajRMcWUxQlBkazFwU0hvYUthYlZGRzdEQTdrNnl4cDJWeEIzZWtaYnc0UUFMTk03QldsOHZiZGNTRTlmRWNrcVpIWHg5UGMzcDRINkF4cG1ZTExsZktQSjlTNm91Vg?oc=5"
-    },
-    {
       "tag": "Climate",
-      "title": "First draft of COP31 deal signals tough negotiations to come",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWVlsVlZ0US1xOVU2U1lLbEtiOGJmVmJIcUViWnBzRXdleE9DN05lN3ZHMDFRQXhpYUJuellVODcyLTUwYnkxOXBMOEhGNmpYbW9iUHNOTm9HcFhkUkxjaHo0UVBkb1pYUmlSVWp6SXRRRGtaRElTOHBOOTBEYXhWOTJSanpxb3RNRzZ2TkZYV1U1YUlOOVBkYUFBLUdFVGprNVBUZ0xWNXgtN1VxVGc?oc=5"
-    },
-    {
-      "tag": "AI & tech",
-      "title": "California sues OpenAI, seeking court-ordered changes after the Hugging Face hack",
+      "title": "Study estimates magnitude of US data center pollution as climate talks unveil clean AI pledge",
       "source": "AP",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZzhWWVB0Z1hBYmU2RUtsRW5BRjJteUR3VmV3d3hTLTlUbWVKZG5aNkZNSzhRX09iMFhVbmVRc1VqODY5MXhWb0V6M0pvT0RhTWNBS01sRzAxRGJBLW9RNWlNYk5VTDEzQ0Z0b0loR1doaFk0UENNMXViSi1selNmSlVfZUR5XzZaSGsxalNheDc0Szlfam9taFIwZw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUTFqY1VncEd2YzN6Z3dUT2lqVXNmVDVxOXROdERRaVFrcDN3ZlhxZVNXdFQ3bnVMNjBYeW1lVk90WGxJRW9VUnpnMU1QQ01vSGJmbmNKdWZWSHVYeElhMUpSMFhFeVk4eG5JakcyNjZ1NTh6ejhMU1RhWVA2N1BiU3lyX1VDRTJGVmpOSjBXd1V4b2Z0OVFWbXozRUJUdk5x?oc=5"
     },
     {
-      "tag": "AI & tech",
-      "title": "California sues OpenAI over AI models’ cyberattacks on Hugging Face, other companies",
+      "tag": "Nuclear",
+      "title": "Ukrainian drones and missiles strike Kerch Bridge that links Russia with Crimea",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNN1lMdEV1WEtKYTVkZHVmeDh1cEhybHluUVd1eGRuVHdfMkt6ekpEbXFVWHpMN254eURaczMwUVg4RXBmay14U0l4R3l2bUxBQWl3alU4ajNLbGtSdlBha0JPY2ZBelkxMlJUU3RHNVBKNWpwWS0xOGlEbklYNHBhZHZ2T2lzako2TzlkMk9sQmZzMmF2V3pYYUpjdnVqZzU2ZFFORzUyNEpDYi14?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "World News in Brief: Ebola cases double in DR Congo, chemical exposure starts before birth, Türk concern over EU-Rwanda transfer plan",
+      "source": "UN News",
+      "url": "https://news.un.org/feed/view/en/story/2026/11/1168827"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "US strikes Iranian missile launch site on Qeshm Island, US official says",
       "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUnZpbWVjMld3R0NVUjRwT1ZIZW04eFJwYVYzNzUzUi1pckdSQmJiZkh5MnNWeHlnX2ZDVUtBVGU5emdtV3hweWlENDBqeXFoTThlSWhTY0pNRURXbFBmOWRySmkwOGxFZGlPQW9qekNhVzB2bW1SQW1rbU52M01vRTc2M0V3Zktfb00xNE04NElpSTU3c2RXTlVZT3JPYkdSRkFqRUpVSmhvZ0JtcHM5LURPN2hXWDZ5Mk1HVkVZQW5Cdw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWENzVXNRVjR0NU9lejlJWll3U01GOENvbnlKVWJuZG9ZSmwtdVRXSDRPZ3JGcGZnSGhfQmYzNnFRQ0p4d2ZaZk80Q0NKUEgtdTI3cmFwb2JxT1FOamJYVllwTFR3UV9ZN2xfMTNTTFZiS0gtSjU2Q3B6dkVLUmgyYzlpcHprNXdCMEdST0RqNkdkTEgycGFEQkVwY01yWENOcVNpYWpFYlRrRG1waGlwVHNKM3h5UHBidHpMcXlkcw?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "US, Mexico and Bolivia lose measles-free status as deaths mount",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/americas/20261117-us-mexico-and-bolivia-lose-measles-free-status-as-deaths-mount"
     },
     {
       "tag": "AI & tech",
-      "title": "California files lawsuit against OpenAI alleging lack of proper safeguards",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/11/16/california-files-lawsuit-against-openai-alleging-lack-of-proper-safeguards?traffic_source=rss"
+      "title": "Norway's Equinor detects ongoing cyberattack, oil and gas output unaffected",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbjhGTnNBTjRRNVlLVTFYb2NsSnB6bDJmbUIwbWY2UTh5YUpDNC1UQXpvLWJacEh2THJTOUlnM2NkMHF0QUJramtnRkpadURDR0FieUJvOWU4bFdka2RKdVE0b3dCMGVHTWpCYzV4SHBZNDZkU3gwOGwwRThtMnNRQ0NtZG5OdUNzRXdnNU1TY0E5Z3FHQV9PeVJmZm40RmpmclE?oc=5"
     },
     {
-      "tag": "Climate",
-      "title": "Cop31 draft text is attempt to ‘draw out parties’ to find agreement, president of talks says",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/environment/2026/nov/16/cop31-draft-text-draw-out-parties-find-agreement-president-talks-says"
+      "tag": "Bio",
+      "title": "Congo's Ebola outbreak is spreading and killing at a record pace",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQOEFWMzBNRHVFZGVza1RSRXBVZkxZZlJuUmI3cDYzc1Z0RU4xTmZvM0lWZzBTdFRCXzlaUURKQTBRX2FBakk2eWtXN1JYelhKNjdvRmd1TDZxUFJCQ3puQ0lYOW5aYzd2cmF3YUxCaGtONUE4YXJPc1VRQmY0dGp1NjBZTzFSYUJUdHFramt0SEV1Tmx5TGVlUG1hVHlFbjh1WTdvUWR4N2NCRExCT1lVM1FUZjFiM0ZPeTkxTHJ5Z2w2M3pK?oc=5"
     }
   ]
 }
