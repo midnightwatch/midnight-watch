@@ -1,0 +1,344 @@
+{
+  "sample": false,
+  "date": "2026-11-20",
+  "seconds": 78.7,
+  "previous": 79.0,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.3,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-20",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.4,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-19",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.0,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-19",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.4,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-19",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-19T23:36:11+00:00",
+  "yesterday_lede": "The clock moves to 79.0 seconds, 0.5 closer to midnight than yesterday: north Korea's uranium enrichment expansion raises nuclear risk.",
+  "chair": {
+    "lede": "The clock moves to 78.7 seconds, 0.3 closer to midnight than yesterday: north Korea's uranium enrichment expansion adds a fresh nuclear proliferation risk.",
+    "body": [
+      "The latest IAEA report confirms that North Korea is expanding its original uranium enrichment facility, introducing a new nuclear proliferation concern that was not present in the baseline.",
+      "Climate pressures have intensified with fresh El Niño‑driven floods in Florida and a severe drought in Fiji, while policy setbacks such as EPA grant cancellations and the removal of fossil‑fuel language at COP31 increase long‑term risk.",
+      "Additional bio and AI threats emerged: a measles comeback in the United States and an AI‑powered cyberattack on the EU Commission, each warranting new modest pressures."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "North Korea is expanding its uranium enrichment facility, adding a new nuclear proliferation risk, and Russian nuclear-capable bombers are operating from Vietnam, extending nuclear posture."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "El Niño‑driven floods in Florida and Fiji’s drought disaster show worsening extreme weather. The US EPA grant cancellations and COP31’s removal of fossil‑fuel language represent policy rollbacks that increase climate risk. Datacentres’ projected 70% emissions rise adds further pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "A major measles resurgence in the US, driven by falling vaccination rates, adds a new infectious disease threat not previously tracked (headline 3)."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Recent AI‑driven cyberattacks on the EU Commission (43) and the large US sale of AI chips to China (24) introduce fresh escalation risks in AI misuse and technology competition."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "North Korea is expanding its original uranium enrichment facility, adding a fresh nuclear proliferation risk. This new development sharpens existing nuclear pressures."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Nuclear",
+      "title": "North Korea is expanding its original uranium enrichment facility, UN nuclear watchdog says",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPM0pQb29VWlZzMkpNU1VsWVZLRFpCa21XNnRtUVUxNUVBVS1vT0NNd0tjZzFCX011RWlWNGgxRlJoUHBmR1Z1c29tT0hrdmEwNXBRYTJZTmFIeFJNbUhVWkpRQldodUFzUDA1TE9MVFM5MEJ4RUtWTGtYOXpwajNqTUtaVDVrR3JTNWx6VlNjNW16ZHRLWnVB?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Rainfall supercharged by El Niño floods roads and collapses a south Florida synagogue's roof",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOY2hjT213Zm5QNUU1QkJIX1pEUWNsR1lCbUhOVm1IR3VWNmpoMVczbjBTVkFkbGUyWEQ2elJpT1BYUkNpLVZja3kwbzZHbXdLUGs1dGc5OFI2bVpQbEhqSS1WcUprOTZsTzU2Y2hxcm12UUdRTTdqektyNWZ2UTVpNWpoOEhqLXJBUHpPXzhxZFdFYzJ3ZVJfZzZuSThhRXB4Q0FWTURB?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Trump wants the Supreme Court to let his EPA cancel billions in Biden-era climate grants",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcGxIRk1oWkZQWm01TUdraDVtamJVOEpCWXN6SHlrYjBweXZubjFmR0t0czVaQ0MwdzhVNHVNOGUta2xJVVhrYlJOckFrOW5tX0tJbUM1WUlUWndmMXBmdkxmLXowaWJJeXBlaTE0QTRmalhtZjlraTEwOF9FREhRN1RyTHQ0S1c4UklDVHFLclNSZjdxVFU3ZTZrZHB6VUYzaVpuVm9kQlk?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Fiji declares state of disaster amid El Nino-driven drought",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV1dfbGxkWnZxMTdBR2tnVW9OMDVBcTRtLWw3TUJjRDBzbHpHcjEyamZRdWR1bjdocXhpUDFlMjdTN3pkdVZkOVg2UEF6a3pyNzBkMTFoeDJrMjl0WGszbTE3TnBPRU5PLXBBc216MlItU1JzZ01WRGpJdTlJRHF3cWZxa1FjaGRWRmFKVmpnbFBKRUx4R2l3U054dzFNX1U4eVl0UVo2bXRBRzdlem8taUtybw?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "How vaccine fears fuelled a major measles comeback in the US",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/19/how-vaccine-fears-fuelled-a-major-measles-comeback-in-the-us?traffic_source=rss"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "EU Commission confirms it was targeted in cyberattack through use of AI tools",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQ2FuVDFlVnk2V2ZQX1cwZDZTVVgtNGcyVkRjdWVPa0dWMnFUVWkxVjU0MmJCZEhqZTNURWtRUlpWTFpHYTJDUS1TckpwbDFOYWl3WjR5Z0hyR0xMRVNQbXNZOWw1dHUtWDMwUl9VTVJRSUVfOWh6cjd1eVBpY3hySU9zbnlvZ2V1UFpBSlFraWZIMTAxTGtXQnVYaGhNLWRkRVhmaE96UQ?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "US signed off on sales of nearly 900,000 AI chips to China in six months, House committee says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOFRrWXhLbGJZcHVKYzUycHNKbTdKZUE2clNGYUp5WFFBOTdaWndZbVdDZW0xSTQzUi1EZlRsRElldE00bktXMUFMaG1Sclo4eGdCVnZab1JUbWJwZHQ4cGFSTzgyNkZSZmF0WHAzR0hTa1B3eUQ5cmJRTGRfd1ZBdkFiSzNpU1RDeF8wU0pmbXBqWXYxeFNuaWdmV01QLWk0MWdrclJDV2ZYNVFFN0puWU9B?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Russian nuclear-capable bombers leave Vietnam as Putin meets world leaders in China",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQd3lIcFN2a09wZThTbTlVaXI1bm82RmdVSnpwSWg2U0libFNLQXZzN2loWU5VQlc1b3B1YnJRU2ZxVGdaYzNjT1J6NDlFamMyNWRhRjZXUUtsY3l1ZlotWjdKTGp2MHJ1TGxwWm1GcDBVRlhKcDRROFRvUUNYY3BmR1YzUHVfNjFjbjR6akpTbFMxdkdYTDc2cEdESHdzWm1tR1dwUC1ha3QtZw?oc=5"
+    }
+  ]
+}
