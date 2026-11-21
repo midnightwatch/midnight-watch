@@ -1,0 +1,344 @@
+{
+  "sample": false,
+  "date": "2026-11-22",
+  "seconds": 78.4,
+  "previous": 78.4,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-21",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.4,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-19",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-21",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.6,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.4,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.4,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-19",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-21T23:29:12+00:00",
+  "yesterday_lede": "The clock moves to 78.4 seconds, 0.3 closer to midnight than yesterday: escalating extreme storms in the U.S. and a new cholera case in South Korea.",
+  "chair": {
+    "lede": "The clock holds at 78.4 seconds: cOP31 deadlock and a fresh Russian missile strike on Zelensky’s hometown.",
+    "body": [
+      "The climate negotiations at COP31 stalled, with deep divisions over fossil‑fuel language and finance, creating a new policy‑level pressure beyond the ongoing extreme‑weather events.",
+      "A Russian ballistic missile attack on President Zelensky’s hometown killed civilians and heightened the Ukraine conflict, adding a fresh geopolitical escalation.",
+      "The United Nations talks on autonomous weapons collapsed without binding rules, and a measles‑associated death in Virginia signals a resurgence of a vaccine‑preventable disease in the United States."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "hold",
+      "say": "No new nuclear weapon test, treaty collapse, or major escalation appeared; recent missile attacks and political statements are covered by existing pressures."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Deadlock at COP31 and deep divisions over fossil fuels signal a worsening climate policy outlook, adding new pressure beyond existing extreme‑weather concerns."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "A measles-associated death in Virginia signals the US losing measles elimination status and a growing outbreak, adding a new biological threat not previously tracked."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "UN talks on autonomous weapons failed to produce binding rules, worsening the AI weapons risk (headlines 28, 32, 36)."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "A fresh Russian ballistic missile strike on President Zelensky’s hometown killed civilians and heightened war tensions, adding a new escalation to the Ukraine conflict (see headlines 22 and 30)."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Climate",
+      "title": "Fight over fossil fuels leaves COP31 climate talks in deadlock",
+      "source": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Russian strike kills two, wounds 60, in Zelenskyy’s hometown",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/11/21/russian-strike-kills-two-wounds-60-in-zelenskyys-hometown?traffic_source=rss"
+    },
+    {
+      "tag": "Bio",
+      "title": "Virginia child dies in state’s first measles-associated death of 2026",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/us-news/2026/nov/21/virginia-child-dies-measles"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Killer robots: U.N. talks fall short of hopes for legally binding rules",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/21/nx-s1-6047916/killer-robots-un-drones"
+    },
+    {
+      "tag": "Climate",
+      "title": "COP31: Deep divisions persist over energy, finance and science",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/cop31-deep-divisions-persist-over-energy-finance-and-science"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Nations at UN talks on AI killer robots agree to more talks but no firm commitment to rein them in",
+      "source": "NPR",
+      "url": "https://www.npr.org/2026/11/21/g-s1-154914/nations-at-un-talks-on-ai-killer-robots-agree-to-more-talks-but-no-firm-commitment-to-rein-them-in"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "International UN talks on controlling use of autonomous weapons collapse",
+      "source": "The Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/21/international-talks-control-ai-autonomous-weapons-collapse"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Russia attacks Zelensky's hometown, Ukraine reaffirms wish to join NATO",
+      "source": "France 24",
+      "url": "https://www.france24.com/en/europe/20261121-russia-attacks-zelensky-s-hometown-ukraine-reaffirms-wish-to-join-nato"
+    }
+  ]
+}
