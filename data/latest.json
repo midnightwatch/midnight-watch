@@ -1,7 +1,7 @@
 {
   "sample": false,
-  "date": "2026-11-22",
-  "seconds": 78.4,
+  "date": "2026-11-23",
+  "seconds": 78.2,
   "previous": 78.4,
   "official_reset": false,
   "anchor": 85.0,
@@ -37,6 +37,16 @@
       "delta": 0.0
     },
     {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.6,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-23",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
       "id": "ai-cyberalert",
       "area": "AI & tech",
       "name": "Fake nuclear/chemical emergency alerts",
@@ -44,16 +54,6 @@
       "since": "2026-11-02",
       "last_seen": "2026-11-11",
       "status": "fading",
-      "delta": 0.0
-    },
-    {
-      "id": "bio-ebola",
-      "area": "Bio",
-      "name": "Ebola outbreak worsening in DR Congo",
-      "weight": 0.4,
-      "since": "2026-11-14",
-      "last_seen": "2026-11-18",
-      "status": "same",
       "delta": 0.0
     },
     {
@@ -73,7 +73,7 @@
       "weight": 0.3,
       "since": "2026-11-16",
       "last_seen": "2026-11-16",
-      "status": "same",
+      "status": "fading",
       "delta": 0.0
     },
     {
@@ -135,8 +135,8 @@
       "weight": 2.6,
       "since": "2026-11-02",
       "last_seen": "2026-11-21",
-      "status": "up",
-      "delta": 0.3
+      "status": "same",
+      "delta": 0.0
     },
     {
       "id": "nuclear-us-iran",
@@ -249,96 +249,96 @@
       "delta": 0.0
     }
   ],
-  "generated_at": "2026-11-21T23:29:12+00:00",
-  "yesterday_lede": "The clock moves to 78.4 seconds, 0.3 closer to midnight than yesterday: escalating extreme storms in the U.S. and a new cholera case in South Korea.",
+  "generated_at": "2026-11-22T23:34:13+00:00",
+  "yesterday_lede": "The clock holds at 78.4 seconds: cOP31 deadlock and a fresh Russian missile strike on Zelensky’s hometown.",
   "chair": {
-    "lede": "The clock holds at 78.4 seconds: cOP31 deadlock and a fresh Russian missile strike on Zelensky’s hometown.",
+    "lede": "The clock moves to 78.2 seconds, 0.2 closer to midnight than yesterday: russian missiles entering NATO territory raise nuclear tension.",
     "body": [
-      "The climate negotiations at COP31 stalled, with deep divisions over fossil‑fuel language and finance, creating a new policy‑level pressure beyond the ongoing extreme‑weather events.",
-      "A Russian ballistic missile attack on President Zelensky’s hometown killed civilians and heightened the Ukraine conflict, adding a fresh geopolitical escalation.",
-      "The United Nations talks on autonomous weapons collapsed without binding rules, and a measles‑associated death in Virginia signals a resurgence of a vaccine‑preventable disease in the United States."
+      "Three Russian missiles flew into Poland, marking the first confirmed incursion of Russian weapons into NATO territory and heightening the risk of a broader nuclear confrontation.",
+      "The German army's trial of kamikaze drones equipped with AI targeting tools introduces a new autonomous weapons capability that could accelerate future conflicts.",
+      "WHO officials warned that ongoing fighting near the Ebola hotspot in the Democratic Republic of Congo is further hampering response efforts, worsening the outbreak."
     ]
   },
   "experts": [
     {
       "role": "Nuclear",
       "focus": "arsenals, treaties, threats",
-      "vote": "hold",
-      "say": "No new nuclear weapon test, treaty collapse, or major escalation appeared; recent missile attacks and political statements are covered by existing pressures."
+      "vote": "worse",
+      "say": "Russian missiles entering NATO territory heighten nuclear tension and worsen the existing nuclear‑Ukraine‑bridge pressure."
     },
     {
       "role": "Climate",
       "focus": "emissions, extremes, policy",
-      "vote": "worse",
-      "say": "Deadlock at COP31 and deep divisions over fossil fuels signal a worsening climate policy outlook, adding new pressure beyond existing extreme‑weather concerns."
+      "vote": "hold",
+      "say": "The climate news today reports the collapse of COP31 negotiations (e.g., headlines 15,18,21,24,27,30,33,38,40,42,44) but no new extreme weather events or policy changes beyond the ongoing diplomatic failure already reflected in the existing pressure."
     },
     {
       "role": "Bio",
       "focus": "outbreaks, labs, weapons",
       "vote": "worse",
-      "say": "A measles-associated death in Virginia signals the US losing measles elimination status and a growing outbreak, adding a new biological threat not previously tracked."
+      "say": "WHO chief says fighting near Congo Ebola outbreak area disrupts response efforts, worsening the Ebola situation already tracked (see headline 3)."
     },
     {
       "role": "AI & tech",
       "focus": "capabilities, misuse, controls",
       "vote": "worse",
-      "say": "UN talks on autonomous weapons failed to produce binding rules, worsening the AI weapons risk (headlines 28, 32, 36)."
+      "say": "German army begins testing kamikaze drones and AI targeting tools, a new autonomous weapons development not previously tracked (cite 4)."
     },
     {
       "role": "Geopolitics",
       "focus": "wars, alliances, leadership",
       "vote": "worse",
-      "say": "A fresh Russian ballistic missile strike on President Zelensky’s hometown killed civilians and heightened war tensions, adding a new escalation to the Ukraine conflict (see headlines 22 and 30)."
+      "say": "Russian missiles entering NATO territory heightens East-West tension, a new escalation not covered by existing pressures."
     }
   ],
   "headlines": [
     {
-      "tag": "Climate",
-      "title": "Fight over fossil fuels leaves COP31 climate talks in deadlock",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss"
-    },
-    {
       "tag": "Nuclear",
-      "title": "Russian strike kills two, wounds 60, in Zelenskyy’s hometown",
-      "source": "Al Jazeera",
-      "url": "https://www.aljazeera.com/news/2026/11/21/russian-strike-kills-two-wounds-60-in-zelenskyys-hometown?traffic_source=rss"
+      "title": "Three Russian missiles flew into Poland Friday, prosecutors say",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNM1VMUS1oUkxlYzRWaDg5WjNPbGJoV2t1LTlRNkVMWnF6a3Q3aUljXzlCal9hWmdhWnlkYzdKNjdFVGdwVk1WUFFucGdfbUlnY3RtUjBsdFBxVTdmTGNjcnJ1a0VDNnk5eFh5NDdWaGNWcjNWcFI2WkoxZnFUbkI5UHZ6YTdYZUVMa19Ldk5YTERtX3ZialpvbjI4eFVoQ0Eyd2l0NGxoVQ?oc=5"
     },
     {
       "tag": "Bio",
-      "title": "Virginia child dies in state’s first measles-associated death of 2026",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/us-news/2026/nov/21/virginia-child-dies-measles"
+      "title": "WHO chief says fighting near Congo Ebola outbreak area disrupts response efforts",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOVnZjcE50YXJiLWxXZE5OQldXSndtUVlUbnNJckNPY1lQM1ZpdlExMlNJX08zNFJQbnFYd3FKT3ZZbzBqY2s4a3c0RVg0M2dELVZrLUx5R0tobENIQWk2QUdNZG9YRl95STZFUlVOVTlVcThuRG90VndEZEZhaE5jbTRVYkN1SUxoYmlteUhlempZSVNGRjJNWjhZdXlSNzMtM1Q3VExpZmFqZHJKbVdjT3lpekdsb0dXQXg0NHdsUkZwdlNzQW9CaGVhblM2b0VHSWRZTGlFVUJBSnd3LXA2SXJoUlVmV1E?oc=5"
     },
     {
       "tag": "AI & tech",
-      "title": "Killer robots: U.N. talks fall short of hopes for legally binding rules",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/11/21/nx-s1-6047916/killer-robots-un-drones"
+      "title": "German army starts testing kamikaze drones and AI targeting tool in Lithuania",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOaEZNb1cwZkRsWmFUN0Nkc0dfTGt4SUVDaXNCSHphV2VrQTBXYnQzTWN2Z0tkOEdiUnRyRnJqX2NST1pmYXJrYVFUQ204QllMNFRtelc0cEtUZy1MWlFMeXRfemNPS0pGQU1veHZyMU1XTWdJNE5pcWstLXUtZ0d4QXRMVzAzZFJKNzlteEZlWUVRbHpIeTJyanFWSlJVMlY4R0NOODNIN1RSLWJDdnQyM25KcDNNbDRvMHZkT1Nfenl6SUl2YUoxalBLT1RqQQ?oc=5"
     },
     {
       "tag": "Climate",
-      "title": "COP31: Deep divisions persist over energy, finance and science",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/cop31-deep-divisions-persist-over-energy-finance-and-science"
+      "title": "Can climate diplomacy build on the collapse of COP31?",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQ1RyOVZKTlV6bndHdTJhb3ZfZkI5R081UGttS1pZMDB4T0s0ekRPNGRQLW5FUERHRGVFLUxLQTFEcnFKSHpwVDBOQThBRGVaZkJfVTlMUzZPOFc3b3dZZllkVUVuRF9Lbnc3d3pzd01KQTE5WFpzR1h4alU4dUF1ZW0yYkpFeHF1RjRvbklfbWJqdDNXV1lkVkFCQnlRZw?oc=5"
     },
     {
-      "tag": "AI & tech",
-      "title": "Nations at UN talks on AI killer robots agree to more talks but no firm commitment to rein them in",
-      "source": "NPR",
-      "url": "https://www.npr.org/2026/11/21/g-s1-154914/nations-at-un-talks-on-ai-killer-robots-agree-to-more-talks-but-no-firm-commitment-to-rein-them-in"
+      "tag": "Climate",
+      "title": "Countries react as COP31 climate talks collapse",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQc3loZzVPSEw4YTN0RXZEdEpveVFkV0JoU0dtRTktZXR6LS1XVGRNVElxWHpWVUQ3eEhOMllBam9jYlNIX29HeW9ncUwyWkNhenBPcmRZeTNBNmt6MF96SkU5TS1zWUVBSEFOS0FMV1gwVmJoS3c3bGw4TjgwLUU5NTFOUEtzOWx3dy04NkhLMW9CMmJxM1dLeVRBRWMyVl9SY1A3THFB?oc=5"
     },
     {
-      "tag": "AI & tech",
-      "title": "International UN talks on controlling use of autonomous weapons collapse",
-      "source": "The Guardian",
-      "url": "https://www.theguardian.com/technology/2026/nov/21/international-talks-control-ai-autonomous-weapons-collapse"
+      "tag": "Climate",
+      "title": "COP31 climate talks collapse as EU and others reject deal",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNN3FQanMtV3N5N3NtMFp4WmVBTHpwMlo4empMNlhGaGprWFJFZ1VDSFFxcUhUVnQzcUJNVFB5dDNEeUgwY19WaXRGcnhYNEpfaE53T0dzbGJKSGhSSmhfdkY2eW04aW13NEZtYnpOVnpLZ3dIV0RlY3VCQU0yZnlVWkp4aWk0YlA3NTdDUjRFZzRWMmhSdUtBbDBhT1ZfdmhZMDRlNlZ2V3hrdkxrSnFNTXBOTQ?oc=5"
     },
     {
-      "tag": "Nuclear",
-      "title": "Russia attacks Zelensky's hometown, Ukraine reaffirms wish to join NATO",
-      "source": "France 24",
-      "url": "https://www.france24.com/en/europe/20261121-russia-attacks-zelensky-s-hometown-ukraine-reaffirms-wish-to-join-nato"
+      "tag": "Climate",
+      "title": "COP31 climate talks set to collapse without political deal",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZFRVY0w1ajMyTV9Xbm5zaS0tNXIxdjNjaW9DS2toc1kyMUdxcDFmS0xIbUgta0Jhb2Q0SWVudVlySTg2eHlHRURfaXp5UDE2OHFud0ZmRExfSFIyMUFQMzdTdHFidzBPUXQxUXRXWWVhTHYtUUx6V2VhclFFQWNzY3hkSm9Tc2pEREhsZDJUa25ZeDc3am5Xa20yelVkWE9pMTlrOXRWbDZ6OENHT25R?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "Why has the COP31 climate conference been branded the 'worst ever'?",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZdVlvek1EUVpVdmx0eXhRWTdCWXNvTVdyTjdfQTh2RTh2alhQQWY0ejVJU0dVSU5YUWNKUFNJamNmX0xVQUZPeUIxaHYwaW1CakJXNTNJQ2dKOVJn?oc=5"
     }
   ]
 }
