@@ -1,0 +1,364 @@
+{
+  "sample": false,
+  "date": "2026-11-26",
+  "seconds": 77.6,
+  "previous": 77.8,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-21",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 1.0,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-26",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.9,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "fading",
+      "delta": -0.1
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.5,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.5,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-26",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-russia-satellite",
+      "area": "Nuclear",
+      "name": "Russia may launch nuclear‑armed satellite",
+      "weight": 0.3,
+      "since": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-21",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 1.0,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 0.8,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-24",
+      "status": "up",
+      "delta": 0.2
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.5,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "fading",
+      "delta": -0.1
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.4,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-19",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-russia-satellite",
+      "area": "Nuclear",
+      "name": "Russia may launch nuclear‑armed satellite",
+      "weight": 0.3,
+      "since": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "status": "new",
+      "delta": 0.3
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "same",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-25T23:42:22+00:00",
+  "yesterday_lede": "The clock moves to 77.8 seconds, 0.4 closer to midnight than yesterday: russia’s possible launch of a nuclear‑armed satellite heightens nuclear risk.",
+  "chair": {
+    "lede": "The clock moves to 77.6 seconds, 0.2 closer to midnight than yesterday: ebola response in eastern Congo is being crippled by fighting, worsening the outbreak.",
+    "body": [
+      "The latest AP report shows that armed conflict in eastern Congo forced Ebola response teams to evacuate, threatening containment and increasing the risk of wider spread.",
+      "AI‑related threats have also risen, with retailers facing a new wave of AI‑driven cyberattacks ahead of Black Friday and AI‑generated disinformation targeting Nigeria's 2027 election, prompting modest weight increases and two new pressures.",
+      "Geopolitical tensions expanded with deadly drone strikes in Sudan and a Libyan army vow of retaliation after a Ukrainian drone attack, while Russian ballistic missile strikes on Kyiv add a fresh nuclear‑related flashpoint."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "Russian ballistic missile strikes on Kyiv show escalation of Russia's missile use, adding to existing nuclear‑related tensions (e.g., satellite threat)."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "hold",
+      "say": "King tide flooding continues with coastal damage reported in multiple locations, but extreme weather is already an open pressure (see headlines 2 and 7). No new climate‑related danger or easing is evident."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "worse",
+      "say": "Ebola response in eastern Congo is hampered as fighting forces workers to evacuate, worsening the outbreak already tracked (bio-ebola)."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "Recent reports of a rising AI‑driven cyberattack threat to retailers ahead of Black Friday and AI‑generated disinformation targeting Nigeria's 2027 election add fresh AI misuse risks beyond existing pressures."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "worse",
+      "say": "Drone strikes killed 19 civilians in southeastern Sudan, adding a new conflict front, and the Libyan army’s vow of retaliation after a Ukrainian drone attack raises the risk of wider regional escalation."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Bio",
+      "title": "Fighting in eastern Congo forces Ebola workers to evacuate, threatening outbreak response",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRDFtT0M3ampBX21sZVc4a0VHSDhwMjcwdm16S2ltOE1SUnBEN29UbmhFQVg2d0U0cmVLTVdrU3k5TS15eWNsUGZKekFqYWFUdGlkTlpWTG93ZHlEUE5CRkJYV2ZfU3lQcUpYcEpiT2g2MXN1OHJWSzhPNWdsX2hwbHJPQVlvQm41UFBNZE5ES1N1d1FMZEkybDJ0ZVp0cHRpSWVibA?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Nigeria's upcoming election marred by rising AI disinformation",
+      "source": "DW",
+      "url": "https://www.dw.com/en/nigeria-s-upcoming-election-marred-by-rising-ai-disinformation/a-79946897?maca=en-rss-en-world-4025-rdf"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "Retailers face rising AI cyberattack threat ahead of Black Friday, many uninsured",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQXpGTVZodUxhM09Jb0ZEQ1JXcmt0VkoxUndncmc3cXhoSWNmWlduNlJmRlA3VzhuRktZT2F6ZjJoTGZ5eVZEa01xZ3A2OHBaVjA4dDJkUTR4TkNNUnc5ay1XazlBcHAzSkVuQVpEVGtsMGlPVlNzLVM0X3F3WnJMZklqMTJnMWszSkxBMEZRLWx5cXgyRE9aSEJtSDlELWRCVjByTGhqT0hPQ200Ui03TUJfaGd1NXRjLUVVM21ObUlSSWd0bEktdmtua0VMWlpoRHFadg?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Drone strikes kill 19 civilians in southeastern Sudan, says rights group",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUFl6aC1QT2ozUEthZ0V6aGJXcnRHek1YYWt4OXZCU2otdGxqanpDTHdtY090MUNYVEV6NFlXdHowV0tDSUpWWlpaaE1EWWFCRlgxNDMtRWRKUW1WemlJZ2ozWExFR2p2ZzhZeWRuQllURFdHekpZNkpKVWh5bnpwSVN2U3piTTFnYms1OEpjVVdGeHpZaTMzU2E4VC1XaXJQZ3QxMmJrYnFuamRUNUl0WGtPSk85ZV82?oc=5"
+    },
+    {
+      "tag": "Geopolitics",
+      "title": "Libyan army vows retaliation after 2 naval officers die of wounds from Ukrainian drone attack",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYlhQMFFISGFSRC1TVkJtS2FtWXl1anZubHJfTnY1VzdiaG5fV2J3MGlWZk84RWUtQUQtRG1DR3Z2b2swWjdacE8zRG1xcHFHN0p3Q25GX3dMTHByRTBnSGl6dHBkcDQxZHF3VF8tMmVLVG5jRm50aGtndHBhWEFaUkFaaVJoZkp1aW8zMDFpVlZlODhqeXhwVG1TV0VNd2Frb2ZsUmg1R0wyb2VxclNscVVRMzc?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "Russian forces hit Kyiv with ballistic missiles, mayor says",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOUhrdXc0NFhybXpCcmF1VjM2RlFseVBqOW0xdXJBQlZWT0w5TmZRTjFTbEpjWTVlZHBmMHZMQ0tVcm5OMnk5RjhKWklxQlFfY1hDQTB4dmZNQWwwd2tLb0xLNGRNbUpNXzNCZGw0Sm1fNlhkSEUzNUZvQ2hkVHNOMGhOOFJlSnZJcXQ4UldFb01FY2J2YmpLUW1NTi1rWnRBb3c?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "What are king tides? These exceptionally high tides are increasingly flooding coastal communities",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQb1RFOVgzWGcyaEI4Y1lLd2FZandJMS1naHVqQURsWGpUZmlUcC1zLTNHOUZydXlMY1dlZGF1ZGtYelNjRjdMRlJEcVFYbUZQd1VIZW1HWUJvSjRnNFlvS25JS2RCMmhYNF9YVkk4RkNxX2Y5Q0lsdVJDUDM3dUNIXzZmdWl5SkRWZVUzNkE3amtxX2ttaFNIYW0wam40cUxrZWFLNS15RDMxeG9JeWc?oc=5"
+    },
+    {
+      "tag": "Climate",
+      "title": "King tides and strong waves destroy part of Pacifica pier as officials warn of coastal flooding",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPUnlsWDNmUjJoejRZUkJsYzktZEkxUW9UOEpyaVNfRUVHQWhtcHo4VVdzcVZ3VmE2eDNVNDZ6SXVEenRDdU1aQVlPMUZyWVlHNTNJckNqWkdGRUg0alIxUHVzOGFZdjhkZjhEOThLMmJGNjBUNTlZZTBmMlMxQVJXTzNQTEpTdmdEMnhCaFFYMDA2VGlmdGc?oc=5"
+    }
+  ]
+}
