@@ -1,0 +1,347 @@
+{
+  "sample": false,
+  "date": "2026-11-28",
+  "seconds": 77.6,
+  "previous": 77.7,
+  "official_reset": false,
+  "anchor": 85.0,
+  "pressures": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.9,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-28",
+      "status": "up",
+      "delta": 0.3
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 1.0,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-26",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.5,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-28",
+      "status": "down",
+      "delta": -0.3
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.5,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.5,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-26",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.5,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-28",
+      "status": "up",
+      "delta": 0.1
+    },
+    {
+      "id": "nuclear-russia-satellite",
+      "area": "Nuclear",
+      "name": "Russia may launch nuclear‑armed satellite",
+      "weight": 0.3,
+      "since": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "pressures_before": [
+    {
+      "id": "climate-extreme",
+      "area": "Climate",
+      "name": "New extreme weather events",
+      "weight": 2.6,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-21",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-ebola",
+      "area": "Bio",
+      "name": "Ebola outbreak worsening in DR Congo",
+      "weight": 1.0,
+      "since": "2026-11-14",
+      "last_seen": "2026-11-26",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-us-iran",
+      "area": "Nuclear",
+      "name": "US threats to resume attacks on Iran",
+      "weight": 0.8,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-18",
+      "status": "fading",
+      "delta": -0.1
+    },
+    {
+      "id": "ai-litigation",
+      "area": "AI & tech",
+      "name": "Lawsuits to freeze new AI models",
+      "weight": 0.5,
+      "since": "2026-11-13",
+      "last_seen": "2026-11-17",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-misuse",
+      "area": "AI & tech",
+      "name": "AI cheating on national exam",
+      "weight": 0.5,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-26",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-cyberalert",
+      "area": "AI & tech",
+      "name": "Fake nuclear/chemical emergency alerts",
+      "weight": 0.4,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-11",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-russia-satellite",
+      "area": "Nuclear",
+      "name": "Russia may launch nuclear‑armed satellite",
+      "weight": 0.3,
+      "since": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "status": "same",
+      "delta": 0.0
+    },
+    {
+      "id": "geopolitics-houthi-missile",
+      "area": "Geopolitics",
+      "name": "Houthis launch missiles toward Riyadh",
+      "weight": 0.3,
+      "since": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-anthrax",
+      "area": "Bio",
+      "name": "Anthrax outbreak in DR Congo wildlife",
+      "weight": 0.2,
+      "since": "2026-11-02",
+      "last_seen": "2026-11-02",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "bio-birdflu",
+      "area": "Bio",
+      "name": "Human case of avian influenza in Washington",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-fridgeattack",
+      "area": "AI & tech",
+      "name": "Cyberattack on European supermarket refrigeration",
+      "weight": 0.2,
+      "since": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "ai-bloodbank-cyber",
+      "area": "AI & tech",
+      "name": "Cyberattack on French blood banks",
+      "weight": 0.2,
+      "since": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "status": "fading",
+      "delta": 0.0
+    },
+    {
+      "id": "nuclear-ukraine-bridge",
+      "area": "Nuclear",
+      "name": "Ukrainian strike on Kerch Bridge",
+      "weight": 0.1,
+      "since": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "status": "fading",
+      "delta": 0.0
+    }
+  ],
+  "generated_at": "2026-11-27T23:44:08+00:00",
+  "yesterday_lede": "The clock moves to 77.7 seconds, 0.1 further from midnight than yesterday: north Korea’s new nuclear expansion pledge and the FIFA cyberattack introduce fresh risks.",
+  "chair": {
+    "lede": "The clock moves to 77.6 seconds, 0.1 closer to midnight than yesterday: russia’s unveiling of a new nuclear‑powered submarine with hypersonic weapons adds a fresh strategic nuclear threat.",
+    "body": [
+      "A Russian announcement of a new nuclear‑powered submarine equipped with hypersonic missiles (headline 10) introduces a fresh strategic nuclear capability that was not covered in the baseline, prompting the addition of a new nuclear pressure.",
+      "Heavy rain, wind and flooding across much of the United States on Thanksgiving (headline 2) constitute a new extreme weather event, increasing the weight of the existing climate‑extreme pressure.",
+      "The IAEA‑mediated ceasefire to repair the Zaporizhzhia plant (headline 1) eases nuclear tension between the US and Iran, allowing the nuclear‑us‑iran pressure to be reduced.",
+      "A breach of the US Air Force’s Cloud One computing platform (headline 14) raises concerns about critical military cyber‑security, leading to a modest increase in the AI‑cyberalert pressure."
+    ]
+  },
+  "experts": [
+    {
+      "role": "Nuclear",
+      "focus": "arsenals, treaties, threats",
+      "vote": "worse",
+      "say": "Putin unveiled a new nuclear‑powered submarine equipped with hypersonic weapons, expanding Russia's nuclear arsenal. While the IAEA is negotiating a ceasefire to repair the Zaporizhzhia plant, the submarine launch introduces a fresh strategic nuclear threat."
+    },
+    {
+      "role": "Climate",
+      "focus": "emissions, extremes, policy",
+      "vote": "worse",
+      "say": "Heavy rain, wind and flooding hit much of the US on Thanksgiving adds a fresh extreme weather event to the existing climate‑extreme pressure."
+    },
+    {
+      "role": "Bio",
+      "focus": "outbreaks, labs, weapons",
+      "vote": "hold",
+      "say": "No new outbreak or containment news; the Ebola headline (3) is a general report and does not add a new development beyond the existing pressure."
+    },
+    {
+      "role": "AI & tech",
+      "focus": "capabilities, misuse, controls",
+      "vote": "worse",
+      "say": "A new cyberattack breached the US Air Force's flagship Cloud One computing platform, representing a fresh threat to critical military infrastructure."
+    },
+    {
+      "role": "Geopolitics",
+      "focus": "wars, alliances, leadership",
+      "vote": "better",
+      "say": "The IAEA is working with Russia and Ukraine on a ceasefire to repair the power link at the Zaporizhzhia nuclear plant, easing nuclear risk."
+    }
+  ],
+  "headlines": [
+    {
+      "tag": "Nuclear",
+      "title": "Putin unveils new Russian nuclear-powered submarine with hypersonic weapons",
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2026/11/27/putin-unveils-new-russian-nuclear-powered-submarine-with-hypersonic-weapons?traffic_source=rss"
+    },
+    {
+      "tag": "Climate",
+      "title": "Heavy rain, wind and flooding hit much of the US on Thanksgiving",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNkxMTUs5ZzFmZFBCR2pBVGg1TEYwSGlKdVI2LWhaYk4zSno0MTJud0xrNHpralVPQWFmdXhaM3dmUmJNNGRFQk9XSGdRSUpCdmx6ZXUtY2V0SWFxdHplbmh2NHlHVUpsUVlnXzRISDhVd203ZmpLb2F6bzdkQU11bm5jQklqb3FZRi1KeDZGWmxDWDhkYXI5VG9WMjFpWkxULUQ3S0dR?oc=5"
+    },
+    {
+      "tag": "Nuclear",
+      "title": "IAEA working with Russia, Ukraine on ceasefire to repair power link at Zaporizhzhia nuclear plant",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQXlld0FmMFoxdUVjNlhmNURVMmZwLXJNcXZrVkhEQWxOLS14ajJFb2VQZzBOOUZKM1Z1VGwzLURERG9lUWdGczh0bTZGTGJqdC00Nk9tYjZLR21iN1ZRbEtmTHhnRFAzV3lYRzVRN2txb3h0TUxoeENQbmNTeHlmN1AtNnBnTE1rYTRnYmxxTXNBUkh1WTdZVHpBN3h2XzNYMXlUaWVLRmlOR051bTIwbE9BWVhJRjRHSWxVd0pXQy1tdnc?oc=5"
+    },
+    {
+      "tag": "AI & tech",
+      "title": "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQnhWb2oyc2Qta3k0bUhwbGZTcWZMREZ0VU41eVNZWDJZTDlBcmMxZzFrLXlmVGJpUHBRbVdBRlNoQU9lWUlIcVpMcXQwWWpyYVJ2eDJQa1ZvNFU5MUFHLWdpQW1BVloyUW5lTUlVSlFpLXJwVHNLMl9fQnBFTTNnemY4Q0JiUkN3SXFndG1pX1l1TmdySFJDOHJlWC1fMnE3cjlaVFB5M1hWbU0?oc=5"
+    },
+    {
+      "tag": "Bio",
+      "title": "Ebola virus",
+      "source": "AP",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE53dERTT3JBaEI4SEFOYlNnRkp4ZTZhS1R2YUpGWmxCWm9iVVl5T3FvREcxVUdleWNXeE1aVE9OSzFvQmViWFhiTkt3?oc=5"
+    }
+  ]
+}
